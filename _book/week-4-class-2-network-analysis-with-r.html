@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Week 4, Class 2: Network Analysis with R” | Applying Network Analysis to Humanities</title>
-  <meta name="description" content="Chapter 9 Week 4, Class 2: Network Analysis with R” | Applying Network Analysis to Humanities" />
+  <title>Week 4, Class 2: Network Analysis with R” | Applying Network Analysis to Humanities</title>
+  <meta name="description" content="Week 4, Class 2: Network Analysis with R” | Applying Network Analysis to Humanities" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Week 4, Class 2: Network Analysis with R” | Applying Network Analysis to Humanities" />
+  <meta property="og:title" content="Week 4, Class 2: Network Analysis with R” | Applying Network Analysis to Humanities" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="yann-ryan/network-analysis-humanities-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Week 4, Class 2: Network Analysis with R” | Applying Network Analysis to Humanities" />
+  <meta name="twitter:title" content="Week 4, Class 2: Network Analysis with R” | Applying Network Analysis to Humanities" />
   
   
   
@@ -23,14 +23,14 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-09-26" />
+<meta name="date" content="2022-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="week-4-class-1-network-basics.html"/>
+<link rel="prev" href="week-4-class-1-network-metrics.html"/>
 <link rel="next" href="week-5-class-1-visualising-networks-with-ggraph.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -136,70 +136,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Network Analysis Book</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About this Book</a></li>
-<li class="chapter" data-level="2" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><i class="fa fa-check"></i><b>2</b> Week 1, class 1: Opening and Knitting an R Markdown File</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html"><i class="fa fa-check"></i>Week 1, class 1: Course Introduction</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
-<li class="chapter" data-level="2.2" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#what-is-r-markdown"><i class="fa fa-check"></i><b>2.2</b> What is R Markdown?</a></li>
-<li class="chapter" data-level="2.3" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#the-rstudio-interface-for-r-markdown"><i class="fa fa-check"></i><b>2.3</b> The RStudio Interface for R Markdown</a>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#how-to-use-this-book-and-follow-the-course."><i class="fa fa-check"></i>How to use this book and follow the course.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#what-do-we-mean-by-a-network"><i class="fa fa-check"></i>What do we mean by a ‘network’?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#graph-theory"><i class="fa fa-check"></i>Graph Theory</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#why-use-networks-in-humanities"><i class="fa fa-check"></i>Why use networks in humanities?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-basics"><i class="fa fa-check"></i>Network Basics</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#bipartite-networks"><i class="fa fa-check"></i>Bipartite networks</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#from-bridges-to-social-networks"><i class="fa fa-check"></i>From Bridges to Social Networks…</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#yaml-header"><i class="fa fa-check"></i><b>2.3.1</b> YAML Header</a></li>
-<li class="chapter" data-level="2.3.2" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#code-chunks"><i class="fa fa-check"></i><b>2.3.2</b> Code Chunks</a></li>
-<li class="chapter" data-level="2.3.3" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#text-editor"><i class="fa fa-check"></i><b>2.3.3</b> Text Editor</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#the-strength-of-weak-ties"><i class="fa fa-check"></i>The Strength of Weak Ties</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#its-a-small-world"><i class="fa fa-check"></i>It’s a Small World</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#saving-and-knitting-a-copy"><i class="fa fa-check"></i><b>2.4</b> Saving and Knitting a copy</a>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#the-new-science-of-networks"><i class="fa fa-check"></i>The ‘New’ Science of Networks</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#conclusion"><i class="fa fa-check"></i>Conclusion</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#exercise-what-is-r-markdown"><i class="fa fa-check"></i>EXERCISE: What is R Markdown?</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#log-into-the-csc-notebooks-workspace"><i class="fa fa-check"></i><b>2.4.1</b> Log into the CSC notebooks workspace</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#the-rstudio-interface-for-r-markdown"><i class="fa fa-check"></i>The RStudio Interface for R Markdown</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#saving-and-knitting-a-copy"><i class="fa fa-check"></i>Saving and Knitting a copy</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#rstudio"><i class="fa fa-check"></i>RStudio</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#knit-the-file."><i class="fa fa-check"></i>Knit the file.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#download-and-send-it-to-the-course-leaders."><i class="fa fa-check"></i>Download and send it to the course leaders.</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#rstudio"><i class="fa fa-check"></i><b>2.5</b> RStudio</a></li>
-<li class="chapter" data-level="2.6" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#knit-the-file."><i class="fa fa-check"></i><b>2.6</b> Knit the file.</a></li>
-<li class="chapter" data-level="2.7" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#download-and-send-it-to-the-course-leaders."><i class="fa fa-check"></i><b>2.7</b> Download and send it to the course leaders.</a></li>
-<li class="chapter" data-level="2.8" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#more-resources"><i class="fa fa-check"></i><b>2.8</b> More resources</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#more-resources"><i class="fa fa-check"></i>More resources</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><i class="fa fa-check"></i><b>3</b> Week 1, Class 2: Introduction to R and the Tidyverse</a>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><i class="fa fa-check"></i>Week 1, Class 2: Introduction to R and the Tidyverse</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#quick-introduction-to-r-and-the-tidyverse"><i class="fa fa-check"></i><b>3.1</b> Quick introduction to R and the tidyverse</a></li>
-<li class="chapter" data-level="3.2" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#what-and-why"><i class="fa fa-check"></i><b>3.2</b> What and why?</a></li>
-<li class="chapter" data-level="3.3" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#using-r"><i class="fa fa-check"></i><b>3.3</b> Using R</a>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#r-and-r-studio"><i class="fa fa-check"></i>R and R-Studio</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-types."><i class="fa fa-check"></i><b>3.3.1</b> Basic R data types.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#logging-into-csc-notebooks-and-opening-a-notebook."><i class="fa fa-check"></i>Logging into CSC notebooks and opening a notebook.</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i><b>3.4</b> Tidyverse</a>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#using-r"><i class="fa fa-check"></i>Using R</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#select-pull"><i class="fa fa-check"></i><b>3.4.1</b> select(), pull()</a></li>
-<li class="chapter" data-level="3.4.2" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#group_by-tally-summarise"><i class="fa fa-check"></i><b>3.4.2</b> group_by(), tally(), summarise()</a></li>
-<li class="chapter" data-level="3.4.3" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>3.4.3</b> filter()</a></li>
-<li class="chapter" data-level="3.4.4" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#sort-arrange-top_n"><i class="fa fa-check"></i><b>3.4.4</b> sort(), arrange(), top_n()</a></li>
-<li class="chapter" data-level="3.4.5" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#left_join-inner_join-anti_join"><i class="fa fa-check"></i><b>3.4.5</b> left_join(), inner_join(), anti_join()</a></li>
-<li class="chapter" data-level="3.4.6" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#piping"><i class="fa fa-check"></i><b>3.4.6</b> Piping</a></li>
-<li class="chapter" data-level="3.4.7" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#plotting-using-ggplot"><i class="fa fa-check"></i><b>3.4.7</b> Plotting using ggplot()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#base-r."><i class="fa fa-check"></i>‘Base’ R.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-types."><i class="fa fa-check"></i>Basic R data types.</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#exercise-for-this-week"><i class="fa fa-check"></i><b>3.5</b> Exercise for this week</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html"><i class="fa fa-check"></i><b>4</b> Week 2, Class 1: Acquiring and Working With Network Data</a></li>
-<li class="chapter" data-level="5" data-path="week-2-class-2-data-cleaning.html"><a href="week-2-class-2-data-cleaning.html"><i class="fa fa-check"></i><b>5</b> Week 2, Class 2: Data Cleaning</a></li>
-<li class="chapter" data-level="6" data-path="week-3-class-1-data-modelling.html"><a href="week-3-class-1-data-modelling.html"><i class="fa fa-check"></i><b>6</b> Week 3, Class 1: Data modelling</a></li>
-<li class="chapter" data-level="7" data-path="week-3-class-2-build-a-data-model-with-r.html"><a href="week-3-class-2-build-a-data-model-with-r.html"><i class="fa fa-check"></i><b>7</b> Week 3, Class 2: Build a Data Model with R</a></li>
-<li class="chapter" data-level="8" data-path="week-4-class-1-network-basics.html"><a href="week-4-class-1-network-basics.html"><i class="fa fa-check"></i><b>8</b> Week 4, Class 1: Network Basics</a></li>
-<li class="chapter" data-level="9" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html"><i class="fa fa-check"></i><b>9</b> Week 4, Class 2: Network Analysis with R”</a>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i>Tidyverse</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#introduction-1"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
-<li class="chapter" data-level="9.2" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#constructing-a-network-in-r"><i class="fa fa-check"></i><b>9.2</b> Constructing a Network in R</a>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#select-pull"><i class="fa fa-check"></i>select(), pull()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#group_by-tally-summarise"><i class="fa fa-check"></i>group_by(), tally(), summarise()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#filter"><i class="fa fa-check"></i>filter()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#sort-arrange"><i class="fa fa-check"></i>sort(), arrange()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#left_join-inner_join-anti_join"><i class="fa fa-check"></i>left_join(), inner_join(), anti_join()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#piping"><i class="fa fa-check"></i>Piping</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#plotting-using-ggplot"><i class="fa fa-check"></i>Plotting using ggplot()</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#reading-in-external-data"><i class="fa fa-check"></i>Reading in external data</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#exercises---r-basics-and-tidyverse"><i class="fa fa-check"></i>EXERCISES - R Basics and Tidyverse</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html"><i class="fa fa-check"></i>Week 2, Class 1: Acquiring and Working With Network Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-data-cleaning.html"><a href="week-2-class-2-data-cleaning.html"><i class="fa fa-check"></i>Week 2, Class 2: Data Cleaning</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-data-modelling.html"><a href="week-3-class-1-data-modelling.html"><i class="fa fa-check"></i>Week 3, Class 1: Data modelling</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-build-a-data-model-with-r.html"><a href="week-3-class-2-build-a-data-model-with-r.html"><i class="fa fa-check"></i>Week 3, Class 2: Build a Data Model with R</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html"><i class="fa fa-check"></i>Week 4, Class 1: Network Metrics</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#import-network-data-with-the-tidyverse"><i class="fa fa-check"></i><b>9.2.1</b> Import Network Data with the Tidyverse</a></li>
-<li class="chapter" data-level="9.2.2" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#turn-the-edge-list-into-a-tbl_graph"><i class="fa fa-check"></i><b>9.2.2</b> Turn the edge list into a tbl_graph</a></li>
-</ul></li>
-<li class="chapter" data-level="9.3" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#exercises"><i class="fa fa-check"></i><b>9.3</b> Exercises:</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html"><i class="fa fa-check"></i><b>10</b> Week 5, Class 1: Visualising Networks with ggraph</a>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#node-level-metrics"><i class="fa fa-check"></i>Node-level metrics</a>
 <ul>
-<li class="chapter" data-level="10.0.1" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#visualisation-with-ggraph"><i class="fa fa-check"></i><b>10.0.1</b> Visualisation with ggraph</a></li>
-<li class="chapter" data-level="10.1" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#visualising-further-information-using-extra-information-with-joins"><i class="fa fa-check"></i><b>10.1</b> Visualising further information (using extra information with joins)</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#degree"><i class="fa fa-check"></i>Degree</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#betweenness-centrality"><i class="fa fa-check"></i>Betweenness Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#eigenvector-centrality"><i class="fa fa-check"></i>Eigenvector Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#closeness-centrality"><i class="fa fa-check"></i>Closeness centrality</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="week-5-class-2-visualising-with-gephi.html"><a href="week-5-class-2-visualising-with-gephi.html"><i class="fa fa-check"></i><b>11</b> Week 5, class 2: Visualising with Gephi</a></li>
-<li class="chapter" data-level="12" data-path="week-6-class-1-bipartite-networks.html"><a href="week-6-class-1-bipartite-networks.html"><i class="fa fa-check"></i><b>12</b> Week 6, Class 1: Bipartite Networks</a></li>
-<li class="chapter" data-level="13" data-path="week-6-class-2-literary-and-linguistic-networks.html"><a href="week-6-class-2-literary-and-linguistic-networks.html"><i class="fa fa-check"></i><b>13</b> Week 6, Class 2: Literary and Linguistic Networks</a></li>
-<li class="chapter" data-level="14" data-path="week-7-reflections.html"><a href="week-7-reflections.html"><i class="fa fa-check"></i><b>14</b> Week 7: Reflections</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#edge-level-metrics"><i class="fa fa-check"></i>Edge-level metrics</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#global-metrics"><i class="fa fa-check"></i>Global Metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#density"><i class="fa fa-check"></i>Density</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#modularity"><i class="fa fa-check"></i>Modularity</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html"><i class="fa fa-check"></i>Week 4, Class 2: Network Analysis with R”</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#constructing-a-network-in-r"><i class="fa fa-check"></i>Constructing a Network in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#import-network-data-with-the-tidyverse"><i class="fa fa-check"></i>Import Network Data with the Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#turn-the-edge-list-into-a-tbl_graph"><i class="fa fa-check"></i>Turn the edge list into a tbl_graph</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#exercises-2"><i class="fa fa-check"></i>Exercises:</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html"><i class="fa fa-check"></i>Week 5, Class 1: Visualising Networks with ggraph</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#visualisation-with-ggraph"><i class="fa fa-check"></i>Visualisation with ggraph</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#visualising-further-information-using-extra-information-with-joins"><i class="fa fa-check"></i>Visualising further information (using extra information with joins)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-visualising-with-gephi.html"><a href="week-5-class-2-visualising-with-gephi.html"><i class="fa fa-check"></i>Week 5, class 2: Visualising with Gephi</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-bipartite-networks.html"><a href="week-6-class-1-bipartite-networks.html"><i class="fa fa-check"></i>Week 6, Class 1: Bipartite Networks</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-literary-and-linguistic-networks.html"><a href="week-6-class-2-literary-and-linguistic-networks.html"><i class="fa fa-check"></i>Week 6, Class 2: Literary and Linguistic Networks</a></li>
+<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html"><i class="fa fa-check"></i>Week 7: Reflections</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -220,46 +250,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-4-class-2-network-analysis-with-r" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> Week 4, Class 2: Network Analysis with R”<a href="week-4-class-2-network-analysis-with-r.html#week-4-class-2-network-analysis-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction-1" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Introduction<a href="week-4-class-2-network-analysis-with-r.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="week-4-class-2-network-analysis-with-r" class="section level1 hasAnchor">
+<h1>Week 4, Class 2: Network Analysis with R”<a href="week-4-class-2-network-analysis-with-r.html#week-4-class-2-network-analysis-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction-2" class="section level2 hasAnchor">
+<h2>Introduction<a href="week-4-class-2-network-analysis-with-r.html#introduction-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A good place to start to learn R is the free book <a href="https://r4ds.had.co.nz/index.html" class="uri">https://r4ds.had.co.nz/index.html</a>, and if you want to learn how to use R for text mining specifically, <a href="https://www.tidytextmining.com/" class="uri">https://www.tidytextmining.com/</a> is an excellent (also free) online book.</p>
 <p>This document you’re reading is called an R Notebook: it’s a special document which contains text <em>and</em> code. Anything within the gray block below is called a ‘chunk’. On the right-hand side you’ll see a little green triangle. Clicking that will run all the code in the chunk. 1 + 1 is very simple computer code which adds those two numbers together. Try clicking on the code.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="week-4-class-2-network-analysis-with-r.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="week-4-class-2-network-analysis-with-r.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>R runs the code, and displays the output underneath the chunk. This MyBinder R environment has loaded an individual ‘container’ for you to try out the code. Feel free to edit or add new code: no changes will be saved once we finish the session.</p>
 </div>
-<div id="constructing-a-network-in-r" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Constructing a Network in R<a href="week-4-class-2-network-analysis-with-r.html#constructing-a-network-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="constructing-a-network-in-r" class="section level2 hasAnchor">
+<h2>Constructing a Network in R<a href="week-4-class-2-network-analysis-with-r.html#constructing-a-network-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>One of the easiest data formats to construct a network is an edge list: a simple dataframe with two columns, representing the connections between two nodes, one per row. It makes particular sense with correspondence data, which is often stored as a table of letters with a ‘from’ and a ‘to’—more or less a ready-made edge list. In a correspondence dataset you might also have multiple sets of each of the edges (multiple letters between the same pair of individuals). You can add this to the edge list as an attribute called weight, which is simply another column.</p>
 <p>I use three R network libraries to do almost everything network-related, from analysis to visualisation: <code>igraph</code>, <code>tidygraph</code> and <code>ggraph</code>. My goal is to port everything to a format which is really easy to work with using existing my data analysis workflow. That format is known as ‘tidy data’, and it is a way of working with data which is easily transferable across a range of uses. It also means you need to learn very little new programming to do network analysis if you stay within this ‘ecosystem’.</p>
-<div id="import-network-data-with-the-tidyverse" class="section level3 hasAnchor" number="9.2.1">
-<h3><span class="header-section-number">9.2.1</span> Import Network Data with the Tidyverse<a href="week-4-class-2-network-analysis-with-r.html#import-network-data-with-the-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="import-network-data-with-the-tidyverse" class="section level3 hasAnchor">
+<h3>Import Network Data with the Tidyverse<a href="week-4-class-2-network-analysis-with-r.html#import-network-data-with-the-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The whole workflow uses four packages. The first is <code>tidyverse</code>, a collection of various packages used for data wrangling and analytics.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="week-4-class-2-network-analysis-with-r.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb48-2"><a href="week-4-class-2-network-analysis-with-r.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb48-3"><a href="week-4-class-2-network-analysis-with-r.html#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb48-4"><a href="week-4-class-2-network-analysis-with-r.html#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="week-4-class-2-network-analysis-with-r.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb60-2"><a href="week-4-class-2-network-analysis-with-r.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb60-3"><a href="week-4-class-2-network-analysis-with-r.html#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb60-4"><a href="week-4-class-2-network-analysis-with-r.html#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code></pre></div>
 <p>Next I need some network data. On the project this is generally a comma separated values file containing the information for one letter per row. We turn the raw letter data into an edge list in a standardised format, with the from/to information, a letter date, a place, and a unique identifier for the letter. Because the dataset is large and the same names are often used repeatedly, we use a unique ID number rather than people or place names when constructing the edge list. The nice thing about working within the tidyverse is that it’s easy to then match the IDs back to actual names afterwards.</p>
 <p>These edge lists can be turned into a network object using <code>tidygraph</code> and the function <code>as_tbl_graph</code>. This function takes the first two columns in a dataset and turns them into the network graph, using any additional columns as attributes. We use two separate tables of data. First, an edge list, using unique, unambiguous numeric IDs for people and place names. Next, additional lookup tables, just with the unique ID, the person’s name, and additional information, if you have it (which can be used to filter the network afterwards).</p>
 <p>First load the two tables into R (I’ve created small sample tables to work with), which are available <a href="https://raw.githubusercontent.com/networkingarchives/blog/master/2021/04/15/my-network-analysis-workflow/letters.csv">here</a> and <a href="https://raw.githubusercontent.com/networkingarchives/blog/master/2021/04/15/my-network-analysis-workflow/letters.csv">here</a>:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="week-4-class-2-network-analysis-with-r.html#cb49-1" aria-hidden="true" tabindex="-1"></a>letters <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/yann-ryan/dh_intro_gates/main/sample_letter_data_network.csv&quot;</span>, <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">.default =</span> <span class="st">&quot;c&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="week-4-class-2-network-analysis-with-r.html#cb61-1" aria-hidden="true" tabindex="-1"></a>letters <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/yann-ryan/dh_intro_gates/main/sample_letter_data_network.csv&quot;</span>, <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">.default =</span> <span class="st">&quot;c&quot;</span>))</span></code></pre></div>
 <p>If you have multiple letters between individuals, you can sum them and use as a weight in the network, or you can ignore it. You can do this with <code>tidyverse</code> commands: <code>group_by()</code> and <code>tally()</code>, changing the name of the new column to ‘weight’.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="week-4-class-2-network-analysis-with-r.html#cb50-1" aria-hidden="true" tabindex="-1"></a>edge_list <span class="ot">=</span> letters <span class="sc">%&gt;%</span> </span>
-<span id="cb50-2"><a href="week-4-class-2-network-analysis-with-r.html#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(author, recipient) <span class="sc">%&gt;%</span> </span>
-<span id="cb50-3"><a href="week-4-class-2-network-analysis-with-r.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(<span class="at">name =</span> <span class="st">&#39;weight&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="week-4-class-2-network-analysis-with-r.html#cb62-1" aria-hidden="true" tabindex="-1"></a>edge_list <span class="ot">=</span> letters <span class="sc">%&gt;%</span> </span>
+<span id="cb62-2"><a href="week-4-class-2-network-analysis-with-r.html#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(author, recipient) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-3"><a href="week-4-class-2-network-analysis-with-r.html#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(<span class="at">name =</span> <span class="st">&#39;weight&#39;</span>)</span></code></pre></div>
 </div>
-<div id="turn-the-edge-list-into-a-tbl_graph" class="section level3 hasAnchor" number="9.2.2">
-<h3><span class="header-section-number">9.2.2</span> Turn the edge list into a tbl_graph<a href="week-4-class-2-network-analysis-with-r.html#turn-the-edge-list-into-a-tbl_graph" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="turn-the-edge-list-into-a-tbl_graph" class="section level3 hasAnchor">
+<h3>Turn the edge list into a tbl_graph<a href="week-4-class-2-network-analysis-with-r.html#turn-the-edge-list-into-a-tbl_graph" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Next transform the edge list into a network object called a tbl_graph, using <a href="https://www.data-imaginist.com/2017/introducing-tidygraph/">tidygraph</a>. A tbl_graph is a graph object which can be manipulated using tidyverse grammar. This means you can create a network and then use a range of standard data analysis functions on it as needed, without learning a whole new set of commands.</p>
 <p>First, load the tidygraph library. Use <code>as_tbl_graph()</code> to turn the edge list into a network. The first two columns will be taken as the from and to data, and any additional columns added as attributes. It’ll automatically create a nodes table, too.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="week-4-class-2-network-analysis-with-r.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygraph)</span>
-<span id="cb51-2"><a href="week-4-class-2-network-analysis-with-r.html#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-3"><a href="week-4-class-2-network-analysis-with-r.html#cb51-3" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="ot">=</span> edge_list <span class="sc">%&gt;%</span> </span>
-<span id="cb51-4"><a href="week-4-class-2-network-analysis-with-r.html#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>()</span>
-<span id="cb51-5"><a href="week-4-class-2-network-analysis-with-r.html#cb51-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-6"><a href="week-4-class-2-network-analysis-with-r.html#cb51-6" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="week-4-class-2-network-analysis-with-r.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygraph)</span>
+<span id="cb63-2"><a href="week-4-class-2-network-analysis-with-r.html#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-3"><a href="week-4-class-2-network-analysis-with-r.html#cb63-3" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="ot">=</span> edge_list <span class="sc">%&gt;%</span> </span>
+<span id="cb63-4"><a href="week-4-class-2-network-analysis-with-r.html#cb63-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>()</span>
+<span id="cb63-5"><a href="week-4-class-2-network-analysis-with-r.html#cb63-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-6"><a href="week-4-class-2-network-analysis-with-r.html#cb63-6" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph</span></code></pre></div>
 <pre><code>## # A tbl_graph: 417 nodes and 479 edges
 ## #
 ## # A directed acyclic simple graph with 1 component
@@ -283,10 +313,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3     3   100      1
 ## # … with 476 more rows</code></pre>
 <p>The tbl_graph is an object with two tables, one for the edges and one for the nodes. You can access each of the tables using the function activate(nodes) or activate(edges). The active table has (active) after it.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="week-4-class-2-network-analysis-with-r.html#cb53-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="ot">=</span> sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb53-2"><a href="week-4-class-2-network-analysis-with-r.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(edges)</span>
-<span id="cb53-3"><a href="week-4-class-2-network-analysis-with-r.html#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-4"><a href="week-4-class-2-network-analysis-with-r.html#cb53-4" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="week-4-class-2-network-analysis-with-r.html#cb65-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="ot">=</span> sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb65-2"><a href="week-4-class-2-network-analysis-with-r.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(edges)</span>
+<span id="cb65-3"><a href="week-4-class-2-network-analysis-with-r.html#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-4"><a href="week-4-class-2-network-analysis-with-r.html#cb65-4" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph</span></code></pre></div>
 <pre><code>## # A tbl_graph: 417 nodes and 479 edges
 ## #
 ## # A directed acyclic simple graph with 1 component
@@ -310,9 +340,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3 Amye Champernowne
 ## # … with 414 more rows</code></pre>
 <p>Tidygraph allows you to perform calculations on the tbl_graph using <code>mutate</code>, using standard igraph algorithms. So for example to calculate the degree of every node:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="week-4-class-2-network-analysis-with-r.html#cb55-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb55-2"><a href="week-4-class-2-network-analysis-with-r.html#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> </span>
-<span id="cb55-3"><a href="week-4-class-2-network-analysis-with-r.html#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;total&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="week-4-class-2-network-analysis-with-r.html#cb67-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb67-2"><a href="week-4-class-2-network-analysis-with-r.html#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-3"><a href="week-4-class-2-network-analysis-with-r.html#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;total&#39;</span>))</span></code></pre></div>
 <pre><code>## # A tbl_graph: 417 nodes and 479 edges
 ## #
 ## # A directed acyclic simple graph with 1 component
@@ -336,7 +366,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3     3   100      1
 ## # … with 476 more rows</code></pre>
 <p>If you run standard functions meant to be used on a dataframe, they will happen to the active table. So if you wanted to filter just edges from ID 1, for example, you could use the <code>filter</code> verb from dplyr:</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="week-4-class-2-network-analysis-with-r.html#cb57-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">filter</span>(from <span class="sc">==</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="week-4-class-2-network-analysis-with-r.html#cb69-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">filter</span>(from <span class="sc">==</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## # A tbl_graph: 417 nodes and 1 edges
 ## #
 ## # A rooted forest with 416 trees
@@ -354,9 +384,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3 Amye Champernowne
 ## # … with 414 more rows</code></pre>
 <p>Maybe you only want to keep nodes with the title ‘Sir’? Activate the nodes again with <code>activate(nodes)</code>, join the people table, then use <code>filter</code> and <code>str_detect</code> to filter based on a regular expressions pattern. You’ll see that it has filtered out unused edges now, too:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="week-4-class-2-network-analysis-with-r.html#cb59-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb59-2"><a href="week-4-class-2-network-analysis-with-r.html#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes)<span class="sc">%&gt;%</span> </span>
-<span id="cb59-3"><a href="week-4-class-2-network-analysis-with-r.html#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(name, <span class="st">&quot;(?i)sir&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="week-4-class-2-network-analysis-with-r.html#cb71-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb71-2"><a href="week-4-class-2-network-analysis-with-r.html#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes)<span class="sc">%&gt;%</span> </span>
+<span id="cb71-3"><a href="week-4-class-2-network-analysis-with-r.html#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(name, <span class="st">&quot;(?i)sir&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tbl_graph: 14 nodes and 4 edges
 ## #
 ## # A rooted forest with 10 trees
@@ -380,10 +410,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3     3     9      1
 ## # … with 1 more row</code></pre>
 <p>Slightly more useful might be to filter based on some calculation you’ve made previously. The data format allows you to use dplyr pipes (%&gt;%) to perform one calculation on the data, then pass that new dataframe along to the next function. It works really well with tidygraph. Here we calculate the degree scores first, then filter to include only nodes with a degree score over two:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="week-4-class-2-network-analysis-with-r.html#cb61-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb61-2"><a href="week-4-class-2-network-analysis-with-r.html#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> </span>
-<span id="cb61-3"><a href="week-4-class-2-network-analysis-with-r.html#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;total&#39;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb61-4"><a href="week-4-class-2-network-analysis-with-r.html#cb61-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(degree <span class="sc">&gt;</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="week-4-class-2-network-analysis-with-r.html#cb73-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb73-2"><a href="week-4-class-2-network-analysis-with-r.html#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> </span>
+<span id="cb73-3"><a href="week-4-class-2-network-analysis-with-r.html#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;total&#39;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb73-4"><a href="week-4-class-2-network-analysis-with-r.html#cb73-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(degree <span class="sc">&gt;</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## # A tbl_graph: 48 nodes and 76 edges
 ## #
 ## # A directed acyclic simple graph with 5 components
@@ -408,8 +438,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 73 more rows</code></pre>
 </div>
 </div>
-<div id="exercises" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> Exercises:<a href="week-4-class-2-network-analysis-with-r.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercises-2" class="section level2 hasAnchor">
+<h2>Exercises:<a href="week-4-class-2-network-analysis-with-r.html#exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Load in the network you created the previous week.</p>
 <p>Create a code chunk below to find the node with the highest degree in your network</p>
 
@@ -420,7 +450,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="week-4-class-1-network-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-4-class-1-network-metrics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="week-5-class-1-visualising-networks-with-ggraph.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

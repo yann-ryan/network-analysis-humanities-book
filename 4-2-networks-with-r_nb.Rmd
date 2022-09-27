@@ -3,15 +3,6 @@
 
 ## Introduction  
 
-A good place to start to learn R is the free book https://r4ds.had.co.nz/index.html, and if you want to learn how to use R for text mining specifically, https://www.tidytextmining.com/ is an excellent (also free) online book.
-
-This document you're reading is called an R Notebook: it's a special document which contains text *and* code. Anything within the gray block below is called a 'chunk'. On the right-hand side you'll see a little green triangle. Clicking that will run all the code in the chunk. 1 + 1 is very simple computer code which adds those two numbers together. Try clicking on the code. 
-
-```{r}
-1+1
-```
-
-R runs the code, and displays the output underneath the chunk. This MyBinder R environment has loaded an individual 'container' for you to try out the code. Feel free to edit or add new code: no changes will be saved once we finish the session.
 
 ## Constructing a Network in R  
 
@@ -68,6 +59,8 @@ sample_tbl_graph = edge_list %>%
 
 sample_tbl_graph
 ```
+
+
 The tbl_graph is an object with two tables, one for the edges and one for the nodes. You can access each of the tables using the function activate(nodes) or activate(edges). The active table has (active) after it. 
 
 ```{r}
@@ -78,6 +71,15 @@ sample_tbl_graph = sample_tbl_graph %>%
 sample_tbl_graph
 
 ```
+
+### Calculate network metrics 
+
+Global metrics
+
+Don't need tidygraph (but doesn't matter if it is)
+
+#### Node-level metrics with a table.
+
 Tidygraph allows you to perform calculations on the tbl_graph using ```mutate```, using standard igraph algorithms. So for example to calculate the degree of every node:
 
 ```{r}

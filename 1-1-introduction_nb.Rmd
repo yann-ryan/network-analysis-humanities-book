@@ -1,14 +1,133 @@
-# Week 1, class 1: Opening and Knitting an R Markdown File 
+# Week 1, class 1: Course Introduction
 
 [Slides for this week](https://comhis.github.io/applying-network-analysis-to-humanities/slides/1-1-introduction.html#/title-slide)
 
-## Introduction  
+## Introduction
 
-Each week, you will need to complete a short assignment in the form of an edited R markdown notebook. As we haven't introduced R yet, for this week, your only task is to make a copy of this notebook in your personal folder, 'knit' it, and send the resulting file to the course leader. In the following weeks, this is the method you'll need to use to submit the assignments, so this is an opportunity to familiarise yourself with it, and to iron out any problems.
+This course will teach you how to use networks to ask (and hopefully answer) questions relating to humanities. More specifically than this, you'll use the science of networks to model entities, and the relationships between them. To do this, you'll use your knowledge of a subject to build a *data model*: a way to conceptualise the way your data all fits together, in a way that allows you to extract network data from it.
 
-Slightly confusingly, there are two copies of this file you'll need to work with for this exercise. If you are viewing this as a webpage, you're looking at the *output* of the R markdown: a simple HTML document. Keep this page open in a web browser as you work. Soon, you'll log into the CSC notebooks server, and open a *source* copy, which is interactive, allowing you to edit and run code.
+## How to use this book and follow the course.
 
-## What is R Markdown?
+Each week, you will need to complete a short assignment. The final section of this chapter, [EXERCISE: What is R Markdown?], contains this assignment. Soon, you'll log into the CSC notebooks server, and open a *source* copy of this section, which is interactive, allowing you to edit and run code. After each week, you'll open the interactive notebook, complete the assignment, and upload the file.
+
+As we haven't introduced R yet, for this week, your only task is to make a copy of the exercise in your personal folder, 'knit' it, and send the resulting file to the course leader. In the following weeks, this is the method you'll need to use to submit the assignments, so this is an opportunity to familiarise yourself with it, and to iron out any problems.
+
+## What do we mean by a 'network'?
+
+The word 'network' is ubiquitous in our daily lives. The Oxford English Dictionary tells us the term itself originally was first defined as `Work (esp. manufactured work) in which threads, wires, etc., are crossed or interlaced in the fashion of a net.` (think patch work), but now we commonly use it for any complex system of interrelated things: we all use social networking, and the telephone, railway, and road networks; an area of a city might be described as having networks of alleyways, or a historian might write about a network of trading posts.
+
+These are all in some way metaphorical. The networks we'll learn about and use on this course have a more specific definition. In mathematics, a network is an object made up of *things* and *connections.* To use the standard language, the *things* are called **nodes** (or sometimes vertices), and the *connections* called **edges**.
+
+These things (and connections) could be almost anything. Some typical examples include:
+
+-   Nodes are people, and the edges their friendships or followers, as in a typical social network.
+
+-   The nodes are books and authors, and the connection is 'written by'.
+
+-   Nodes are web pages on the internet
+
+<details>
+
+<summary>In this final example, what might the connections be?</summary>
+
+The connections between web pages are generally the hyperlinks: the system of links known as the World Wide Web.
+
+</details>
+<br>
+
+## Graph Theory
+
+Representing data in this way allows us to use the mathematics of *graph theory* to find out things about it. The origins of this date back to the 18th century, and the mathematician Leonard Euler. The city of Königsberg (now Kaliningrad) was built on a river with two islands and a system (a network, perhaps?) of seven bridges connecting them. The inhabitants of the city had long wondered if there it was possible to devise a route which would cross each bridge exactly once.
+
+Euler solved this problem by abstracting the bridge system into what we now call a graph: a structure with nodes and edges. He used this approach to prove that the path was only possible if the graph had exactly zero or two nodes with a *degree* (a count of the total connections) with an odd number.
+
+![](images/Screenshot%202022-09-26%20at%2011.25.49.png)
+
+This process: abstracting a system to its connections, and devising mathematical rules to understand it, forms the basis of modern graph theory. Graph theory has methods to perform all sorts of calculations on the network: both on the individual nodes (for example to find the most important nodes by various measurements), and on the network as a whole. Rather than think about each individual relationship separately, a network model means that we can understand some more about how each part is interrelated, how the structure itself is important, and how one node might affect another in complex ways.
+
+## Why use networks in humanities?
+
+Network analysis has become one of the most popular (and perhaps one of the most overused) techniques in the digital humanities toolbox. Over this course, we'll ask you to think critically about the methods you use and when they might not always be the best way to think about your data. At the same time, network analysis does have plenty to offer the digital humanist:
+
+-   Humanities data is messy and complex, and network analysis deals well with complexity. The ubiquitous 'hairball graph', for example, might in some cases be the best way to get an overview of the structure of a large set of humanities data.
+
+-   Human relationships are naturally interrelated. The reason two individuals might exchange correspondence is not generally random, but strongly dependent on a wider network, for example whether they have friends in common. Networks can help to untangle these dependencies.
+
+-   Network analysis doesn't always provide the answers, but it can be a way to filter down to particularly important individuals or relationships in a dataset, worthy of a further look with your humanities hat on.
+
+-   There are lots of other ways the tools of networks are useful, where understanding the network itself is not the end goal. For example, knowledge graphs, or certain techniques for information retrieval.
+
+## Network Basics
+
+As already mentioned, a network is a graph consisting of nodes and edges (connections). These are often represented visually as points (the nodes) and lines (the edges), like this:
+
+![](images/Screenshot%202022-09-26%20at%2011.42.32.png){width="300"}
+
+These connections can often have a *weight* attached, for example the number of letters exchanged between two people, or the number of times two actors appear in a scene in a movie or play together. These weights can be used in the calculations.
+
+![](images/Screenshot%202022-09-26%20at%2011.42.58.png){width="300"}
+
+Edges can also have *directions,* meaning that the incoming and outgoing links are counted separately: for example we might count incoming and outgoing letters separately.
+
+**What might this letter count tell us about a relationship in a network? What potential danger is there is reading something from this?**
+
+These directed edges can also have separate weights attached to them:
+
+![](images/Screenshot%202022-09-26%20at%2011.31.15.png){width="300"}
+
+## Bipartite networks
+
+In the above examples, the nodes and connections has been obvious. Later in the course, we'll introduce *bipartite* networks. These networks are very common, particularly in humanities research. A bipartite network is one where the nodes are of different *types*, for example we might have a bipartite network of actors and movies, where the edges mean a particular actor has acted in that movie. An actor can be connected to one (or many) movie, but the two types of nodes cannot be connected to each other (a movie can't really act in another movie). These types of networks require some thought before the regular network metrics are applied to them.
+
+## From Bridges to Social Networks...
+
+In the 20th century, this same approach began to be used by the new discipline of sociology, applied to friendship networks. The gave birth to the field of 'social network analysis', which over the past half a century or so has developed a whole range of theories governing the ways networks of people are formed, and what implications this has for the way they act. Human nodes naturally behave quite differently to an island, after all.
+
+**In what specific way might the connection between two people have different attributes to a connection between two islands?**
+
+### The Strength of Weak Ties
+
+We won't deal with all of these theories here, but will mention a few key ones which are good demonstrations of the way in which graph theory has been applied to social networks, and the kinds of things it has determined.. One of the pioneers of social network analysis was Mark Granovetter. In a [1973 paper](https://www.jstor.org/stable/2776392), Mark Granovetter argued that the most important ties in a network are often those which connect two separate social groups together. These ties, according to Granovatter, occupy a 'brokerage' position, and can be key in certain situations.
+
+For example, paradoxically, job seekers are more likely to find the most useful leads through their distant acquaintances rather than their close friends...
+
+<details>
+
+<summary>Why might this be the case?</summary>
+
+It's because, wrote Granovetter, these distant acquaintances are more likely to be able to provide 'new' information on opportunities: a close friend, on the other hand, will probably have access to the same information as you.
+
+</details>
+<br>
+This 'brokerage' position can be deduced mathematically using a metric known as *betweenness centrality* (we'll come back to that in a later class).
+
+### It's a Small World
+
+Another important early finding of social network analysis came from a series of experiments by the social psychologist Stanley Milgram. In 1967 Milgram devised an experiment where a series of postcards were mailed out to random people in US cities. These postcards contained basic information about a 'target' person in another, geographically-distant, city. The participants were asked to send the postcard to that person if they knew them, and if not, send it to the contact they thought might be most likely to know that person. The details of each person were recorded on the postcard at every step.
+
+<details>
+
+<summary>What problems can you imagine with this experiment?</summary>
+
+It's worth considering how the experiment may be biased. Are all groups of people equally likely to answer (or have the time and money to carry out) a request from a random postcard? How might this have distorted the findings?
+
+</details>
+<br>
+When (or if) a postcard made it to the target person, Milgram could see how many 'hops' it had taken in order to get there. The average number of hops was between five and a half and six: this information was later used to claim that everyone in the US was connected by 'six degrees of separation'. In network terms, this is known as the 'average path length' of the network. This fact is known as the 'small world' effect.
+
+It is also connected to the 'strength of weak ties' theory by Granovetter. This surprisingly-small number is possible because of the structure of social networks: if you want to reach someone in a distant city, are you more likely to have success if you send it to a close neighbour, or a distant acquaintance who lives there?
+
+## The 'New' Science of Networks
+
+The most common use of networks in academic research much of the 20th century was looking at these small, sociological networks of relationships between people. This changed in the late 1990s, when a group of scientists began to use network research to understand the structures governing many kinds of complex systems, initially using the approach to map out the structure of the World Wide Web. This research showed that many of these complex networks had a similar structure: a small number of nodes with a very large number of connections, known as *hubs,* and a large number of nodes with very few connections. In fact, they argued, the structure followed what is known as a *power-law*: essentially many nodes have a very small number of connections, an exponentially smaller number of nodes have an exponentially larger number of connections, and so forth until a tiny of number of nodes have very many connections.
+
+These researchers, notably Albert Barabasi, argued that this process was guided by *preferential attachment*, meaning that these networks were created because nodes were much more likely to attach themselves to nodes which already had many connections. Perhaps most importantly, they empirically showed that this particular structure could be found across a range of networks, from computers, to people, to biological networks or the structure of neurons in the brain.
+
+## Conclusion
+
+This outline has hopefully got you thinking about this network approach to data. A word of warning: almost everything can be represented as some kind of network. However, many of the findings from them require some careful thought: do they tell us something interesting, such as why a group of contacts formed in a particular formed in this way, or do they just reflect the data that we have collected or have available? What does a complex 'hairball' network diagram really tell us? Between now and the next class, try to consider the ways some of the data you have used in your studies might be thought of as a network, and what benefits (and pitfalls) that approach might bring.
+
+## EXERCISE: What is R Markdown?
 
 First things first: what is this R markdown document, and how do you use it?
 
@@ -18,7 +137,7 @@ An R Markdown file is a format which can be used to create *code notebooks*: int
 -   R code 'chunks' (these are the grey boxes which start and end with \`\`\`{r})
 -   Plain text. Text outside the code is treated as ordinary text.
 
-## The RStudio Interface for R Markdown
+### The RStudio Interface for R Markdown
 
 When you open a file with extension .Rmd in R Studio (as you will shortly), it automatically detects it as an R Markdown file, and becomes an editor. This is what it should look like:
 
@@ -32,13 +151,13 @@ The second highlighted box, just underneath, allows you to switch between 'Sourc
 
 Now we return to the three components of the markdown document (the header, the code chunks, and the plain text).
 
-### YAML Header
+#### YAML Header
 
 The YAML header is a special language which configures the R markdown. You won't need to change this much, but you can specify a title and change some settings relating to how the document is knit.
 
 ![](images/Screenshot%202022-09-26%20at%2015.02.40.png)
 
-### Code Chunks
+#### Code Chunks
 
 The code chunks are, naturally, a very important element in the document. When you create a code chunk, using the menu item mentioned above, or by typing X and then ending with another X , a grey box will appear. Any entered in this box will be interpreted as R code. In the top-right corner are three icons. You can run everything in the chunk by pressing the small green triangle, and the results will display directly below the chunk. Doing it for chunk below this text (if you're looking at the interactive version in CSC notebooks) will run the code `1 + 1`, and print the answer directly below.
 
@@ -50,7 +169,7 @@ Clicking on the 'options' cog, will display some settings you can change: in som
 1 + 1
 ```
 
-### Text Editor
+#### Text Editor
 
 The third key component is the text editor. The point of an R Markdown document is to combine text (for example, explanations of the method you've used, or even an entire article where the chunks generate the figures) and code. The text can be formatted using a simple syntax called Markdown. Markdown is a widely-used web standard which allows you to specify thinks like headings, bullet points, italics and bold text. You can learn the basic syntax [here](https://rmarkdown.rstudio.com/authoring_basics.html), but here are the most important ones:
 
@@ -60,11 +179,11 @@ For the moment, that's really all you need to know about editing R Markdown itse
 
 You can also use the visual editor to format your text.
 
-## Saving and Knitting a copy
+### Saving and Knitting a copy
 
 The second part of this exercise tasks you with logging into the CSC notebooks workspace, loading the R-Studio application, saving and 'knitting' the R markdown file to your personal work area.
 
-### Log into the CSC notebooks workspace
+#### Log into the CSC notebooks workspace
 
 In order to open and run the code for this course, we'll use the CSC notebooks server. This allows you to log into a pre-made workspace containing all the relevant notebooks for the course.
 
@@ -78,32 +197,30 @@ Once you've done this, click on 'My Workspaces' using the left-side menu. You sh
 
 ![](images/Screenshot%202022-09-26%20at%2015.20.30.png)
 
-## RStudio
+### RStudio
 
 Once the session has loaded, the browser window will display an instance of R-Studio. R Studio is an IDE---an interface for the programming language R. Again, don't worry too much about the details of this now - you'll learn how to use it properly over the next few weeks. For now, just concentrate on opening, saving, and knitting the R document.
 
 First, you need to find and open the markdown document itself. The bottom-right window pane is displaying the file browser - this is how you can open files in R. Click into the applying-network-analysis-to-humanities folder, and then within that open the notebooks/ folder. Open the file `1-1-introduction.Rmd` by clicking on it. It will open in the top left pane, with the editor options we walked through above.
 
-The first thing you need to do is move the file to your own workspace. This is a folder called `my-work` only you can write to, which is persistent for the duration of the course (it will be deleted after that, so make sure you make a copy of anything you want to save). Using the file pane, select the `1-1-introduction.Rmd` file by clicking the text box to the left. Next, click the 'more' cog just above, and the 'Copy to' option. In the pop-up box, navigate to your own folder (click on the Home icon, then you should see it). *Add your initials to the filename and click 'Choose' to save it*. 
+The first thing you need to do is move the file to your own workspace. This is a folder called `my-work` only you can write to, which is persistent for the duration of the course (it will be deleted after that, so make sure you make a copy of anything you want to save). Using the file pane, select the `1-1-introduction.Rmd` file by clicking the text box to the left. Next, click the 'more' cog just above, and the 'Copy to' option. In the pop-up box, navigate to your own folder (click on the Home icon, then you should see it). *Add your initials to the filename and click 'Choose' to save it*.
 
 ![](images/Screenshot%202022-09-26%20at%2015.31.48.png)
 
-Once you've done this, you can close this copy of the file, navigate to your folder using the files pane, and open the new copy. 
+Once you've done this, you can close this copy of the file, navigate to your folder using the files pane, and open the new copy.
 
-## Knit the file. 
+### Knit the file.
 
-The final task is to knit the file. To 'knit' a file means that it is turned into an HTML webpage, which will include the text, the code chunks (unless hidden), and all the results of the executed code. Click on the drop-down which currently displays 'Preview', above the file you've just opened. Select 'Knit to HTML'. This will run the code, and generate an HTML document in the same folder. 
+The final task is to knit the file. To 'knit' a file means that it is turned into an HTML webpage, which will include the text, the code chunks (unless hidden), and all the results of the executed code. Click on the drop-down which currently displays 'Preview', above the file you've just opened. Select 'Knit to HTML'. This will run the code, and generate an HTML document in the same folder.
 
-## Download and send it to the course leaders. 
+### Download and send it to the course leaders.
 
-Download the newly-generated HTML file to your computer by selecting it with the checkbox, then the 'More' cog and 'Export'. The file will be downloaded to your local Downloads folder. 
+Download the newly-generated HTML file to your computer by selecting it with the checkbox, then the 'More' cog and 'Export'. The file will be downloaded to your local Downloads folder.
 
 ## More resources
 
 There are loads of resources out there to learn more about RMarkdown:
 
-https://bookdown.org/yihui/rmarkdown/ 
+<https://bookdown.org/yihui/rmarkdown/>
 
-https://rmarkdown.rstudio.com/articles.html  
-
-
+<https://rmarkdown.rstudio.com/articles.html>

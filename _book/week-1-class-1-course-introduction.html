@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 1, class 1: Course Introduction | Applying Network Analysis to Humanities</title>
+  <meta name="description" content="Week 1, class 1: Course Introduction | Applying Network Analysis to Humanities" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 1, class 1: Course Introduction | Applying Network Analysis to Humanities" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="yann-ryan/network-analysis-humanities-book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 1, class 1: Course Introduction | Applying Network Analysis to Humanities" />
+  
+  
+  
+
+<meta name="author" content="Yann Ryan, Iiro Tihonen" />
+
+
+<meta name="date" content="2022-09-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="week-1-class-2-introduction-to-r-and-the-tidyverse.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Network Analysis Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html"><i class="fa fa-check"></i>Week 1, class 1: Course Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#how-to-use-this-book-and-follow-the-course."><i class="fa fa-check"></i>How to use this book and follow the course.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#what-do-we-mean-by-a-network"><i class="fa fa-check"></i>What do we mean by a ‘network’?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#graph-theory"><i class="fa fa-check"></i>Graph Theory</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#why-use-networks-in-humanities"><i class="fa fa-check"></i>Why use networks in humanities?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-basics"><i class="fa fa-check"></i>Network Basics</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#bipartite-networks"><i class="fa fa-check"></i>Bipartite networks</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#from-bridges-to-social-networks"><i class="fa fa-check"></i>From Bridges to Social Networks…</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#the-strength-of-weak-ties"><i class="fa fa-check"></i>The Strength of Weak Ties</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#its-a-small-world"><i class="fa fa-check"></i>It’s a Small World</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#the-new-science-of-networks"><i class="fa fa-check"></i>The ‘New’ Science of Networks</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#conclusion"><i class="fa fa-check"></i>Conclusion</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#exercise-what-is-r-markdown"><i class="fa fa-check"></i>EXERCISE: What is R Markdown?</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#the-rstudio-interface-for-r-markdown"><i class="fa fa-check"></i>The RStudio Interface for R Markdown</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#saving-and-knitting-a-copy"><i class="fa fa-check"></i>Saving and Knitting a copy</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#rstudio"><i class="fa fa-check"></i>RStudio</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#knit-the-file."><i class="fa fa-check"></i>Knit the file.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#download-and-send-it-to-the-course-leaders."><i class="fa fa-check"></i>Download and send it to the course leaders.</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#more-resources"><i class="fa fa-check"></i>More resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><i class="fa fa-check"></i>Week 1, Class 2: Introduction to R and the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#r-and-r-studio"><i class="fa fa-check"></i>R and R-Studio</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#logging-into-csc-notebooks-and-opening-a-notebook."><i class="fa fa-check"></i>Logging into CSC notebooks and opening a notebook.</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#using-r"><i class="fa fa-check"></i>Using R</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#base-r."><i class="fa fa-check"></i>‘Base’ R.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-types."><i class="fa fa-check"></i>Basic R data types.</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i>Tidyverse</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#select-pull"><i class="fa fa-check"></i>select(), pull()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#group_by-tally-summarise"><i class="fa fa-check"></i>group_by(), tally(), summarise()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#filter"><i class="fa fa-check"></i>filter()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#sort-arrange"><i class="fa fa-check"></i>sort(), arrange()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#left_join-inner_join-anti_join"><i class="fa fa-check"></i>left_join(), inner_join(), anti_join()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#piping"><i class="fa fa-check"></i>Piping</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#plotting-using-ggplot"><i class="fa fa-check"></i>Plotting using ggplot()</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#reading-in-external-data"><i class="fa fa-check"></i>Reading in external data</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#exercises---r-basics-and-tidyverse"><i class="fa fa-check"></i>EXERCISES - R Basics and Tidyverse</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html"><i class="fa fa-check"></i>Week 2, Class 1: Acquiring and Working With Network Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-data-cleaning.html"><a href="week-2-class-2-data-cleaning.html"><i class="fa fa-check"></i>Week 2, Class 2: Data Cleaning</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-data-modelling.html"><a href="week-3-class-1-data-modelling.html"><i class="fa fa-check"></i>Week 3, Class 1: Data modelling</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-build-a-data-model-with-r.html"><a href="week-3-class-2-build-a-data-model-with-r.html"><i class="fa fa-check"></i>Week 3, Class 2: Build a Data Model with R</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html"><i class="fa fa-check"></i>Week 4, Class 1: Network Metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#node-level-metrics"><i class="fa fa-check"></i>Node-level metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#degree"><i class="fa fa-check"></i>Degree</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#betweenness-centrality"><i class="fa fa-check"></i>Betweenness Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#eigenvector-centrality"><i class="fa fa-check"></i>Eigenvector Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#closeness-centrality"><i class="fa fa-check"></i>Closeness centrality</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#edge-level-metrics"><i class="fa fa-check"></i>Edge-level metrics</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#global-metrics"><i class="fa fa-check"></i>Global Metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#density"><i class="fa fa-check"></i>Density</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#modularity"><i class="fa fa-check"></i>Modularity</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html"><i class="fa fa-check"></i>Week 4, Class 2: Network Analysis with R”</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#constructing-a-network-in-r"><i class="fa fa-check"></i>Constructing a Network in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#import-network-data-with-the-tidyverse"><i class="fa fa-check"></i>Import Network Data with the Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#turn-the-edge-list-into-a-tbl_graph"><i class="fa fa-check"></i>Turn the edge list into a tbl_graph</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#exercises-2"><i class="fa fa-check"></i>Exercises:</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html"><i class="fa fa-check"></i>Week 5, Class 1: Visualising Networks with ggraph</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#visualisation-with-ggraph"><i class="fa fa-check"></i>Visualisation with ggraph</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#visualising-further-information-using-extra-information-with-joins"><i class="fa fa-check"></i>Visualising further information (using extra information with joins)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-visualising-with-gephi.html"><a href="week-5-class-2-visualising-with-gephi.html"><i class="fa fa-check"></i>Week 5, class 2: Visualising with Gephi</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-bipartite-networks.html"><a href="week-6-class-1-bipartite-networks.html"><i class="fa fa-check"></i>Week 6, Class 1: Bipartite Networks</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-literary-and-linguistic-networks.html"><a href="week-6-class-2-literary-and-linguistic-networks.html"><i class="fa fa-check"></i>Week 6, Class 2: Literary and Linguistic Networks</a></li>
+<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html"><i class="fa fa-check"></i>Week 7: Reflections</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applying Network Analysis to Humanities</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-1-class-1-course-introduction" class="section level1 hasAnchor">
+<h1>Week 1, class 1: Course Introduction<a href="week-1-class-1-course-introduction.html#week-1-class-1-course-introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><a href="https://comhis.github.io/applying-network-analysis-to-humanities/slides/1-1-introduction.html#/title-slide">Slides for this week</a></p>
+<div id="introduction" class="section level2 hasAnchor">
+<h2>Introduction<a href="week-1-class-1-course-introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This course will teach you how to use networks to ask (and hopefully answer) questions relating to humanities. More specifically than this, you’ll use the science of networks to model entities, and the relationships between them. To do this, you’ll use your knowledge of a subject to build a <em>data model</em>: a way to conceptualise the way your data all fits together, in a way that allows you to extract network data from it.</p>
+</div>
+<div id="how-to-use-this-book-and-follow-the-course." class="section level2 hasAnchor">
+<h2>How to use this book and follow the course.<a href="week-1-class-1-course-introduction.html#how-to-use-this-book-and-follow-the-course." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Each week, you will need to complete a short assignment. The final section of this chapter, <a href="week-1-class-1-course-introduction.html#exercise-what-is-r-markdown">EXERCISE: What is R Markdown?</a>, contains this assignment. Soon, you’ll log into the CSC notebooks server, and open a <em>source</em> copy of this section, which is interactive, allowing you to edit and run code. After each week, you’ll open the interactive notebook, complete the assignment, and upload the file.</p>
+<p>As we haven’t introduced R yet, for this week, your only task is to make a copy of the exercise in your personal folder, ‘knit’ it, and send the resulting file to the course leader. In the following weeks, this is the method you’ll need to use to submit the assignments, so this is an opportunity to familiarise yourself with it, and to iron out any problems.</p>
+</div>
+<div id="what-do-we-mean-by-a-network" class="section level2 hasAnchor">
+<h2>What do we mean by a ‘network’?<a href="week-1-class-1-course-introduction.html#what-do-we-mean-by-a-network" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The word ‘network’ is ubiquitous in our daily lives. The Oxford English Dictionary tells us the term itself originally was first defined as <code>Work (esp. manufactured work) in which threads, wires, etc., are crossed or interlaced in the fashion of a net.</code> (think patch work), but now we commonly use it for any complex system of interrelated things: we all use social networking, and the telephone, railway, and road networks; an area of a city might be described as having networks of alleyways, or a historian might write about a network of trading posts.</p>
+<p>These are all in some way metaphorical. The networks we’ll learn about and use on this course have a more specific definition. In mathematics, a network is an object made up of <em>things</em> and <em>connections.</em> To use the standard language, the <em>things</em> are called <strong>nodes</strong> (or sometimes vertices), and the <em>connections</em> called <strong>edges</strong>.</p>
+<p>These things (and connections) could be almost anything. Some typical examples include:</p>
+<ul>
+<li><p>Nodes are people, and the edges their friendships or followers, as in a typical social network.</p></li>
+<li><p>The nodes are books and authors, and the connection is ‘written by’.</p></li>
+<li><p>Nodes are web pages on the internet</p></li>
+</ul>
+<details>
+<summary>
+In this final example, what might the connections be?
+</summary>
+<p>The connections between web pages are generally the hyperlinks: the system of links known as the World Wide Web.</p>
+</details>
+<p><br></p>
+</div>
+<div id="graph-theory" class="section level2 hasAnchor">
+<h2>Graph Theory<a href="week-1-class-1-course-introduction.html#graph-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Representing data in this way allows us to use the mathematics of <em>graph theory</em> to find out things about it. The origins of this date back to the 18th century, and the mathematician Leonard Euler. The city of Königsberg (now Kaliningrad) was built on a river with two islands and a system (a network, perhaps?) of seven bridges connecting them. The inhabitants of the city had long wondered if there it was possible to devise a route which would cross each bridge exactly once.</p>
+<p>Euler solved this problem by abstracting the bridge system into what we now call a graph: a structure with nodes and edges. He used this approach to prove that the path was only possible if the graph had exactly zero or two nodes with a <em>degree</em> (a count of the total connections) with an odd number.</p>
+<p><img src="images/Screenshot%202022-09-26%20at%2011.25.49.png" /></p>
+<p>This process: abstracting a system to its connections, and devising mathematical rules to understand it, forms the basis of modern graph theory. Graph theory has methods to perform all sorts of calculations on the network: both on the individual nodes (for example to find the most important nodes by various measurements), and on the network as a whole. Rather than think about each individual relationship separately, a network model means that we can understand some more about how each part is interrelated, how the structure itself is important, and how one node might affect another in complex ways.</p>
+</div>
+<div id="why-use-networks-in-humanities" class="section level2 hasAnchor">
+<h2>Why use networks in humanities?<a href="week-1-class-1-course-introduction.html#why-use-networks-in-humanities" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Network analysis has become one of the most popular (and perhaps one of the most overused) techniques in the digital humanities toolbox. Over this course, we’ll ask you to think critically about the methods you use and when they might not always be the best way to think about your data. At the same time, network analysis does have plenty to offer the digital humanist:</p>
+<ul>
+<li><p>Humanities data is messy and complex, and network analysis deals well with complexity. The ubiquitous ‘hairball graph’, for example, might in some cases be the best way to get an overview of the structure of a large set of humanities data.</p></li>
+<li><p>Human relationships are naturally interrelated. The reason two individuals might exchange correspondence is not generally random, but strongly dependent on a wider network, for example whether they have friends in common. Networks can help to untangle these dependencies.</p></li>
+<li><p>Network analysis doesn’t always provide the answers, but it can be a way to filter down to particularly important individuals or relationships in a dataset, worthy of a further look with your humanities hat on.</p></li>
+<li><p>There are lots of other ways the tools of networks are useful, where understanding the network itself is not the end goal. For example, knowledge graphs, or certain techniques for information retrieval.</p></li>
+</ul>
+</div>
+<div id="network-basics" class="section level2 hasAnchor">
+<h2>Network Basics<a href="week-1-class-1-course-introduction.html#network-basics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As already mentioned, a network is a graph consisting of nodes and edges (connections). These are often represented visually as points (the nodes) and lines (the edges), like this:</p>
+<p><img src="images/Screenshot%202022-09-26%20at%2011.42.32.png" width="300" /></p>
+<p>These connections can often have a <em>weight</em> attached, for example the number of letters exchanged between two people, or the number of times two actors appear in a scene in a movie or play together. These weights can be used in the calculations.</p>
+<p><img src="images/Screenshot%202022-09-26%20at%2011.42.58.png" width="300" /></p>
+<p>Edges can also have <em>directions,</em> meaning that the incoming and outgoing links are counted separately: for example we might count incoming and outgoing letters separately.</p>
+<p><strong>What might this letter count tell us about a relationship in a network? What potential danger is there is reading something from this?</strong></p>
+<p>These directed edges can also have separate weights attached to them:</p>
+<p><img src="images/Screenshot%202022-09-26%20at%2011.31.15.png" width="300" /></p>
+</div>
+<div id="bipartite-networks" class="section level2 hasAnchor">
+<h2>Bipartite networks<a href="week-1-class-1-course-introduction.html#bipartite-networks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the above examples, the nodes and connections has been obvious. Later in the course, we’ll introduce <em>bipartite</em> networks. These networks are very common, particularly in humanities research. A bipartite network is one where the nodes are of different <em>types</em>, for example we might have a bipartite network of actors and movies, where the edges mean a particular actor has acted in that movie. An actor can be connected to one (or many) movie, but the two types of nodes cannot be connected to each other (a movie can’t really act in another movie). These types of networks require some thought before the regular network metrics are applied to them.</p>
+</div>
+<div id="from-bridges-to-social-networks" class="section level2 hasAnchor">
+<h2>From Bridges to Social Networks…<a href="week-1-class-1-course-introduction.html#from-bridges-to-social-networks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the 20th century, this same approach began to be used by the new discipline of sociology, applied to friendship networks. The gave birth to the field of ‘social network analysis’, which over the past half a century or so has developed a whole range of theories governing the ways networks of people are formed, and what implications this has for the way they act. Human nodes naturally behave quite differently to an island, after all.</p>
+<p><strong>In what specific way might the connection between two people have different attributes to a connection between two islands?</strong></p>
+<div id="the-strength-of-weak-ties" class="section level3 hasAnchor">
+<h3>The Strength of Weak Ties<a href="week-1-class-1-course-introduction.html#the-strength-of-weak-ties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We won’t deal with all of these theories here, but will mention a few key ones which are good demonstrations of the way in which graph theory has been applied to social networks, and the kinds of things it has determined.. One of the pioneers of social network analysis was Mark Granovetter. In a <a href="https://www.jstor.org/stable/2776392">1973 paper</a>, Mark Granovetter argued that the most important ties in a network are often those which connect two separate social groups together. These ties, according to Granovatter, occupy a ‘brokerage’ position, and can be key in certain situations.</p>
+<p>For example, paradoxically, job seekers are more likely to find the most useful leads through their distant acquaintances rather than their close friends…</p>
+<details>
+<summary>
+Why might this be the case?
+</summary>
+<p>It’s because, wrote Granovetter, these distant acquaintances are more likely to be able to provide ‘new’ information on opportunities: a close friend, on the other hand, will probably have access to the same information as you.</p>
+</details>
+<p><br>
+This ‘brokerage’ position can be deduced mathematically using a metric known as <em>betweenness centrality</em> (we’ll come back to that in a later class).</p>
+</div>
+<div id="its-a-small-world" class="section level3 hasAnchor">
+<h3>It’s a Small World<a href="week-1-class-1-course-introduction.html#its-a-small-world" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another important early finding of social network analysis came from a series of experiments by the social psychologist Stanley Milgram. In 1967 Milgram devised an experiment where a series of postcards were mailed out to random people in US cities. These postcards contained basic information about a ‘target’ person in another, geographically-distant, city. The participants were asked to send the postcard to that person if they knew them, and if not, send it to the contact they thought might be most likely to know that person. The details of each person were recorded on the postcard at every step.</p>
+<details>
+<summary>
+What problems can you imagine with this experiment?
+</summary>
+<p>It’s worth considering how the experiment may be biased. Are all groups of people equally likely to answer (or have the time and money to carry out) a request from a random postcard? How might this have distorted the findings?</p>
+</details>
+<p><br>
+When (or if) a postcard made it to the target person, Milgram could see how many ‘hops’ it had taken in order to get there. The average number of hops was between five and a half and six: this information was later used to claim that everyone in the US was connected by ‘six degrees of separation’. In network terms, this is known as the ‘average path length’ of the network. This fact is known as the ‘small world’ effect.</p>
+<p>It is also connected to the ‘strength of weak ties’ theory by Granovetter. This surprisingly-small number is possible because of the structure of social networks: if you want to reach someone in a distant city, are you more likely to have success if you send it to a close neighbour, or a distant acquaintance who lives there?</p>
+</div>
+</div>
+<div id="the-new-science-of-networks" class="section level2 hasAnchor">
+<h2>The ‘New’ Science of Networks<a href="week-1-class-1-course-introduction.html#the-new-science-of-networks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The most common use of networks in academic research much of the 20th century was looking at these small, sociological networks of relationships between people. This changed in the late 1990s, when a group of scientists began to use network research to understand the structures governing many kinds of complex systems, initially using the approach to map out the structure of the World Wide Web. This research showed that many of these complex networks had a similar structure: a small number of nodes with a very large number of connections, known as <em>hubs,</em> and a large number of nodes with very few connections. In fact, they argued, the structure followed what is known as a <em>power-law</em>: essentially many nodes have a very small number of connections, an exponentially smaller number of nodes have an exponentially larger number of connections, and so forth until a tiny of number of nodes have very many connections.</p>
+<p>These researchers, notably Albert Barabasi, argued that this process was guided by <em>preferential attachment</em>, meaning that these networks were created because nodes were much more likely to attach themselves to nodes which already had many connections. Perhaps most importantly, they empirically showed that this particular structure could be found across a range of networks, from computers, to people, to biological networks or the structure of neurons in the brain.</p>
+</div>
+<div id="conclusion" class="section level2 hasAnchor">
+<h2>Conclusion<a href="week-1-class-1-course-introduction.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This outline has hopefully got you thinking about this network approach to data. A word of warning: almost everything can be represented as some kind of network. However, many of the findings from them require some careful thought: do they tell us something interesting, such as why a group of contacts formed in a particular formed in this way, or do they just reflect the data that we have collected or have available? What does a complex ‘hairball’ network diagram really tell us? Between now and the next class, try to consider the ways some of the data you have used in your studies might be thought of as a network, and what benefits (and pitfalls) that approach might bring.</p>
+</div>
+<div id="exercise-what-is-r-markdown" class="section level2 hasAnchor">
+<h2>EXERCISE: What is R Markdown?<a href="week-1-class-1-course-introduction.html#exercise-what-is-r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First things first: what is this R markdown document, and how do you use it?</p>
+<p>An R Markdown file is a format which can be used to create <em>code notebooks</em>: interactive documents containing text and code. Essentially it is a plain text file with the extension .Rmd. It has three types of content:</p>
+<ul>
+<li>A YAML header (the text at the top in between two sets of —)</li>
+<li>R code ‘chunks’ (these are the grey boxes which start and end with ```{r})</li>
+<li>Plain text. Text outside the code is treated as ordinary text.</li>
+</ul>
+<div id="the-rstudio-interface-for-r-markdown" class="section level3 hasAnchor">
+<h3>The RStudio Interface for R Markdown<a href="week-1-class-1-course-introduction.html#the-rstudio-interface-for-r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When you open a file with extension .Rmd in R Studio (as you will shortly), it automatically detects it as an R Markdown file, and becomes an editor. This is what it should look like:</p>
+<p><img src="images/Screenshot%202022-09-26%20at%2014.31.45.png" /></p>
+<p>Two sections are highlighted in the image above, which are the most important parts of the editor you’ll need to be aware of.</p>
+<p>The first bar contains a few important buttons. The first, a drop-down which currently has ‘Preview’ selected, gives you options to ‘knit’ your document (we’ll return to that later). The second, a small green ‘c’ with a plus sign beside it, allows you to create a new code chunk. The third, another drop-down which currently displays ‘Run’, gives you options to run (or execute) one or more of your code chunks.</p>
+<p>The second highlighted box, just underneath, allows you to switch between ‘Source’ and ‘Visual’. The default, ‘Source’, shows the original markdown file. ‘Visual’ changes to a visual editor, which allows you to edit the document with a user interface similar to a word processor. This might be useful if you use markdown to write an extended document, for the final project for this course, for example.</p>
+<p>Now we return to the three components of the markdown document (the header, the code chunks, and the plain text).</p>
+<div id="yaml-header" class="section level4 hasAnchor">
+<h4>YAML Header<a href="week-1-class-1-course-introduction.html#yaml-header" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The YAML header is a special language which configures the R markdown. You won’t need to change this much, but you can specify a title and change some settings relating to how the document is knit.</p>
+<p><img src="images/Screenshot%202022-09-26%20at%2015.02.40.png" /></p>
+</div>
+<div id="code-chunks" class="section level4 hasAnchor">
+<h4>Code Chunks<a href="week-1-class-1-course-introduction.html#code-chunks" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The code chunks are, naturally, a very important element in the document. When you create a code chunk, using the menu item mentioned above, or by typing X and then ending with another X , a grey box will appear. Any entered in this box will be interpreted as R code. In the top-right corner are three icons. You can run everything in the chunk by pressing the small green triangle, and the results will display directly below the chunk. Doing it for chunk below this text (if you’re looking at the interactive version in CSC notebooks) will run the code <code>1 + 1</code>, and print the answer directly below.</p>
+<p>Clicking on the ‘options’ cog, will display some settings you can change: in some instances when making an R markdown document, you might want to hide the code and just display the output, for example. You can use the options here to do that for an individual chunk.</p>
+<p><img src="images/Screenshot%202022-09-26%20at%2015.03.23.png" /></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="week-1-class-1-course-introduction.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+</div>
+<div id="text-editor" class="section level4 hasAnchor">
+<h4>Text Editor<a href="week-1-class-1-course-introduction.html#text-editor" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The third key component is the text editor. The point of an R Markdown document is to combine text (for example, explanations of the method you’ve used, or even an entire article where the chunks generate the figures) and code. The text can be formatted using a simple syntax called Markdown. Markdown is a widely-used web standard which allows you to specify thinks like headings, bullet points, italics and bold text. You can learn the basic syntax <a href="https://rmarkdown.rstudio.com/authoring_basics.html">here</a>, but here are the most important ones:</p>
+<p>For the moment, that’s really all you need to know about editing R Markdown itself. We’ll expand on this over the next few weeks, as you become more familiar with R.</p>
+<p><img src="images/Screenshot%202022-09-26%20at%2015.13.02.png" /></p>
+<p>You can also use the visual editor to format your text.</p>
+</div>
+</div>
+<div id="saving-and-knitting-a-copy" class="section level3 hasAnchor">
+<h3>Saving and Knitting a copy<a href="week-1-class-1-course-introduction.html#saving-and-knitting-a-copy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The second part of this exercise tasks you with logging into the CSC notebooks workspace, loading the R-Studio application, saving and ‘knitting’ the R markdown file to your personal work area.</p>
+<div id="log-into-the-csc-notebooks-workspace" class="section level4 hasAnchor">
+<h4>Log into the CSC notebooks workspace<a href="week-1-class-1-course-introduction.html#log-into-the-csc-notebooks-workspace" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In order to open and run the code for this course, we’ll use the CSC notebooks server. This allows you to log into a pre-made workspace containing all the relevant notebooks for the course.</p>
+<p>First, login to CSC notebooks. Open <a href="https://notebooks-beta.rahtiapp.fi/" class="uri">https://notebooks-beta.rahtiapp.fi/</a> and log in, using your CSC account. You’ll see a home screen like this:</p>
+<p><img src="images/Screenshot%202022-09-26%20at%2015.16.49.png" /></p>
+<p>Next, join the workspace. Click the ‘join workspace’ button at the top-right of the window, and copy and paste in the join code you have been sent by email.</p>
+<p>Once you’ve done this, click on ‘My Workspaces’ using the left-side menu. You should now see a workspace called ‘Network Analysis for Humanities’, and within this, an RStudio application called ‘Network Analysis Course’. Click the big ‘power’ button on the right to start the session. The application should now open in a new tab.</p>
+<p><img src="images/Screenshot%202022-09-26%20at%2015.20.30.png" /></p>
+</div>
+</div>
+<div id="rstudio" class="section level3 hasAnchor">
+<h3>RStudio<a href="week-1-class-1-course-introduction.html#rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Once the session has loaded, the browser window will display an instance of R-Studio. R Studio is an IDE—an interface for the programming language R. Again, don’t worry too much about the details of this now - you’ll learn how to use it properly over the next few weeks. For now, just concentrate on opening, saving, and knitting the R document.</p>
+<p>First, you need to find and open the markdown document itself. The bottom-right window pane is displaying the file browser - this is how you can open files in R. Click into the applying-network-analysis-to-humanities folder, and then within that open the notebooks/ folder. Open the file <code>1-1-introduction.Rmd</code> by clicking on it. It will open in the top left pane, with the editor options we walked through above.</p>
+<p>The first thing you need to do is move the file to your own workspace. This is a folder called <code>my-work</code> only you can write to, which is persistent for the duration of the course (it will be deleted after that, so make sure you make a copy of anything you want to save). Using the file pane, select the <code>1-1-introduction.Rmd</code> file by clicking the text box to the left. Next, click the ‘more’ cog just above, and the ‘Copy to’ option. In the pop-up box, navigate to your own folder (click on the Home icon, then you should see it). <em>Add your initials to the filename and click ‘Choose’ to save it</em>.</p>
+<p><img src="images/Screenshot%202022-09-26%20at%2015.31.48.png" /></p>
+<p>Once you’ve done this, you can close this copy of the file, navigate to your folder using the files pane, and open the new copy.</p>
+</div>
+<div id="knit-the-file." class="section level3 hasAnchor">
+<h3>Knit the file.<a href="week-1-class-1-course-introduction.html#knit-the-file." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The final task is to knit the file. To ‘knit’ a file means that it is turned into an HTML webpage, which will include the text, the code chunks (unless hidden), and all the results of the executed code. Click on the drop-down which currently displays ‘Preview’, above the file you’ve just opened. Select ‘Knit to HTML’. This will run the code, and generate an HTML document in the same folder.</p>
+</div>
+<div id="download-and-send-it-to-the-course-leaders." class="section level3 hasAnchor">
+<h3>Download and send it to the course leaders.<a href="week-1-class-1-course-introduction.html#download-and-send-it-to-the-course-leaders." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Download the newly-generated HTML file to your computer by selecting it with the checkbox, then the ‘More’ cog and ‘Export’. The file will be downloaded to your local Downloads folder.</p>
+</div>
+</div>
+<div id="more-resources" class="section level2 hasAnchor">
+<h2>More resources<a href="week-1-class-1-course-introduction.html#more-resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are loads of resources out there to learn more about RMarkdown:</p>
+<p><a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a></p>
+<p><a href="https://rmarkdown.rstudio.com/articles.html" class="uri">https://rmarkdown.rstudio.com/articles.html</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/1-1-introduction_nb.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
