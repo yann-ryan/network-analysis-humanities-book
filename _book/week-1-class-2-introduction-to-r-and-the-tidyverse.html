@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities</title>
+  <meta name="description" content="Chapter 3 Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="yann-ryan/network-analysis-humanities-book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities" />
+  
+  
+  
+
+<meta name="author" content="Yann Ryan, Iiro Tihonen" />
+
+
+<meta name="date" content="2022-09-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"/>
+<link rel="next" href="week-2-class-1-acquiring-and-working-with-network-data.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Network Analysis Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About this Book</a></li>
+<li class="chapter" data-level="2" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><i class="fa fa-check"></i><b>2</b> Week 1, class 1: Opening and Knitting an R Markdown File</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#what-is-r-markdown"><i class="fa fa-check"></i><b>2.2</b> What is R Markdown?</a></li>
+<li class="chapter" data-level="2.3" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#the-rstudio-interface-for-r-markdown"><i class="fa fa-check"></i><b>2.3</b> The RStudio Interface for R Markdown</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#yaml-header"><i class="fa fa-check"></i><b>2.3.1</b> YAML Header</a></li>
+<li class="chapter" data-level="2.3.2" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#code-chunks"><i class="fa fa-check"></i><b>2.3.2</b> Code Chunks</a></li>
+<li class="chapter" data-level="2.3.3" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#text-editor"><i class="fa fa-check"></i><b>2.3.3</b> Text Editor</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#saving-and-knitting-a-copy"><i class="fa fa-check"></i><b>2.4</b> Saving and Knitting a copy</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#log-into-the-csc-notebooks-workspace"><i class="fa fa-check"></i><b>2.4.1</b> Log into the CSC notebooks workspace</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#rstudio"><i class="fa fa-check"></i><b>2.5</b> RStudio</a></li>
+<li class="chapter" data-level="2.6" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#knit-the-file."><i class="fa fa-check"></i><b>2.6</b> Knit the file.</a></li>
+<li class="chapter" data-level="2.7" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#download-and-send-it-to-the-course-leaders."><i class="fa fa-check"></i><b>2.7</b> Download and send it to the course leaders.</a></li>
+<li class="chapter" data-level="2.8" data-path="week-1-class-1-opening-and-knitting-an-r-markdown-file.html"><a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html#more-resources"><i class="fa fa-check"></i><b>2.8</b> More resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><i class="fa fa-check"></i><b>3</b> Week 1, Class 2: Introduction to R and the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#quick-introduction-to-r-and-the-tidyverse"><i class="fa fa-check"></i><b>3.1</b> Quick introduction to R and the tidyverse</a></li>
+<li class="chapter" data-level="3.2" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#what-and-why"><i class="fa fa-check"></i><b>3.2</b> What and why?</a></li>
+<li class="chapter" data-level="3.3" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#using-r"><i class="fa fa-check"></i><b>3.3</b> Using R</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-types."><i class="fa fa-check"></i><b>3.3.1</b> Basic R data types.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i><b>3.4</b> Tidyverse</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#select-pull"><i class="fa fa-check"></i><b>3.4.1</b> select(), pull()</a></li>
+<li class="chapter" data-level="3.4.2" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#group_by-tally-summarise"><i class="fa fa-check"></i><b>3.4.2</b> group_by(), tally(), summarise()</a></li>
+<li class="chapter" data-level="3.4.3" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>3.4.3</b> filter()</a></li>
+<li class="chapter" data-level="3.4.4" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#sort-arrange-top_n"><i class="fa fa-check"></i><b>3.4.4</b> sort(), arrange(), top_n()</a></li>
+<li class="chapter" data-level="3.4.5" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#left_join-inner_join-anti_join"><i class="fa fa-check"></i><b>3.4.5</b> left_join(), inner_join(), anti_join()</a></li>
+<li class="chapter" data-level="3.4.6" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#piping"><i class="fa fa-check"></i><b>3.4.6</b> Piping</a></li>
+<li class="chapter" data-level="3.4.7" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#plotting-using-ggplot"><i class="fa fa-check"></i><b>3.4.7</b> Plotting using ggplot()</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#exercise-for-this-week"><i class="fa fa-check"></i><b>3.5</b> Exercise for this week</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html"><i class="fa fa-check"></i><b>4</b> Week 2, Class 1: Acquiring and Working With Network Data</a></li>
+<li class="chapter" data-level="5" data-path="week-2-class-2-data-cleaning.html"><a href="week-2-class-2-data-cleaning.html"><i class="fa fa-check"></i><b>5</b> Week 2, Class 2: Data Cleaning</a></li>
+<li class="chapter" data-level="6" data-path="week-3-class-1-data-modelling.html"><a href="week-3-class-1-data-modelling.html"><i class="fa fa-check"></i><b>6</b> Week 3, Class 1: Data modelling</a></li>
+<li class="chapter" data-level="7" data-path="week-3-class-2-build-a-data-model-with-r.html"><a href="week-3-class-2-build-a-data-model-with-r.html"><i class="fa fa-check"></i><b>7</b> Week 3, Class 2: Build a Data Model with R</a></li>
+<li class="chapter" data-level="8" data-path="week-4-class-1-network-basics.html"><a href="week-4-class-1-network-basics.html"><i class="fa fa-check"></i><b>8</b> Week 4, Class 1: Network Basics</a></li>
+<li class="chapter" data-level="9" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html"><i class="fa fa-check"></i><b>9</b> Week 4, Class 2: Network Analysis with R”</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#introduction-1"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#constructing-a-network-in-r"><i class="fa fa-check"></i><b>9.2</b> Constructing a Network in R</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#import-network-data-with-the-tidyverse"><i class="fa fa-check"></i><b>9.2.1</b> Import Network Data with the Tidyverse</a></li>
+<li class="chapter" data-level="9.2.2" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#turn-the-edge-list-into-a-tbl_graph"><i class="fa fa-check"></i><b>9.2.2</b> Turn the edge list into a tbl_graph</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#exercises"><i class="fa fa-check"></i><b>9.3</b> Exercises:</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html"><i class="fa fa-check"></i><b>10</b> Week 5, Class 1: Visualising Networks with ggraph</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#visualisation-with-ggraph"><i class="fa fa-check"></i><b>10.0.1</b> Visualisation with ggraph</a></li>
+<li class="chapter" data-level="10.1" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#visualising-further-information-using-extra-information-with-joins"><i class="fa fa-check"></i><b>10.1</b> Visualising further information (using extra information with joins)</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="week-5-class-2-visualising-with-gephi.html"><a href="week-5-class-2-visualising-with-gephi.html"><i class="fa fa-check"></i><b>11</b> Week 5, class 2: Visualising with Gephi</a></li>
+<li class="chapter" data-level="12" data-path="week-6-class-1-bipartite-networks.html"><a href="week-6-class-1-bipartite-networks.html"><i class="fa fa-check"></i><b>12</b> Week 6, Class 1: Bipartite Networks</a></li>
+<li class="chapter" data-level="13" data-path="week-6-class-2-literary-and-linguistic-networks.html"><a href="week-6-class-2-literary-and-linguistic-networks.html"><i class="fa fa-check"></i><b>13</b> Week 6, Class 2: Literary and Linguistic Networks</a></li>
+<li class="chapter" data-level="14" data-path="week-7-reflections.html"><a href="week-7-reflections.html"><i class="fa fa-check"></i><b>14</b> Week 7: Reflections</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applying Network Analysis to Humanities</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-1-class-2-introduction-to-r-and-the-tidyverse" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Week 1, Class 2: Introduction to R and the Tidyverse<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#week-1-class-2-introduction-to-r-and-the-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Note: if you’re reading this as part of the ‘Applying Network Analysis to Humanities’ course, you should also move a copy to your ‘my-work’ folder in your CSC notebook Workspace, using the <a href="https://comhis.github.io/applying-network-analysis-to-humanities/notebooks/1-1-introduction_nb.html">method we learned in the previous class</a>.</p>
+<p>You can either read the static copy in your browser, or else read it directly in the CSC RStudio application, where you can edit and run the code chunks.</p>
+<p>There are a number of smaller exercises at the end of the document. Once you’ve completed these, knit the document, and email the HTML file to the course leaders. Again, this was covered in last week’s documentation.</p>
+<div id="quick-introduction-to-r-and-the-tidyverse" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Quick introduction to R and the tidyverse<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#quick-introduction-to-r-and-the-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="what-and-why" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> What and why?<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#what-and-why" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The format of much of the data you’ll work with in R is not that different to the kind of file you would normally open in a spreadsheet programme - what is known as a dataframe.</p>
+<p>A dataframe is basically a spreadsheet - it contains rows with observations, and columns with variables. Each row is generally a <em>thing</em>, for want of a better word. A thing that wants to be counted, either by summarising it as a more general thing, or turning it into something else and then counting it, or removing some of the things first and then counting the leftovers.</p>
+<p>You can do a lot more interesting tasks with a thing in a dataframe. A thing might be a single polygon, in a huge dataframe of polygons or lines, all of which add up to a map, which we can then count, sort, filter and render as an image or even an interactive application.</p>
+</div>
+<div id="using-r" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Using R<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#using-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="basic-r-data-types." class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Basic R data types.<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-types." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It is worth understanding the main types of data that you’ll come across, in your environment window. First, you’ll have dataframes. These are the spreadsheet-like objects which you’ll use in most analyses. They have rows and columns.</p>
+<p>Next are variables. A variable is assigned to a name, and then used for various purposes.</p>
+<p>You’ll often hear of an item called a vector. A vector is a list of objects of the same type. A vector can be a single column in a dataframe (spreadsheet), which means they are used very often in R to manipulate data. A vector can have different types: for example, a character vector looks like this <code>c("apples", "bananas", "oranges")</code>.</p>
+<p>A vector is created with the command <code>c()</code>, with each item in the vector placed between the brackets, and followed by a comma. If your vector is a vector of words, the words need to be in inverted commas or quotation marks.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb3-1" aria-hidden="true" tabindex="-1"></a>fruit <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;apples&quot;</span>, <span class="st">&quot;bananas&quot;</span>, <span class="st">&quot;oranges&quot;</span>, <span class="st">&quot;apples&quot;</span>)</span>
+<span id="cb3-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb3-2" aria-hidden="true" tabindex="-1"></a>colour <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb3-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb3-3" aria-hidden="true" tabindex="-1"></a>amount <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">8</span>)</span></code></pre></div>
+<p>You can create a dataframe using the <code>data.frame()</code> command. You just need to pass the function each of your vectors, which will become your columns.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb4-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="ot">=</span> <span class="fu">data.frame</span>(fruit, colour, amount, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>Notice above that the third column, the amount, has <int> under it instead of <chr>. That’s because R is treating it as a number, rather than a character. This means you can add them up and do all sorts of other mathy type things to them.</p>
+<p>All the items in a vector are <em>coerced</em> to the same type. So if you try to make a vector with a combination of numbers and strings, the numbers will be converted to strings. I wouldn’t worried <em>too</em> much about that for now.</p>
+<p>So for example if you create this vector, the numbers will get converted into strings.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb5-1" aria-hidden="true" tabindex="-1"></a>fruit <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;apples&quot;</span>, <span class="dv">5</span>, <span class="st">&quot;oranges&quot;</span>, <span class="dv">3</span>)</span>
+<span id="cb5-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb5-2" aria-hidden="true" tabindex="-1"></a>fruit</span></code></pre></div>
+<pre><code>## [1] &quot;apples&quot;  &quot;5&quot;       &quot;oranges&quot; &quot;3&quot;</code></pre>
+</div>
+</div>
+<div id="tidyverse" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Tidyverse<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Most of the work in these notebooks is done using a set of packages developed for R called the ‘tidyverse’. These enhance and improve a large range of R functions, with much nice syntax - and they’re faster too. It’s really a bunch of individual packages for sorting, filtering and plotting data frames.
+They can be divided into a number of diferent categories.</p>
+<p>All these functions work in the same way. The first argument is the thing you want to operate on. This is nearly always a data frame. After come other arguments, which are often specific columns, or certain variables you want to do something with.</p>
+<p>You installed the package in the last notebook. Make sure the library is loaded by running the following in an R chunk in a notebook:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>Here are a couple of the most important ones</p>
+<div id="select-pull" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> select(), pull()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#select-pull" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>select()</code> allows you to select columns. You can use names or numbers to pick the columns, and you can use a <code>-</code> sign to select everything <em>but</em> a given column.</p>
+<p>Using the fruit data frame we created above:
+We can select just the fruit and colour columns:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(fruit_data, fruit, colour)</span></code></pre></div>
+<pre><code>##     fruit colour
+## 1  apples  green
+## 2 bananas yellow
+## 3 oranges orange
+## 4  apples    red</code></pre>
+<p>Select everything but the colour column:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(fruit_data, <span class="sc">-</span>colour)</span></code></pre></div>
+<pre><code>##     fruit amount
+## 1  apples      2
+## 2 bananas      5
+## 3 oranges     10
+## 4  apples      8</code></pre>
+<p>Select the first two columns:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(fruit_data, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##     fruit colour
+## 1  apples  green
+## 2 bananas yellow
+## 3 oranges orange
+## 4  apples    red</code></pre>
+</div>
+<div id="group_by-tally-summarise" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> group_by(), tally(), summarise()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#group_by-tally-summarise" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The next group of functions group things together and count them. Sounds boring but you would be amazed by how much of data science just seems to be doing those two things in various combinations.</p>
+<p><code>group_by()</code> puts rows with the same value in a column of your dataframe into a group. Once they’re in a group, you can count them or summarise them by another variable.</p>
+<p>First you need to create a new dataframe with the grouped fruit.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb14-1" aria-hidden="true" tabindex="-1"></a>grouped_fruit <span class="ot">=</span> <span class="fu">group_by</span>(fruit_data, fruit)</span></code></pre></div>
+<p>Next we use <code>tally()</code>. This counts all the instances of each fruit group.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(grouped_fruit)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   fruit       n
+##   &lt;chr&gt;   &lt;int&gt;
+## 1 apples      2
+## 2 bananas     1
+## 3 oranges     1</code></pre>
+<p>See? Now the apples are grouped together rather than being two separate rows, and there’s a new column called <code>n</code>, which contains the result of the count.</p>
+<p>If we specify that we want to count by something else, we can add that in as a ‘weight’, by adding <code>wt =</code> as an argument in the function.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(grouped_fruit, <span class="at">wt =</span> amount)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   fruit       n
+##   &lt;chr&gt;   &lt;dbl&gt;
+## 1 apples     10
+## 2 bananas     5
+## 3 oranges    10</code></pre>
+<p>That counts the amounts of each fruit, ignoring the colour.</p>
+</div>
+<div id="filter" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> filter()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#filter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another quite obviously useful function. This filters the dataframe based on a condition which you set within the function. The first argument is the data to be filtered. The second is a condition (or multiple condition). The function will return every row where that condition is true.</p>
+<p>Just red fruit:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(fruit_data, colour <span class="sc">==</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
+<pre><code>##    fruit colour amount
+## 1 apples    red      8</code></pre>
+<p>Just fruit with at least 5 pieces:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(fruit_data, amount <span class="sc">&gt;=</span><span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##     fruit colour amount
+## 1 bananas yellow      5
+## 2 oranges orange     10
+## 3  apples    red      8</code></pre>
+</div>
+<div id="sort-arrange-top_n" class="section level3 hasAnchor" number="3.4.4">
+<h3><span class="header-section-number">3.4.4</span> sort(), arrange(), top_n()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#sort-arrange-top_n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another useful set of functions, often you want to sort things. The function <code>arrange()</code> does this very nicely. You specify the data frame, and the variable you would like to sort by.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, amount)</span></code></pre></div>
+<pre><code>##     fruit colour amount
+## 1  apples  green      2
+## 2 bananas yellow      5
+## 3  apples    red      8
+## 4 oranges orange     10</code></pre>
+<p>Sorting is ascending by default, but you can specify descending using <code>desc()</code>:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, <span class="fu">desc</span>(amount))</span></code></pre></div>
+<pre><code>##     fruit colour amount
+## 1 oranges orange     10
+## 2  apples    red      8
+## 3 bananas yellow      5
+## 4  apples  green      2</code></pre>
+<p>If you `sort<code>arrange()</code> by a list of characters, you’ll get alphabetical order:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, fruit)</span></code></pre></div>
+<pre><code>##     fruit colour amount
+## 1  apples  green      2
+## 2  apples    red      8
+## 3 bananas yellow      5
+## 4 oranges orange     10</code></pre>
+<p>You can sort by multiple things:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, fruit, <span class="fu">desc</span>(amount))</span></code></pre></div>
+<pre><code>##     fruit colour amount
+## 1  apples    red      8
+## 2  apples  green      2
+## 3 bananas yellow      5
+## 4 oranges orange     10</code></pre>
+<p>Notice that now red apples are first.</p>
+</div>
+<div id="left_join-inner_join-anti_join" class="section level3 hasAnchor" number="3.4.5">
+<h3><span class="header-section-number">3.4.5</span> left_join(), inner_join(), anti_join()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#left_join-inner_join-anti_join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another set of commands we’ll use quite often in this course are the <code>join()</code> ‘family’. Joins are a very powerful but simple way of selecting certain subsets of data, and adding information from multiple tables together.</p>
+<p>Let’s make a second table of information giving the delivery day for each fruit type:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb31-1" aria-hidden="true" tabindex="-1"></a>fruit_type <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;apples&#39;</span>, <span class="st">&#39;bananas&#39;</span>,<span class="st">&#39;oranges&#39;</span>)</span>
+<span id="cb31-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb31-2" aria-hidden="true" tabindex="-1"></a>weekday <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Monday&#39;</span>, <span class="st">&#39;Wednesday&#39;</span>, <span class="st">&#39;Friday&#39;</span>)</span>
+<span id="cb31-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb31-4" aria-hidden="true" tabindex="-1"></a>fruit_days <span class="ot">=</span> <span class="fu">data.frame</span>(fruit_type, weekday, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb31-5"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb31-6" aria-hidden="true" tabindex="-1"></a>fruit_days</span></code></pre></div>
+<pre><code>##   fruit_type   weekday
+## 1     apples    Monday
+## 2    bananas Wednesday
+## 3    oranges    Friday</code></pre>
+<p>This can be ‘joined’ to the fruit information, to add the new data on the delivery day, without having to edit the original table (or repeat the information for apples twice). This is done using <code>left_join</code>.</p>
+<p>Joins need a common <code>key</code>, a column which allows the join to match the data tables up. It’s important that these are unique (a person’s name makes a bad key by itself, for example, because it’s likely more than one person will share the same name). Usually, we use codes as the join keys. If the columns containing the join keys have different names (as ours do), specify them using the syntax below:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb33-1" aria-hidden="true" tabindex="-1"></a>joined_fruit <span class="ot">=</span> fruit_data <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(fruit_days, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;fruit&quot;</span> <span class="ot">=</span> <span class="st">&quot;fruit_type&quot;</span>))</span>
+<span id="cb33-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb33-3" aria-hidden="true" tabindex="-1"></a>joined_fruit</span></code></pre></div>
+<pre><code>##     fruit colour amount   weekday
+## 1  apples  green      2    Monday
+## 2 bananas yellow      5 Wednesday
+## 3 oranges orange     10    Friday
+## 4  apples    red      8    Monday</code></pre>
+<p>In this new dataframe, the correct weekday is now listed beside the relevant fruit type.</p>
+</div>
+<div id="piping" class="section level3 hasAnchor" number="3.4.6">
+<h3><span class="header-section-number">3.4.6</span> Piping<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#piping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another useful feature of the tidyverse is that you can ‘pipe’ commands through a bunch of functions, making it easier to follow the logical order of the code. This means that you can do one operation, and pass the result to another operation. The previous dataframe is passed as the first argument of the next function by using the pipe <code>%&gt;%</code> command. It works like this:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb35-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> </span>
+<span id="cb35-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(colour <span class="sc">!=</span> <span class="st">&#39;yellow&#39;</span>) <span class="sc">%&gt;%</span> <span class="co"># remove any yellow colour fruit</span></span>
+<span id="cb35-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fruit) <span class="sc">%&gt;%</span> <span class="co"># group the fruit by type</span></span>
+<span id="cb35-4"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(amount) <span class="sc">%&gt;%</span> <span class="co"># count each group</span></span>
+<span id="cb35-5"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="co"># arrange in descending order of the count</span></span></code></pre></div>
+<pre><code>## # A tibble: 2 × 2
+##   fruit       n
+##   &lt;chr&gt;   &lt;dbl&gt;
+## 1 apples     10
+## 2 oranges    10</code></pre>
+<p>That code block, written in prose: “take fruit data, remove any yellow colour fruit, count the fruits by type and amount, and arrange in descending order of the total”</p>
+</div>
+<div id="plotting-using-ggplot" class="section level3 hasAnchor" number="3.4.7">
+<h3><span class="header-section-number">3.4.7</span> Plotting using ggplot()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#plotting-using-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The tidyverse includes a pretty great plotting library called ggplot2. This can be used by piping your dataframe to a function called <code>ggplot()</code>. The basic idea is that you add your data, then you can add plot elements which are called geoms. Some common ones are <code>geom_line()</code>, <code>geom_bar()</code> and <code>geom_point()</code>.</p>
+<p>To the geom function you add aesthetics, which is basically telling the function which bits of your data should be responsible for which parts of the visualisation. These are added using <code>aes()</code>. I’ll explain a bit more about some of these aesthetics as I go along.</p>
+<p>As an example:</p>
+<p>Bar chart of different types of fruit (one each of bananas and oranges, two types of apple)</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb37-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+Counting the total amount of fruit:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb38-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">weight =</span> amount))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p>Charting amounts and fruit colours:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb39-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">weight =</span> amount, <span class="at">fill =</span> colour)) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p>And just because it annoys me having random colours, we can map them to the actual colours:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb40-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> </span>
+<span id="cb40-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb40-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">weight =</span> amount, <span class="at">fill =</span> colour)) <span class="sc">+</span> </span>
+<span id="cb40-4"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;orange&quot;</span> <span class="ot">=</span> <span class="st">&quot;orange&quot;</span>, </span>
+<span id="cb40-5"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb40-5" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;green&quot;</span> <span class="ot">=</span> <span class="st">&quot;#8db600&quot;</span>, </span>
+<span id="cb40-6"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb40-6" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;red&quot;</span> <span class="ot">=</span> <span class="st">&quot;#ff0800&quot;</span>, </span>
+<span id="cb40-7"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb40-7" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;yellow&quot;</span> <span class="ot">=</span> <span class="st">&quot;#ffe135&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+</div>
+</div>
+<div id="exercise-for-this-week" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Exercise for this week<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#exercise-for-this-week" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>So that’s a very quick introduction to R. There’s loads of places to learn more.</p>
+<p><a href="https://www.rstudio.com/resources/cheatsheets/">R-studio cheat sheets</a></p>
+<p><a href="https://bookdown.org/ndphillips/YaRrr/">The Pirate’s Guide to R, a good beginners guide to base R</a></p>
+<p><a href="https://r4ds.had.co.nz">R for data science, which teaches the tidyverse in detail</a></p>
+<p><a href="https://bookdown.org/yihui/bookdown/introduction.html">Learn how to make a book like this using Bookdown</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-1-class-1-opening-and-knitting-an-r-markdown-file.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-2-class-1-acquiring-and-working-with-network-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/1-2-intro-to-r_nb.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

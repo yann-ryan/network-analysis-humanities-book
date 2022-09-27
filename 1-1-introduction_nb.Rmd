@@ -1,0 +1,109 @@
+# Week 1, class 1: Opening and Knitting an R Markdown File 
+
+[Slides for this week](https://comhis.github.io/applying-network-analysis-to-humanities/slides/1-1-introduction.html#/title-slide)
+
+## Introduction  
+
+Each week, you will need to complete a short assignment in the form of an edited R markdown notebook. As we haven't introduced R yet, for this week, your only task is to make a copy of this notebook in your personal folder, 'knit' it, and send the resulting file to the course leader. In the following weeks, this is the method you'll need to use to submit the assignments, so this is an opportunity to familiarise yourself with it, and to iron out any problems.
+
+Slightly confusingly, there are two copies of this file you'll need to work with for this exercise. If you are viewing this as a webpage, you're looking at the *output* of the R markdown: a simple HTML document. Keep this page open in a web browser as you work. Soon, you'll log into the CSC notebooks server, and open a *source* copy, which is interactive, allowing you to edit and run code.
+
+## What is R Markdown?
+
+First things first: what is this R markdown document, and how do you use it?
+
+An R Markdown file is a format which can be used to create *code notebooks*: interactive documents containing text and code. Essentially it is a plain text file with the extension .Rmd. It has three types of content:
+
+-   A YAML header (the text at the top in between two sets of ---)
+-   R code 'chunks' (these are the grey boxes which start and end with \`\`\`{r})
+-   Plain text. Text outside the code is treated as ordinary text.
+
+## The RStudio Interface for R Markdown
+
+When you open a file with extension .Rmd in R Studio (as you will shortly), it automatically detects it as an R Markdown file, and becomes an editor. This is what it should look like:
+
+![](images/Screenshot%202022-09-26%20at%2014.31.45.png)
+
+Two sections are highlighted in the image above, which are the most important parts of the editor you'll need to be aware of.
+
+The first bar contains a few important buttons. The first, a drop-down which currently has 'Preview' selected, gives you options to 'knit' your document (we'll return to that later). The second, a small green 'c' with a plus sign beside it, allows you to create a new code chunk. The third, another drop-down which currently displays 'Run', gives you options to run (or execute) one or more of your code chunks.
+
+The second highlighted box, just underneath, allows you to switch between 'Source' and 'Visual'. The default, 'Source', shows the original markdown file. 'Visual' changes to a visual editor, which allows you to edit the document with a user interface similar to a word processor. This might be useful if you use markdown to write an extended document, for the final project for this course, for example.
+
+Now we return to the three components of the markdown document (the header, the code chunks, and the plain text).
+
+### YAML Header
+
+The YAML header is a special language which configures the R markdown. You won't need to change this much, but you can specify a title and change some settings relating to how the document is knit.
+
+![](images/Screenshot%202022-09-26%20at%2015.02.40.png)
+
+### Code Chunks
+
+The code chunks are, naturally, a very important element in the document. When you create a code chunk, using the menu item mentioned above, or by typing X and then ending with another X , a grey box will appear. Any entered in this box will be interpreted as R code. In the top-right corner are three icons. You can run everything in the chunk by pressing the small green triangle, and the results will display directly below the chunk. Doing it for chunk below this text (if you're looking at the interactive version in CSC notebooks) will run the code `1 + 1`, and print the answer directly below.
+
+Clicking on the 'options' cog, will display some settings you can change: in some instances when making an R markdown document, you might want to hide the code and just display the output, for example. You can use the options here to do that for an individual chunk.
+
+![](images/Screenshot%202022-09-26%20at%2015.03.23.png)
+
+```{r}
+1 + 1
+```
+
+### Text Editor
+
+The third key component is the text editor. The point of an R Markdown document is to combine text (for example, explanations of the method you've used, or even an entire article where the chunks generate the figures) and code. The text can be formatted using a simple syntax called Markdown. Markdown is a widely-used web standard which allows you to specify thinks like headings, bullet points, italics and bold text. You can learn the basic syntax [here](https://rmarkdown.rstudio.com/authoring_basics.html), but here are the most important ones:
+
+For the moment, that's really all you need to know about editing R Markdown itself. We'll expand on this over the next few weeks, as you become more familiar with R.
+
+![](images/Screenshot%202022-09-26%20at%2015.13.02.png)
+
+You can also use the visual editor to format your text.
+
+## Saving and Knitting a copy
+
+The second part of this exercise tasks you with logging into the CSC notebooks workspace, loading the R-Studio application, saving and 'knitting' the R markdown file to your personal work area.
+
+### Log into the CSC notebooks workspace
+
+In order to open and run the code for this course, we'll use the CSC notebooks server. This allows you to log into a pre-made workspace containing all the relevant notebooks for the course.
+
+First, login to CSC notebooks. Open <https://notebooks-beta.rahtiapp.fi/> and log in, using your CSC account. You'll see a home screen like this:
+
+![](images/Screenshot%202022-09-26%20at%2015.16.49.png)
+
+Next, join the workspace. Click the 'join workspace' button at the top-right of the window, and copy and paste in the join code you have been sent by email.
+
+Once you've done this, click on 'My Workspaces' using the left-side menu. You should now see a workspace called 'Network Analysis for Humanities', and within this, an RStudio application called 'Network Analysis Course'. Click the big 'power' button on the right to start the session. The application should now open in a new tab.
+
+![](images/Screenshot%202022-09-26%20at%2015.20.30.png)
+
+## RStudio
+
+Once the session has loaded, the browser window will display an instance of R-Studio. R Studio is an IDE---an interface for the programming language R. Again, don't worry too much about the details of this now - you'll learn how to use it properly over the next few weeks. For now, just concentrate on opening, saving, and knitting the R document.
+
+First, you need to find and open the markdown document itself. The bottom-right window pane is displaying the file browser - this is how you can open files in R. Click into the applying-network-analysis-to-humanities folder, and then within that open the notebooks/ folder. Open the file `1-1-introduction.Rmd` by clicking on it. It will open in the top left pane, with the editor options we walked through above.
+
+The first thing you need to do is move the file to your own workspace. This is a folder called `my-work` only you can write to, which is persistent for the duration of the course (it will be deleted after that, so make sure you make a copy of anything you want to save). Using the file pane, select the `1-1-introduction.Rmd` file by clicking the text box to the left. Next, click the 'more' cog just above, and the 'Copy to' option. In the pop-up box, navigate to your own folder (click on the Home icon, then you should see it). *Add your initials to the filename and click 'Choose' to save it*. 
+
+![](images/Screenshot%202022-09-26%20at%2015.31.48.png)
+
+Once you've done this, you can close this copy of the file, navigate to your folder using the files pane, and open the new copy. 
+
+## Knit the file. 
+
+The final task is to knit the file. To 'knit' a file means that it is turned into an HTML webpage, which will include the text, the code chunks (unless hidden), and all the results of the executed code. Click on the drop-down which currently displays 'Preview', above the file you've just opened. Select 'Knit to HTML'. This will run the code, and generate an HTML document in the same folder. 
+
+## Download and send it to the course leaders. 
+
+Download the newly-generated HTML file to your computer by selecting it with the checkbox, then the 'More' cog and 'Export'. The file will be downloaded to your local Downloads folder. 
+
+## More resources
+
+There are loads of resources out there to learn more about RMarkdown:
+
+https://bookdown.org/yihui/rmarkdown/ 
+
+https://rmarkdown.rstudio.com/articles.html  
+
+

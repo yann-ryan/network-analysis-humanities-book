@@ -1,0 +1,26 @@
+--- 
+title: "Applying Network Analysis to Humanities"
+author: "Yann Ryan, Iiro Tihonen"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography:
+- book.bib
+- packages.bib
+link-citations: yes
+github-repo: "yann-ryan/network-analysis-humanities-book"
+---
+
+# About this Book 
+
+This book is a collection of notebooks intended to supplement the "Applying Network Analysis to Humanities' course at the University of Helsinki, beginning November 2022.   
+
+[Course page on Studies Service](https://studies.helsinki.fi/courses/cur/hy-opt-cur-2223-7c9cdedc-fc7b-4e66-b793-1dbe0db868b7)
+
+Browse the chapters using the navigation bar on the left. 
+
+If you're doing the course, you'll need to open the interactive notebook versions of these chapters, which contain required weekly exercises. See the chapter 2 for more details on this, and how to submit. 
+
+
+
+
