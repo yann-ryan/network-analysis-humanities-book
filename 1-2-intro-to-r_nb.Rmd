@@ -2,7 +2,7 @@
 
 ## Exercises
 
-Note: the final section ([EXERCISES - R Basics and Tidyverse]) of this chapter has a number of exercises. These are stored as a separate notebook in the CSC notebook workspace, with the name `1-2-intro-to-r.Rmd`. You'll need to move a copy to your 'my-work' folder in your CSC notebook Workspace, complete the exercises, and knit them, using the [method we learned in the previous class](https://comhis.github.io/applying-network-analysis-to-humanities/notebooks/1-1-introduction_nb.html). Once this is done, send a copy of the HTML file to the course leaders.
+This lesson has a corresponding editable notebook containing some exercises. These are stored as a separate notebook in the CSC notebook workspace, with the name `1-2-intro-to-r.Rmd`. You'll need to move a copy to your 'my-work' folder in your CSC notebook Workspace, complete the exercises, and knit them, using the [method we learned in the previous class](https://comhis.github.io/applying-network-analysis-to-humanities/notebooks/1-1-introduction_nb.html). Once this is done, send a copy of the HTML file to the course leaders.
 
 ## R and R-Studio
 
@@ -286,7 +286,7 @@ Most of the time, you'll be working with external data sources. These most commo
 
 ```{r}
 
-df = read_csv(file = 'sample_network.csv') # Read a .csv file as a network
+df = read_csv(file = 'sample_network.csv') # Read a .csv file as a network, specify the path to the file here.
 
 df
 
@@ -304,65 +304,3 @@ This has been a very quick introduction to R. There are lots of places to learn 
 
 [Learn how to make a book like this using Bookdown](https://bookdown.org/yihui/bookdown/introduction.html)
 
-## EXERCISES - R Basics and Tidyverse
-
-Change the third item in the `fruit` vector to `bananas` and the corresponding item in the colour vector to `yellow`:
-
-```{r}
-fruit = c("apples", "bananas", "oranges", "apples")
-colour = c("green", "yellow", "orange", "red")
-amount = c(2,5,10,8)
-```
-
-Turn this into a dataframe:
-
-```{r}
-
-```
-
-Get a total for the amount of each fruit:
-
-```{r}
-
-```
-
-Read in the `book_sample.csv` dataset, giving it the name `df`. It's a random sample of 1500 books published in London, Edinburgh, and Dublin. You'll need to find this file in the 'data' folder of the CSC notebooks workspace.
-
-Fill in the necessary part of the function below:
-
-```{r}
-
-```
-
-Filter to only include books with Dublin as the place of publication. Call this new dataset `dublin_books`:
-
-```{r}
-
-
-```
-
-Count the number of books per year in the `dublin_books` dataset:
-
-```{r}
-
-```
-
-Count the number of books for each place of publication in the original `df` dataset. Save this as an object called `df_count`.
-
-```{r}
-
-```
-
-Arrange the places in descending order of number of books:
-
-```{r}
-
-```
-
-Make a bar chart of the count of places:
-
-```{r}
-
-```
-
-Join the `df_count` dataset to the `df` dataset, so that each record now has the total count alongside it.

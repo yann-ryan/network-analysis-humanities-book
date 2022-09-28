@@ -1,20 +1,31 @@
-# Week 5, Class 1: Visualising Networks with ggraph  
+# Week 5, Class 1: Visualising Networks with ggraph
 
+## Network visualisations.
 
-### Visualisation with ggraph
+Perhaps because of the complexity of many network datasets, it is very common for them to be visualised. These visualisations are most often the points and lines which we have used throughout this book, but there are also a number of other ways they can be visualised (which often might be more useful).
 
-The last step in the workflow is visualising the network. You can use igraph and standard R plotting libraries for this, but I use a package called [ggraph](https://github.com/thomasp85/ggraph), which uses the same language as ggplot (a very well-known visualisation library for R) and adds some special functions to visualise networks. To create a network diagram, first use the function ```ggraph``` on your tbl_graph, then add the special [ggraph geoms](https://ggplot2.tidyverse.org/reference/) ```geom_node_point()``` and ```geom_edge_link()```
+From early social network research, researchers tried to manually visualise these graphs in meaningful ways, for example by placing closely-connected clusters together (and away from other clusters), placing important or highly-connected nodes towards the centre, or minimising the number of edge (line) crossings. With large networks, today this process is usually carried out using algorithms to work out the node placements.
 
+### Force-directed network visualisations
 
+The most common family of these algorithsm are 'force-directed', meaning they use a simulation of physical forces in order to create sensible placements of nodes. One of the most common of these is the Fruchterman-Reingold layout, which treats edges like a spring. Nodes which share an edge are attracted to each other using a spring-like force; every pair of nodes in the system also has a repulsive force. The algorithm simulates this physical system and stops when the distances between the nodes means that the system is in equilibrium.
+
+### How do we 'read' a network graph?
+
+## Visualisation with ggraph
+
+The next step in the workflow is visualising the network. We will use a package called [ggraph](https://github.com/thomasp85/ggraph), which uses the same language as ggplot (used in the earlier lesson) and adds some special functions to visualise networks.
+
+To create a network diagram, first use the function `ggraph` on your tbl_graph, then add the special [ggraph geoms](https://ggplot2.tidyverse.org/reference/) `geom_node_point()` and `geom_edge_link()`
 
 ```{r message=FALSE, warning=FALSE}
 library(tidygraph)
 library(tidyverse)
 library(ggraph)
-letters = read_csv("https://raw.githubusercontent.com/yann-ryan/dh_intro_gates/main/sample_letter_data_network.csv", col_types = cols(.default = "c"))
+letters = read_csv("letter_data.csv", col_types = cols(.default = "c"))
 
 edge_list = letters %>% 
-  group_by(author, recipient) %>% 
+  group_by(from_id, to_id) %>% 
   tally(name = 'weight')
 
 sample_tbl_graph = edge_list %>% 
@@ -23,14 +34,14 @@ sample_tbl_graph = edge_list %>%
 sample_tbl_graph
 ```
 
-
 ```{r}
 
 
-sample_tbl_graph %>% ggraph('nicely') + geom_node_point() + geom_edge_link()
-
+sample_tbl_graph %>% ggraph('fr') + geom_node_point() + geom_edge_link()
 
 ```
+
+### Ggraph and other tidyverse functions
 
 You can use the dplyr pipes to perform calculations, filter the data and then visualise it, all in one go:
 
@@ -42,10 +53,11 @@ sample_tbl_graph %>%
   ggraph('nicely') + 
   geom_node_point() + 
   geom_edge_link()
-```  
+```
 
-```geom_node_point()``` and ```geom_edge_link``` take aesthetics, just like regular ggplot geoms. You can calculate degree scores and then set the size of the nodes to the result:
+### Adding aesthetics such as color and size
 
+`geom_node_point()` and `geom_edge_link` take aesthetics, just like regular ggplot geoms. You can calculate degree scores and then set the size of the nodes to the result:
 
 ```{r}
 sample_tbl_graph %>% 
@@ -56,12 +68,16 @@ sample_tbl_graph %>%
   geom_edge_link()
 ```
 
-Add ```geom_node_text()``` to add text labels to your network. In a larger network, it can be helpful to only show labels belonging to the most-connected nodes. First, join the people table to the nodes table, then use ggraph, setting the ```label``` aesthetic. Another ```dplyr``` verb, ```if_else``` allows you to add conditions to the label command. Here, I've used if_else to return the label if the node's degree score is more than 10:
+### Add node labels
+
+Add `geom_node_text()` to add text labels to your network. In a larger network, it can be helpful to only show labels belonging to the most-connected nodes. First, join the people table to the nodes table, then use ggraph, setting the `label` aesthetic. Another `dplyr` verb, `if_else` allows you to add conditions to the label command. Here, I've used if_else to return the label if the node's degree score is more than 10:
+
+A the moment, we only have the IDs for each node. In a further step we can join back the actual names and use these as labels.
 
 ```{r}
 
 sample_tbl_graph %>% 
-  activate(nodes)%>% 
+  activate(nodes) %>% 
   mutate(degree = centrality_degree(mode = 'total'))  %>% 
   ggraph('nicely') + 
   geom_node_point(aes(size = degree)) + 
@@ -70,4 +86,67 @@ sample_tbl_graph %>%
 
 ```
 
-## Visualising further information (using extra information with joins)
+### Calculating and coloring by community detection
+
+One very common visualisation is colouring the various groups in the network, which might give us a clue as to its structure.
+
+```{r}
+sample_tbl_graph %>% 
+  as.undirected() %>% 
+  as_tbl_graph() %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree(mode = 'total'))  %>% 
+  mutate(community = group_edge_betweenness(weights =NULL)) %>% 
+  filter(community %in% 1:4) %>% 
+  ggraph('nicely') + 
+  geom_node_point(aes(size = degree, color = as.character(community))) + 
+  geom_edge_link(alpha = .2)
+```
+
+## Case study: Scientists and Politicians
+
+By joining the node attribute information to the network, we can use this external information in the visualisations.
+
+First, load the same node attributes table as before:
+
+```{r}
+node_attributes = read_csv('node_attributes.csv')
+```
+
+This external information might help us to make sense of the clusters found by the community detection algorithm used above. One of the fields in the data is whether that person is listed as a politician on Wikidata:the field can be either `yes` or `no`.
+
+To check whether this might be a clue towards the structure of the network, we will set the color to the community, and the shape to the politician flag.
+
+```{r}
+sample_tbl_graph %>% 
+  as.undirected() %>% 
+  as_tbl_graph()%>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree(mode = 'total')) %>% 
+  left_join(node_attributes) %>% 
+  mutate(community = group_edge_betweenness(weights =NULL)) %>% 
+  filter(community %in% 1:4) %>% 
+  ggraph('nicely') + 
+  geom_edge_link(alpha = .2)+ 
+  geom_node_point(aes(size = degree, color = as.character(community), shape = politician))  + 
+  geom_node_text(aes(label = ifelse(degree >2, main_name, NA)), size = 2.5, repel = T) + 
+  theme(legend.position = 'none')
+```
+
+It does look like one of the four clusters (cluster 2) has far fewer politicians. This cluster seems to be a group of group of what we would now call scientists.
+
+This could also be done using the data. Benefit of visualisations.
+
+Some other things this visualisation might tell you:
+
+-   What is the importance of the nodes sitting in between the scientists and the politicians? What metrics might they score highly on, and what role might they occupy in this system? What kinds of information may they be able to pass on?
+
+-   What is the position of Athanasius Kircher? What does it mean to be on the periphery of this network?
+
+-   What effect might additional data have on the metrics in this network? Does this mean we can't use them?
+
+## Exercises - Visualising your data with ggraph.
+
+### Create a basic network visualisation of your network.
+
+### Calculate a network metric and add this as a size to the network.

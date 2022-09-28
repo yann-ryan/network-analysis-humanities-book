@@ -1,0 +1,480 @@
+letter_id,from_id,from_name,to_id,to_name
+1,1,Arthur Remys,124,Mr. Carnsew
+2,1,Arthur Remys,2,William Carnsew
+3,2,William Carnsew,17,Lady Grace Carnsew
+4,3,Degorye Wills,117,Mathew Carnsew
+5,2,William Carnsew,24,Richard Carnsew
+6,4,Amye Champernowne,28,Sir Richard Carnsew
+7,5,Ane Carnsew,24,Richard Carnsew
+8,6,Emanuell Shere,24,Richard Carnsew
+9,7,Francis Drake,24,Richard Carnsew
+10,8,Grace Cruse,68,Thomas Cruse
+11,9,Henrye Lower,24,Richard Carnsew
+12,10,Humfrey Marten,24,Richard Carnsew
+13,11,Humfrey Stowe,24,Richard Carnsew
+14,12,Humfry Lower,28,Sir Richard Carnsew
+15,13,Humfry Sloggat,24,Richard Carnsew
+16,14,John Amadas,24,Richard Carnsew
+17,14,John Amadas,28,Sir Richard Carnsew
+18,15,John Goldsmythe,24,Richard Carnsew
+19,16,John Gruyte,28,Sir Richard Carnsew
+20,17,Lady Grace Carnsew,24,Richard Carnsew
+21,17,Lady Grace Carnsew,28,Sir Richard Carnsew
+22,18,Bridget Treffry,28,Sir Richard Carnsew
+23,19,Bridgett Champernowne,24,Richard Carnsew
+24,20,Nicholas Glyn,24,Richard Carnsew
+25,21,Peter Spenott,24,Richard Carnsew
+26,22,Raphe Fetherstonne,125,Richard Hill
+27,23,Reignold Billing,24,Richard Carnsew
+28,23,Reignold Billing,28,Sir Richard Carnsew
+29,24,Richard Carnsew,126,Hary Chapernowne
+30,24,Richard Carnsew,127,Hugh Boscawine
+31,24,Richard Carnsew,128,John Coocke
+32,24,Richard Carnsew,129,John Samuell
+33,24,Richard Carnsew,130,Marke Pondys
+34,24,Richard Carnsew,131,Mr. Bird
+35,24,Richard Carnsew,132,Mr. Escott
+36,24,Richard Carnsew,133,Mr. Helinge
+37,24,Richard Carnsew,134,Mr. Mins
+38,24,Richard Carnsew,135,Nicholas Opie
+39,24,Richard Carnsew,26,Roger Squier
+40,24,Richard Carnsew,136,Sir Edwarde Harris
+41,24,Richard Carnsew,137,"Sir John Specott, High Sheriff of Cornwall"
+42,24,Richard Carnsew,68,Thomas Cruse
+43,25,Richard Williams,28,Sir Richard Carnsew
+44,24,Richard Carnsew,105,Robert Moore
+45,26,Roger Squier,28,Sir Richard Carnsew
+46,17,Lady Grace Carnsew,138,Adm. Moylle
+47,24,Richard Carnsew,139,Sidiake Mathew
+48,27,Capt. Nicholas Burton,28,Sir Richard Carnsew
+49,28,Sir Richard Carnsew,140,Jeffery
+50,28,Sir Richard Carnsew,141,Richard Penhalowe
+51,28,Sir Richard Carnsew,142,Robert Doyly
+52,24,Richard Carnsew,43,Thomas Bodleigh
+53,28,Sir Richard Carnsew,143,Thomas Bossawsack
+54,28,Sir Richard Carnsew,68,Thomas Cruse
+55,28,Sir Richard Carnsew,144,Thomas Hornabrooke
+56,28,Sir Richard Carnsew,145,Thomas Monck
+57,24,Richard Carnsew,116,Thomas Nicholls
+58,28,Sir Richard Carnsew,146,William Morsill
+59,24,Richard Carnsew,147,William Short
+60,24,Richard Carnsew,148,John Bond
+61,29,Agnes Austin,149,Mary Barrett
+62,28,Sir Richard Carnsew,29,Agnes Austin
+63,24,Richard Carnsew,150,Richard Mills
+64,24,Richard Carnsew,151,Alice Pointer
+65,28,Sir Richard Carnsew,152,Ursula Treffry
+66,24,Richard Carnsew,153,Jasper Bridgeman
+67,28,Sir Richard Carnsew,154,Matthew Treffry
+68,2,William Carnsew,155,William Emett
+69,28,Sir Richard Carnsew,44,Thomas Kendall
+70,28,Sir Richard Carnsew,115,Francis Penkevell
+71,24,Richard Carnsew,156,Edward Yeo
+72,24,Richard Carnsew,157,Sir George Greynvil
+73,22,Raphe Fetherstonne,24,Richard Carnsew
+74,30,Mary Denham,117,Mathew Carnsew
+75,24,Richard Carnsew,158,The Churchwardens of St. Kewe
+76,2,William Carnsew,159,Thomas Halswell
+77,31,Christopher Creed,160,Honor Langford
+78,24,Richard Carnsew,58,John Wood
+79,24,Richard Carnsew,161,Emanuell Langford
+80,24,Richard Carnsew,162,Margaret Hyll
+81,24,Richard Carnsew,163,Robart Hayman
+82,2,William Carnsew,3,Degorye Wills
+83,2,William Carnsew,164,Edmund Garrard
+84,2,William Carnsew,117,Mathew Carnsew
+85,2,William Carnsew,165,Jo. Heath
+86,24,Richard Carnsew,166,John Lipatte
+87,32,Richard Webber,117,Mathew Carnsew
+88,24,Richard Carnsew,123,Margaret Hill
+89,2,William Carnsew,167,Roger Braban
+90,24,Richard Carnsew,168,Richard Langherne
+91,24,Richard Carnsew,169,W. Rescarrocke
+92,33,Richard Billinge,117,Mathew Carnsew
+93,2,William Carnsew,27,Capt. Nicholas Burton
+94,34,John Dolife,170,Mr. William Rolfe
+95,35,John Pymount,170,Mr. William Rolfe
+96,36,Robert Beners,170,Mr. William Rolfe
+97,37,Robert Preston,170,Mr. William Rolfe
+98,24,Richard Carnsew,171,Stephen Rawlyn
+99,38,W. Harrington,46,Sir Faithful Fortescue
+100,37,Robert Preston,172,LandLord Shillito
+101,39,George Shelleto,170,Mr. William Rolfe
+102,24,Richard Carnsew,173,Thomas Riche
+103,2,William Carnsew,174,George Gist
+104,24,Richard Carnsew,175,Honor Toker
+105,24,Richard Carnsew,176,Digori Wills
+106,24,Richard Carnsew,177,Roger Webber
+107,24,Richard Carnsew,178,Pathericke Jenkyn
+108,24,Richard Carnsew,27,Capt. Nicholas Burton
+109,24,Richard Carnsew,179,Christill Constabell
+110,24,Richard Carnsew,180,William Roskrow
+111,24,Richard Carnsew,181,Katherine Polwhede
+112,24,Richard Carnsew,174,George Gist
+113,24,Richard Carnsew,182,William Noye
+114,24,Richard Carnsew,183,Ambrose Manintone
+115,24,Richard Carnsew,184,Humfrey Kempe
+116,24,Richard Carnsew,185,Thomas Treffy
+117,26,Roger Squier,186,Ralphe Kete
+118,24,Richard Carnsew,187,Jero. Walker
+119,24,Richard Carnsew,188,John Jeffrey
+120,24,Richard Carnsew,189,William Havosow
+121,24,Richard Carnsew,190,Hughe Pruste
+122,24,Richard Carnsew,32,Richard Webber
+123,24,Richard Carnsew,191,Hugh Beheathlam
+124,24,Richard Carnsew,192,John Jelbeard
+125,40,Barnard Grenvile,193,Sheriff of Cornwall
+126,2,William Carnsew,194,Anthony Turpyn
+127,24,Richard Carnsew,195,William Dandy
+128,24,Richard Carnsew,196,Peter Roskrowe
+129,24,Richard Carnsew,197,Andrew Fenton
+130,24,Richard Carnsew,198,Digorey Bordon
+131,24,Richard Carnsew,199,Digory Penvond
+132,24,Richard Carnsew,200,John Beaford
+133,28,Sir Richard Carnsew,201,Richard Penhallow
+134,28,Sir Richard Carnsew,202,Thomas Peares
+135,28,Sir Richard Carnsew,125,Richard Hill
+136,28,Sir Richard Carnsew,203,Andrew Whettlye
+137,28,Sir Richard Carnsew,204,William Warmington
+138,28,Sir Richard Carnsew,40,Barnard Grenvile
+139,28,Sir Richard Carnsew,205,John Foote
+140,17,Lady Grace Carnsew,206,Thomas Eade
+141,17,Lady Grace Carnsew,68,Thomas Cruse
+142,28,Sir Richard Carnsew,32,Richard Webber
+143,28,Sir Richard Carnsew,207,Holman
+144,41,John Yeo,117,Mathew Carnsew
+145,28,Sir Richard Carnsew,208,Joseph Jeffrey
+146,17,Lady Grace Carnsew,42,Sir Richard
+147,28,Sir Richard Carnsew,162,Margaret Hyll
+148,17,Lady Grace Carnsew,23,Reignold Billing
+149,42,Sir Richard,209,Mr. Macye
+150,42,Sir Richard,137,"Sir John Specott, High Sheriff of Cornwall"
+151,28,Sir Richard Carnsew,86,John Davies
+152,28,Sir Richard Carnsew,210,John Rills
+153,28,Sir Richard Carnsew,211,Mr. Hambly
+154,28,Sir Richard Carnsew,212,Mr. Lucas
+155,28,Sir Richard Carnsew,213,Mr. Prideaux
+156,28,Sir Richard Carnsew,214,Mr. Smithe
+157,28,Sir Richard Carnsew,33,Richard Billinge
+158,43,Thomas Bodleigh,215,Tristram Soby
+159,17,Lady Grace Carnsew,44,Thomas Kendall
+160,44,Thomas Kendall,216,Rowland Byllinge
+161,2,William Carnsew,28,Sir Richard Carnsew
+162,28,Sir Richard Carnsew,217,Humfry Hyll
+163,16,John Gruyte,17,Lady Grace Carnsew
+164,7,Francis Drake,28,Sir Richard Carnsew
+165,28,Sir Richard Carnsew,218,J. Bassett
+166,28,Sir Richard Carnsew,183,Ambrose Manintone
+167,28,Sir Richard Carnsew,219,Edward Coswarthe
+168,28,Sir Richard Carnsew,58,John Wood
+169,28,Sir Richard Carnsew,220,Edward Courtenay
+170,17,Lady Grace Carnsew,221,Mary Sharp
+171,17,Lady Grace Carnsew,222,William Sharp
+172,28,Sir Richard Carnsew,223,Richard Harbyn
+173,2,William Carnsew,48,Reskymer Bonython
+174,28,Sir Richard Carnsew,224,William Elston
+175,28,Sir Richard Carnsew,225,Humfrye Nycoll
+176,45,William Prideaux,225,Humfrye Nycoll
+177,28,Sir Richard Carnsew,226,Geo. Bond
+178,28,Sir Richard Carnsew,227,Anthony Penkevell
+179,28,Sir Richard Carnsew,228,William Coade
+180,28,Sir Richard Carnsew,229,William Roscorocke
+181,28,Sir Richard Carnsew,85,Ralph Byrd
+182,28,Sir Richard Carnsew,230,John Spulde
+183,44,Thomas Kendall,231,Sir Edward
+184,23,Reignold Billing,31,Christopher Creed
+185,28,Sir Richard Carnsew,232,William Gyl
+186,28,Sir Richard Carnsew,233,Peter Hallamore
+187,17,Lady Grace Carnsew,234,William Rogers
+188,28,Sir Richard Carnsew,234,William Rogers
+189,46,Sir Faithful Fortescue,235,Sir Foulke Conway
+190,28,Sir Richard Carnsew,31,Christopher Creed
+191,47,Francis Crane,236,Nicholas Glynne
+192,48,Reskymer Bonython,47,Francis Crane
+193,28,Sir Richard Carnsew,47,Francis Crane
+194,49,H. Fans,236,Nicholas Glynne
+195,48,Reskymer Bonython,49,H. Fans
+196,28,Sir Richard Carnsew,49,H. Fans
+197,28,Sir Richard Carnsew,123,Margaret Hill
+198,28,Sir Richard Carnsew,237,Mr. Gibbons
+199,28,Sir Richard Carnsew,238,Jo. Samuell
+200,2,William Carnsew,86,John Davies
+201,28,Sir Richard Carnsew,239,Henry Carnsew
+202,28,Sir Richard Carnsew,240,Nicholas Lower
+203,50,Philip Flemyng,65,William Weld
+204,28,Sir Richard Carnsew,107,William Samuell
+205,51,Alice Thurrgood,80,William Mellow
+206,52,Four Ordinary Pages of the Chamber to the late Queen Anne,241,Commissioners for his late Majesty&#x0027;s funeral
+207,53,"Minister and Churchwardens of All Hallows, Barking",241,Commissioners for his late Majesty&#x0027;s funeral
+208,54,William Tomson,241,Commissioners for his late Majesty&#x0027;s funeral
+209,55,Henry Brenning,241,Commissioners for his late Majesty&#x0027;s funeral
+210,56,Henry Russell,241,Commissioners for his late Majesty&#x0027;s funeral
+211,57,Hugh Warden,241,Commissioners for his late Majesty&#x0027;s funeral
+212,58,John Wood,241,Commissioners for his late Majesty&#x0027;s funeral
+213,59,Majesty&#x0027;s gunners in ordinary,241,Commissioners for his late Majesty&#x0027;s funeral
+214,60,Nine Grooms of the late Queen&#x0027;s Chamber,241,Commissioners for his late Majesty&#x0027;s funeral
+215,61,"Robert Wood, John Wood, and two others, Keepers of his Majesty&#x0027;s cormorants",241,Commissioners for his late Majesty&#x0027;s funeral
+216,62,Sampson Calvert,241,Commissioners for his late Majesty&#x0027;s funeral
+217,17,Lady Grace Carnsew,162,Margaret Hyll
+218,28,Sir Richard Carnsew,242,Sir John Arundel of Trerise
+219,28,Sir Richard Carnsew,243,James Polkinhorne
+220,28,Sir Richard Carnsew,244,Francis Brabant
+221,63,Robert Bacon,65,William Weld
+222,64,Walsingham Gresley,245,Richard Wyld
+223,65,William Weld,246,William Melcom
+224,14,John Amadas,247,Richard Parson
+225,28,Sir Richard Carnsew,248,John Pelliton
+226,28,Sir Richard Carnsew,249,Francis Harvey
+227,28,Sir Richard Carnsew,250,Peter Toker
+228,65,William Weld,251,Captain Michael Williams
+229,65,William Weld,252,Simon Richardson
+230,28,Sir Richard Carnsew,253,Digori Bande
+231,28,Sir Richard Carnsew,254,Christopher Hughe
+232,65,William Weld,255,Henry Raleigh
+233,66,Marmaduke Dobb,256,Secretary Weld
+234,28,Sir Richard Carnsew,257,Francis Carnsew
+235,28,Sir Richard Carnsew,258,William Ducke
+236,67,J. Lancaster,259,Mrs. Grace Barrett
+237,28,Sir Richard Carnsew,149,Mary Barrett
+238,28,Sir Richard Carnsew,259,Mrs. Grace Barrett
+239,68,Thomas Cruse,260,Lady Carnsew
+240,28,Sir Richard Carnsew,261,James Carnsew
+241,28,Sir Richard Carnsew,262,Nicholas Hemings
+242,28,Sir Richard Carnsew,263,John Estcott
+243,28,Sir Richard Carnsew,264,George Glinn
+244,28,Sir Richard Carnsew,265,John Prust
+245,28,Sir Richard Carnsew,266,Richard Bolsawsacke
+246,46,Sir Faithful Fortescue,65,William Weld
+247,28,Sir Richard Carnsew,190,Hughe Pruste
+248,69,George Verney,65,William Weld
+249,28,Sir Richard Carnsew,267,Rosicleere Arscott
+250,65,William Weld,268,William Jeffray
+251,70,Christopher Conway,245,Richard Wyld
+252,65,William Weld,269,William Luttrell
+253,71,Richard Daye,245,Richard Wyld
+254,65,William Weld,270,Henry Gybb
+255,72,Robert Dixon,256,Secretary Weld
+256,65,William Weld,271,William Dixon
+257,65,William Weld,71,Richard Daye
+258,65,William Weld,111,George Colt
+259,73,Henry Lee,80,William Mellow
+260,74,Richard Swift,80,William Mellow
+261,75,Robert Crane,80,William Mellow
+262,76,Thomas Mead,80,William Mellow
+263,77,Captain George Langham,80,William Mellow
+264,78,William Wyche,80,William Mellow
+265,79,"Langham, John",80,William Mellow
+266,80,William Mellow,272,Jesper
+267,80,William Mellow,273,John Cowley
+268,80,William Mellow,274,William Woodhouse
+269,65,William Weld,72,Robert Dixon
+270,80,William Mellow,275,William Salter
+271,80,William Mellow,276,Thomas Moodie
+272,65,William Weld,277,Lucas Jacobs
+273,65,William Weld,278,Thomas Rice
+274,80,William Mellow,279,Grinling Tyndall
+275,80,William Mellow,280,Richard Gresswoulde
+276,80,William Mellow,281,John Dowley
+277,80,William Mellow,282,John Bastrar
+278,80,William Mellow,283,James Francis
+279,81,Edward Conway,284,Lieutenant Morgan
+280,81,Edward Conway,65,William Weld
+281,80,William Mellow,285,Tindall
+282,65,William Weld,83,Henry Spencer
+283,65,William Weld,286,Mrs. Ellinor Grace
+284,65,William Weld,66,Marmaduke Dobb
+285,82,Major George Rawdon,106,White
+286,82,Major George Rawdon,256,Secretary Weld
+287,65,William Weld,82,Major George Rawdon
+288,65,William Weld,287,Thomas Burgh
+289,65,William Weld,288,"Anna, Lady Wake"
+290,82,Major George Rawdon,289,Verstie Rawdon
+291,66,Marmaduke Dobb,82,Major George Rawdon
+292,82,Major George Rawdon,290,Robin Ward
+293,83,Henry Spencer,82,Major George Rawdon
+294,84,Walter Thomas,291,William Hartwell
+295,82,Major George Rawdon,291,William Hartwell
+296,82,Major George Rawdon,292,Thomas Tallis
+297,85,Ralph Byrd,293,Thomas Smaly
+298,82,Major George Rawdon,294,Daniel O&#x0027;Neill
+299,82,Major George Rawdon,295,Michael Doyne
+300,86,John Davies,82,Major George Rawdon
+301,82,Major George Rawdon,296,Richard Cholmeley
+302,82,Major George Rawdon,297,Arthur Hill
+303,82,Major George Rawdon,298,Richard Dobb
+304,82,Major George Rawdon,299,Throckton Stotesbury
+305,82,Major George Rawdon,84,Walter Thomas
+306,82,Major George Rawdon,300,Ralph Conway
+307,82,Major George Rawdon,301,Tandy
+308,82,Major George Rawdon,302,William Cadogan
+309,82,Major George Rawdon,303,William Sambach
+310,25,Richard Williams,304,William Gwynne
+311,87,Lord Mountgarret,305,Lord Fermoy
+312,81,Edward Conway,306,Henry Wilmott
+313,88,Committee for Public Revenue,92,Commissioners of the Supreme Council of the Confederate Catholics
+314,89,"Randal Macdonnell, Earl of Antrim?",307,Father Oliver D&#x0027;Arcy
+315,89,"Randal Macdonnell, Earl of Antrim?",308,Friar Patrick Corilly
+316,90,Oliver Cusack,93,Captain Brandon Cusacke
+317,91,General Preston,92,Commissioners of the Supreme Council of the Confederate Catholics
+318,91,General Preston,309,Captain George Cruise
+319,89,"Randal Macdonnell, Earl of Antrim?",310,Lady cousin
+320,92,Commissioners of the Supreme Council of the Confederate Catholics,93,Captain Brandon Cusacke
+321,93,Captain Brandon Cusacke,311,Philip Cusack
+322,93,Captain Brandon Cusacke,312,Colonel Warren
+323,92,Commissioners of the Supreme Council of the Confederate Catholics,313,The Committee of the Co. Kildare
+324,92,Commissioners of the Supreme Council of the Confederate Catholics,314,Major Christopher O&#x0027;Brien
+325,92,Commissioners of the Supreme Council of the Confederate Catholics,315,Colonel Dermot O&#x0027;Brien
+326,91,General Preston,316,Commissioners of the Irish Catholic Council
+327,91,General Preston,317,John Nugent
+328,91,General Preston,318,Captain Michael Burnell
+329,91,General Preston,319,Captain Thomas Roche
+330,91,General Preston,320,Sir Lucas Dillon
+331,87,Lord Mountgarret,321,The Nuncio and Congregation of the Catholic Church
+332,91,General Preston,97,Roman Catholic Bishop of Ferns
+333,91,General Preston,322,The Irish Catholics Clergy
+334,91,General Preston,323,Owen O&#x0027;Neill
+335,91,General Preston,324,The Irish Lords
+336,91,General Preston,325,The Mayor
+337,91,General Preston,326,Citizens of Kilkenny
+338,94,Sir Phelim O&#x0027;Neill,307,Father Oliver D&#x0027;Arcy
+339,91,General Preston,327,Giles Smith
+340,91,General Preston,328,Sir Luke Fitzgerald
+341,91,General Preston,329,The Archbishop of Fermo
+342,91,General Preston,330,The Roman Catholic Bishop of Elphin
+343,91,General Preston,102,Nicholas Plunektt
+344,91,General Preston,331,Oliver
+345,91,General Preston,332,Antonio Nicholas Vandersipe
+346,91,General Preston,333,Madame Preston
+347,91,General Preston,334,George Gran
+348,37,Robert Preston,91,General Preston
+349,91,General Preston,335,Father Anthony Gearnon
+350,91,General Preston,96,Leinster Committee
+351,95,Patrick D&#x0027;Arcy,91,General Preston
+352,91,General Preston,336,Robert Plunket
+353,91,General Preston,337,Peter Taaffe
+354,91,General Preston,338,The Commissioners of the Co. Wicklow
+355,91,General Preston,339,Colonel John Bellew
+356,91,General Preston,340,Field Officers at Caterlagh
+357,91,General Preston,341,Walter Cruise
+358,91,General Preston,342,James Preston
+359,96,Leinster Committee,343,The Receiver of Enemies&#x0027; Bents in the Co. Wicklow
+360,91,General Preston,99,Nicholas Owens
+361,92,Commissioners of the Supreme Council of the Confederate Catholics,344,Captain R. Lombard
+362,92,Commissioners of the Supreme Council of the Confederate Catholics,96,Leinster Committee
+363,97,Roman Catholic Bishop of Ferns,96,Leinster Committee
+364,91,General Preston,345,Don Francisco Foisotte
+365,96,Leinster Committee,98,Coole Toole
+366,92,Commissioners of the Supreme Council of the Confederate Catholics,98,Coole Toole
+367,91,General Preston,346,Daniel Synnott
+368,96,Leinster Committee,347,Peter Wycombe
+369,92,Commissioners of the Supreme Council of the Confederate Catholics,347,Peter Wycombe
+370,96,Leinster Committee,348,George Barnewall
+371,91,General Preston,349,The Deinster Committee
+372,91,General Preston,350,Captain Jenico Rochfort
+373,98,Coole Toole,351,The Commissioners General
+374,99,Nicholas Owens,307,Father Oliver D&#x0027;Arcy
+375,100,Thomas Dongan,351,The Commissioners General
+376,91,General Preston,352,Pierce Fitzgerald
+377,101,Richard Netterville,348,George Barnewall
+378,91,General Preston,353,William Hore
+379,91,General Preston,354,Thomas Geoghegan
+380,91,General Preston,355,Theobald Butler
+381,91,General Preston,356,Edward Bermingham
+382,91,General Preston,357,Edward Remingham
+383,91,General Preston,358,Lord Muskerry
+384,91,General Preston,359,General Hugh Byrne
+385,91,General Preston,360,James Byrne
+386,91,General Preston,361,Paul Wadding
+387,101,Richard Netterville,362,Thomas Clynton
+388,96,Leinster Committee,363,Edward Furlong
+389,87,Lord Mountgarret,91,General Preston
+390,91,General Preston,364,Walter Bagnall
+391,91,General Preston,348,George Barnewall
+392,91,General Preston,365,F. Foiscotte
+393,37,Robert Preston,366,Peter Bathe
+394,96,Leinster Committee,342,James Preston
+395,91,General Preston,367,Captain Dongan
+396,102,Nicholas Plunektt,96,Leinster Committee
+397,88,Committee for Public Revenue,368,M. Norton
+398,103,Benjamin Oldfield,369,Colonel Conway
+399,81,Edward Conway,370,Miles Woodshaw
+400,81,Edward Conway,82,Major George Rawdon
+401,81,Edward Conway,371,Major Edward Burgh
+402,88,Committee for Public Revenue,372,Christopher Kendall
+403,42,Sir Richard,373,Abraham Smith
+404,82,Major George Rawdon,369,Colonel Conway
+405,81,Edward Conway,374,Lady Dorothy Rawdon
+406,104,Lord Montgomery,369,Colonel Conway
+407,81,Edward Conway,104,Lord Montgomery
+408,86,John Davies,375,Mr. Kendall. Robt
+409,105,Robert Moore,376,Frances Moore
+410,106,White,307,Father Oliver D&#x0027;Arcy
+411,46,Sir Faithful Fortescue,377,Sir George Law
+412,107,William Samuell,378,Sir John Baber
+413,73,Henry Lee,278,Thomas Rice
+414,86,John Davies,379,Colonel Sampson de Lalo
+415,108,Henry Thomas,110,William Carnsew sen.
+416,109,Arthur Strode,110,William Carnsew sen.
+417,110,William Carnsew sen.,380,James Luke
+418,111,George Colt,381,King's Solicitor
+419,1,Arthur Remys,113,William Carnsew jun.
+420,28,Sir Richard Carnsew,153,Jasper Bridgeman
+421,112,John Carnsew,113,William Carnsew jun.
+422,113,William Carnsew jun.,382,Thomas Roscarrow
+423,113,William Carnsew jun.,383,Wolryke
+424,114,William Langford,384,Hugh Trevanyon
+425,110,William Carnsew sen.,117,Mathew Carnsew
+426,113,William Carnsew jun.,385,John Bodleghe
+427,113,William Carnsew jun.,117,Mathew Carnsew
+428,113,William Carnsew jun.,386,Alexander Dan
+429,115,Francis Penkevell,113,William Carnsew jun.
+430,113,William Carnsew jun.,387,Jane Penkevell
+431,116,Thomas Nicholls,113,William Carnsew jun.
+432,108,Henry Thomas,113,William Carnsew jun.
+433,113,William Carnsew jun.,388,William Penkevell
+434,28,Sir Richard Carnsew,113,William Carnsew jun.
+435,117,Mathew Carnsew,389,Honor Carnsew
+436,110,William Carnsew sen.,113,William Carnsew jun.
+437,28,Sir Richard Carnsew,117,Mathew Carnsew
+438,113,William Carnsew jun.,390,John Mollas
+439,118,John Weston,113,William Carnsew jun.
+440,113,William Carnsew jun.,120,Ulricke Frose
+441,113,William Carnsew jun.,389,Honor Carnsew
+442,113,William Carnsew jun.,391,John Hance
+443,113,William Carnsew jun.,392,Dr. Ed
+444,113,William Carnsew jun.,393,Robert Tencreke
+445,119,Wollerycke Froste,394,Thomas Coswarthe
+446,113,William Carnsew jun.,394,Thomas Coswarthe
+447,113,William Carnsew jun.,395,John Morfild
+448,120,Ulricke Frose,396,Robert Denham
+449,113,William Carnsew jun.,397,John Otes
+450,113,William Carnsew jun.,398,Robert Martyn
+451,113,William Carnsew jun.,399,Hugh Trevanion
+452,113,William Carnsew jun.,400,Mr. Holton
+453,113,William Carnsew jun.,396,Robert Denham
+454,113,William Carnsew jun.,401,Barnard Penros
+455,113,William Carnsew jun.,402,Thomasine Morfyld
+456,113,William Carnsew jun.,403,"William Turner, doctor of medicine"
+457,113,William Carnsew jun.,404,Mr. Creed
+458,117,Mathew Carnsew,405,Vicar and constables of St. Bruarde
+459,28,Sir Richard Carnsew,406,George Carnsew
+460,121,Thomas Ducke,117,Mathew Carnsew
+461,109,Arthur Strode,117,Mathew Carnsew
+462,114,William Langford,117,Mathew Carnsew
+463,117,Mathew Carnsew,407,"Richard Carewe, Tristram Arscott, and Leonard Yeo"
+464,28,Sir Richard Carnsew,407,"Richard Carewe, Tristram Arscott, and Leonard Yeo"
+465,28,Sir Richard Carnsew,408,R. Squier
+466,28,Sir Richard Carnsew,409,Richard Goodall
+467,30,Mary Denham,261,James Carnsew
+468,117,Mathew Carnsew,410,John Goldsmith
+469,28,Sir Richard Carnsew,411,Maurice Hill
+470,28,Sir Richard Carnsew,412,Edwarde Joanes
+471,11,Humfrey Stowe,28,Sir Richard Carnsew
+472,28,Sir Richard Carnsew,413,Christopher Maynwaringe
+473,28,Sir Richard Carnsew,122,Gilbert Michell
+474,122,Gilbert Michell,409,Richard Goodall
+475,28,Sir Richard Carnsew,414,Nicholas Rous
+476,11,Humfrey Stowe,122,Gilbert Michell
+477,28,Sir Richard Carnsew,415,Thomas Evans
+478,113,William Carnsew jun.,416,Chr. Holmes
+479,123,Margaret Hill,417,Alex Maynarde

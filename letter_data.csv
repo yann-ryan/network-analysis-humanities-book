@@ -1,0 +1,1375 @@
+letter_id,from_id,from_name,to_id,to_name,date
+1,E006019-S012734-T000000,"Dr. Ralph Cudworth, Master of Christ&#x0027;s College",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-31
+2,E006019-S012734-T000000,"Dr. Ralph Cudworth, Master of Christ&#x0027;s College",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-31
+3,E011771-S014372-T000000,"Hyde, Edward",E015294-S041287-T000000,Sir Edward Nicholas,1670-12-31
+4,E015103-S043299-T000000,Sir Philip Musgrave,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-03
+5,E020134-S040615-T000000,"Taylor, Silas",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-04
+6,E014743-S041280-T000000,Sir Edward Misselden,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-04
+7,E015103-S043299-T000000,Sir Philip Musgrave,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-06
+8,E020485-S043979-T000000,Sir Thomas Allin,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-07
+9,E020485-S043979-T000000,Sir Thomas Allin,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-11
+10,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1670-01-12
+11,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1670-01-14
+12,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1670-01-15
+13,E015103-S043299-T000000,Sir Philip Musgrave,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-17
+14,E007992-S018852-T000000,"Heneage Finch, Earl of Winchilsea",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-01-18
+15,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1670-01-19
+16,E020485-S043979-T000000,Sir Thomas Allin,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-21
+17,E020485-S043979-T000000,Sir Thomas Allin,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-30
+18,E015103-S043299-T000000,Sir Philip Musgrave,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-31
+19,S035587,"Philadelphia, Lady Wentworth",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-02-05
+20,E918239-S043259-T000000,"Wyche, Peter (Sir)",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-02-06
+21,E015103-S043299-T000000,Sir Philip Musgrave,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-02-07
+22,E014743-S041280-T000000,Sir Edward Misselden,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-02-15
+23,E015333-S052172-T000000,William Nicholson,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-02-15
+24,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E000312-S012741-T000000,Dr. Richard Allestree,1670-02-17
+25,E014743-S041280-T000000,Sir Edward Misselden,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-02-18
+26,E006019-S012734-T000000,"Dr. Ralph Cudworth, Master of Christ&#x0027;s College",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-02-19
+27,E300364-S022991-T000000,John Evelyn,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-02-28
+28,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E005561-S012565-T000000,"Dr. John Cosin, Vice-Chancellor of Cambridge University",1670-03-02
+29,S044898,Sir. Edward Spragg,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-03-04
+30,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",S012732,Dr. Ralph Brideoke,1670-03-12
+31,E003555-S038426-T000000,"Robert Bruce, Earl of Elgin and Ailesbury",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-03-24
+32,E022114-S041675-T000000,Sir George Downing,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-03-24
+33,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E903387-S043701-T000000,Sir Robert Holmes,1670-04-30
+34,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E000312-S012741-T000000,Dr. Richard Allestree,1670-04-02
+35,S044898,Sir. Edward Spragg,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-04-10
+36,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1670-04-10
+37,E019544-S012615-T000000,"Spencer, John (Dr)",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-04-15
+38,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-04-25
+39,S024860,"John, Lord Lovelace",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-04-18
+40,E020485-S043979-T000000,Sir Thomas Allin,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-04-18
+41,E022114-S041675-T000000,Sir George Downing,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-04-19
+42,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-04-29
+43,S047442,"Thomas Belasyse, Earl of Fauconberg",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-04-30
+44,S047669,"Thomas Clifford, Baron Clifford of Chudleigh",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-04-22
+45,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-04-23
+46,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-05-03
+47,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-05-03
+48,E008389-S012935-T000000,"Fuller, William",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-04-25
+49,E008389-S012935-T000000,"Fuller, William",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-04-25
+50,S012233,Dowager Duchess of Savoy,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1670-05-06
+51,S012233,Dowager Duchess of Savoy,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1670-05-06
+52,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-05-07
+53,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-05-07
+54,E014088-S014453-T000000,"Montagu, Edward",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-04-28
+55,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-05-08
+56,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1670-04-29
+57,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1670-05-04
+58,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1670-05-06
+59,S022413,"John Berkeley, Baron Berkeley of Stratton",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-05-07
+60,S047249,"Theobald Taaffe, Earl of Carlingford",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-05-07
+61,E911246-S038373-T026395,"Robert Bertie, Lord Willoughby",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-05-09
+62,E600026-S019424-T000000,"Stubbe, Henry",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-05-18
+63,E000520-S001769-T000000,"Arthur Annesley, Earl of Anglesey",E003476-S051213-T000000,"William Brouncker, Viscount Brouncker of Lyons",1670-05-19
+64,S039502,Roger l&#x0027;Estrange,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-05-19
+65,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E015260-S012566-T000000,Dr. John Covell,1670-05-19
+66,S042748,Sir John Monson,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-05-23
+67,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-05-24
+68,S044898,Sir. Edward Spragg,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-05-30
+69,E904150-S051429-T000000,"William Craven, Earl of Craven",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-05-31
+70,E020485-S043979-T000000,Sir Thomas Allin,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-30
+71,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E018557-S012448-T000000,"Sheldon, Gilbert",1670-06-04
+72,E015103-S043299-T000000,Sir Philip Musgrave,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-06
+73,S012870,Dr. Thomas Lamplugh,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-07
+74,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-06-20
+75,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-06-21
+76,E003520-S029712-T000000,Major-General Browne,E016283-S039896-T000000,Samuel Pepys,1670-06-15
+77,E022114-S041675-T000000,Sir George Downing,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-15
+78,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E014954-S017498-T000000,"Morley, George",1670-06-16
+79,S052795,"William, Lord Paget",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-16
+80,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-06-27
+81,S047442,"Thomas Belasyse, Earl of Fauconberg",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-27
+82,E014954-S017498-T000000,"Morley, George",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-06-18
+83,S027205,Lord Berkeley,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-06-18
+84,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1670-06-18
+85,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1670-06-18
+86,S044898,Sir. Edward Spragg,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-20
+87,S047669,"Thomas Clifford, Baron Clifford of Chudleigh",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-20
+88,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E005561-S012565-T000000,"Dr. John Cosin, Vice-Chancellor of Cambridge University",1670-06-21
+89,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-22
+90,E015103-S043299-T000000,Sir Philip Musgrave,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-22
+91,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-23
+92,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-07-04
+93,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-07-04
+94,S043794,Sir Robert Vyner,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-25
+95,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E021119-S038065-T000000,"Vaughan, Richard",1670-06-26
+96,S047669,"Thomas Clifford, Baron Clifford of Chudleigh",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-27
+97,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-28
+98,E022114-S041675-T000000,Sir George Downing,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-28
+99,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E005337-S014546-T000000,"Reynolds, Edward (Dr)",1670-06-29
+100,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1670-06-29
+101,S051123,"William Blandford, Bishop of Worcester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-29
+102,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-06-30
+103,E011771-S014372-T000000,"Hyde, Edward",E015294-S041287-T000000,Sir Edward Nicholas,1670-07-31
+104,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-07-11
+105,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E019713-S038011-T000000,"Sterne, Richard (Dr)",1670-07-01
+106,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-07-05
+107,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",1670-07-06
+108,E913810-S043577-T000000,"Temple, Richard (Sir)",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-07-08
+109,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-07-09
+110,E000520-S001769-T000000,"Arthur Annesley, Earl of Anglesey",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-07-13
+111,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-07-25
+112,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-07-16
+113,S012233,Dowager Duchess of Savoy,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1670-07-30
+114,E903387-S043701-T000000,Sir Robert Holmes,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-07-20
+115,E903387-S043701-T000000,Sir Robert Holmes,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-07-20
+116,E903387-S043701-T000000,Sir Robert Holmes,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-07-23
+117,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-08-02
+118,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-07-26
+119,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1670-07-27
+120,E020485-S043979-T000000,Sir Thomas Allin,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-07-28
+121,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-08-08
+122,S001450,"Anthony Ashley Cooper, Earl of Shaftesbury",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1670-07-30
+123,E600026-S019424-T000000,"Stubbe, Henry",E002622-S014197-T000000,"Edward Conway, Earl of Conway",1670-07-30
+124,S047442,"Thomas Belasyse, Earl of Fauconberg",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-07-30
+125,E011771-S014372-T000000,"Hyde, Edward",E015294-S041287-T000000,Sir Edward Nicholas,1670-08-31
+126,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-01
+127,S047442,"Thomas Belasyse, Earl of Fauconberg",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-31
+128,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E004820-S044035-T000000,Sir Thomas Chicheley,1670-08-03
+129,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-06
+130,E911246-S038373-T026395,"Robert Bertie, Lord Willoughby",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-06
+131,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-08-16
+132,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-09
+133,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1670-08-10
+134,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-08-22
+135,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E004820-S044035-T000000,Sir Thomas Chicheley,1670-08-12
+136,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-13
+137,S044898,Sir. Edward Spragg,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-13
+138,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-16
+139,S007002,"Charles Lennox, Duke of Richmond and Lennox",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-16
+140,E600100-S041020-T000000,Sir Charles Scarborough,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-08-19
+141,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-08-29
+142,E020485-S043979-T000000,Sir Thomas Allin,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-26
+143,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-09-05
+144,S047442,"Thomas Belasyse, Earl of Fauconberg",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-09-05
+145,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-30
+146,S042748,Sir John Monson,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-08-31
+147,S047442,"Thomas Belasyse, Earl of Fauconberg",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-09-14
+148,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-09-06
+149,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-09-06
+150,S044898,Sir. Edward Spragg,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-09-08
+151,S044040,Sir Thomas Clarges,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-09-09
+152,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E004820-S044035-T000000,Sir Thomas Chicheley,1670-09-09
+153,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E004820-S044035-T000000,Sir Thomas Chicheley,1670-09-09
+154,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E019066-S007456-T000000,"Hatton, Christopher",1670-09-09
+155,E917332-S043193-T000000,Sir Orlando Bridgeman,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-09-10
+156,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E019713-S038011-T000000,"Sterne, Richard (Dr)",1670-09-13
+157,S026155,Lady Elizabeth Carr,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-09-17
+158,S042687,"Sir John Knight, mayor of Bristol",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-09-17
+159,S048740,"Thomas Smith, Bishop of Carlisle",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-09-17
+160,S044898,Sir. Edward Spragg,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-09-20
+161,S041265,Sir Edward Hungerford,E021779-S040314-T000000,"Ward, Seth",1670-09-22
+162,S039502,Roger l&#x0027;Estrange,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-09-24
+163,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1670-09-25
+164,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-09-27
+165,E007984-S011172-T000000,"Finch, Daniel",E002622-S014197-T000000,"Edward Conway, Earl of Conway",1670-10-31
+166,E008389-S012935-T000000,"Fuller, William",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-10-01
+167,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-10-01
+168,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-10-02
+169,S044040,Sir Thomas Clarges,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-10-09
+170,S047249,"Theobald Taaffe, Earl of Carlingford",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-10-11
+171,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-10-12
+172,E015103-S043299-T000000,Sir Philip Musgrave,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-10-14
+173,E008139-S040866-T000000,Sir Arthur Forbes,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-10-15
+174,S041323,Sir Edward Sherburne,E016283-S039896-T000000,Samuel Pepys,1670-10-19
+175,S047669,"Thomas Clifford, Baron Clifford of Chudleigh",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-10-21
+176,E917332-S043193-T000000,Sir Orlando Bridgeman,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-10-23
+177,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-10-25
+178,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-10-29
+179,S039502,Roger l&#x0027;Estrange,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1670-10-29
+180,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E005561-S012565-T000000,"Dr. John Cosin, Vice-Chancellor of Cambridge University",1670-10-29
+181,E006690-S041673-T000000,Sir George Digby,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-10-30
+182,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-11-01
+183,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E004820-S044035-T000000,Sir Thomas Chicheley,1670-11-30
+184,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-11-08
+185,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1670-11-10
+186,E018091-S052405-T000000,"William Sancroft, Archbishop of Canterbury",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1670-11-10
+187,S043794,Sir Robert Vyner,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-11-11
+188,E002911-S031544-T000000,"Michael Boyle, Archbishop of Dublin",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-11-12
+189,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1670-11-16
+190,E022114-S041675-T000000,Sir George Downing,E003476-S051213-T000000,"William Brouncker, Viscount Brouncker of Lyons",1670-11-16
+191,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-11-22
+192,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E019713-S038011-T000000,"Sterne, Richard (Dr)",1670-11-24
+193,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1670-11-25
+194,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-11-28
+195,S039502,Roger l&#x0027;Estrange,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-11-29
+196,E011771-S014372-T000000,"Hyde, Edward",E011779-S001299-T000000,"Hyde, Anne",1670-12-31
+197,E011771-S014372-T000000,"Hyde, Edward",E011779-S001299-T000000,"Hyde, Anne",1670-12-31
+198,E011771-S014372-T000000,"Hyde, Edward",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1670-12-31
+199,E011771-S014372-T000000,"Hyde, Edward",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1670-12-31
+200,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-12-01
+201,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E000312-S012741-T000000,Dr. Richard Allestree,1670-12-31
+202,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-12-03
+203,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-12-06
+204,E022114-S041675-T000000,Sir George Downing,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-12-10
+205,S043476,Sir Richard Ford,E016283-S039896-T000000,Samuel Pepys,1670-12-12
+206,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-12-20
+207,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1670-12-20
+208,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-12-21
+209,S040823,Sir Anthony Deane,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-12-22
+210,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-12-23
+211,S044898,Sir. Edward Spragg,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-12-26
+212,E013492-S043730-T000000,Sir Robert Long,E016283-S039896-T000000,Samuel Pepys,1670-12-28
+213,S012885,Dr. Thomas Tullie,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-12-29
+214,E012178-S019202-T000000,"Jermyn, Henry",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-12-31
+215,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E012119-S043025-T000000,Sir Leoline Jenkins,1671-12-31
+216,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E018180-S049044-T000000,"Wood, Thomas",1671-10-11
+217,E014088-S014453-T000000,"Montagu, Edward",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-01-03
+218,S022413,"John Berkeley, Baron Berkeley of Stratton",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-01-03
+219,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-01-03
+220,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E013261-S023644-T000000,"Leslie, John",1671-01-07
+221,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-01-08
+222,S040823,Sir Anthony Deane,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-01-08
+223,E907719-S043693-T000000,Sir Robert Harley,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-01-10
+224,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1671-01-11
+225,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",S016294,"Francis, Lord Aungier",1671-01-11
+226,S001450,"Anthony Ashley Cooper, Earl of Shaftesbury",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-01-13
+227,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1671-01-15
+228,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",S051735,"William Hamilton (Douglas), Duke of Hamilton",1671-01-18
+229,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-01-19
+230,E022114-S041675-T000000,Sir George Downing,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-01-20
+231,E014088-S014453-T000000,"Montagu, Edward",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-01-23
+232,E300649-S043886-T000000,Sir Samuel Morland,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-01-25
+233,E300364-S022991-T000000,John Evelyn,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-01-28
+234,E008389-S012935-T000000,"Fuller, William",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-01-31
+235,S043476,Sir Richard Ford,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-01-31
+236,S016294,"Francis, Lord Aungier",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-02-28
+237,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-02-01
+238,E921955-S041743-T000000,Sir George Rawdon,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-02-28
+239,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-02-08
+240,S001450,"Anthony Ashley Cooper, Earl of Shaftesbury",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-02-13
+241,S047669,"Thomas Clifford, Baron Clifford of Chudleigh",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-02-13
+242,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-02-22
+243,E014088-S014453-T000000,"Montagu, Edward",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-02-24
+244,E912196-S001906-T000000,"Vere, Aubrey de",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-02-24
+245,S043476,Sir Richard Ford,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-02-25
+246,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-02-26
+247,S012885,Dr. Thomas Tullie,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-02-27
+248,S012423,Dr. Francis Turner,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-02-28
+249,E015993-S036911-T000000,"Rev. Benjamin Parry, D.D",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-03-31
+250,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E013261-S023644-T000000,"Leslie, John",1671-03-02
+251,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-03-03
+252,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-03-05
+253,S024860,"John, Lord Lovelace",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-03-12
+254,S043476,Sir Richard Ford,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-03-13
+255,S043794,Sir Robert Vyner,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-03-14
+256,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1671-03-15
+257,E005455-S001780-T000000,"Capel, Arthur",E004304-S041657-T000000,Sir George Carteret,1671-03-20
+258,E015103-S043299-T000000,Sir Philip Musgrave,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-03-22
+259,E015051-S014454-T000000,"Montagu, Edward",E016283-S039896-T000000,Samuel Pepys,1671-03-23
+260,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",S013497,Earl of Montagu,1671-03-23
+261,E005455-S001780-T000000,"Capel, Arthur",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-03-24
+262,S012423,Dr. Francis Turner,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-03-25
+263,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",S012423,Dr. Francis Turner,1671-03-25
+264,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",S030426,Master and Fellows of St. John&#x0027;s College,1671-03-25
+265,S043476,Sir Richard Ford,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-03-26
+266,S043476,Sir Richard Ford,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-03-26
+267,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-03-28
+268,S040823,Sir Anthony Deane,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-03-28
+269,S043794,Sir Robert Vyner,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-03-28
+270,S044202,Sir Thomas Lynch,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-03-28
+271,S012838,Dr. Tanaquil Faber,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-04-30
+272,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-04-01
+273,S044202,Sir Thomas Lynch,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-04-06
+274,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-04-11
+275,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E005455-S001780-T000000,"Capel, Arthur",1671-04-11
+276,E005561-S012565-T000000,"Dr. John Cosin, Vice-Chancellor of Cambridge University",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-04-17
+277,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1671-04-17
+278,E300364-S022991-T000000,John Evelyn,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-04-24
+279,S026155,Lady Elizabeth Carr,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-04-24
+280,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",S022413,"John Berkeley, Baron Berkeley of Stratton",1671-04-25
+281,S012885,Dr. Thomas Tullie,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-04-29
+282,S044202,Sir Thomas Lynch,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-01
+283,S007002,"Charles Lennox, Duke of Richmond and Lennox",E016283-S039896-T000000,Samuel Pepys,1671-05-06
+284,E002945-S039349-T000000,"Roger Boyle, Earl of Orrery",E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-05-07
+285,S025899,King Dom Pedro II,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-05-10
+286,S025899,King Dom Pedro II,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-05-10
+287,S012423,Dr. Francis Turner,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-11
+288,E006019-S012734-T000000,"Dr. Ralph Cudworth, Master of Christ&#x0027;s College",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-11
+289,S001450,"Anthony Ashley Cooper, Earl of Shaftesbury",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-05-11
+290,S047669,"Thomas Clifford, Baron Clifford of Chudleigh",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-05-11
+291,E007997-S018851-T000000,"Heneage Finch, Earl of Nottingham",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-13
+292,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E007997-S018851-T000000,"Heneage Finch, Earl of Nottingham",1671-05-13
+293,S044898,Sir. Edward Spragg,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-13
+294,E015051-S014454-T000000,"Montagu, Edward",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-05-14
+295,S040823,Sir Anthony Deane,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-14
+296,E001346-S047404-T000000,"Thomas Barlow, Bishop of Lincoln",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-19
+297,S047480,Thomas Blood,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-05-19
+298,S001450,"Anthony Ashley Cooper, Earl of Shaftesbury",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-05-20
+299,S040823,Sir Anthony Deane,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-05-20
+300,E903387-S043701-T000000,Sir Robert Holmes,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-20
+301,E005455-S001780-T000000,"Capel, Arthur",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-05-22
+302,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E004820-S044035-T000000,Sir Thomas Chicheley,1671-05-25
+303,E022114-S041675-T000000,Sir George Downing,E003476-S051213-T000000,"William Brouncker, Viscount Brouncker of Lyons",1671-05-26
+304,S040823,Sir Anthony Deane,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-27
+305,E903387-S043701-T000000,Sir Robert Holmes,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-27
+306,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1671-05-28
+307,S037346,"Richard Butler, Earl of Arran",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-29
+308,E019790-S012443-T000000,"Stradling, George",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-30
+309,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-30
+310,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-30
+311,E300364-S022991-T000000,John Evelyn,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-30
+312,E017482-S043764-T000000,Sir Robert Reynolds,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-05-30
+313,S013497,Earl of Montagu,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-06-30
+314,S013497,Earl of Montagu,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-06-30
+315,S012956,Dr. William Thomas,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-06-02
+316,E600026-S019424-T000000,"Stubbe, Henry",E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-06-03
+317,E916209-S041189-T000000,"Walker, Edward (Sir)",E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-06-03
+318,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-06-03
+319,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E004454-S051301-T000000,"William Cavendish, Duke of Newcastle upon Tyne",1671-06-04
+320,E903387-S043701-T000000,Sir Robert Holmes,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-05
+321,E000799-S042396-T000000,Sir John Ashburnham,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-06
+322,S047669,"Thomas Clifford, Baron Clifford of Chudleigh",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-06
+323,S012603,"Dr. John Parry, Dean of Christ Church",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-07
+324,E903387-S043701-T000000,Sir Robert Holmes,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-07
+325,S016294,"Francis, Lord Aungier",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-10
+326,E003520-S029712-T000000,Major-General Browne,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-10
+327,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-06-10
+328,S043476,Sir Richard Ford,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-11
+329,S051123,"William Blandford, Bishop of Worcester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-12
+330,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-06-14
+331,E022443-S042999-T000000,"Williamson, Joseph (Sir)",S044898,Sir. Edward Spragg,1671-06-15
+332,S043794,Sir Robert Vyner,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-17
+333,S042759,Sir John Nicholas,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-19
+334,E018180-S049044-T000000,"Wood, Thomas",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-19
+335,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-06-24
+336,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-06-28
+337,E019790-S012443-T000000,"Stradling, George",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-07-01
+338,E016521-S012874-T000000,"Pierce, Thomas (Dr)",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-07-31
+339,E008139-S040866-T000000,Sir Arthur Forbes,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-07-01
+340,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-07-01
+341,S047669,"Thomas Clifford, Baron Clifford of Chudleigh",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-07-01
+342,E018180-S049044-T000000,"Wood, Thomas",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-07-03
+343,E000189-S014115-T000000,Edward Bernard,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-07-04
+344,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-07-06
+345,S007002,"Charles Lennox, Duke of Richmond and Lennox",E016283-S039896-T000000,Samuel Pepys,1671-07-06
+346,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",S042761,Sir John Nisbet,1671-07-10
+347,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-07-13
+348,S012603,"Dr. John Parry, Dean of Christ Church",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-07-15
+349,E008139-S040866-T000000,Sir Arthur Forbes,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-07-22
+350,E008139-S040866-T000000,Sir Arthur Forbes,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-07-22
+351,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1671-07-25
+352,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E016521-S012874-T000000,"Pierce, Thomas (Dr)",1671-07-26
+353,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",S036031,"President of Magdalen College, Oxford",1671-07-26
+354,S040923,Sir Bernard Gascoigne,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-08-06
+355,E002945-S039349-T000000,"Roger Boyle, Earl of Orrery",E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-07-28
+356,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-08-01
+357,S040923,Sir Bernard Gascoigne,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-08-21
+358,E008389-S012935-T000000,"Fuller, William",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-08-12
+359,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1671-08-12
+360,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-08-12
+361,E020485-S043979-T000000,Sir Thomas Allin,E016283-S039896-T000000,Samuel Pepys,1671-08-14
+362,E003520-S029712-T000000,Major-General Browne,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-08-18
+363,S044898,Sir. Edward Spragg,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-08-18
+364,E300501-S037685-T000000,"Richard Jones, Earl of Ranelagh",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-08-22
+365,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-08-27
+366,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1671-08-27
+367,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E009352-S023222-T000000,"John Grenville, Earl of Bath",1671-08-27
+368,E000145-S012650-T000000,Dr. Lancelot Addison,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-08-29
+369,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E012119-S043025-T000000,Sir Leoline Jenkins,1671-08-31
+370,E007997-S018851-T000000,"Heneage Finch, Earl of Nottingham",E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-09-30
+371,E022114-S041675-T000000,Sir George Downing,E016283-S039896-T000000,Samuel Pepys,1671-09-01
+372,E011642-S044852-T000000,"Wentworth, William",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-09-06
+373,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-09-09
+374,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E004820-S044035-T000000,Sir Thomas Chicheley,1671-09-10
+375,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E004820-S044035-T000000,Sir Thomas Chicheley,1671-09-13
+376,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1671-09-14
+377,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",1671-09-17
+378,S047480,Thomas Blood,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-09-18
+379,E003520-S029712-T000000,Major-General Browne,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-09-19
+380,E022114-S041675-T000000,Sir George Downing,S042405,Sir John Bankes,1671-09-19
+381,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E005795-S038500-T000000,"Robert Creighton, Bishop of Bath and Wells",1671-09-20
+382,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E019066-S007456-T000000,"Hatton, Christopher",1671-09-20
+383,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-09-23
+384,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E300276-S016406-T000000,"Friedrich Wilhelm I, Elector of Brandenburg",1671-09-23
+385,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-09-23
+386,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E012005-S020946-T000000,"James II and VII, King of England, Scotland, and Ireland",1671-09-24
+387,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E019066-S007456-T000000,"Hatton, Christopher",1671-09-24
+388,E923520-S043262-T000000,"Wyche, Peter (Sir)",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-09-28
+389,S047669,"Thomas Clifford, Baron Clifford of Chudleigh",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-09-30
+390,S042098,Sir Horatio Townsend,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-10-31
+391,S043794,Sir Robert Vyner,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-10-01
+392,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-10-03
+393,E018557-S012448-T000000,"Sheldon, Gilbert",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-08
+394,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1671-10-08
+395,E016079-S043752-T000000,Sir Robert Paston,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-09
+396,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E010707-S019407-T000000,"Somerset, Henry",1671-10-09
+397,S012885,Dr. Thomas Tullie,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-10
+398,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E000312-S012741-T000000,Dr. Richard Allestree,1671-10-10
+399,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-12
+400,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1671-10-12
+401,E923520-S043262-T000000,"Wyche, Peter (Sir)",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-12
+402,S012885,Dr. Thomas Tullie,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-13
+403,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-13
+404,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-13
+405,S042423,Sir John Berkenhead,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-14
+406,S044195,Sir Thomas Littleton,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-16
+407,S047480,Thomas Blood,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-16
+408,S012423,Dr. Francis Turner,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-17
+409,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-17
+410,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-10-17
+411,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-22
+412,E020134-S040615-T000000,"Taylor, Silas",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-24
+413,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-10-25
+414,E020134-S040615-T000000,"Taylor, Silas",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-26
+415,S042759,Sir John Nicholas,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-26
+416,S043476,Sir Richard Ford,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-10-28
+417,S047669,"Thomas Clifford, Baron Clifford of Chudleigh",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-10-30
+418,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E000538-S017681-T000000,"Villiers, George",1671-10-31
+419,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",S030401,Master and Fellows of Christ&#x0027; College,1671-10-31
+420,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-11-01
+421,E019066-S007456-T000000,"Hatton, Christopher",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-11-14
+422,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E013261-S023644-T000000,"Leslie, John",1671-11-16
+423,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-11-18
+424,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1671-11-19
+425,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E912196-S001906-T000000,"Vere, Aubrey de",1671-11-19
+426,E008389-S012935-T000000,"Fuller, William",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-11-25
+427,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-11-25
+428,S024860,"John, Lord Lovelace",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-11-26
+429,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1671-11-27
+430,S040823,Sir Anthony Deane,E016283-S039896-T000000,Samuel Pepys,1671-11-28
+431,E916270-S043706-T000000,Sir Robert Howard,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-11-28
+432,E022114-S041675-T000000,Sir George Downing,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-12-02
+433,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-12-02
+434,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1671-12-03
+435,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E018557-S012448-T000000,"Sheldon, Gilbert",1671-12-03
+436,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-12-04
+437,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1671-12-04
+438,E019114-S048156-T000000,Thomas Hyde,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-12-05
+439,E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",E021779-S040314-T000000,"Ward, Seth",1671-12-06
+440,E000312-S012741-T000000,Dr. Richard Allestree,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-12-08
+441,S042687,"Sir John Knight, mayor of Bristol",E016283-S039896-T000000,Samuel Pepys,1671-12-11
+442,E014603-S035450-T000000,"Peter Mews, Bishop of Winchester",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-12-12
+443,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-12-12
+444,S026155,Lady Elizabeth Carr,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-12-18
+445,E019066-S007456-T000000,"Hatton, Christopher",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-12-18
+446,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E012119-S043025-T000000,Sir Leoline Jenkins,1671-12-21
+447,E921955-S041743-T000000,Sir George Rawdon,E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-12-23
+448,E916270-S043706-T000000,Sir Robert Howard,E016283-S039896-T000000,Samuel Pepys,1671-12-23
+449,E007558-S022969-T000000,John Ellis,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-12-27
+450,E020134-S040615-T000000,"Taylor, Silas",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-12-28
+451,S047480,Thomas Blood,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-12-28
+452,E000312-S012741-T000000,Dr. Richard Allestree,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-12-31
+453,E013473,"Lister, Martin",E400236,"Ray, John",1670-01-01
+454,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-01-03
+455,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1670-01-03
+456,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-01-03
+457,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-01-03
+458,E922238,"Martindale, Adam",E004830-S019312-T000000,"Oldenburg, Henry",1670-01-07
+459,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-01-07
+460,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1670-01-09
+461,E600089,"Borelli, Giovanni Alfonso",E600059-S012260-T000000,"Wallis, John (Dr)",1670-01-10
+462,E018557-S012448-T000000,"Sheldon, Gilbert",E018091-S052405-T000000,"William Sancroft, Archbishop of Canterbury",1670-01-10
+463,E004830-S019312-T000000,"Oldenburg, Henry",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-01-10
+464,E600059-S012260-T000000,"Wallis, John (Dr)",E600089,"Borelli, Giovanni Alfonso",1670-01-13
+465,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1670-01-14
+466,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1670-01-14
+467,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-01-16
+468,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-01-16
+469,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-01-17
+470,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-01-17
+471,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1670-01-18
+472,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-01-19
+473,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-01-19
+474,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1670-01-20
+475,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1670-01-20
+476,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1670-01-21
+477,E600059-S012260-T000000,"Wallis, John (Dr)",E600089,"Borelli, Giovanni Alfonso",1670-01-23
+478,E600059-S012260-T000000,"Wallis, John (Dr)",E600089,"Borelli, Giovanni Alfonso",1670-01-23
+479,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1670-01-24
+480,E004830-S019312-T000000,"Oldenburg, Henry",E902243,"Malpighi, Marcello",1670-01-25
+481,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1670-01-25
+482,E004830-S019312-T000000,"Oldenburg, Henry",E600088,"Sluse, René François de",1670-01-26
+483,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-01-28
+484,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1670-01-28
+485,E902358,"Barbarigo, Gregorio",E300115,"Kircher, Athanasius",1670-01-30
+486,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1670-01-30
+487,E012383,"Junius, Franciscus",E005604-S042501-T000000,Sir John Cotton,1670-01-30
+488,E009478-S012508-T000000,"Vossius, Isaac (Dr)",E005604-S042501-T000000,Sir John Cotton,1670-01-30
+489,E009478-S012508-T000000,"Vossius, Isaac (Dr)",E005604-S042501-T000000,Sir John Cotton,1670-01-30
+490,E009478-S012508-T000000,"Vossius, Isaac (Dr)",E005604-S042501-T000000,Sir John Cotton,1670-01-30
+491,E300821,"Worthington, John",E014890,"More, Henry (Dr)",1670-01-31
+492,E600096-S010574-T000000,"Medici, Cosimo III de'",E011119-S048100-T000000,Thomas Hobbes,1670-02-04
+493,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-02-04
+494,E004830-S019312-T000000,"Oldenburg, Henry",E600088,"Sluse, René François de",1670-02-05
+495,E003494,"Browne, Edward",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-05
+496,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-08
+497,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-08
+498,E004830-S019312-T000000,"Oldenburg, Henry",E012855,"Lambeck, Peter",1670-02-10
+499,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1670-02-10
+500,E008491-S047956-T000000,Thomas Gale,E000189-S014115-T000000,Edward Bernard,1670-02-10
+501,E019641,"Stanley, Thomas",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1670-02-12
+502,E003494,"Browne, Edward",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-12
+503,E012405-S019209-T000000,"Justel, Henri",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-12
+504,E019641,"Stanley, Thomas",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1670-02-12
+505,E012405-S019209-T000000,"Justel, Henri",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-12
+506,E004830-S019312-T000000,"Oldenburg, Henry",E003494,"Browne, Edward",1670-02-13
+507,E012405-S019209-T000000,"Justel, Henri",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-13
+508,E003476-S051213-T000000,"William Brouncker, Viscount Brouncker of Lyons",E600059-S012260-T000000,"Wallis, John (Dr)",1670-02-15
+509,E003494,"Browne, Edward",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-15
+510,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-15
+511,E012405-S019209-T000000,"Justel, Henri",E000189-S014115-T000000,Edward Bernard,1670-02-16
+512,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-17
+513,E012383,"Junius, Franciscus",E014265,"Marshall, Thomas",1670-02-17
+514,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1670-02-17
+515,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-18
+516,E004830-S019312-T000000,"Oldenburg, Henry",E012855,"Lambeck, Peter",1670-02-20
+517,E100041,"Charas, Moyse",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-22
+518,E011519,"Huet, Pierre Daniel",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-22
+519,E011519,"Huet, Pierre Daniel",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-22
+520,E100041,"Charas, Moyse",E004830-S019312-T000000,"Oldenburg, Henry",1670-02-22
+521,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-02-22
+522,E400236,"Ray, John",E013473,"Lister, Martin",1670-02-23
+523,E300364-S022991-T000000,John Evelyn,E004830-S019312-T000000,"Oldenburg, Henry",1670-02-25
+524,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1670-02-27
+525,E300821,"Worthington, John",E014890,"More, Henry (Dr)",1670-02-28
+526,E100048,"Cotton, Charles",E013473,"Lister, Martin",1670-02-28
+527,E020176-S048831-T000000,"Thomas Tenison, Archbishop of Canterbury",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-04
+528,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-04
+529,E004830-S019312-T000000,"Oldenburg, Henry",E902181,"De Graaf, Regnier",1670-03-05
+530,E300364-S022991-T000000,John Evelyn,E004830-S019312-T000000,"Oldenburg, Henry",1670-03-07
+531,E003494,"Browne, Edward",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-07
+532,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-08
+533,E600108,"Bartholin, Erasmus",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-09
+534,E100048,"Cotton, Charles",E013473,"Lister, Martin",1670-03-10
+535,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-10
+536,E004830-S019312-T000000,"Oldenburg, Henry",E300364-S022991-T000000,John Evelyn,1670-03-10
+537,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-10
+538,E004830-S019312-T000000,"Oldenburg, Henry",E100041,"Charas, Moyse",1670-03-10
+539,E600088,"Sluse, René François de",E600059-S012260-T000000,"Wallis, John (Dr)",1670-03-10
+540,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-10
+541,E004830-S019312-T000000,"Oldenburg, Henry",E003494,"Browne, Edward",1670-03-11
+542,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-12
+543,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1670-03-12
+544,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1670-03-12
+545,E300821,"Worthington, John",E014890,"More, Henry (Dr)",1670-03-14
+546,E300305,"Childrey, Joshua",E021779-S040314-T000000,"Ward, Seth",1670-03-14
+547,E004830-S019312-T000000,"Oldenburg, Henry",E902181,"De Graaf, Regnier",1670-03-15
+548,E300305,"Childrey, Joshua",E021779-S040314-T000000,"Ward, Seth",1670-03-15
+549,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-17
+550,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-03-18
+551,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-03-18
+552,E100041,"Charas, Moyse",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-19
+553,E003494,"Browne, Edward",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-19
+554,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-19
+555,E100041,"Charas, Moyse",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-19
+556,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-20
+557,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-20
+558,E013473,"Lister, Martin",E400236,"Ray, John",1670-03-21
+559,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-22
+560,E004830-S019312-T000000,"Oldenburg, Henry",E011519,"Huet, Pierre Daniel",1670-03-22
+561,E008491-S047956-T000000,Thomas Gale,E000189-S014115-T000000,Edward Bernard,1670-03-22
+562,E300821,"Worthington, John",E917332-S043193-T000000,Sir Orlando Bridgeman,1670-03-22
+563,E300533,"Tonge, Israel",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-22
+564,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-24
+565,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-03-25
+566,E300533,"Tonge, Israel",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-25
+567,E004830-S019312-T000000,"Oldenburg, Henry",E300817,"Winthrop, John",1670-03-26
+568,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-03-26
+569,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-03-26
+570,E004830-S019312-T000000,"Oldenburg, Henry",E300533,"Tonge, Israel",1670-03-27
+571,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-03-27
+572,E300821,"Worthington, John",E014890,"More, Henry (Dr)",1670-03-28
+573,E600059-S012260-T000000,"Wallis, John (Dr)",E600088,"Sluse, René François de",1670-03-29
+574,E300305,"Childrey, Joshua",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-29
+575,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1670-03-29
+576,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-29
+577,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-29
+578,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-29
+579,E004830-S019312-T000000,"Oldenburg, Henry",E003494,"Browne, Edward",1670-03-29
+580,E300305,"Childrey, Joshua",E600059-S012260-T000000,"Wallis, John (Dr)",1670-03-30
+581,E003494,"Browne, Edward",E004830-S019312-T000000,"Oldenburg, Henry",1670-03-31
+582,E021779-S040314-T000000,"Ward, Seth",E300821,"Worthington, John",1670-04-02
+583,E903317,"Chapelain, Jean",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1670-04-02
+584,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-03
+585,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-03
+586,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-04-05
+587,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-04-05
+588,E004830-S019312-T000000,"Oldenburg, Henry",E600088,"Sluse, René François de",1670-04-05
+589,E004830-S019312-T000000,"Oldenburg, Henry",E300817,"Winthrop, John",1670-04-05
+590,E600059-S012260-T000000,"Wallis, John (Dr)",E300305,"Childrey, Joshua",1670-04-08
+591,E300305,"Childrey, Joshua",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-08
+592,E600059-S012260-T000000,"Wallis, John (Dr)",E600088,"Sluse, René François de",1670-04-08
+593,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-08
+594,E004830-S019312-T000000,"Oldenburg, Henry",E003494,"Browne, Edward",1670-04-08
+595,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-08
+596,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-09
+597,E400236,"Ray, John",E013473,"Lister, Martin",1670-04-10
+598,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-11
+599,E011527-S010405-T000000,"Huygens, Constantijn",E019266,"Thévenot, Melchisédech",1670-04-11
+600,E300305,"Childrey, Joshua",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-12
+601,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1670-04-15
+602,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1670-04-15
+603,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-16
+604,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-19
+605,E004830-S019312-T000000,"Oldenburg, Henry",E300305,"Childrey, Joshua",1670-04-19
+606,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-04-19
+607,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-04-19
+608,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-19
+609,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-21
+610,E300305,"Childrey, Joshua",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-22
+611,E912405,"Kerckring, Theodor",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-25
+612,E902243,"Malpighi, Marcello",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-25
+613,E300305,"Childrey, Joshua",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-25
+614,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-04-26
+615,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-04-26
+616,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-04-26
+617,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-04-28
+618,E900815-S031558-T000000,"Ruyter, Michiel Adriaenszoon de",E903376-S024822-T000000,"Witt, Johan de",1670-04-29
+619,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-04-29
+620,E905324,"Ménage, Gilles",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1670-04-30
+621,E921957-S017587-T000000,"Rust, George",E900605-S001285-T000000,"Conway, Anne",1670-04-30
+622,E300115,"Kircher, Athanasius",E903584,Clement X,1670-05-01
+623,E012405-S019209-T000000,"Justel, Henri",E004830-S019312-T000000,"Oldenburg, Henry",1670-05-07
+624,E400236,"Ray, John",E013473,"Lister, Martin",1670-05-08
+625,E003476-S051213-T000000,"William Brouncker, Viscount Brouncker of Lyons",E011457,"Howard, Henry",1670-05-10
+626,E902629,"Braunschweig-Lüneburg, Sophia Elisabeth von",E300115,"Kircher, Athanasius",1670-05-12
+627,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-05-13
+628,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1670-05-13
+629,E903378,"Du Hamel, Jean Baptiste",E004830-S019312-T000000,"Oldenburg, Henry",1670-05-14
+630,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-05-15
+631,E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",E300115,"Kircher, Athanasius",1670-05-16
+632,E012405-S019209-T000000,"Justel, Henri",E004830-S019312-T000000,"Oldenburg, Henry",1670-05-17
+633,E004830-S019312-T000000,"Oldenburg, Henry",E300817,"Winthrop, John",1670-05-19
+634,E004830-S019312-T000000,"Oldenburg, Henry",E012405-S019209-T000000,"Justel, Henri",1670-05-22
+635,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1670-05-23
+636,E903378,"Du Hamel, Jean Baptiste",E004830-S019312-T000000,"Oldenburg, Henry",1670-05-24
+637,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-05-26
+638,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1670-05-27
+639,E003494,"Browne, Edward",E004830-S019312-T000000,"Oldenburg, Henry",1670-05-30
+640,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-05-30
+641,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-05-30
+642,E006850,"Dodwell, Henry",E000189-S014115-T000000,Edward Bernard,1670-06-02
+643,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-06-03
+644,E300533,"Tonge, Israel",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-06
+645,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-07
+646,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-09
+647,E901952,"Stansel, Valentine",E300115,"Kircher, Athanasius",1670-06-09
+648,E003494,"Browne, Edward",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-09
+649,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-06-10
+650,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-06-10
+651,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1670-06-13
+652,E300829,"Ingelo, Nathaniel (Dr)",E300821,"Worthington, John",1670-06-14
+653,E013473,"Lister, Martin",E400236,"Ray, John",1670-06-14
+654,E904647,"Plante, Franciscus",E011527-S010405-T000000,"Huygens, Constantijn",1670-06-16
+655,E300533,"Tonge, Israel",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-16
+656,E012119-S043025-T000000,Sir Leoline Jenkins,E018091-S052405-T000000,"William Sancroft, Archbishop of Canterbury",1670-06-16
+657,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-17
+658,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-06-17
+659,E902243,"Malpighi, Marcello",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-17
+660,E903378,"Du Hamel, Jean Baptiste",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-18
+661,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1670-06-18
+662,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1670-06-19
+663,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1670-06-19
+664,E902181,"De Graaf, Regnier",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-19
+665,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-06-21
+666,E300115,"Kircher, Athanasius",E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",1670-06-23
+667,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-06-24
+668,E600088,"Sluse, René François de",E011527-S010405-T000000,"Huygens, Constantijn",1670-06-24
+669,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-25
+670,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-06-27
+671,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-06-28
+672,E903378,"Du Hamel, Jean Baptiste",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-28
+673,E902181,"De Graaf, Regnier",E004830-S019312-T000000,"Oldenburg, Henry",1670-06-29
+674,E300821,"Worthington, John",E014087-S023729-T000000,"Maitland, John",1670-06-30
+675,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-06-30
+676,E002852,"Bourignon, Antoinette",E016108,"Patin, Guy",1670-07-03
+677,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-07-04
+678,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1670-07-05
+679,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-07-05
+680,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-07-08
+681,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1670-07-08
+682,E400236,"Ray, John",E013473,"Lister, Martin",1670-07-09
+683,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-07-11
+684,E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",E004830-S019312-T000000,"Oldenburg, Henry",1670-07-13
+685,E004830-S019312-T000000,"Oldenburg, Henry",E600088,"Sluse, René François de",1670-07-14
+686,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-07-14
+687,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-07-15
+688,E004830-S019312-T000000,"Oldenburg, Henry",E902243,"Malpighi, Marcello",1670-07-15
+689,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1670-07-16
+690,E004830-S019312-T000000,"Oldenburg, Henry",E300364-S022991-T000000,John Evelyn,1670-07-18
+691,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-07-18
+692,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1670-07-19
+693,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-07-19
+694,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-07-19
+695,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-07-21
+696,E002852,"Bourignon, Antoinette",E016108,"Patin, Guy",1670-07-21
+697,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-07-22
+698,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-07-22
+699,E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",E011119-S048100-T000000,Thomas Hobbes,1670-07-23
+700,E004830-S019312-T000000,"Oldenburg, Henry",E904717,"Rudbeck, Olof",1670-07-23
+701,E600088,"Sluse, René François de",E600059-S012260-T000000,"Wallis, John (Dr)",1670-07-25
+702,E004830-S019312-T000000,"Oldenburg, Henry",E902243,"Malpighi, Marcello",1670-07-25
+703,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1670-07-25
+704,E600088,"Sluse, René François de",E600059-S012260-T000000,"Wallis, John (Dr)",1670-07-25
+705,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-07-25
+706,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-07-26
+707,E400236,"Ray, John",E013473,"Lister, Martin",1670-07-27
+708,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-07-28
+709,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-07-28
+710,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-07-30
+711,E902822,"Swammerdam, Jan",E019266,"Thévenot, Melchisédech",1670-07-31
+712,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-01
+713,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-01
+714,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-08-02
+715,E004830-S019312-T000000,"Oldenburg, Henry",E904717,"Rudbeck, Olof",1670-08-02
+716,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-04
+717,E004830-S019312-T000000,"Oldenburg, Henry",E902181,"De Graaf, Regnier",1670-08-05
+718,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-08-07
+719,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-08-07
+720,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-08-08
+721,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-09
+722,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-10
+723,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-08-12
+724,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-08-13
+725,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-14
+726,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-14
+727,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1670-08-15
+728,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-08-16
+729,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1670-08-16
+730,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-08-16
+731,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-08-16
+732,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-08-16
+733,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-17
+734,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-19
+735,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-19
+736,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-19
+737,E004830-S019312-T000000,"Oldenburg, Henry",E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",1670-08-20
+738,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-20
+739,E904834,"La Trémouille, Henri de",E903376-S024822-T000000,"Witt, Johan de",1670-08-22
+740,E300817,"Winthrop, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-26
+741,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-27
+742,E009471-S041856-T000000,"Sir Harbottle Grimston, Speaker of the House of Commons",E015049-S037742-T000000,Richard Love,1670-08-27
+743,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-08-29
+744,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-08-30
+745,E400236,"Ray, John",E013473,"Lister, Martin",1670-09-01
+746,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-09-02
+747,E904277-S035294-T000000,Pensionary Fagel,E903376-S024822-T000000,"Witt, Johan de",1670-09-03
+748,E011527-S010405-T000000,"Huygens, Constantijn",E903369,"Gramont, Antoine",1670-09-04
+749,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1670-09-04
+750,E300817,"Winthrop, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-09-05
+751,E005454-S027908-T000000,Lord Shaftesbury,E013698,"Locke, John",1670-09-08
+752,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-09-08
+753,E004830-S019312-T000000,"Oldenburg, Henry",E300472,"Hevelius, Johannes",1670-09-08
+754,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1670-09-12
+755,E004830-S019312-T000000,"Oldenburg, Henry",E000189-S014115-T000000,Edward Bernard,1670-09-13
+756,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-09-13
+757,E011527-S010405-T000000,"Huygens, Constantijn",E017558,"Gronovius, Johann Frederick",1670-09-16
+758,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1670-09-17
+759,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1670-09-17
+760,E004830-S019312-T000000,"Oldenburg, Henry",E300472,"Hevelius, Johannes",1670-09-18
+761,E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",E004830-S019312-T000000,"Oldenburg, Henry",1670-09-18
+762,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1670-09-20
+763,E004830-S019312-T000000,"Oldenburg, Henry",E000189-S014115-T000000,Edward Bernard,1670-09-23
+764,E902488,"Magalotti, Lorenzo",E004830-S019312-T000000,"Oldenburg, Henry",1670-09-23
+765,E004830-S019312-T000000,"Oldenburg, Henry",E600088,"Sluse, René François de",1670-09-24
+766,E902633,"Spinola, Giambattista",E300115,"Kircher, Athanasius",1670-09-24
+767,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1670-09-25
+768,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-09-27
+769,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-09-30
+770,E902488,"Magalotti, Lorenzo",E004830-S019312-T000000,"Oldenburg, Henry",1670-10-03
+771,E004830-S019312-T000000,"Oldenburg, Henry",E600088,"Sluse, René François de",1670-10-04
+772,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-10-04
+773,E300821,"Worthington, John",E014890,"More, Henry (Dr)",1670-10-06
+774,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-10-07
+775,E300817,"Winthrop, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-10-11
+776,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-10-13
+777,E600096-S010574-T000000,"Medici, Cosimo III de'",E600059-S012260-T000000,"Wallis, John (Dr)",1670-10-13
+778,E300115,"Kircher, Athanasius",E900860-S015130-T000000,"Leopold I, Holy Roman Emperor",1670-10-13
+779,E017871-S036110-T000000,"Rupert, Prince and Count Palatine of the Rhine",E903376-S024822-T000000,"Witt, Johan de",1670-10-14
+780,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-10-17
+781,E013473,"Lister, Martin",E400236,"Ray, John",1670-10-18
+782,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-10-18
+783,E012405-S019209-T000000,"Justel, Henri",E004830-S019312-T000000,"Oldenburg, Henry",1670-10-19
+784,E011519,"Huet, Pierre Daniel",E004830-S019312-T000000,"Oldenburg, Henry",1670-10-20
+785,E004830-S019312-T000000,"Oldenburg, Henry",E022443-S042999-T000000,"Williamson, Joseph (Sir)",1670-10-21
+786,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1670-10-21
+787,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-10-21
+788,E300817,"Winthrop, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-10-21
+789,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-10-23
+790,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1670-10-23
+791,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-10-24
+792,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-10-25
+793,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-10-25
+794,E300817,"Winthrop, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-10-26
+795,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-10-28
+796,E902822,"Swammerdam, Jan",E019266,"Thévenot, Melchisédech",1670-10-30
+797,E900815-S031558-T000000,"Ruyter, Michiel Adriaenszoon de",E903376-S024822-T000000,"Witt, Johan de",1670-10-30
+798,E011519,"Huet, Pierre Daniel",E004830-S019312-T000000,"Oldenburg, Henry",1670-10-30
+799,E000393-S036175-T000000,"Solms-Braunfels, Amalia von",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1670-10-31
+800,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1670-10-31
+801,E013898,"Ludolf, Job",E004830-S019312-T000000,"Oldenburg, Henry",1670-10-31
+802,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-11-01
+803,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-11-01
+804,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-11-03
+805,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-03
+806,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-04
+807,E300817,"Winthrop, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-05
+808,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-07
+809,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-11-08
+810,E902243,"Malpighi, Marcello",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-10
+811,E013898,"Ludolf, Job",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-10
+812,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-11-11
+813,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-11-11
+814,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-12
+815,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-13
+816,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-13
+817,E907146,"Morhof, Daniel Georg",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-13
+818,E922238,"Martindale, Adam",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-14
+819,E300821,"Worthington, John",E014890,"More, Henry (Dr)",1670-11-14
+820,E004830-S019312-T000000,"Oldenburg, Henry",E922238,"Martindale, Adam",1670-11-15
+821,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-15
+822,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-11-15
+823,E700407,"Schurman, Anna Maria van",E913654-S036185-T000000,"Sophia, Electress of Hanover",1670-11-16
+824,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-16
+825,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-11-18
+826,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-11-18
+827,E600059-S012260-T000000,"Wallis, John (Dr)",E600096-S010574-T000000,"Medici, Cosimo III de'",1670-11-19
+828,E004830-S019312-T000000,"Oldenburg, Henry",E300472,"Hevelius, Johannes",1670-11-21
+829,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-11-22
+830,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-22
+831,E004830-S019312-T000000,"Oldenburg, Henry",E903378,"Du Hamel, Jean Baptiste",1670-11-22
+832,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-24
+833,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-11-24
+834,E300115,"Kircher, Athanasius",E902199,"Rolfink, Werner",1670-11-25
+835,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-11-25
+836,E004830-S019312-T000000,"Oldenburg, Henry",E922238,"Martindale, Adam",1670-11-25
+837,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-25
+838,E004830-S019312-T000000,"Oldenburg, Henry",E600108,"Bartholin, Erasmus",1670-11-25
+839,E922238,"Martindale, Adam",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-26
+840,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-26
+841,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-11-28
+842,E922238,"Martindale, Adam",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-30
+843,E000189-S014115-T000000,Edward Bernard,E004830-S019312-T000000,"Oldenburg, Henry",1670-11-30
+844,E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",E004830-S019312-T000000,"Oldenburg, Henry",1670-11-30
+845,E003476-S051213-T000000,"William Brouncker, Viscount Brouncker of Lyons",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-01
+846,E004830-S019312-T000000,"Oldenburg, Henry",E000189-S014115-T000000,Edward Bernard,1670-12-01
+847,E004830-S019312-T000000,"Oldenburg, Henry",E300472,"Hevelius, Johannes",1670-12-01
+848,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-12-01
+849,E922238,"Martindale, Adam",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-02
+850,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-02
+851,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-04
+852,E000189-S014115-T000000,Edward Bernard,E004830-S019312-T000000,"Oldenburg, Henry",1670-12-04
+853,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-04
+854,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-05
+855,E922238,"Martindale, Adam",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-06
+856,E600089,"Borelli, Giovanni Alfonso",E600059-S012260-T000000,"Wallis, John (Dr)",1670-12-06
+857,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1670-12-06
+858,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-12-11
+859,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-12-11
+860,E011527-S010405-T000000,"Huygens, Constantijn",E012580-S048216-T000000,Thomas Killigrew,1670-12-11
+861,E000189-S014115-T000000,Edward Bernard,E004830-S019312-T000000,"Oldenburg, Henry",1670-12-11
+862,E922238,"Martindale, Adam",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-12
+863,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-12-13
+864,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-13
+865,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-15
+866,E004830-S019312-T000000,"Oldenburg, Henry",E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",1670-12-18
+867,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-12-19
+868,E004830-S019312-T000000,"Oldenburg, Henry",E013898,"Ludolf, Job",1670-12-20
+869,E004830-S019312-T000000,"Oldenburg, Henry",E902243,"Malpighi, Marcello",1670-12-20
+870,E003476-S051213-T000000,"William Brouncker, Viscount Brouncker of Lyons",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-20
+871,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1670-12-22
+872,E600059-S012260-T000000,"Wallis, John (Dr)",E003476-S051213-T000000,"William Brouncker, Viscount Brouncker of Lyons",1670-12-22
+873,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-22
+874,E002622-S014197-T000000,"Edward Conway, Earl of Conway",E921955-S041743-T000000,Sir George Rawdon,1670-12-22
+875,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-23
+876,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-12-23
+877,E004830-S019312-T000000,"Oldenburg, Henry",E922238,"Martindale, Adam",1670-12-23
+878,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-23
+879,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1670-12-27
+880,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-27
+881,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1670-12-27
+882,E902248,"Denis, Jean-Baptiste",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-29
+883,E902248,"Denis, Jean-Baptiste",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-29
+884,E600059-S012260-T000000,"Wallis, John (Dr)",E006553-S025923-T000000,"William III and II, King of England, Scotland, and Ireland",1670-12-30
+885,E004830-S019312-T000000,"Oldenburg, Henry",E013898,"Ludolf, Job",1670-12-30
+886,E004830-S019312-T000000,"Oldenburg, Henry",E902243,"Malpighi, Marcello",1670-12-30
+887,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-12-31
+888,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-12-31
+889,E011527-S010405-T000000,"Huygens, Constantijn",E022859-S041055-T000000,"Wren, Christopher (Sir)",1670-12-31
+890,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-12-31
+891,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-12-31
+892,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-12-31
+893,E915139-S024988-T000000,Joseph Bampfield,E903376-S024822-T000000,"Witt, Johan de",1670-12-31
+894,E912405,"Kerckring, Theodor",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-31
+895,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1670-12-31
+896,E600088,"Sluse, René François de",E600059-S012260-T000000,"Wallis, John (Dr)",1670-12-31
+897,E013473,"Lister, Martin",E400236,"Ray, John",1671-01-01
+898,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1671-01-01
+899,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-02
+900,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-02
+901,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-01-03
+902,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-10
+903,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-10
+904,E004830-S019312-T000000,"Oldenburg, Henry",E902248,"Denis, Jean-Baptiste",1671-01-12
+905,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-13
+906,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-01-13
+907,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-01-13
+908,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-13
+909,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-01-13
+910,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-01-14
+911,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-01-16
+912,E004830-S019312-T000000,"Oldenburg, Henry",E011519,"Huet, Pierre Daniel",1671-01-16
+913,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-01-17
+914,E922238,"Martindale, Adam",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-17
+915,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-01-18
+916,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-20
+917,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-20
+918,E004830-S019312-T000000,"Oldenburg, Henry",E600088,"Sluse, René François de",1671-01-22
+919,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-23
+920,E400236,"Ray, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-23
+921,E300533,"Tonge, Israel",E004830-S019312-T000000,"Oldenburg, Henry",1671-01-25
+922,E004830-S019312-T000000,"Oldenburg, Henry",E011519,"Huet, Pierre Daniel",1671-01-26
+923,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-01-26
+924,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-01-28
+925,E004830-S019312-T000000,"Oldenburg, Henry",E012855,"Lambeck, Peter",1671-01-28
+926,E004830-S019312-T000000,"Oldenburg, Henry",E300472,"Hevelius, Johannes",1671-01-28
+927,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-01-28
+928,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-01-30
+929,E013473,"Lister, Martin",E400236,"Ray, John",1671-01-30
+930,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-01-31
+931,E004830-S019312-T000000,"Oldenburg, Henry",E922238,"Martindale, Adam",1671-02-02
+932,E600372,"Cassini, Jean Dominique",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-02
+933,E600372,"Cassini, Jean Dominique",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-02
+934,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-02-03
+935,E018557-S012448-T000000,"Sheldon, Gilbert",E017953-S012334-T000000,"Ryves, Bruno (Dr)",1671-02-03
+936,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1671-02-04
+937,E000189-S014115-T000000,Edward Bernard,E004830-S019312-T000000,"Oldenburg, Henry",1671-02-04
+938,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-04
+939,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-02-04
+940,E922238,"Martindale, Adam",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-04
+941,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-04
+942,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-05
+943,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-02-06
+944,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-07
+945,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-07
+946,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-07
+947,E400236,"Ray, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-08
+948,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-10
+949,E902243,"Malpighi, Marcello",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-10
+950,E011527-S010405-T000000,"Huygens, Constantijn",E023197,"Nassau-Siegen, Johan Maurits van",1671-02-10
+951,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-02-11
+952,E004830-S019312-T000000,"Oldenburg, Henry",E922238,"Martindale, Adam",1671-02-12
+953,E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",E903376-S024822-T000000,"Witt, Johan de",1671-02-13
+954,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-02-14
+955,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-02-14
+956,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-02-14
+957,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-02-14
+958,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-02-14
+959,E021031-S049939-T000000,Van Beuningen,E903376-S024822-T000000,"Witt, Johan de",1671-02-14
+960,E021031-S049939-T000000,Van Beuningen,E904277-S035294-T000000,Pensionary Fagel,1671-02-14
+961,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-02-17
+962,E400236,"Ray, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-18
+963,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-18
+964,E013473,"Lister, Martin",E400236,"Ray, John",1671-02-18
+965,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-18
+966,E902243,"Malpighi, Marcello",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-20
+967,E600096-S010574-T000000,"Medici, Cosimo III de'",E300115,"Kircher, Athanasius",1671-02-20
+968,E903322,"Colbert, Jean-Baptiste",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1671-02-20
+969,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-02-21
+970,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-02-21
+971,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-24
+972,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-02-25
+973,E003476-S051213-T000000,"William Brouncker, Viscount Brouncker of Lyons",E600059-S012260-T000000,"Wallis, John (Dr)",1671-02-25
+974,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-25
+975,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-02-25
+976,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-25
+977,E903317,"Chapelain, Jean",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1671-02-28
+978,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-02-28
+979,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-02-28
+980,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-04
+981,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-04
+982,E011519,"Huet, Pierre Daniel",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-06
+983,E011519,"Huet, Pierre Daniel",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-06
+984,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-03-07
+985,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-03-07
+986,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-03-07
+987,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-03-07
+988,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-09
+989,E012855,"Lambeck, Peter",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-09
+990,E012855,"Lambeck, Peter",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-09
+991,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-09
+992,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-03-11
+993,E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-11
+994,E009376-S012687-T000000,"Grew, Nehemiah",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-12
+995,E400236,"Ray, John",E013473,"Lister, Martin",1671-03-13
+996,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-14
+997,E020176-S048831-T000000,"Thomas Tenison, Archbishop of Canterbury",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-14
+998,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-03-14
+999,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-14
+1000,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-16
+1001,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-03-17
+1002,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-19
+1003,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-03-21
+1004,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-03-21
+1005,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-23
+1006,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1671-03-24
+1007,E004830-S019312-T000000,"Oldenburg, Henry",E902243,"Malpighi, Marcello",1671-03-25
+1008,E300821,"Worthington, John",E014890,"More, Henry (Dr)",1671-03-26
+1009,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-27
+1010,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-03-27
+1011,E013473,"Lister, Martin",E400236,"Ray, John",1671-03-31
+1012,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-02
+1013,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-02
+1014,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-02
+1015,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-04-04
+1016,E019475-S002308-T000000,"Spanheim, Ezekiel",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1671-04-05
+1017,E020176-S048831-T000000,"Thomas Tenison, Archbishop of Canterbury",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-06
+1018,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-07
+1019,E903317,"Chapelain, Jean",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1671-04-08
+1020,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-08
+1021,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-04-09
+1022,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-04-09
+1023,E005604-S042501-T000000,Sir John Cotton,E011527-S010405-T000000,"Huygens, Constantijn",1671-04-10
+1024,E600089,"Borelli, Giovanni Alfonso",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-10
+1025,E600089,"Borelli, Giovanni Alfonso",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-10
+1026,E004830-S019312-T000000,"Oldenburg, Henry",E300817,"Winthrop, John",1671-04-11
+1027,E011627-S036273-T000000,"Provost and Fellows of Trinity College, Dublin",E013698,"Locke, John",1671-04-11
+1028,E008491-S047956-T000000,Thomas Gale,E000189-S014115-T000000,Edward Bernard,1671-04-12
+1029,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-04-14
+1030,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-04-14
+1031,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-04-14
+1032,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-04-15
+1033,E019475-S002308-T000000,"Spanheim, Ezekiel",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1671-04-15
+1034,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-04-15
+1035,E904004,"Beverningh, Hieronymus van",E903376-S024822-T000000,"Witt, Johan de",1671-04-15
+1036,E904004,"Beverningh, Hieronymus van",E903376-S024822-T000000,"Witt, Johan de",1671-04-15
+1037,E902822,"Swammerdam, Jan",E019266,"Thévenot, Melchisédech",1671-04-16
+1038,E020176-S048831-T000000,"Thomas Tenison, Archbishop of Canterbury",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-16
+1039,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-17
+1040,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-17
+1041,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1671-04-18
+1042,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-18
+1043,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-18
+1044,E004830-S019312-T000000,"Oldenburg, Henry",E300817,"Winthrop, John",1671-04-21
+1045,E902331,"Weikhard von Auersperg, Johann",E300115,"Kircher, Athanasius",1671-04-23
+1046,E011527-S010405-T000000,"Huygens, Constantijn",E005604-S042501-T000000,Sir John Cotton,1671-04-23
+1047,E400236,"Ray, John",E013473,"Lister, Martin",1671-04-23
+1048,E004830-S019312-T000000,"Oldenburg, Henry",E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",1671-04-24
+1049,E011527-S010405-T000000,"Huygens, Constantijn",E005604-S042501-T000000,Sir John Cotton,1671-04-24
+1050,E004830-S019312-T000000,"Oldenburg, Henry",E300472,"Hevelius, Johannes",1671-04-28
+1051,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-28
+1052,E004830-S019312-T000000,"Oldenburg, Henry",E600088,"Sluse, René François de",1671-04-28
+1053,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-04-28
+1054,E012405-S019209-T000000,"Justel, Henri",E004830-S019312-T000000,"Oldenburg, Henry",1671-04-29
+1055,E904004,"Beverningh, Hieronymus van",E903376-S024822-T000000,"Witt, Johan de",1671-04-29
+1056,E011527-S010405-T000000,"Huygens, Constantijn",E012580-S048216-T000000,Thomas Killigrew,1671-04-30
+1057,E011527-S010405-T000000,"Huygens, Constantijn",E005604-S042501-T000000,Sir John Cotton,1671-04-30
+1058,E003494,"Browne, Edward",E003523,"Browne, Thomas (Sir)",1671-04-30
+1059,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-01
+1060,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-01
+1061,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-01
+1062,E004830-S019312-T000000,"Oldenburg, Henry",E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",1671-05-04
+1063,E004830-S019312-T000000,"Oldenburg, Henry",E600088,"Sluse, René François de",1671-05-08
+1064,E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-09
+1065,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-05-09
+1066,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-05-10
+1067,E904004,"Beverningh, Hieronymus van",E903376-S024822-T000000,"Witt, Johan de",1671-05-11
+1068,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-13
+1069,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-13
+1070,E011527-S010405-T000000,"Huygens, Constantijn",E100041,"Charas, Moyse",1671-05-14
+1071,E011527-S010405-T000000,"Huygens, Constantijn",E904266,"Enclos, Anne de l'",1671-05-14
+1072,E002620-S051125-T000000,William Blathwaite,E022443-S042999-T000000,"Williamson, Joseph (Sir)",1671-05-15
+1073,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-05-19
+1074,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-05-19
+1075,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-19
+1076,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-05-19
+1077,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-19
+1078,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-05-22
+1079,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-22
+1080,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-05-22
+1081,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-23
+1082,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-23
+1083,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-23
+1084,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-23
+1085,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-23
+1086,E011527-S010405-T000000,"Huygens, Constantijn",E000393-S036175-T000000,"Solms-Braunfels, Amalia von",1671-05-26
+1087,E011527-S010405-T000000,"Huygens, Constantijn",E000393-S036175-T000000,"Solms-Braunfels, Amalia von",1671-05-26
+1088,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-05-26
+1089,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-05-26
+1090,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-05-27
+1091,E014890,"More, Henry (Dr)",E300821,"Worthington, John",1671-05-29
+1092,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-29
+1093,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1671-05-30
+1094,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-30
+1095,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-05-31
+1096,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-05-31
+1097,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-01
+1098,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-01
+1099,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-02
+1100,E007902-S023013-T000000,"John Fell, Bishop of Oxford",E018091-S052405-T000000,"William Sancroft, Archbishop of Canterbury",1671-06-02
+1101,E902243,"Malpighi, Marcello",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-03
+1102,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-06-03
+1103,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-06-05
+1104,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-06-05
+1105,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-06-05
+1106,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-06-06
+1107,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-06-06
+1108,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-06-06
+1109,E004830-S019312-T000000,"Oldenburg, Henry",E300472,"Hevelius, Johannes",1671-06-08
+1110,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1671-06-08
+1111,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-08
+1112,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-06-09
+1113,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-09
+1114,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-09
+1115,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-10
+1116,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-06-10
+1117,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-10
+1118,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-10
+1119,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-12
+1120,E004830-S019312-T000000,"Oldenburg, Henry",E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",1671-06-12
+1121,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-12
+1122,E004830-S019312-T000000,"Oldenburg, Henry",E400236,"Ray, John",1671-06-13
+1123,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-14
+1124,E000189-S014115-T000000,Edward Bernard,E006871-S022202-T000000,Johann Georg Gr&#x00E4;ve,1671-06-16
+1125,E600372,"Cassini, Jean Dominique",E300115,"Kircher, Athanasius",1671-06-17
+1126,E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-18
+1127,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-19
+1128,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-19
+1129,E902181,"De Graaf, Regnier",E902822,"Swammerdam, Jan",1671-06-19
+1130,E006850,"Dodwell, Henry",E000189-S014115-T000000,Edward Bernard,1671-06-19
+1131,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-20
+1132,E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-20
+1133,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-06-20
+1134,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-20
+1135,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-06-20
+1136,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-06-21
+1137,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-06-21
+1138,E004830-S019312-T000000,"Oldenburg, Henry",E300472,"Hevelius, Johannes",1671-06-22
+1139,E004830-S019312-T000000,"Oldenburg, Henry",E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",1671-06-22
+1140,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1671-06-23
+1141,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-06-24
+1142,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-24
+1143,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-24
+1144,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-27
+1145,E004830-S019312-T000000,"Oldenburg, Henry",E000189-S014115-T000000,Edward Bernard,1671-06-27
+1146,E902181,"De Graaf, Regnier",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-29
+1147,E902181,"De Graaf, Regnier",E004830-S019312-T000000,"Oldenburg, Henry",1671-06-29
+1148,E002622-S014197-T000000,"Edward Conway, Earl of Conway",E921955-S041743-T000000,Sir George Rawdon,1671-06-30
+1149,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-07-02
+1150,E400236,"Ray, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-03
+1151,E902822,"Swammerdam, Jan",E902181,"De Graaf, Regnier",1671-07-03
+1152,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-04
+1153,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-07-04
+1154,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-07-04
+1155,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-05
+1156,E004830-S019312-T000000,"Oldenburg, Henry",E000189-S014115-T000000,Edward Bernard,1671-07-07
+1157,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-07
+1158,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-07
+1159,E400236,"Ray, John",E013473,"Lister, Martin",1671-07-08
+1160,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-10
+1161,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-07-13
+1162,E400236,"Ray, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-13
+1163,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-14
+1164,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-15
+1165,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-15
+1166,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-17
+1167,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-18
+1168,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-18
+1169,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-20
+1170,E008491-S047956-T000000,Thomas Gale,E000189-S014115-T000000,Edward Bernard,1671-07-22
+1171,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-07-23
+1172,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-07-23
+1173,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-07-23
+1174,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1671-07-24
+1175,E007999-S042578-T000000,"Sir John Finch, his brother-in-law",E002622-S014197-T000000,"Edward Conway, Earl of Conway",1671-07-25
+1176,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-26
+1177,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-27
+1178,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-07-27
+1179,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-07-27
+1180,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-07-27
+1181,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-07-27
+1182,E900860-S015130-T000000,"Leopold I, Holy Roman Emperor",E300115,"Kircher, Athanasius",1671-07-29
+1183,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-01
+1184,E005604-S042501-T000000,Sir John Cotton,E009478-S012508-T000000,"Vossius, Isaac (Dr)",1671-08-01
+1185,E001471-S030430-T000000,"Master and Fellows of Trinity College, Cambridge",E000189-S014115-T000000,Edward Bernard,1671-08-01
+1186,E005604-S042501-T000000,Sir John Cotton,E009478-S012508-T000000,"Vossius, Isaac (Dr)",1671-08-01
+1187,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-04
+1188,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-08-06
+1189,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-08-06
+1190,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-08-06
+1191,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-08-06
+1192,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-10
+1193,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-08-11
+1194,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-08-11
+1195,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-11
+1196,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-13
+1197,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-14
+1198,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-14
+1199,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-15
+1200,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-08-15
+1201,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-08-15
+1202,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-08-15
+1203,E004830-S019312-T000000,"Oldenburg, Henry",E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",1671-08-15
+1204,E004454-S051301-T000000,"William Cavendish, Duke of Newcastle upon Tyne",E011527-S010405-T000000,"Huygens, Constantijn",1671-08-16
+1205,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-16
+1206,E017871-S036110-T000000,"Rupert, Prince and Count Palatine of the Rhine",E903376-S024822-T000000,"Witt, Johan de",1671-08-17
+1207,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-08-18
+1208,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1671-08-18
+1209,E600372,"Cassini, Jean Dominique",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-20
+1210,E600372,"Cassini, Jean Dominique",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-20
+1211,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-08-20
+1212,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-20
+1213,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-08-20
+1214,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-20
+1215,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-23
+1216,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-08-23
+1217,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-23
+1218,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-23
+1219,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-24
+1220,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-08-25
+1221,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-08-25
+1222,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-25
+1223,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-26
+1224,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-26
+1225,E004830-S019312-T000000,"Oldenburg, Henry",E600372,"Cassini, Jean Dominique",1671-08-26
+1226,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-08-31
+1227,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-09-02
+1228,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1671-09-03
+1229,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-09-04
+1230,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-09-04
+1231,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-09-04
+1232,E004830-S019312-T000000,"Oldenburg, Henry",E600372,"Cassini, Jean Dominique",1671-09-05
+1233,E004830-S019312-T000000,"Oldenburg, Henry",E400236,"Ray, John",1671-09-10
+1234,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1671-09-10
+1235,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-09-10
+1236,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-09-11
+1237,E400236,"Ray, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-09-12
+1238,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-09-13
+1239,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-09-14
+1240,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-09-14
+1241,E011527-S010405-T000000,"Huygens, Constantijn",E004454-S051301-T000000,"William Cavendish, Duke of Newcastle upon Tyne",1671-09-19
+1242,E011527-S010405-T000000,"Huygens, Constantijn",E903311,"Cavendish, Margaret",1671-09-19
+1243,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-09-21
+1244,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-09-21
+1245,E400236,"Ray, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-09-22
+1246,E902321-S006658-T000000,"Hessen-Darmstadt, Friedrich von",E300115,"Kircher, Athanasius",1671-09-22
+1247,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-09-23
+1248,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-09-23
+1249,E600059-S012260-T000000,"Wallis, John (Dr)",E011119-S048100-T000000,Thomas Hobbes,1671-09-30
+1250,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-09-30
+1251,E003494,"Browne, Edward",E003523,"Browne, Thomas (Sir)",1671-09-30
+1252,E600059-S012260-T000000,"Wallis, John (Dr)",E011119-S048100-T000000,Thomas Hobbes,1671-09-30
+1253,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1671-10-01
+1254,E016661-S014514-T000000,"Pococke, Edward",E600059-S012260-T000000,"Wallis, John (Dr)",1671-10-01
+1255,E600059-S012260-T000000,"Wallis, John (Dr)",E016661-S014514-T000000,"Pococke, Edward",1671-10-03
+1256,E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",E903479,"Spinoza, Baruch",1671-10-05
+1257,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1671-10-07
+1258,E004830-S019312-T000000,"Oldenburg, Henry",E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",1671-10-08
+1259,E300817,"Winthrop, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-10-10
+1260,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-10-10
+1261,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-10-10
+1262,E004830-S019312-T000000,"Oldenburg, Henry",E400236,"Ray, John",1671-10-11
+1263,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-10-12
+1264,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-10-16
+1265,E903317,"Chapelain, Jean",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1671-10-19
+1266,E004830-S019312-T000000,"Oldenburg, Henry",E400236,"Ray, John",1671-10-21
+1267,E004830-S019312-T000000,"Oldenburg, Henry",E906453-S026312-T000000,"Willughby, Francis",1671-10-21
+1268,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-10-21
+1269,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-10-22
+1270,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-10-22
+1271,E300115,"Kircher, Athanasius",E902303,"Oliva, Giovanni Paolo",1671-10-23
+1272,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-10-24
+1273,E019508-S001553-T000000,"Sparrow, Anthony (Dr)",E018557-S012448-T000000,"Sheldon, Gilbert",1671-10-24
+1274,E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",E004830-S019312-T000000,"Oldenburg, Henry",1671-10-25
+1275,E900993,"Becher, Johann Joachim",E004830-S019312-T000000,"Oldenburg, Henry",1671-10-26
+1276,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-10-26
+1277,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-10-26
+1278,E004830-S019312-T000000,"Oldenburg, Henry",E902181,"De Graaf, Regnier",1671-10-26
+1279,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1671-10-27
+1280,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-10-28
+1281,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-10-31
+1282,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-10-31
+1283,E902243,"Malpighi, Marcello",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-01
+1284,E004830-S019312-T000000,"Oldenburg, Henry",E600089,"Borelli, Giovanni Alfonso",1671-11-02
+1285,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-11-04
+1286,E902364,Bernhard Gustav von Baden-Durlach,E300115,"Kircher, Athanasius",1671-11-04
+1287,E013473,"Lister, Martin",E400236,"Ray, John",1671-11-04
+1288,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-06
+1289,E019266,"Thévenot, Melchisédech",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-07
+1290,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-07
+1291,E020176-S048831-T000000,"Thomas Tenison, Archbishop of Canterbury",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-07
+1292,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-07
+1293,E019266,"Thévenot, Melchisédech",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-07
+1294,E903479,"Spinoza, Baruch",E013152-S018039-T000000,"Leibniz, Gottfried Wilhelm",1671-11-09
+1295,E004830-S019312-T000000,"Oldenburg, Henry",E300472,"Hevelius, Johannes",1671-11-09
+1296,E902172,"Redi, Francesco",E300115,"Kircher, Athanasius",1671-11-10
+1297,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-11
+1298,E004830-S019312-T000000,"Oldenburg, Henry",E600089,"Borelli, Giovanni Alfonso",1671-11-12
+1299,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-11-14
+1300,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-11-14
+1301,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-11-14
+1302,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-11-14
+1303,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-15
+1304,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-16
+1305,E600059-S012260-T000000,"Wallis, John (Dr)",E005839-S034027-T000000,"Nathaniel Crew, Baron Crew, Bishop of Durham",1671-11-16
+1306,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-16
+1307,E020176-S048831-T000000,"Thomas Tenison, Archbishop of Canterbury",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-17
+1308,E005795-S038500-T000000,"Robert Creighton, Bishop of Bath and Wells",E018557-S012448-T000000,"Sheldon, Gilbert",1671-11-17
+1309,E005795-S038500-T000000,"Robert Creighton, Bishop of Bath and Wells",E018557-S012448-T000000,"Sheldon, Gilbert",1671-11-17
+1310,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-11-18
+1311,E008491-S047956-T000000,Thomas Gale,E000189-S014115-T000000,Edward Bernard,1671-11-18
+1312,E004830-S019312-T000000,"Oldenburg, Henry",E300472,"Hevelius, Johannes",1671-11-19
+1313,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-21
+1314,E006850,"Dodwell, Henry",E000189-S014115-T000000,Edward Bernard,1671-11-21
+1315,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-11-21
+1316,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-21
+1317,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-11-21
+1318,E013473,"Lister, Martin",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-21
+1319,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-23
+1320,E001601-S012731-T000000,Dr. Ralph Bathurst,E018557-S012448-T000000,"Sheldon, Gilbert",1671-11-24
+1321,E001601-S012731-T000000,Dr. Ralph Bathurst,E018557-S012448-T000000,"Sheldon, Gilbert",1671-11-24
+1322,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-25
+1323,E600059-S012260-T000000,"Wallis, John (Dr)",E600100-S041020-T000000,Sir Charles Scarborough,1671-11-26
+1324,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-11-27
+1325,E012119-S043025-T000000,Sir Leoline Jenkins,E018557-S012448-T000000,"Sheldon, Gilbert",1671-11-28
+1326,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-11-28
+1327,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-11-28
+1328,E902822,"Swammerdam, Jan",E902302,"Stensen, Niels",1671-11-30
+1329,E011527-S010405-T000000,"Huygens, Constantijn",E004654-S006979-T000000,"Charles II, King of England, Scotland, and Ireland",1671-11-30
+1330,E011527-S010405-T000000,"Huygens, Constantijn",E001993-S018912-T000000,"Henry Bennet, Earl of Arlington",1671-11-30
+1331,E004830-S019312-T000000,"Oldenburg, Henry",E600088,"Sluse, René François de",1671-11-30
+1332,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-01
+1333,E600059-S012260-T000000,"Wallis, John (Dr)",E600100-S041020-T000000,Sir Charles Scarborough,1671-12-01
+1334,E004830-S019312-T000000,"Oldenburg, Henry",E600088,"Sluse, René François de",1671-12-01
+1335,E600059-S012260-T000000,"Wallis, John (Dr)",E600100-S041020-T000000,Sir Charles Scarborough,1671-12-01
+1336,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-02
+1337,E903317,"Chapelain, Jean",E009478-S012508-T000000,"Vossius, Isaac (Dr)",1671-12-03
+1338,E912732,"Hjärne, Urban",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-03
+1339,E912732,"Hjärne, Urban",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-03
+1340,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-03
+1341,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-03
+1342,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1671-12-05
+1343,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-12-06
+1344,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-12-06
+1345,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-07
+1346,E600059-S012260-T000000,"Wallis, John (Dr)",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-07
+1347,E014890,"More, Henry (Dr)",E900605-S001285-T000000,"Conway, Anne",1671-12-07
+1348,E300817,"Winthrop, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-08
+1349,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-12
+1350,E005795-S038500-T000000,"Robert Creighton, Bishop of Bath and Wells",E018557-S012448-T000000,"Sheldon, Gilbert",1671-12-12
+1351,E004830-S019312-T000000,"Oldenburg, Henry",E902243,"Malpighi, Marcello",1671-12-14
+1352,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-12-15
+1353,E004830-S019312-T000000,"Oldenburg, Henry",E600059-S012260-T000000,"Wallis, John (Dr)",1671-12-15
+1354,E022626,"Witsen, Nicholaes Corneliszoon",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-20
+1355,E004830-S019312-T000000,"Oldenburg, Henry",E008063,"Flamsteed, John",1671-12-22
+1356,E008063,"Flamsteed, John",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-23
+1357,E004830-S019312-T000000,"Oldenburg, Henry",E013473,"Lister, Martin",1671-12-23
+1358,E004830-S019312-T000000,"Oldenburg, Henry",E902243,"Malpighi, Marcello",1671-12-24
+1359,E600088,"Sluse, René François de",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-27
+1360,E300537-S012314-T000000,"Worsley, Benjamin",E022828-S001174-T000000,"Marvell, Andrew",1671-12-27
+1361,E902822,"Swammerdam, Jan",E902181,"De Graaf, Regnier",1671-12-31
+1362,E902822,"Swammerdam, Jan",E902302,"Stensen, Niels",1671-12-31
+1363,E912732,"Hjärne, Urban",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-31
+1364,E906453-S026312-T000000,"Willughby, Francis",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-31
+1365,E022626,"Witsen, Nicholaes Corneliszoon",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-31
+1366,E013473,"Lister, Martin",E400236,"Ray, John",1671-12-31
+1367,E022443-S042999-T000000,"Williamson, Joseph (Sir)",E002620-S051125-T000000,William Blathwaite,1671-12-31
+1368,E902822,"Swammerdam, Jan",E902181,"De Graaf, Regnier",1671-12-31
+1369,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-31
+1370,E009478-S012508-T000000,"Vossius, Isaac (Dr)",E903317,"Chapelain, Jean",1671-12-31
+1371,E902822,"Swammerdam, Jan",E019266,"Thévenot, Melchisédech",1671-12-31
+1372,E300472,"Hevelius, Johannes",E004830-S019312-T000000,"Oldenburg, Henry",1671-12-31
+1373,E902822,"Swammerdam, Jan",E019266,"Thévenot, Melchisédech",1671-12-31
+1374,E902822,"Swammerdam, Jan",E019266,"Thévenot, Melchisédech",1671-12-31

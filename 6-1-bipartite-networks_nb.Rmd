@@ -1,4 +1,4 @@
-# Week 6, Class 1: Bipartite Networks
+# Week 6, Class 1: Bipartite Networks, Multigraphs, etc.
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 

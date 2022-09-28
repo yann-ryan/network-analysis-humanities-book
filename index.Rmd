@@ -1,4 +1,4 @@
---- 
+---
 title: "Applying Network Analysis to Humanities"
 author: "Yann Ryan, Iiro Tihonen"
 date: "`r Sys.Date()`"
@@ -9,18 +9,45 @@ bibliography:
 - packages.bib
 link-citations: yes
 github-repo: "yann-ryan/network-analysis-humanities-book"
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
-# About this Book 
+# About this Book
 
-This book is a collection of notebooks intended to supplement the "Applying Network Analysis to Humanities' course at the University of Helsinki, beginning November 2022.   
+This book is intended to be read alongside the the "Applying Network
+Analysis to Humanities' course at the University of Helsinki, beginning
+November 2022.
 
-[Course page on Studies Service](https://studies.helsinki.fi/courses/cur/hy-opt-cur-2223-7c9cdedc-fc7b-4e66-b793-1dbe0db868b7)
+[Course page on Studies
+Service](https://studies.helsinki.fi/courses/cur/hy-opt-cur-2223-7c9cdedc-fc7b-4e66-b793-1dbe0db868b7)
 
-Browse the chapters using the navigation bar on the left. 
+There are two chapters for each week, one for each session. Browse
+through the chapters using the menu to the left.
 
-If you're doing the course, you'll need to open the interactive notebook versions of these chapters, which contain required weekly exercises. See the chapter 2 for more details on this, and how to submit. 
+For most classes, there is an equivalent set of exercises. You'll
+probably want to have this book at hand to complete them. They are
+available as R markdown notebooks, using the CSC notebooks service.
+You'll need a CSC account, and you'll be sent a join code at the
+beginning of the course. If you don't have either of these things,
+contact the [course leader](mailto:yann.ryan@helinki.fi).
 
+There are also a set of slides for each week, which you can access here:
 
+-   Week 1: [class
+    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/1-1-introduction.html),
+    [class
+    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/1-2-intro-to-r.html)
 
+-   Week 2: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/2-1-network-data.html), [class 2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/2-2-data-cleaning.html)
 
+-   Week 3: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/3-1-fundamentals-data-modelling.html), [class 2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/3-2-building-data-model.html)
+
+-   Week 4: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/4-1-fundamentals.html), [class 2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/4-2-networks-with-r.html)
+
+-   Week 5: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/5-1-visualising-with-ggraph.html), [class 2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/visualising-gephi.html)
+
+-   Week 6: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/bipartite-networks.html), [class 2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/6-2-literary-linguistic.html)
+
+-   Week 7: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/7-reflections.html)
