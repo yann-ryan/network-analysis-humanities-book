@@ -52,6 +52,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -277,20 +279,14 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html"><i class="fa fa-check"></i>Week 5, class 2: Other network types</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#bipartite-networks-1"><i class="fa fa-check"></i>Bipartite networks</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#make-a-bipartite-network-in-r"><i class="fa fa-check"></i>Make a bipartite network in R</a>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#co-occurrence-and-co-authorship-networks."><i class="fa fa-check"></i>Co-occurrence and co-authorship networks.</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#create-a-regular-network-graph"><i class="fa fa-check"></i>Create a regular network graph</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#specify-the-type"><i class="fa fa-check"></i>Specify the type</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#visualise-as-bipartite"><i class="fa fa-check"></i>Visualise as bipartite</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#project-to-one-mode."><i class="fa fa-check"></i>Project to one-mode.</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#a-type-of-co-authorship-publisher-networks"><i class="fa fa-check"></i>A type of co-authorship: publisher networks</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#the-dataset"><i class="fa fa-check"></i>The dataset</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#method"><i class="fa fa-check"></i>Method</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#multi-layer-networks"><i class="fa fa-check"></i>Multi-layer networks</a>
-<ul>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#visualise-with-ggraph-and-geom_edge_fan"><i class="fa fa-check"></i>Visualise with ggraph and geom_edge_fan()</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#spatial-networks-1"><i class="fa fa-check"></i>Spatial networks</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#temporal-networks"><i class="fa fa-check"></i>Temporal networks</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#case-study-bipartite-publisher-network"><i class="fa fa-check"></i>Case study: bipartite publisher network</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#conclusions-3"><i class="fa fa-check"></i>Conclusions</a></li>
+<li><a href="week-5-class-2-other-network-types.html#section" id="toc-section"></a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html"><i class="fa fa-check"></i>Week 6, Class 1: Asking and Answering Questions with Networks</a>
 <ul>
@@ -352,6 +348,17 @@ div.csl-indent {
 <div id="what-do-we-mean-by-a-network" class="section level2 hasAnchor">
 <h2>What do we mean by a ‘network’?<a href="week-1-class-1-course-introduction.html#what-do-we-mean-by-a-network" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The word ‘network’ is ubiquitous in our daily lives. The Oxford English Dictionary tells us the term itself originally was first defined as <code>Work (esp. manufactured work) in which threads, wires, etc., are crossed or interlaced in the fashion of a net.</code> (think patch work), but now we commonly use it for any complex system of interrelated things: we all use social networking, and the telephone, railway, and road networks; an area of a city might be described as having networks of alleyways, or a historian might write about a network of trading posts.</p>
+<p>Networks have long been used to understand aspects of historical or cultural change. In below video, accompanying a <a href="https://www.science.org/doi/10.1126/science.1240064">paper in <em>Science</em></a>, researchers graphed places of birth and death—taken from Wikidata—as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p><br></p>
+<details>
+<summary>
+Given that the information is taken from Wikidata, what problems could you envisage with this study?
+</summary>
+<p>While Wikidata is a large data source, it is obviously very partial and has a particular focus, for example in favour of white, male, Western Europeans. The study may just replicate the biases of Wikidata itself, ignoring important cultural influences from other parts of the world.</p>
+</details>
+<p><br></p>
 <p>These are all in some way metaphorical. The networks we’ll learn about and use on this course have a more specific definition. In mathematics, a network is an object made up of <em>things</em> and <em>connections.</em> To use the standard language, the <em>things</em> are called <strong>nodes</strong> (or sometimes vertices), and the <em>connections</em> called <strong>edges</strong>.</p>
 <p>These things (and connections) could be almost anything. Some typical examples include:</p>
 <ul>

@@ -52,6 +52,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -277,20 +279,14 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html"><i class="fa fa-check"></i>Week 5, class 2: Other network types</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#bipartite-networks-1"><i class="fa fa-check"></i>Bipartite networks</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#make-a-bipartite-network-in-r"><i class="fa fa-check"></i>Make a bipartite network in R</a>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#co-occurrence-and-co-authorship-networks."><i class="fa fa-check"></i>Co-occurrence and co-authorship networks.</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#create-a-regular-network-graph"><i class="fa fa-check"></i>Create a regular network graph</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#specify-the-type"><i class="fa fa-check"></i>Specify the type</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#visualise-as-bipartite"><i class="fa fa-check"></i>Visualise as bipartite</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#project-to-one-mode."><i class="fa fa-check"></i>Project to one-mode.</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#a-type-of-co-authorship-publisher-networks"><i class="fa fa-check"></i>A type of co-authorship: publisher networks</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#the-dataset"><i class="fa fa-check"></i>The dataset</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#method"><i class="fa fa-check"></i>Method</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#multi-layer-networks"><i class="fa fa-check"></i>Multi-layer networks</a>
-<ul>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#visualise-with-ggraph-and-geom_edge_fan"><i class="fa fa-check"></i>Visualise with ggraph and geom_edge_fan()</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#spatial-networks-1"><i class="fa fa-check"></i>Spatial networks</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#temporal-networks"><i class="fa fa-check"></i>Temporal networks</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#case-study-bipartite-publisher-network"><i class="fa fa-check"></i>Case study: bipartite publisher network</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#conclusions-3"><i class="fa fa-check"></i>Conclusions</a></li>
+<li><a href="week-5-class-2-other-network-types.html#section" id="toc-section"></a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html"><i class="fa fa-check"></i>Week 6, Class 1: Asking and Answering Questions with Networks</a>
 <ul>
@@ -341,36 +337,185 @@ div.csl-indent {
 <h1>Week 5, class 2: Other network types<a href="week-5-class-2-other-network-types.html#week-5-class-2-other-network-types" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="bipartite-networks-1" class="section level2 hasAnchor">
 <h2>Bipartite networks<a href="week-5-class-2-other-network-types.html#bipartite-networks-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The work we have done so far has been on networks which are naturally what is known as <em>unimodel</em> or <em>unipartite</em>: person A sends a letter to person B. In a letter network there is only one type of node (a letter author or recipient), and one type of node (sends/receives a letter).</p>
+<p>Many networks are not this straightforward, and have two, or more, types of nodes. For example, a network of twitter users connected to twitter groups, or a network of directors connected to companies. These networks are known as <em>bimodal</em> or <em>bipartite</em>, if there are two types of nodes, or <em>tripartite</em> when there’s three, and so forth.</p>
+<p>The following is a diagram of a bipartite network of Facebook users and group membership.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<p>In this network, the first type (red, on the left) are people, and the second type (green, on the right) are Facebook groups. A line is drawn from one to the other if they are a member of that group. Carol is a member of the rabbits and dog group, Carol, David, Bob, and Egbert are members of the dog group, and Egbert and Alice members of the cat group.</p>
+<p>In digital humanities research, we often have access to bipartite network data, because almost any two sets of data points can be represented as a bipartite network. In some cases, the dataset can be derived rather than some pre-existing membership or category the data belongs to, as, for instance, in this study of the New Zealand parliament, which constructed a bipartite network of MPs to a set of speech topics, created using LDA topic modelling. In this model MPs are the first type, and topics the second, and these are used to construct a network of MPs based on their similarity across the topics they spoke about in Parliament.</p>
+<div class="figure">
+<img src="images/nz_topics.png" width="400" alt="" />
+<p class="caption">From Curran B, Higham K, Ortiz E, Vasques Filho D (2018) Look who's talking: Two-mode networks as representations of a topic model of New Zealand parliamentary speeches. PLoS ONE 13(6): e0199072. <a href="https://doi.org/10.1371/journal.pone.0199072" class="uri">https://doi.org/10.1371/journal.pone.0199072</a></p>
 </div>
-<div id="make-a-bipartite-network-in-r" class="section level2 hasAnchor">
-<h2>Make a bipartite network in R<a href="week-5-class-2-other-network-types.html#make-a-bipartite-network-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="create-a-regular-network-graph" class="section level3 hasAnchor">
-<h3>Create a regular network graph<a href="week-5-class-2-other-network-types.html#create-a-regular-network-graph" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It’s important, therefore, to understand the extent to which regular network methods work or don’t work with this structure. Standard network measurements (such as degree) are easy to calculate using these networks, but are not always meaningful. In the above example, the degree count for each node (its connections) is simply a count of its group membership. Unlike in a regular network, the measurement doesn’t give any clues as to the most central member of the group. Similar problems exist for other metrics.</p>
+<p>In many cases, then, we will need to do something to the network in order to get meaningful analysis from it. The most common thing to do is to <em>project</em> the network. This involves collapsing the network, and directly connecting one of the node types, based on their connections to the other. For example, the network above can be collapsed into two separate networks: a network of people connected by shared group membership, and a network of groups connected by shared members:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<p>The network on the left displays a very common aspect of bipartite network projections: <em>cliques</em>, a cluster of nodes where each is connected to all the others.</p>
+<p>In the network on the left, the edge becomes ‘shares a Facebook group with’, and on the right, ‘has shared members’.</p>
+<details>
+<summary>
+Which of these two networks do you think is more appropriate?
+</summary>
+<p>To a certain extent, that depends on the question. The more obvious answer would be to build a network of people, but if we were more interested in the ‘ecosystem’ of Facebook groups and how they interact, then perhaps the second network type would be of more use.</p>
+</details>
+<p><br></p>
+<p>At this point, regular network metrics can be used. We might use degree, for example, to demonstrate that Alice is peripheral to this network.</p>
+<p>However, it’s important to be aware of what projecting the network does. Most importantly, there is a potential <em>loss of information</em>: in the new network, the edge only records that there is a shared group between two nodes, and the information on which groups specifically were shared is discarded.</p>
+<p>Some of this information can be kept through a weight value attached to each node. In the diagram on the left above, Egbert and Bob have a weight of two, because they share two groups (cats and dogs). This weight information can be incorporated into your network metrics.</p>
+<p>Technically almost any data can be modelled as a bipartite network. However, is it always appropriate?</p>
+<p>To give a slightly ridiculous example, imagine you had a dataset of fruit, and their corresponding colours.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+fruit
+</th>
+<th style="text-align:left;">
+color
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+apple
+</td>
+<td style="text-align:left;">
+green
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:left;">
+yellow
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+peach
+</td>
+<td style="text-align:left;">
+pink
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pineapple
+</td>
+<td style="text-align:left;">
+yellow
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+grape
+</td>
+<td style="text-align:left;">
+green
+</td>
+</tr>
+</tbody>
+</table>
+<p>There is nothing stopping you from turning this into a bipartite network of fruit connected to colours, and even projecting this to a network of fruit directly connected by shared colours. It is very easy to technically turn this into a network.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+<p>But is it meaningful? Perhaps not, unless there was a very clear reason for doing (biologists may be interested in this very question!).</p>
 </div>
-<div id="specify-the-type" class="section level3 hasAnchor">
-<h3>Specify the type<a href="week-5-class-2-other-network-types.html#specify-the-type" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="co-occurrence-and-co-authorship-networks." class="section level2 hasAnchor">
+<h2>Co-occurrence and co-authorship networks.<a href="week-5-class-2-other-network-types.html#co-occurrence-and-co-authorship-networks." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>However, there are many cases where a bipartite network does actually make sense. Two very popular (and related) uses are <strong>co-authorship networks</strong> and <strong>co-citation</strong> <strong>networks</strong>. In the former, people are connected to the papers they wrote together, and in the latter, they are connected if they were cited in the same paper together.</p>
+<p>Unlike fruit and colours, this data has some inherently networked-looking properties. The connections are likely to be clustered into different topics or academic communities, and if A and B both authored separate papers with C, they probably have a higher chance of also authoring a paper together.</p>
+<p>Perhaps even more interestingly, this is a way of finding connections where we otherwise may have no data. We probably don’t have any information on whether a large group of academic writers were in contact with each other (although maybe some of it can be found through Twitter data). A co-authorship network allows us to <em>infer</em> these connections through another dataset.</p>
+<p>This is very often the case in humanities datasets, particularly historical, where we only have very limited information on who was in contact with whom, and then, only if their letters or some other record of their contact survived. However, we may have more information on the companies they worked for, the groups they were part of, or the publications they worked on.</p>
+<p>Modelling this data as a network may allow us to understand subject boundaries, highlight influential individuals, and look, for example, at questions of gender or racial bias in patterns of authorship and citation. <a href="https://doi.org/10.1108/JD-11-2021-0221">This recent paper</a> constructed a co-authorship network of digital humanities publications, and found that even through there were less women authors overall, they had important roles as bridges, linking otherwise disconnected areas. This network diagram from that paper shows the centrality of many of the green (female) authors:</p>
+<div class="figure">
+<img src="images/co-authorship.png" width="600" alt="" />
+<p class="caption">From Gao, J., Nyhan, J., Duke-Williams, O. and Mahony, S. (2022), “Gender influences in Digital Humanities co-authorship networks”, Journal of Documentation, Vol. 78 No. 7, pp. 327-350. <a href="https://doi.org/10.1108/JD-11-2021-0221" class="uri">https://doi.org/10.1108/JD-11-2021-0221</a></p>
 </div>
-<div id="visualise-as-bipartite" class="section level3 hasAnchor">
-<h3>Visualise as bipartite<a href="week-5-class-2-other-network-types.html#visualise-as-bipartite" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="a-type-of-co-authorship-publisher-networks" class="section level3 hasAnchor">
+<h3>A type of co-authorship: publisher networks<a href="week-5-class-2-other-network-types.html#a-type-of-co-authorship-publisher-networks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can take a similar approach to the information found in historical books. While co-authorship itself in early modern publishing was rare, most books were <em>produced</em> by collaborations between sets of publishers and printers. These relationships are well suited to modelling as a network, and we could imagine they might display some of the network tendencies we’ve just discussed.</p>
 </div>
-<div id="project-to-one-mode." class="section level3 hasAnchor">
-<h3>Project to one-mode.<a href="week-5-class-2-other-network-types.html#project-to-one-mode." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="the-dataset" class="section level3 hasAnchor">
+<h3>The dataset<a href="week-5-class-2-other-network-types.html#the-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The dataset we’ll be working with the a dataset of metadata from the English Short Title Catalogue (known as the ESTC). This data lists a unique ID for each publisher, printer, bookseller and author listed on the title pages of books printed between 1500 and 1800.</p>
+</div>
+<div id="method" class="section level3 hasAnchor">
+<h3>Method<a href="week-5-class-2-other-network-types.html#method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In this class we’ll take this raw data, filter it, and turn it into a bipartite network of publishers and printers connected to books. We’ll then <em>project</em> the network, and directly connect the publishers and printers, based on their shared co-occurrences on books. This network can then be visualised and analysed.</p>
+<p>First, load the data into R:</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="week-5-class-2-other-network-types.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&#39;../publisher_network/estc_actor_links&#39;</span>)</span>
+<span id="cb108-2"><a href="week-5-class-2-other-network-types.html#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&#39;../publisher_network/estc_core&#39;</span>)</span></code></pre></div>
+<p>The data is organised like this: each row represents a book and a single actor linked to that book (meaning a publisher, printer, bookseller, or author). Each actor and book has a unique code. Further columns give information on the type of actor (some can have multiple, for example be the author and the publisher).</p>
+<p>The book IDs and the actor IDs can be used as an <em>edge list</em>, and processed exactly the same as the previous lesson on regular one-mode networks. To do this, first filter to the appropriate types of actors, and then use <code>select()</code> to choose the <code>actor_id</code> and <code>estc_id</code> columns:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="week-5-class-2-other-network-types.html#cb109-1" aria-hidden="true" tabindex="-1"></a>edge_list <span class="ot">=</span> estc_actor_links <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(estc_core <span class="sc">%&gt;%</span> <span class="fu">select</span>(estc_id, publication_year, publication_place)) <span class="sc">%&gt;%</span> </span>
+<span id="cb109-2"><a href="week-5-class-2-other-network-types.html#cb109-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(publication_year <span class="sc">%in%</span> <span class="dv">1750</span><span class="sc">:</span><span class="dv">1760</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb109-3"><a href="week-5-class-2-other-network-types.html#cb109-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(publication_place <span class="sc">==</span> <span class="st">&#39;Edinburgh&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb109-4"><a href="week-5-class-2-other-network-types.html#cb109-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(actor_role_publisher <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb109-5"><a href="week-5-class-2-other-network-types.html#cb109-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(estc_id, actor_id) </span></code></pre></div>
+<pre><code>## Joining, by = &quot;estc_id&quot;</code></pre>
+<p>Use the same functions as before to turn this into a network object:</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="week-5-class-2-other-network-types.html#cb111-1" aria-hidden="true" tabindex="-1"></a>publisher_graph  <span class="ot">=</span> edge_list<span class="sc">%&gt;%</span> <span class="fu">as_tbl_graph</span>()</span></code></pre></div>
+<p>The next steps are specific to bipartite networks. In order for R to ‘know’ that the network is bipartite, each node needs to have an associated type. We use an igraph function for this, called <code>bipartite_mapping()</code>. This assigns a TRUE or FALSE value to each node, depending on whether they are found in the first or second column of the data. This is saved as an attribute of the nodes using the following code:</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="week-5-class-2-other-network-types.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(publisher_graph)<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="fu">bipartite_mapping</span>(publisher_graph)<span class="sc">$</span>type</span></code></pre></div>
+<p>At this point, we can already visualise the network, setting the shape of the node to the type:</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="week-5-class-2-other-network-types.html#cb113-1" aria-hidden="true" tabindex="-1"></a>publisher_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb113-2"><a href="week-5-class-2-other-network-types.html#cb113-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;stress&#39;</span>) <span class="sc">+</span></span>
+<span id="cb113-3"><a href="week-5-class-2-other-network-types.html#cb113-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb113-4"><a href="week-5-class-2-other-network-types.html#cb113-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">shape =</span> type),<span class="at">size =</span><span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb113-5"><a href="week-5-class-2-other-network-types.html#cb113-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
+<p>It already looks like a network structure, with a number of disconnected components (individuals who never collaborate, or only in a small group), with a central connected ‘component’, consisting of publishers who often collaborate on books together.</p>
+<p>However, we want to know more specifically about the structure of the publisher network. To do this, we project it.</p>
+<p>Igraph has another function for this, <code>bipartite_projection()</code>. Use this function on the network:</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="week-5-class-2-other-network-types.html#cb114-1" aria-hidden="true" tabindex="-1"></a>proj <span class="ot">=</span> <span class="fu">bipartite.projection</span>(publisher_graph)</span></code></pre></div>
+<p>The result is a new object, a list, containing to further objects. These are the two network projections (publisher to publisher, and book to book). They can be accessed using <code>proj[[1]]</code> and <code>proj[[2]]</code>. We’ll work with the second item, the publishers, but first, turn it into a tidygraph object so that we can work on it in the same way as the previous lessons.</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="week-5-class-2-other-network-types.html#cb115-1" aria-hidden="true" tabindex="-1"></a>proj[[<span class="dv">2</span>]] <span class="ot">=</span> proj[[<span class="dv">2</span>]] <span class="sc">%&gt;%</span> <span class="fu">as_tbl_graph</span>()</span>
+<span id="cb115-2"><a href="week-5-class-2-other-network-types.html#cb115-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-3"><a href="week-5-class-2-other-network-types.html#cb115-3" aria-hidden="true" tabindex="-1"></a>proj[[<span class="dv">2</span>]] </span></code></pre></div>
+<pre><code>## # A tbl_graph: 133 nodes and 308 edges
+## #
+## # An undirected simple graph with 66 components
+## #
+## # Node Data: 133 × 1 (active)
+##   name                   
+##   &lt;chr&gt;                  
+## 1 46725009               
+## 2 robertfleming_0        
+## 3 andrewstevensonwriter_0
+## 4 willgordon_0           
+## 5 alexanderkincaid_1     
+## 6 johngray_0             
+## # … with 127 more rows
+## #
+## # Edge Data: 308 × 3
+##    from    to weight
+##   &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;
+## 1     2     4      2
+## 2     2     7      1
+## 3     2    11      1
+## # … with 305 more rows</code></pre>
+<p>Now we have a new network, consisting of publisher nodes, and edges. Note, also, that the edges have a weight attached, representing the number of shared books they occur on.</p>
+<p>The rest of the steps can be copied directly from the previous lesson on networks.</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="week-5-class-2-other-network-types.html#cb117-1" aria-hidden="true" tabindex="-1"></a>proj[[<span class="dv">2</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb117-2"><a href="week-5-class-2-other-network-types.html#cb117-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;all&#39;</span>, <span class="at">weights =</span> weight)) <span class="sc">%&gt;%</span> </span>
+<span id="cb117-3"><a href="week-5-class-2-other-network-types.html#cb117-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb117-4"><a href="week-5-class-2-other-network-types.html#cb117-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb117-5"><a href="week-5-class-2-other-network-types.html#cb117-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> degree))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
 </div>
 </div>
-<div id="multi-layer-networks" class="section level2 hasAnchor">
-<h2>Multi-layer networks<a href="week-5-class-2-other-network-types.html#multi-layer-networks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="visualise-with-ggraph-and-geom_edge_fan" class="section level3 hasAnchor">
-<h3>Visualise with ggraph and geom_edge_fan()<a href="week-5-class-2-other-network-types.html#visualise-with-ggraph-and-geom_edge_fan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="conclusions-3" class="section level2 hasAnchor">
+<h2>Conclusions<a href="week-5-class-2-other-network-types.html#conclusions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>A co-authorship network like this can get very dense very quickly, because there are many books, and only a limited number of individuals, so there will be many connections between them. It may be more meaningful to filter the data, for example using the edge weight column, to only consider ‘stronger’ relationships in the network (nodes which share several books together).</p></li>
+<li><p>The network also has a large number of ‘isolates’: nodes which are disconnected completely from the full network. These could also be removed, for visual clarity at least. To do this, you could filter to remove nodes with a total degree of one.</p></li>
+<li><p>This projected network is inherently <em>undirected</em>, because the edge ‘shares a book title’ doesn’t have any direction attached to it.</p></li>
+</ul>
 </div>
-</div>
-<div id="spatial-networks-1" class="section level2 hasAnchor">
-<h2>Spatial networks<a href="week-5-class-2-other-network-types.html#spatial-networks-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="temporal-networks" class="section level2 hasAnchor">
-<h2>Temporal networks<a href="week-5-class-2-other-network-types.html#temporal-networks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="case-study-bipartite-publisher-network" class="section level2 hasAnchor">
-<h2>Case study: bipartite publisher network<a href="week-5-class-2-other-network-types.html#case-study-bipartite-publisher-network" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="section" class="section level2">
+<h2></h2>
 
 </div>
 </div>

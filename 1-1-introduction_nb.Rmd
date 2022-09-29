@@ -1,3 +1,7 @@
+---
+---
+---
+
 # Week 1, class 1: Course Introduction
 
 [Slides for this week](https://comhis.github.io/applying-network-analysis-to-humanities/slides/1-1-introduction.html#/title-slide)
@@ -15,6 +19,24 @@ As we haven't introduced R yet, for this week, your only task is to make a copy 
 ## What do we mean by a 'network'?
 
 The word 'network' is ubiquitous in our daily lives. The Oxford English Dictionary tells us the term itself originally was first defined as `Work (esp. manufactured work) in which threads, wires, etc., are crossed or interlaced in the fashion of a net.` (think patch work), but now we commonly use it for any complex system of interrelated things: we all use social networking, and the telephone, railway, and road networks; an area of a city might be described as having networks of alleyways, or a historian might write about a network of trading posts.
+
+Networks have long been used to understand aspects of historical or cultural change. In below video, accompanying a [paper in *Science*](https://www.science.org/doi/10.1126/science.1240064), researchers graphed places of birth and death---taken from Wikidata---as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+
+<br>
+
+<details>
+
+<summary>Given that the information is taken from Wikidata, what problems could you envisage with this study?</summary>
+
+While Wikidata is a large data source, it is obviously very partial and has a particular focus, for example in favour of white, male, Western Europeans. The study may just replicate the biases of Wikidata itself, hiding the important cultural influences on the west, from other parts of the world.
+
+</details>
+
+<br>
 
 These are all in some way metaphorical. The networks we'll learn about and use on this course have a more specific definition. In mathematics, a network is an object made up of *things* and *connections.* To use the standard language, the *things* are called **nodes** (or sometimes vertices), and the *connections* called **edges**.
 
@@ -163,7 +185,7 @@ Multigraphs are also known as multi-layer networks: you could imagine each separ
 
 The final type of network is even more exotic: in an ordinary network, an edge always connects two nodes together. A network where each edge can connect to any number of nodes is called a **hypergraph**. It's best explained with a diagram: in the figure below, an edge is no longer a line but a coloured area, and each of the points which fall within them are connected nodes. Good real-world examples are WhatsApp or Facebook groups: each person can be a member of multiple groups.
 
-![(By Hypergraph.svg: Kilom691derivative work: Pgdx (talk) - Hypergraph.svg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=10687664)](images/1920px-Hypergraph-wikipedia.svg.png){width="500"}
+![(By Hypergraph.svg: Kilom691derivative work: Pgdx (talk) - Hypergraph.svg, CC BY-SA 3.0, <https://commons.wikimedia.org/w/index.php?curid=10687664>)](images/1920px-Hypergraph-wikipedia.svg.png){width="500"}
 
 <details>
 
