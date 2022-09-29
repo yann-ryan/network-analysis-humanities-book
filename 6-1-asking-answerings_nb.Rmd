@@ -1,0 +1,14 @@
+# Week 6, Class 1: Asking and Answering Questions with Networks
+
+## What makes a good question of a network?
+
+## Using the data model
+
+## Using visualisations
+
+## Network statistics
+
+### Networks and regression
+
+### ERGMs.
+

@@ -1,0 +1,23 @@
+# Week 5, class 2: Other network types 
+
+## Bipartite networks
+
+## Make a bipartite network in R
+
+### Create a regular network graph
+
+### Specify the type
+
+### Visualise as bipartite
+
+### Project to one-mode.
+
+## Multi-layer networks 
+
+### Visualise with ggraph and geom_edge_fan()
+
+## Spatial networks
+
+## Temporal networks
+
+## Case study: bipartite publisher network

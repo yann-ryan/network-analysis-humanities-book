@@ -20,9 +20,6 @@ This book is intended to be read alongside the the "Applying Network
 Analysis to Humanities' course at the University of Helsinki, beginning
 November 2022.
 
-[Course page on Studies
-Service](https://studies.helsinki.fi/courses/cur/hy-opt-cur-2223-7c9cdedc-fc7b-4e66-b793-1dbe0db868b7)
-
 There are two chapters for each week, one for each session. Browse
 through the chapters using the menu to the left.
 
@@ -33,6 +30,25 @@ You'll need a CSC account, and you'll be sent a join code at the
 beginning of the course. If you don't have either of these things,
 contact the [course leader](mailto:yann.ryan@helinki.fi).
 
+## About the course
+
+The course is held online, via Zoom, on Wednesdays and Fridays, between
+08.15 and 09.45, starting on November 02.
+
+Assessment is the following:
+
+-   Completion of weekly assignments (pass/fail, carried out during
+    class and finished afterwards if necessary).
+
+-   Presentation on final project (1/5 of the grade)**, given in
+    Wednesday of the final week.**
+
+-   Final project (4/5 of the grade, s**ubmitted on December 23 at the
+    latest.**
+
+Full details on the [course page on Studies
+Service](https://studies.helsinki.fi/courses/cur/hy-opt-cur-2223-7c9cdedc-fc7b-4e66-b793-1dbe0db868b7)
+
 There are also a set of slides for each week, which you can access here:
 
 -   Week 1: [class
@@ -40,14 +56,30 @@ There are also a set of slides for each week, which you can access here:
     [class
     2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/1-2-intro-to-r.html)
 
--   Week 2: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/2-1-network-data.html), [class 2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/2-2-data-cleaning.html)
+-   Week 2: [class
+    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/2-1-network-data.html),
+    [class
+    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/2-2-data-cleaning.html)
 
--   Week 3: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/3-1-fundamentals-data-modelling.html), [class 2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/3-2-building-data-model.html)
+-   Week 3: [class
+    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/3-1-fundamentals-data-modelling.html),
+    [class
+    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/3-2-building-data-model.html)
 
--   Week 4: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/4-1-fundamentals.html), [class 2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/4-2-networks-with-r.html)
+-   Week 4: [class
+    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/4-1-fundamentals.html),
+    [class
+    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/4-2-networks-with-r.html)
 
--   Week 5: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/5-1-visualising-with-ggraph.html), [class 2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/visualising-gephi.html)
+-   Week 5: [class
+    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/5-1-visualising-with-ggraph.html),
+    [class
+    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/visualising-gephi.html)
 
--   Week 6: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/bipartite-networks.html), [class 2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/6-2-literary-linguistic.html)
+-   Week 6: [class
+    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/bipartite-networks.html),
+    [class
+    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/6-2-literary-linguistic.html)
 
--   Week 7: [class 1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/7-reflections.html)
+-   Week 7: [class
+    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/7-reflections.html)

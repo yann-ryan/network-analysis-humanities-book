@@ -48,7 +48,11 @@ This process: abstracting a system to its connections, and devising mathematical
 
 ## Why use networks in humanities?
 
-Network analysis has become one of the most popular (and perhaps one of the most overused) techniques in the digital humanities toolbox. Over this course, we'll ask you to think critically about the methods you use and when they might not always be the best way to think about your data. At the same time, network analysis does have plenty to offer the digital humanist:
+Network analysis has become one of the most popular (and perhaps one of the most overused) techniques in the digital humanities toolbox. Over this course, we'll ask you to think critically about the methods you use and when they might not always be the best way to think about your data.
+
+![](images/shouldyoudonetworkanalysis_xxl.jpg){width="500"}
+
+At the same time, network analysis does have plenty to offer the digital humanist:
 
 -   Humanities data is messy and complex, and network analysis deals well with complexity. The ubiquitous 'hairball graph', for example, might in some cases be the best way to get an overview of the structure of a large set of humanities data.
 
@@ -130,7 +134,7 @@ All three books would be connected to each other, because they all have one publ
 
 ### Multigraphs
 
-There can also be multiple *kinds* of edges, in the same network. For example in a network of historical correspondents, you might have 'talked to' as well as 'sent a letter to/from'. If these edges are not merged, these graphs are known as **multigraphs**.
+There can also be multiple *kinds* of edges, in the same network. For example in a network of historical correspondents, you might have 'met in person' as well as 'sent a letter to/from'. If these edges are not merged, these graphs are known as **multigraphs**.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(tidygraph)
@@ -138,7 +142,9 @@ library(igraph)
 library(ggraph)
 library(tidyverse)
 
-tibble(from = c('A', 'A', 'A', 'A', 'B'),to = c('B', 'C', 'D', 'B', 'C'), type = c('spoke', 'spoke', 'spoke', 'letter', 'letter')) %>% 
+tibble(from = c('A', 'A', 'A', 'A', 'B'),
+       to = c('B', 'C', 'D', 'B', 'C'), 
+       type = c('met', 'met', 'met', 'letter', 'letter')) %>% 
   graph_from_data_frame() %>% 
   ggraph() + 
   geom_edge_fan(aes(label = type), 
@@ -146,14 +152,16 @@ tibble(from = c('A', 'A', 'A', 'A', 'B'),to = c('B', 'C', 'D', 'B', 'C'), type =
                    label_dodge = unit(2.5, 'mm'),
                    arrow = arrow(length = unit(4, 'mm')), 
                    end_cap = circle(5, 'mm')) + 
-  geom_node_point(size =10, pch = 21, fill = 'white') +
+  geom_node_point(size = 10, pch = 21, fill = 'white') +
   geom_node_text(aes(label = name)) + 
   theme_void()
 ```
 
+Multigraphs are also known as multi-layer networks: you could imagine each separate set of edges as a separate layer within a network. Conceptually, we might learn interesting things by understanding how the various layers overlap and interact. R and other programming languages have packages to plot and analyse them.
+
 ### Hypergraphs
 
-The final type of network is more exotic: in an ordinary network, an edge always connects two nodes together. A network where each edge can connect to any number of nodes is called a **hypergraph**. It's best explained with a diagram: in the figure below, an edge is no longer a line but a coloured area, and each of the points which fall within them are connected nodes. Good real-world examples are WhatsApp or Facebook groups: each person can be a member of multiple groups.
+The final type of network is even more exotic: in an ordinary network, an edge always connects two nodes together. A network where each edge can connect to any number of nodes is called a **hypergraph**. It's best explained with a diagram: in the figure below, an edge is no longer a line but a coloured area, and each of the points which fall within them are connected nodes. Good real-world examples are WhatsApp or Facebook groups: each person can be a member of multiple groups.
 
 ![(By Hypergraph.svg: Kilom691derivative work: Pgdx (talk) - Hypergraph.svg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=10687664)](images/1920px-Hypergraph-wikipedia.svg.png){width="500"}
 
@@ -170,6 +178,10 @@ These could also be considered bipartite networks (individuals connected to grou
 These networks---multigraphs and hypergraphs---require an additional set of algorithms, and generally off-the-shelf tools have not been developed for them in the same way as exist for normal graphs. However, there are packages available for R which have been developed to deal with them.
 
 ### Spatial networks
+
+A final type of network is a spatial network: one where the nodes and edges have real-world spatial characteristics. A good example of this is a road network: edges can be represented as geometric lines, and cities and other points of interest as geographic points. These can have historical uses, for example the early modern road network of some of north-western Europe has been mapped by the Viabundus project as a spatial network: using simple network shortest-path algorithms and adding the road length as a weight, the data can be used to plot likely itineraries from one point to another.
+
+![A map of the early modern road network made with data from the Viabundus project. Each color represents the 'neighbourhood' of roads which can be reached from Urecht in a single day.](images/viabundus.png){width="500"}
 
 ## From Bridges to Social Networks...
 
@@ -219,4 +231,8 @@ These researchers, notably Albert Barabasi, argued that this process was guided 
 
 ## Conclusion
 
-This outline has hopefully got you thinking about this network approach to data. A word of warning: almost everything can be represented as some kind of network. However, many of the findings from them require some careful thought: do they tell us something interesting, such as why a group of contacts formed in a particular formed in this way, or do they just reflect the data that we have collected or have available? What does a complex 'hairball' network diagram really tell us? Between now and the next class, try to consider the ways some of the data you have used in your studies might be thought of as a network, and what benefits (and pitfalls) that approach might bring.
+This outline has hopefully got you thinking about this network approach to data. A word of warning: almost everything can be represented as some kind of network. However, many of the findings from them require some careful thought: do they tell us something interesting, such as why a group of contacts formed in a particular formed in this way, or do they just reflect the data that we have collected or have available? What does a complex 'hairball' network diagram really tell us?
+
+Between now and the next class, try to consider the ways some of the data you have used in your studies might be thought of as a network, and what benefits (and pitfalls) that approach might bring.
+
+Lastly, remember that a network is a *model:* a set of proposals to explain something about the real world. It is an artificial contruction, or a metaphor, rather than the thing itself. As such, even a very 'accurate' network is likely to be only one of many such models which could be used as an explanation for a particular phenomenon or observation. Throughout this course, you should use your critical tools to keep this in mind, and assess the usefulness of a particular model to your data explorations.
