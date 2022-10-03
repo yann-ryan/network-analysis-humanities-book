@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-09-29" />
+<meta name="date" content="2022-10-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -163,6 +163,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i>About the course</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reading"><i class="fa fa-check"></i>Reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#slides"><i class="fa fa-check"></i>Slides</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html"><i class="fa fa-check"></i>Week 1, class 1: Course Introduction</a>
 <ul>
@@ -178,6 +180,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#edge-direction"><i class="fa fa-check"></i>Edge direction</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#weighted-and-directed"><i class="fa fa-check"></i>Weighted and directed</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-paths"><i class="fa fa-check"></i>Network paths</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#different-network-types"><i class="fa fa-check"></i>Different Network Types</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#bipartite-networks"><i class="fa fa-check"></i>Bipartite networks</a></li>
@@ -239,7 +242,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#clustering-coefficient"><i class="fa fa-check"></i>Clustering coefficient</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-structure-in-networks"><i class="fa fa-check"></i>Community Structure in Networks</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#modularity"><i class="fa fa-check"></i>Modularity</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-detection-methods"><i class="fa fa-check"></i>Community Detection Methods</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
@@ -369,7 +372,7 @@ div.csl-indent {
 <div id="avoiding-the-dreaded-hairball" class="section level4 hasAnchor">
 <h4>Avoiding the dreaded ‘hairball’<a href="week-5-class-1-visualising-networks-with-ggraph.html#avoiding-the-dreaded-hairball" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Visualising large networks using these methods can often result in a large tangled mass of nodes and edges, known perojatively as a ‘hairball’. This is particularly true of large graphs without much of a tendency to cluster together, such as this graph of Facebook page networks<span class="citation">(<a href="#ref-musae" role="doc-biblioref">Rozemberczki, Allen, and Sarkar 2021</a>)</span>.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 <p>These graphs have limited use, even as exploratory data. There are some ways to mitigate against them, however:</p>
 <ul>
 <li><p>Consider filtering the network, as in the previous steps. Make sure you’re aware of the consequences of filtering before and after you calculate network metrics, however.</p></li>
@@ -391,13 +394,13 @@ div.csl-indent {
 <span id="cb91-5"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb91-5" aria-hidden="true" tabindex="-1"></a>g <span class="sc">%&gt;%</span> <span class="fu">ggraph</span>(<span class="st">&#39;bipartite&#39;</span>)<span class="sc">+</span> </span>
 <span id="cb91-6"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb91-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> </span>
 <span id="cb91-7"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb91-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.character</span>(types)))  <span class="sc">+</span> <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="fu">theme_void</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;bottom&#39;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&#39;Type:&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 </div>
 <div id="adjacency-matrix" class="section level4 hasAnchor">
 <h4>Adjacency Matrix<a href="week-5-class-1-visualising-networks-with-ggraph.html#adjacency-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>One popular alternative to a network diagram is an <em>adjacency matrix.</em> In this case, the x and y axes contain each name in the network. A filled square is drawn for each edge, where they intersect.</p>
 <p>This method can be particularly useful for small, dense networks.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 </div>
 </div>
 </div>
@@ -419,7 +422,7 @@ div.csl-indent {
 <p>This object is then passed to the function <code>ggraph()</code>, using the pipes.</p>
 <p><code>ggraph()</code> tells R to begin drawing a graph. It has optional arguments: for example, you can set the layout to something other than the default using the argument <code>layout =</code>.</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb93-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">&#39;fr&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 <p>You’ll notice that it doesn’t draw anything other than a blank grey background.</p>
 <p><code>ggraph</code> uses the syntax as the plotting library <code>ggplot2</code>. Recall from Week 1, class 2, that plots in <code>ggplot2</code> are created by adding <code>geom_</code> functions to the blank plot.</p>
 <p>The same principle applies here, except with special <code>ggraph</code> geoms:</p>
@@ -431,7 +434,7 @@ div.csl-indent {
 <span id="cb94-2"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
 <span id="cb94-3"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>() <span class="sc">+</span> </span>
 <span id="cb94-4"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb94-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 <p>There are many additional ways you can manipulate the visual appearance of your nodes and edges, for example by adding color, size, shape, arrows, and so forth.</p>
 <p>In ggraph (and ggplot), visual elements can be manipulated in two ways: you can either specify a value for a visual property, or you can specify that a property is mapped to a particular data point.</p>
 <p>This is all done with the relevant geom. To do the former, specify the value directly in the geom, like this:</p>
@@ -439,14 +442,14 @@ div.csl-indent {
 <span id="cb95-2"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb95-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
 <span id="cb95-3"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb95-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> <span class="co"># we specified that size should be set at the value 3</span></span>
 <span id="cb95-4"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb95-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
 <p>To map data to a particular data point, specify the data to be used within the geom, within a command <code>aes()</code>:</p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb96-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
 <span id="cb96-2"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> <span class="co"># calculate a value for degree</span></span>
 <span id="cb96-3"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
 <span id="cb96-4"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb96-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> <span class="co"># switch around the order of the nodes and edges as it&#39;s easier to see the node color</span></span>
 <span id="cb96-5"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb96-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree)) <span class="co"># as well as the size, color is now mapped to the degree score.</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
 <p>Other visual properties which can be mapped or specified include <code>shape</code> and <code>alpha</code>.</p>
 <p>The visual appearance of edges can also be adjusted, using the same syntax.</p>
 <p>Change to a dashed line using <code>linetype</code>:</p>
@@ -455,7 +458,7 @@ div.csl-indent {
 <span id="cb97-3"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
 <span id="cb97-4"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb97-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">linetype =</span> <span class="dv">5</span>) <span class="sc">+</span> </span>
 <span id="cb97-5"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb97-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
 <p>You can also add arrows, with the following syntax. The <code>length</code> and <code>endcap</code> arguments control the appearance of the arrow.</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb98-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
 <span id="cb98-2"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> </span>
@@ -464,7 +467,7 @@ div.csl-indent {
 <span id="cb98-5"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb98-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">&#39;mm&#39;</span>)), </span>
 <span id="cb98-6"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb98-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">end_cap =</span> <span class="fu">circle</span>(<span class="dv">3</span>, <span class="st">&#39;mm&#39;</span>)) <span class="sc">+</span> </span>
 <span id="cb98-7"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb98-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
 <div id="ggraph-and-other-tidyverse-functions" class="section level3 hasAnchor">
 <h3>Ggraph and other tidyverse functions<a href="week-5-class-1-visualising-networks-with-ggraph.html#ggraph-and-other-tidyverse-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can use the dplyr pipes to perform calculations, filter the data and then visualise it, all in one go:</p>
@@ -475,7 +478,7 @@ div.csl-indent {
 <span id="cb99-5"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb99-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
 <span id="cb99-6"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb99-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>() <span class="sc">+</span> </span>
 <span id="cb99-7"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb99-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
 </div>
 <div id="add-node-labels" class="section level3 hasAnchor">
 <h3>Add node labels<a href="week-5-class-1-visualising-networks-with-ggraph.html#add-node-labels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -491,7 +494,7 @@ div.csl-indent {
 <span id="cb100-6"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb100-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">if_else</span>(degree <span class="sc">&gt;</span><span class="dv">10</span>, name, <span class="cn">NULL</span>), <span class="at">size =</span> degree), <span class="at">repel =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> </span>
 <span id="cb100-7"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb100-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 240 rows containing missing values (geom_text_repel).</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
 </div>
 <div id="calculating-and-coloring-by-community-detection" class="section level3 hasAnchor">
 <h3>Calculating and coloring by community detection<a href="week-5-class-1-visualising-networks-with-ggraph.html#calculating-and-coloring-by-community-detection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -514,7 +517,7 @@ div.csl-indent {
 ## with weighted edge betweenness community detection might not make sense --
 ## modularity treats edge weights as similarities while edge betwenness treats them
 ## as distances.</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
 </div>
 </div>
 <div id="case-study-scientists-and-politicians" class="section level2 hasAnchor">
@@ -546,7 +549,7 @@ div.csl-indent {
 <span id="cb107-11"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb107-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> degree, <span class="at">color =</span> <span class="fu">as.character</span>(community), <span class="at">shape =</span> politician))  <span class="sc">+</span> </span>
 <span id="cb107-12"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb107-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">ifelse</span>(degree <span class="sc">&gt;</span><span class="dv">2</span>, main_name, <span class="cn">NA</span>)), <span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">repel =</span> T) <span class="sc">+</span> </span>
 <span id="cb107-13"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb107-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
 <p>It does look like one of the four clusters (cluster 2) has far fewer politicians. This cluster seems to be a group of what might be described as natural philosophers.</p>
 <p>Other things to look out for in this visualisation:</p>
 <ul>

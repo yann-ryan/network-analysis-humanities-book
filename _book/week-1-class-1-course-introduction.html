@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-09-29" />
+<meta name="date" content="2022-10-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -163,6 +163,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i>About the course</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reading"><i class="fa fa-check"></i>Reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#slides"><i class="fa fa-check"></i>Slides</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html"><i class="fa fa-check"></i>Week 1, class 1: Course Introduction</a>
 <ul>
@@ -178,6 +180,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#edge-direction"><i class="fa fa-check"></i>Edge direction</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#weighted-and-directed"><i class="fa fa-check"></i>Weighted and directed</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-paths"><i class="fa fa-check"></i>Network paths</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#different-network-types"><i class="fa fa-check"></i>Different Network Types</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#bipartite-networks"><i class="fa fa-check"></i>Bipartite networks</a></li>
@@ -239,7 +242,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#clustering-coefficient"><i class="fa fa-check"></i>Clustering coefficient</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-structure-in-networks"><i class="fa fa-check"></i>Community Structure in Networks</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#modularity"><i class="fa fa-check"></i>Modularity</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-detection-methods"><i class="fa fa-check"></i>Community Detection Methods</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
@@ -348,17 +351,6 @@ div.csl-indent {
 <div id="what-do-we-mean-by-a-network" class="section level2 hasAnchor">
 <h2>What do we mean by a ‘network’?<a href="week-1-class-1-course-introduction.html#what-do-we-mean-by-a-network" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The word ‘network’ is ubiquitous in our daily lives. The Oxford English Dictionary tells us the term itself originally was first defined as <code>Work (esp. manufactured work) in which threads, wires, etc., are crossed or interlaced in the fashion of a net.</code> (think patch work), but now we commonly use it for any complex system of interrelated things: we all use social networking, and the telephone, railway, and road networks; an area of a city might be described as having networks of alleyways, or a historian might write about a network of trading posts.</p>
-<p>Networks have long been used to understand aspects of historical or cultural change. In below video, accompanying a <a href="https://www.science.org/doi/10.1126/science.1240064">paper in <em>Science</em></a>, researchers graphed places of birth and death—taken from Wikidata—as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-<p><br></p>
-<details>
-<summary>
-Given that the information is taken from Wikidata, what problems could you envisage with this study?
-</summary>
-<p>While Wikidata is a large data source, it is obviously very partial and has a particular focus, for example in favour of white, male, Western Europeans. The study may just replicate the biases of Wikidata itself, ignoring important cultural influences from other parts of the world.</p>
-</details>
-<p><br></p>
 <p>These are all in some way metaphorical. The networks we’ll learn about and use on this course have a more specific definition. In mathematics, a network is an object made up of <em>things</em> and <em>connections.</em> To use the standard language, the <em>things</em> are called <strong>nodes</strong> (or sometimes vertices), and the <em>connections</em> called <strong>edges</strong>.</p>
 <p>These things (and connections) could be almost anything. Some typical examples include:</p>
 <ul>
@@ -373,6 +365,18 @@ In this final example, what might the connections be?
 <p>The connections between web pages are generally the hyperlinks: the system of links known as the World Wide Web.</p>
 </details>
 <p><br></p>
+<p>Networks have long been used to understand aspects of historical or cultural change. In below video, accompanying a <a href="https://www.science.org/doi/10.1126/science.1240064">paper in <em>Science</em></a>, researchers graphed places of birth and death—taken from Wikidata—as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p><br></p>
+<details>
+<summary>
+Given that the information is taken from Wikidata, what problems could you envisage with this study?
+</summary>
+<p>While Wikidata is a large data source, it is obviously very partial and has a particular focus, for example in favour of white, male, Western Europeans. The study may just replicate the biases of Wikidata itself, hiding the important cultural influences on the west, from other parts of the world.</p>
+</details>
+<p><br></p>
+<p>Other typical uses of complex networks in humanities subjects include <a href="https://model-articles.rrchnm.org/articles/midura/">spatial networks</a>, <a href="https://www.frontiersin.org/articles/10.3389/fdigh.2017.00017/full">line of sight</a> or <a href="https://academic.oup.com/book/40384/chapter-abstract/347130019?redirectedFrom=fulltext">pottery similarity networks</a> in archaeology, <a href="https://www.landesgeschichte.uni-goettingen.de/handelsstrassen/index.php">historic road networks</a>, and <a href="http://www.martingrandjean.ch/network-visualization-shakespeare/">character networks in plays</a>. In this course, we’ll mostly work with networks as tools for <strong>descriptive</strong> and <strong>exploratory</strong> data analysis. But network science also has wide uses in <strong>statistical and predictive modelling</strong>.</p>
 </div>
 <div id="graph-theory" class="section level2 hasAnchor">
 <h2>Graph Theory<a href="week-1-class-1-course-introduction.html#graph-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -384,7 +388,10 @@ In this final example, what might the connections be?
 <div id="why-use-networks-in-humanities" class="section level2 hasAnchor">
 <h2>Why use networks in humanities?<a href="week-1-class-1-course-introduction.html#why-use-networks-in-humanities" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Network analysis has become one of the most popular (and perhaps one of the most overused) techniques in the digital humanities toolbox. Over this course, we’ll ask you to think critically about the methods you use and when they might not always be the best way to think about your data.</p>
-<p><img src="images/shouldyoudonetworkanalysis_xxl.jpg" width="500" /></p>
+<div class="figure">
+<img src="images/shouldyoudonetworkanalysis_xxl.jpg" width="500" alt="" />
+<p class="caption">Almost anything can be a network, but should you use network analysis? Here is a handy flowchart which might help you decide.</p>
+</div>
 <p>At the same time, network analysis does have plenty to offer the digital humanist:</p>
 <ul>
 <li><p>Humanities data is messy and complex, and network analysis deals well with complexity. The ubiquitous ‘hairball graph’, for example, might in some cases be the best way to get an overview of the structure of a large set of humanities data.</p></li>
@@ -395,9 +402,10 @@ In this final example, what might the connections be?
 </div>
 <div id="network-basics" class="section level2 hasAnchor">
 <h2>Network Basics<a href="week-1-class-1-course-introduction.html#network-basics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This section introduces the fundamental basics of network analysis, including its key components, and various network types.</p>
 <div id="nodes-and-edges" class="section level3 hasAnchor">
 <h3>Nodes and Edges<a href="week-1-class-1-course-introduction.html#nodes-and-edges" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>As already mentioned, a network is a graph consisting of nodes and edges (connections). These are often represented visually as points (the nodes) and lines (the edges), like this:</p>
+<p>As already mentioned, a network is a graph consisting of nodes and edges (connections). Typically (though not always), the edges are <em>pairwise,</em> meaning they run between a pair of nodes. These are often represented visually as points (the nodes) and lines (the edges), like this:</p>
 <p><img src="images/Screenshot%202022-09-26%20at%2011.42.32.png" width="300" /></p>
 </div>
 <div id="edge-weights" class="section level3 hasAnchor">
@@ -424,6 +432,16 @@ What might this letter count tell us about a relationship in a network? What pot
 <p><img src="images/Screenshot%202022-09-26%20at%2011.31.15.png" width="300" /></p>
 </div>
 </div>
+<div id="network-paths" class="section level2 hasAnchor">
+<h2>Network paths<a href="week-1-class-1-course-introduction.html#network-paths" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One of the central concepts behind networks is that they allow information to travel along the edges, moving from node to node. In a metaphorical sense, nodes with less ‘hops’ between them have an easier route to this information, and may be said to be close together or influential on each other. If we add more than three nodes to the network, these paths begin to emerge. A network path is simply a route, travelling along edges, from one node to another in a network. Some network metrics use these paths to estimate structural importance, for example. Paths work differently in <em>directed</em> networks: information can only move in the direction of the edges.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="_main_files/figure-html/unnamed-chunk-1-1.png" alt="Network diagram showing the shortest path between node 5 and node 6. Left-hand network is undirected, meaning the path can travel along any edge. Network on the right is directed, meaning a path only exists in the direction of the edge. " width="672" />
+<p class="caption">
+Figure 1: Network diagram showing the shortest path between node 5 and node 6. Left-hand network is undirected, meaning the path can travel along any edge. Network on the right is directed, meaning a path only exists in the direction of the edge.
+</p>
+</div>
+</div>
 <div id="different-network-types" class="section level2 hasAnchor">
 <h2>Different Network Types<a href="week-1-class-1-course-introduction.html#different-network-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="bipartite-networks" class="section level3 hasAnchor">
@@ -438,7 +456,7 @@ What might this letter count tell us about a relationship in a network? What pot
 <p>The diagram below is an illustration of how this looks, with a network of publishers connected to books. Each individual is listed as the publisher of a number of books, which become the two node types, connected as shown in the figure on the left. A publisher can be connected to many books, but the two types of nodes cannot be connected to each other (a publisher obviously can’t publisher another publisher…).</p>
 <p>Many network measurements and algorithms are designed to be used on regular, <em>one-mode</em> networks. Often, when working with bipartite networks, we <em>collapse</em> the network into one of the node types, meaning that we directly connect one of the types to each other, based on shared connections to the other type.</p>
 <p>In the figure on the left below, we have collapsed the network so that now, publishers are directly connected to each other, based on shared appearances on books. If publishers shared multiple books, this can be added to the new edge as weight.</p>
-<p><img src="images/bipartite.png" /></p>
+<p><img src="images/bipartite.png" width="500" /></p>
 <details>
 <summary>
 What would a projected network of the other type (books connected to books) look like?
@@ -450,7 +468,12 @@ What would a projected network of the other type (books connected to books) look
 <div id="multigraphs" class="section level3 hasAnchor">
 <h3>Multigraphs<a href="week-1-class-1-course-introduction.html#multigraphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There can also be multiple <em>kinds</em> of edges, in the same network. For example in a network of historical correspondents, you might have ‘met in person’ as well as ‘sent a letter to/from’. If these edges are not merged, these graphs are known as <strong>multigraphs</strong>.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="_main_files/figure-html/unnamed-chunk-2-1.png" alt="A diagram of a multigraph: a network with edges of more than one type." width="672" />
+<p class="caption">
+Figure 2: A diagram of a multigraph: a network with edges of more than one type.
+</p>
+</div>
 <p>Multigraphs are also known as multi-layer networks: you could imagine each separate set of edges as a separate layer within a network. Conceptually, we might learn interesting things by understanding how the various layers overlap and interact. R and other programming languages have packages to plot and analyse them.</p>
 </div>
 <div id="hypergraphs" class="section level3 hasAnchor">
@@ -480,8 +503,15 @@ What other way could we model the network of Facebook or WhatsApp groups?
 </div>
 <div id="from-bridges-to-social-networks" class="section level2 hasAnchor">
 <h2>From Bridges to Social Networks…<a href="week-1-class-1-course-introduction.html#from-bridges-to-social-networks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In the 20th century, this same approach began to be used by the new discipline of sociology, applied to friendship networks. The gave birth to the field of ‘social network analysis’, which over the past half a century or so has developed a whole range of theories governing the ways networks of people are formed, and what implications this has for the way they act. Human nodes naturally behave quite differently to an island, after all.</p>
-<p><strong>In what specific way might the connection between two people have different attributes to a connection between two islands?</strong></p>
+<p>In the twentieth century, this graph theory began to be used by the new discipline of sociology now applied to human relationships, to understand the processes behind business, family, and friendship ties. This gave birth to the field of ‘social network analysis’, which over the past half a century or so has developed a whole range of theories governing the ways networks of people are formed, and what implications this has for the way they act. Human nodes naturally behave quite differently to an island, after all.</p>
+<details>
+<p><br></p>
+<summary>
+In what specific way might the connection between two people have different attributes to a connection between two islands?
+</summary>
+<p>Bridges and islands, clearly, don’t have any choices as to whom they will connect to: it is determined by their geographic position. So many network analysis techniques may not be appropriate. But it is a good example of how graph theory should be considered firstly as a set of mathematical tools.</p>
+</details>
+<p><br></p>
 <div id="the-strength-of-weak-ties" class="section level3 hasAnchor">
 <h3>The Strength of Weak Ties<a href="week-1-class-1-course-introduction.html#the-strength-of-weak-ties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We won’t deal with all of these theories here, but will mention a few key ones which are good demonstrations of the way in which graph theory has been applied to social networks, and the kinds of things it has determined.. One of the pioneers of social network analysis was Mark Granovetter. In a <a href="https://www.jstor.org/stable/2776392">1973 paper</a>, Mark Granovetter argued that the most important ties in a network are often those which connect two separate social groups together. These ties, according to Granovatter, occupy a ‘brokerage’ position, and can be key in certain situations.</p>
@@ -511,11 +541,12 @@ What problems can you imagine with this experiment?
 <div id="the-new-science-of-networks" class="section level2 hasAnchor">
 <h2>The ‘New’ Science of Networks<a href="week-1-class-1-course-introduction.html#the-new-science-of-networks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The most common use of networks in academic research much of the 20th century was looking at these small, sociological networks of relationships between people. This changed in the late 1990s, when a group of scientists began to use network research to understand the structures governing many kinds of complex systems, initially using the approach to map out the structure of the World Wide Web. This research showed that many of these complex networks had a similar structure: a small number of nodes with a very large number of connections, known as <em>hubs,</em> and a large number of nodes with very few connections. In fact, they argued, the structure followed what is known as a <em>power-law</em>: essentially many nodes have a very small number of connections, an exponentially smaller number of nodes have an exponentially larger number of connections, and so forth until a tiny of number of nodes have very many connections.</p>
-<p>These researchers, notably Albert Barabasi, argued that this process was guided by <em>preferential attachment</em>, meaning that these networks were created because nodes were much more likely to attach themselves to nodes which already had many connections. Perhaps most importantly, they empirically showed that this particular structure could be found across a range of networks, from computers, to people, to biological networks or the structure of neurons in the brain.</p>
+<p>These researchers, notably Albert Barabasi, argued that this process was guided by <em>preferential attachment</em>, meaning that these networks were created because nodes in a network were much more likely to attach themselves to nodes which already had many connections, leading to a ‘rich get richer’ effect. Perhaps most importantly, they demonstrated empirically that this particular structure could be found across a range of networks, from computers, to people, to biological networks or the structure of neurons in the brain. And they have wide-ranging implications: a scale-free network means it is easy for a disease to spread, because once it reaches a hub node it can easily move throughout the network.</p>
+<p>These ideas, published at a time when the internet (and later social networking) moved into the mainstream, drove a huge interest in thinking about the world in a ‘networked’ way. They spawned a range of popular science and psychology books. Barabasi wrote <a href="https://en.wikipedia.org/wiki/Linked:_The_New_Science_of_Networks"><em>Linked</em></a><em>,</em> one of the defining popular science books of the 2000s, and used networks to argue that this scale-free network structure could be used to explain a whole range of human behaviours, from epidemics, to economics, to politics.</p>
 </div>
 <div id="conclusion" class="section level2 hasAnchor">
 <h2>Conclusion<a href="week-1-class-1-course-introduction.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This outline has hopefully got you thinking about this network approach to data. A word of warning: almost everything can be represented as some kind of network. However, many of the findings from them require some careful thought: do they tell us something interesting, such as why a group of contacts formed in a particular formed in this way, or do they just reflect the data that we have collected or have available? What does a complex ‘hairball’ network diagram really tell us?</p>
+<p>This outline has hopefully got you thinking about this network approach to data. A word of warning: almost everything can be represented as some kind of network. However, many of the findings from them require some careful thought: do they tell us something interesting, such as why a group of contacts formed in a particular formed in this way, or do they just reflect the data that we have collected or have available? What does a complex ‘hairball’ network diagram really tell us? Have the claims of <em>Linked</em> really helped us to understand business, economics, and the spread of disease?</p>
 <p>Between now and the next class, try to consider the ways some of the data you have used in your studies might be thought of as a network, and what benefits (and pitfalls) that approach might bring.</p>
 <p>Lastly, remember that a network is a <em>model:</em> a set of proposals to explain something about the real world. It is an artificial contruction, or a metaphor, rather than the thing itself. As such, even a very ‘accurate’ network is likely to be only one of many such models which could be used as an explanation for a particular phenomenon or observation. Throughout this course, you should use your critical tools to keep this in mind, and assess the usefulness of a particular model to your data explorations.</p>
 

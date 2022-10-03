@@ -37,7 +37,7 @@ In this network, the first type (red, on the left) are people, and the second ty
 
 In digital humanities research, we often have access to bipartite network data, because almost any two sets of data points can be represented as a bipartite network. In some cases, the dataset can be derived rather than some pre-existing membership or category the data belongs to, as, for instance, in this study of the New Zealand parliament, which constructed a bipartite network of MPs to a set of speech topics, created using LDA topic modelling. In this model MPs are the first type, and topics the second, and these are used to construct a network of MPs based on their similarity across the topics they spoke about in Parliament.
 
-![From Curran B, Higham K, Ortiz E, Vasques Filho D (2018) Look who\'s talking: Two-mode networks as representations of a topic model of New Zealand parliamentary speeches. PLoS ONE 13(6): e0199072. https://doi.org/10.1371/journal.pone.0199072](images/nz_topics.png){width="400"}
+![From Curran B, Higham K, Ortiz E, Vasques Filho D (2018) Look who's talking: Two-mode networks as representations of a topic model of New Zealand parliamentary speeches. PLoS ONE 13(6): e0199072. <https://doi.org/10.1371/journal.pone.0199072>](images/nz_topics.png){width="400"}
 
 It's important, therefore, to understand the extent to which regular network methods work or don't work with this structure. Standard network measurements (such as degree) are easy to calculate using these networks, but are not always meaningful. In the above example, the degree count for each node (its connections) is simply a count of its group membership. Unlike in a regular network, the measurement doesn't give any clues as to the most central member of the group. Similar problems exist for other metrics.
 
@@ -228,6 +228,6 @@ proj[[2]] %>%
 
 -   The network also has a large number of 'isolates': nodes which are disconnected completely from the full network. These could also be removed, for visual clarity at least. To do this, you could filter to remove nodes with a total degree of one.
 
--   This projected network is inherently *undirected*, because the edge 'shares a book title' doesn't have any direction attached to it.
+-   This projected network is inherently *undirected*, because the edge 'shares a book title' doesn't have any direction associated with it.
 
 ## 

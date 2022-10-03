@@ -49,6 +49,49 @@ Assessment is the following:
 Full details on the [course page on Studies
 Service](https://studies.helsinki.fi/courses/cur/hy-opt-cur-2223-7c9cdedc-fc7b-4e66-b793-1dbe0db868b7)
 
+## Reading
+
+Each week will have one piece of set reading, usually an article or book
+chapter, to be discussed in-class the following week.
+
+There is no set textbook, but the following are good general
+introductions to networks:
+
+**Ahnert, R., Ahnert, S., Coleman, C., & Weingart, S. (2021). *The
+Network Turn: Changing Perspectives in the Humanities* (Elements in
+Publishing and Book Culture). Cambridge: Cambridge University Press.
+<doi:10.1017/9781108866804>**
+
+Short, very readable volume on networks, specifically focused on
+humanities applications. Free, open access copy available through the
+above link.
+
+**Easley, D., and Kleinberg,J. (2010). *Networks, Crowds, and Markets:
+Reasoning about a Highly Connected World.* Cambridge University Press.**
+
+Very comprehensive textbook on networks, mostly relating to economics,
+sociology, computing. Pre-publication draft is available for free on the
+[book website](https://www.cs.cornell.edu/home/kleinber/networks-book/).
+
+**Barabási, A.-L. (2002). *Linked: The New Science of Networks*. Perseus
+Pub.**
+
+Popular science book on networks, very influential in bringing the
+science of networks to a popular audience.
+
+**Newman, M. E. J. (2018). *Networks* (Second edition). Oxford
+University Press.**
+
+Comprehensive textbook of network theory, recommended if you want to
+understand algorithms etc. in more detail.
+
+Also worth checking out is the [extensive
+bibliography](https://historicalnetworkresearch.org/bibliography/) and
+[journal](https://jhnr.uni.lu/index.php/jhnr) by the Historical Network
+Research Community.
+
+## Slides
+
 There are also a set of slides for each week, which you can access here:
 
 -   Week 1: [class

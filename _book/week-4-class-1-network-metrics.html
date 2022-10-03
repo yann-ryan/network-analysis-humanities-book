@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-09-29" />
+<meta name="date" content="2022-10-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -163,6 +163,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i>About the course</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reading"><i class="fa fa-check"></i>Reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#slides"><i class="fa fa-check"></i>Slides</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html"><i class="fa fa-check"></i>Week 1, class 1: Course Introduction</a>
 <ul>
@@ -178,6 +180,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#edge-direction"><i class="fa fa-check"></i>Edge direction</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#weighted-and-directed"><i class="fa fa-check"></i>Weighted and directed</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-paths"><i class="fa fa-check"></i>Network paths</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#different-network-types"><i class="fa fa-check"></i>Different Network Types</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#bipartite-networks"><i class="fa fa-check"></i>Bipartite networks</a></li>
@@ -239,7 +242,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#clustering-coefficient"><i class="fa fa-check"></i>Clustering coefficient</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-structure-in-networks"><i class="fa fa-check"></i>Community Structure in Networks</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#modularity"><i class="fa fa-check"></i>Modularity</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-detection-methods"><i class="fa fa-check"></i>Community Detection Methods</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
@@ -357,9 +360,9 @@ div.csl-indent {
 <h4>Degree distribution<a href="week-4-class-1-network-metrics.html#degree-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Degree is used to measure structural properties of the network. We can do this using the <strong>degree distribution</strong>. A distribution counts how many nodes have a degree of 1, a degree of two, three, and so forth, or sometimes a range, such as a degree of between 1 and 5, 6 and 10, and so on. As mentioned in a previous chapter, this degree distribution tells us some valuable structural properties about the network, such as the extent to which it is a collection of hubs and less important nodes (known as ‘scale-free’).</p>
 <p>To illustrate the degree distribution, below is a histogram of the degree distribution for a randomly-created scale-free network with 1000 nodes and 1000 edges. It shows that 0 to 10 nodes have a degree score of 50, 11 - 20 have a degree score of 4, and at the other end, more than 400 nodes have a degree score of just 1.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
-<p>Another way to illustrate this is with a log-log plot. A log-log plot shows the same data, except the scales are logarithmic, making them easier to read.</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p>Another way to illustrate this is with a log-log plot. A log-log plot shows the same data, except the scales are logarithmic, making them easier to read.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 <p>Networks with distributions which look like this on a histogram or log-log plot are likely to be scale-free, meaning their structure consists of a number of important hubs with high degree, followed by a larger number of less-important nodes.</p>
 <p>Network science has shown that these network types are very common in all sorts of real-world situations, from biological, to social, to computer networks. They’ve also been shown to have a number of particular properties: for example, it may make a computer network resistant to random ‘attack’, because its only when hubs are removed that the network begins to become disconnected. Removing unimportant nodes doesn’t affect the overall system. At the same time, this can make them vulnerable, if hub nodes are specifically targeted.</p>
 </div>
@@ -422,21 +425,36 @@ Consider a letter network with an average path length of 4. Does this mean that 
 </div>
 <div id="community-structure-in-networks" class="section level3 hasAnchor">
 <h3>Community Structure in Networks<a href="week-4-class-1-network-metrics.html#community-structure-in-networks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Louvain algorithm</p>
-<p>Other methods.</p>
+<p>Networks and communities are often thought of as analogous, but in network analysis, the latter are considered a subset of the former. Discovering discrete communities—often called sub-graphs—within a wider network has long been one of the fundamental applications of network science. In epidemiological networks, for example, the extent to which a network tends to break into sub-graphs and the constitution of those parts has important implications for understanding the spread of disease through a system. While the ego networks of the previous chapters are communities in their own right,  working with a large set of merged, overlapping ego networks invites us to think about the whole, and how this whole might be redivided into clusters not necessarily corresponding to the ego networks which constitute its parts.</p>
+<p>In a network sense, a community might be generally defined as a sub-grouping within a network which is in some way more densely connected to its internal group members than to those outside the group. The problem, of course, is that if the graph is connected (i.e. if all nodes can reach all other nodes eventually), then the boundaries of any detected community that goes beyond a simple ego network are necessarily arbitrary, flexible, and subjective. It is true that many individuals will sit firmly in the core of a given cluster, but there will be those on the margins who might be considered as members of more than one community—or none. </p>
+<p>In spite of these problems, this rigid way of thinking about communities can serve as a useful tool, to which we can bring our existing knowledge of historical communities and compare them to an algorithm’s results. By forcing us to over-simplify, they may not be able to capture the full extent of multiple overlapping communities of identity, but they do help us to reflect on how we think of individuals operating within communities of correspondence. For example, though we might think of person X primarily as a member of group Y, if we look just at their patterns of correspondence, they seem more firmly in group Z. This is not to say that we should necessarily re-evaluate the scholarship and declare that they were in group Z all along, but it might be an indication that we should re-assess that person's patterns of correspondence—after all, belonging to a community and being more likely to correspond with its members are not the same thing. </p>
 </div>
-<div id="modularity" class="section level3 hasAnchor">
-<h3>Modularity<a href="week-4-class-1-network-metrics.html#modularity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="community-detection-methods" class="section level3 hasAnchor">
+<h3>Community Detection Methods<a href="week-4-class-1-network-metrics.html#community-detection-methods" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Network science has a large of algorithsm for finding optimal communities in graphs. Many rely on a metric called modularity, explained in this next section.</p>
+<div id="modularity" class="section level4 hasAnchor">
+<h4>Modularity<a href="week-4-class-1-network-metrics.html#modularity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Modularity is a score evaluating how well a given set of group labels describe the groups found in a network. It’s calculated as the number of edges falling within groups minus the expected number in an equivalent network with edges placed at random (<a href="https://www.pnas.org/content/103/23/8577">link</a>). In the below diagram, the modularity is high, because the groups (coloured as either red or green nodes) correctly describe the two separate ‘communities’ found in the network. Community detection algorithms work by trying to maximise this value.</p>
 <p><img src="images/modularity.png" /></p>
 <p>As with the clustering coefficient, a high modularity indicates the extent to which the network might be described as a collection of densely-connected sub-groups, or whether the links are spread out evenly across the network.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-34"></span>
-<img src="_main_files/figure-html/unnamed-chunk-34-1.png" alt="A network with high modularity. The given partitions (separate colours) successfully divide the network into groups with many more connections between the groups than to other groups." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-35"></span>
+<img src="_main_files/figure-html/unnamed-chunk-35-1.png" alt="A network with high modularity. The given partitions (separate colours) successfully divide the network into groups with many more connections between the groups than to other groups." width="672" />
 <p class="caption">
-Figure 1: A network with high modularity. The given partitions (separate colours) successfully divide the network into groups with many more connections between the groups than to other groups.
+Figure 3: A network with high modularity. The given partitions (separate colours) successfully divide the network into groups with many more connections between the groups than to other groups.
 </p>
 </div>
-<p>A small warning: modularity is only as useful as the groups you feed it. The Gephi modularity score, for example, first uses a community detection algorithm, and the modularity score is just the maximum that it is able to find using this method. In most cases, the found groups will not be a perfect representation of the way the network is divided.</p>
+</div>
+<div id="louvain-community-detection" class="section level4 hasAnchor">
+<h4>Louvain Community Detection<a href="week-4-class-1-network-metrics.html#louvain-community-detection" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Louvain algorithm is one algorithm which uses modularity, developed specifically for use in large graphs. At first, each node in the network is assigned to a community of just itself. Then, one at a time, each node is temporarily moved to the community of each of its neighbours, and the modularity of the whole graph is re-checked using the method above. Each node is kept in the community which results in the highest change in overall modularity. </p>
+<p>At this point, most nodes are now in a community of two (if there's no change in modularity, they stay in their own community). The next step treats these mini-communities as nodes in a network in their own right, and runs the same process again (putting each mini-community into the mini-community of its neighbour, calculating overall modularity, and moving to that which gives it the highest gain). This whole process then repeats until modularity stops increasing and communities stop merging with other communities—or a pre-supplied threshold is reached.</p>
+<p>In very large graphs, the process is more difficult and likely to give different results depending on the random starting point. Also, while the method may be a useful way of finding communities without preconceived starting points, it does require us to think of the network as being divided into communities of some kind. Every node must be placed in a community - none can be placed outside the communities, and, perhaps more controversially, with this method, no node can be a member of more than one community. </p>
+<div class="figure">
+<img src="images/louvain.png" width="700" alt="" />
+<p class="caption">From Traag, V.A., Waltman, L. &amp; van Eck, N.J. From Louvain to Leiden: guaranteeing well-connected communities. Sci Rep 9, 5233 (2019). <a href="https://doi.org/10.1038/s41598-019-41695-z" class="uri">https://doi.org/10.1038/s41598-019-41695-z</a></p>
+</div>
+<p>Important to note is that communities are to some degree subjective, and ‘densely-connected’ can have different meanings depending on the algorithm. And needless to say, detecting communities on a graph alone does not make a research question!</p>
+</div>
 </div>
 </div>
 <div id="conclusions" class="section level2 hasAnchor">

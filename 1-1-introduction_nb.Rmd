@@ -20,24 +20,6 @@ As we haven't introduced R yet, for this week, your only task is to make a copy 
 
 The word 'network' is ubiquitous in our daily lives. The Oxford English Dictionary tells us the term itself originally was first defined as `Work (esp. manufactured work) in which threads, wires, etc., are crossed or interlaced in the fashion of a net.` (think patch work), but now we commonly use it for any complex system of interrelated things: we all use social networking, and the telephone, railway, and road networks; an area of a city might be described as having networks of alleyways, or a historian might write about a network of trading posts.
 
-Networks have long been used to understand aspects of historical or cultural change. In below video, accompanying a [paper in *Science*](https://www.science.org/doi/10.1126/science.1240064), researchers graphed places of birth and death---taken from Wikidata---as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-
-</iframe>
-
-<br>
-
-<details>
-
-<summary>Given that the information is taken from Wikidata, what problems could you envisage with this study?</summary>
-
-While Wikidata is a large data source, it is obviously very partial and has a particular focus, for example in favour of white, male, Western Europeans. The study may just replicate the biases of Wikidata itself, hiding the important cultural influences on the west, from other parts of the world.
-
-</details>
-
-<br>
-
 These are all in some way metaphorical. The networks we'll learn about and use on this course have a more specific definition. In mathematics, a network is an object made up of *things* and *connections.* To use the standard language, the *things* are called **nodes** (or sometimes vertices), and the *connections* called **edges**.
 
 These things (and connections) could be almost anything. Some typical examples include:
@@ -58,6 +40,26 @@ The connections between web pages are generally the hyperlinks: the system of li
 
 <br>
 
+Networks have long been used to understand aspects of historical or cultural change. In below video, accompanying a [paper in *Science*](https://www.science.org/doi/10.1126/science.1240064), researchers graphed places of birth and death---taken from Wikidata---as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+
+<br>
+
+<details>
+
+<summary>Given that the information is taken from Wikidata, what problems could you envisage with this study?</summary>
+
+While Wikidata is a large data source, it is obviously very partial and has a particular focus, for example in favour of white, male, Western Europeans. The study may just replicate the biases of Wikidata itself, hiding the important cultural influences on the west, from other parts of the world.
+
+</details>
+
+<br>
+
+Other typical uses of complex networks in humanities subjects include [spatial networks](https://model-articles.rrchnm.org/articles/midura/), [line of sight](https://www.frontiersin.org/articles/10.3389/fdigh.2017.00017/full) or [pottery similarity networks](https://academic.oup.com/book/40384/chapter-abstract/347130019?redirectedFrom=fulltext) in archaeology, [historic road networks](https://www.landesgeschichte.uni-goettingen.de/handelsstrassen/index.php), and [character networks in plays](http://www.martingrandjean.ch/network-visualization-shakespeare/). In this course, we'll mostly work with networks as tools for **descriptive** and **exploratory** data analysis. But network science also has wide uses in **statistical and predictive modelling**.
+
 ## Graph Theory
 
 Representing data in this way allows us to use the mathematics of *graph theory* to find out things about it. The origins of this date back to the 18th century, and the mathematician Leonard Euler. The city of Königsberg (now Kaliningrad) was built on a river with two islands and a system (a network, perhaps?) of seven bridges connecting them. The inhabitants of the city had long wondered if there it was possible to devise a route which would cross each bridge exactly once.
@@ -72,7 +74,7 @@ This process: abstracting a system to its connections, and devising mathematical
 
 Network analysis has become one of the most popular (and perhaps one of the most overused) techniques in the digital humanities toolbox. Over this course, we'll ask you to think critically about the methods you use and when they might not always be the best way to think about your data.
 
-![](images/shouldyoudonetworkanalysis_xxl.jpg){width="500"}
+![Almost anything can be a network, but should you use network analysis? Here is a handy flowchart which might help you decide.](images/shouldyoudonetworkanalysis_xxl.jpg){width="500"}
 
 At the same time, network analysis does have plenty to offer the digital humanist:
 
@@ -86,9 +88,11 @@ At the same time, network analysis does have plenty to offer the digital humanis
 
 ## Network Basics
 
+This section introduces the fundamental basics of network analysis, including its key components, and various network types.
+
 ### Nodes and Edges
 
-As already mentioned, a network is a graph consisting of nodes and edges (connections). These are often represented visually as points (the nodes) and lines (the edges), like this:
+As already mentioned, a network is a graph consisting of nodes and edges (connections). Typically (though not always), the edges are *pairwise,* meaning they run between a pair of nodes. These are often represented visually as points (the nodes) and lines (the edges), like this:
 
 ![](images/Screenshot%202022-09-26%20at%2011.42.32.png){width="300"}
 
@@ -122,6 +126,46 @@ These directed edges can also have separate weights attached to them:
 
 ![](images/Screenshot%202022-09-26%20at%2011.31.15.png){width="300"}
 
+## Network paths
+
+One of the central concepts behind networks is that they allow information to travel along the edges, moving from node to node. In a metaphorical sense, nodes with less 'hops' between them have an easier route to this information, and may be said to be close together or influential on each other. If we add more than three nodes to the network, these paths begin to emerge. A network path is simply a route, travelling along edges, from one node to another in a network. Some network metrics use these paths to estimate structural importance, for example. Paths work differently in *directed* networks: information can only move in the direction of the edges.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Network diagram showing the shortest path between node 5 and node 6. Left-hand network is undirected, meaning the path can travel along any edge. Network on the right is directed, meaning a path only exists in the direction of the edge. "}
+library(tidyverse)
+library(ggraph)
+library(igraph)
+g = tibble(a = c(1,1,2,3,4,7,6), b = c(2,3,7,5,3,4,2)) %>% graph_from_data_frame(directed = F)
+
+s = igraph::get.shortest.paths(g, 6, 7, output = 'both')
+
+E(g, path=unlist(s[[1]]))$color <- "red"
+
+a = ggraph(g, 'kk') + 
+  geom_edge_link(width = 2, aes(color = color)) + 
+  geom_node_point(size = 20, fill = 'white', pch = 21, stroke = 2) + 
+  geom_node_text(aes(label = name)) + theme_void() + 
+  scale_x_continuous(expand = c(.1, .1))+ 
+  scale_y_continuous(expand = c(.1, .1)) + theme(legend.position = 'none')
+
+g = tibble(a = c(1,1,2,3,4,7,6), b = c(2,3,7,5,3,4,2)) %>% graph_from_data_frame(directed = T)
+
+s = igraph::get.shortest.paths(g, 6, 7, output = 'both')
+
+E(g, path=unlist(s[[1]]))$color <- "red"
+
+b = ggraph(g, 'kk') + 
+  geom_edge_link(width = 2, aes(color = color),
+                 arrow = arrow(length = unit(4, 'mm')), 
+                   end_cap = circle(10, 'mm')) + 
+  geom_node_point(size = 20, fill = 'white', pch = 21, stroke = 2) + 
+  geom_node_text(aes(label = name)) + theme_void() + 
+  scale_x_continuous(expand = c(.1, .1))+ 
+  scale_y_continuous(expand = c(.1, .1)) + theme(legend.position = 'none')
+
+cowplot::plot_grid(a,b)
+
+```
+
 ## Different Network Types
 
 ### Bipartite networks
@@ -142,7 +186,7 @@ Many network measurements and algorithms are designed to be used on regular, *on
 
 In the figure on the left below, we have collapsed the network so that now, publishers are directly connected to each other, based on shared appearances on books. If publishers shared multiple books, this can be added to the new edge as weight.
 
-![](images/bipartite.png)
+![](images/bipartite.png){width="500"}
 
 <details>
 
@@ -158,7 +202,7 @@ All three books would be connected to each other, because they all have one publ
 
 There can also be multiple *kinds* of edges, in the same network. For example in a network of historical correspondents, you might have 'met in person' as well as 'sent a letter to/from'. If these edges are not merged, these graphs are known as **multigraphs**.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "A diagram of a multigraph: a network with edges of more than one type."}
 library(tidygraph)
 library(igraph)
 library(ggraph)
@@ -169,14 +213,16 @@ tibble(from = c('A', 'A', 'A', 'A', 'B'),
        type = c('met', 'met', 'met', 'letter', 'letter')) %>% 
   graph_from_data_frame() %>% 
   ggraph() + 
-  geom_edge_fan(aes(label = type), 
+  geom_edge_fan(width = 1,aes(label = type), 
                    angle_calc = 'along',
                    label_dodge = unit(2.5, 'mm'),
                    arrow = arrow(length = unit(4, 'mm')), 
-                   end_cap = circle(5, 'mm')) + 
-  geom_node_point(size = 10, pch = 21, fill = 'white') +
+                   end_cap = circle(10, 'mm')) + 
+  geom_node_point(size = 20, pch = 21, fill = 'white', stroke = 2) +
   geom_node_text(aes(label = name)) + 
-  theme_void()
+  theme_void() + 
+  scale_x_continuous(expand = c(.2,.2)) + 
+  scale_y_continuous(expand = c(.2,.2))
 ```
 
 Multigraphs are also known as multi-layer networks: you could imagine each separate set of edges as a separate layer within a network. Conceptually, we might learn interesting things by understanding how the various layers overlap and interact. R and other programming languages have packages to plot and analyse them.
@@ -207,9 +253,19 @@ A final type of network is a spatial network: one where the nodes and edges have
 
 ## From Bridges to Social Networks...
 
-In the 20th century, this same approach began to be used by the new discipline of sociology, applied to friendship networks. The gave birth to the field of 'social network analysis', which over the past half a century or so has developed a whole range of theories governing the ways networks of people are formed, and what implications this has for the way they act. Human nodes naturally behave quite differently to an island, after all.
+In the twentieth century, this graph theory began to be used by the new discipline of sociology now applied to human relationships, to understand the processes behind business, family, and friendship ties. This gave birth to the field of 'social network analysis', which over the past half a century or so has developed a whole range of theories governing the ways networks of people are formed, and what implications this has for the way they act. Human nodes naturally behave quite differently to an island, after all.
 
-**In what specific way might the connection between two people have different attributes to a connection between two islands?**
+<details>
+
+<br>
+
+<summary>In what specific way might the connection between two people have different attributes to a connection between two islands?</summary>
+
+Bridges and islands, clearly, don't have any choices as to whom they will connect to: it is determined by their geographic position. So many network analysis techniques may not be appropriate. But it is a good example of how graph theory should be considered firstly as a set of mathematical tools.
+
+</details>
+
+<br>
 
 ### The Strength of Weak Ties
 
@@ -249,11 +305,13 @@ It is also connected to the 'strength of weak ties' theory by Granovetter. This 
 
 The most common use of networks in academic research much of the 20th century was looking at these small, sociological networks of relationships between people. This changed in the late 1990s, when a group of scientists began to use network research to understand the structures governing many kinds of complex systems, initially using the approach to map out the structure of the World Wide Web. This research showed that many of these complex networks had a similar structure: a small number of nodes with a very large number of connections, known as *hubs,* and a large number of nodes with very few connections. In fact, they argued, the structure followed what is known as a *power-law*: essentially many nodes have a very small number of connections, an exponentially smaller number of nodes have an exponentially larger number of connections, and so forth until a tiny of number of nodes have very many connections.
 
-These researchers, notably Albert Barabasi, argued that this process was guided by *preferential attachment*, meaning that these networks were created because nodes were much more likely to attach themselves to nodes which already had many connections. Perhaps most importantly, they empirically showed that this particular structure could be found across a range of networks, from computers, to people, to biological networks or the structure of neurons in the brain.
+These researchers, notably Albert Barabasi, argued that this process was guided by *preferential attachment*, meaning that these networks were created because nodes in a network were much more likely to attach themselves to nodes which already had many connections, leading to a 'rich get richer' effect. Perhaps most importantly, they demonstrated empirically that this particular structure could be found across a range of networks, from computers, to people, to biological networks or the structure of neurons in the brain. And they have wide-ranging implications: a scale-free network means it is easy for a disease to spread, because once it reaches a hub node it can easily move throughout the network.
+
+These ideas, published at a time when the internet (and later social networking) moved into the mainstream, drove a huge interest in thinking about the world in a 'networked' way. They spawned a range of popular science and psychology books. Barabasi wrote [*Linked*](https://en.wikipedia.org/wiki/Linked:_The_New_Science_of_Networks)*,* one of the defining popular science books of the 2000s, and used networks to argue that this scale-free network structure could be used to explain a whole range of human behaviours, from epidemics, to economics, to politics.
 
 ## Conclusion
 
-This outline has hopefully got you thinking about this network approach to data. A word of warning: almost everything can be represented as some kind of network. However, many of the findings from them require some careful thought: do they tell us something interesting, such as why a group of contacts formed in a particular formed in this way, or do they just reflect the data that we have collected or have available? What does a complex 'hairball' network diagram really tell us?
+This outline has hopefully got you thinking about this network approach to data. A word of warning: almost everything can be represented as some kind of network. However, many of the findings from them require some careful thought: do they tell us something interesting, such as why a group of contacts formed in a particular formed in this way, or do they just reflect the data that we have collected or have available? What does a complex 'hairball' network diagram really tell us? Have the claims of *Linked* really helped us to understand business, economics, and the spread of disease?
 
 Between now and the next class, try to consider the ways some of the data you have used in your studies might be thought of as a network, and what benefits (and pitfalls) that approach might bring.
 

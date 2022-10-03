@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-09-29" />
+<meta name="date" content="2022-10-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -163,6 +163,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i>About the course</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reading"><i class="fa fa-check"></i>Reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#slides"><i class="fa fa-check"></i>Slides</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html"><i class="fa fa-check"></i>Week 1, class 1: Course Introduction</a>
 <ul>
@@ -178,6 +180,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#edge-direction"><i class="fa fa-check"></i>Edge direction</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#weighted-and-directed"><i class="fa fa-check"></i>Weighted and directed</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-paths"><i class="fa fa-check"></i>Network paths</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#different-network-types"><i class="fa fa-check"></i>Different Network Types</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#bipartite-networks"><i class="fa fa-check"></i>Bipartite networks</a></li>
@@ -239,7 +242,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#clustering-coefficient"><i class="fa fa-check"></i>Clustering coefficient</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-structure-in-networks"><i class="fa fa-check"></i>Community Structure in Networks</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#modularity"><i class="fa fa-check"></i>Modularity</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-detection-methods"><i class="fa fa-check"></i>Community Detection Methods</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
@@ -340,16 +343,16 @@ div.csl-indent {
 <p>The work we have done so far has been on networks which are naturally what is known as <em>unimodel</em> or <em>unipartite</em>: person A sends a letter to person B. In a letter network there is only one type of node (a letter author or recipient), and one type of node (sends/receives a letter).</p>
 <p>Many networks are not this straightforward, and have two, or more, types of nodes. For example, a network of twitter users connected to twitter groups, or a network of directors connected to companies. These networks are known as <em>bimodal</em> or <em>bipartite</em>, if there are two types of nodes, or <em>tripartite</em> when there’s three, and so forth.</p>
 <p>The following is a diagram of a bipartite network of Facebook users and group membership.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
 <p>In this network, the first type (red, on the left) are people, and the second type (green, on the right) are Facebook groups. A line is drawn from one to the other if they are a member of that group. Carol is a member of the rabbits and dog group, Carol, David, Bob, and Egbert are members of the dog group, and Egbert and Alice members of the cat group.</p>
 <p>In digital humanities research, we often have access to bipartite network data, because almost any two sets of data points can be represented as a bipartite network. In some cases, the dataset can be derived rather than some pre-existing membership or category the data belongs to, as, for instance, in this study of the New Zealand parliament, which constructed a bipartite network of MPs to a set of speech topics, created using LDA topic modelling. In this model MPs are the first type, and topics the second, and these are used to construct a network of MPs based on their similarity across the topics they spoke about in Parliament.</p>
 <div class="figure">
 <img src="images/nz_topics.png" width="400" alt="" />
-<p class="caption">From Curran B, Higham K, Ortiz E, Vasques Filho D (2018) Look who's talking: Two-mode networks as representations of a topic model of New Zealand parliamentary speeches. PLoS ONE 13(6): e0199072. <a href="https://doi.org/10.1371/journal.pone.0199072" class="uri">https://doi.org/10.1371/journal.pone.0199072</a></p>
+<p class="caption">From Curran B, Higham K, Ortiz E, Vasques Filho D (2018) Look who’s talking: Two-mode networks as representations of a topic model of New Zealand parliamentary speeches. PLoS ONE 13(6): e0199072. <a href="https://doi.org/10.1371/journal.pone.0199072" class="uri">https://doi.org/10.1371/journal.pone.0199072</a></p>
 </div>
 <p>It’s important, therefore, to understand the extent to which regular network methods work or don’t work with this structure. Standard network measurements (such as degree) are easy to calculate using these networks, but are not always meaningful. In the above example, the degree count for each node (its connections) is simply a count of its group membership. Unlike in a regular network, the measurement doesn’t give any clues as to the most central member of the group. Similar problems exist for other metrics.</p>
 <p>In many cases, then, we will need to do something to the network in order to get meaningful analysis from it. The most common thing to do is to <em>project</em> the network. This involves collapsing the network, and directly connecting one of the node types, based on their connections to the other. For example, the network above can be collapsed into two separate networks: a network of people connected by shared group membership, and a network of groups connected by shared members:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
 <p>The network on the left displays a very common aspect of bipartite network projections: <em>cliques</em>, a cluster of nodes where each is connected to all the others.</p>
 <p>In the network on the left, the edge becomes ‘shares a Facebook group with’, and on the right, ‘has shared members’.</p>
 <details>
@@ -419,7 +422,7 @@ green
 </tbody>
 </table>
 <p>There is nothing stopping you from turning this into a bipartite network of fruit connected to colours, and even projecting this to a network of fruit directly connected by shared colours. It is very easy to technically turn this into a network.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
 <p>But is it meaningful? Perhaps not, unless there was a very clear reason for doing (biologists may be interested in this very question!).</p>
 </div>
 <div id="co-occurrence-and-co-authorship-networks." class="section level2 hasAnchor">
@@ -465,7 +468,7 @@ green
 <span id="cb113-3"><a href="week-5-class-2-other-network-types.html#cb113-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">2</span>) <span class="sc">+</span> </span>
 <span id="cb113-4"><a href="week-5-class-2-other-network-types.html#cb113-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">shape =</span> type),<span class="at">size =</span><span class="dv">2</span>) <span class="sc">+</span> </span>
 <span id="cb113-5"><a href="week-5-class-2-other-network-types.html#cb113-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
 <p>It already looks like a network structure, with a number of disconnected components (individuals who never collaborate, or only in a small group), with a central connected ‘component’, consisting of publishers who often collaborate on books together.</p>
 <p>However, we want to know more specifically about the structure of the publisher network. To do this, we project it.</p>
 <p>Igraph has another function for this, <code>bipartite_projection()</code>. Use this function on the network:</p>
@@ -503,7 +506,7 @@ green
 <span id="cb117-3"><a href="week-5-class-2-other-network-types.html#cb117-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
 <span id="cb117-4"><a href="week-5-class-2-other-network-types.html#cb117-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">1</span>) <span class="sc">+</span> </span>
 <span id="cb117-5"><a href="week-5-class-2-other-network-types.html#cb117-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> degree))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
 </div>
 </div>
 <div id="conclusions-3" class="section level2 hasAnchor">
@@ -511,7 +514,7 @@ green
 <ul>
 <li><p>A co-authorship network like this can get very dense very quickly, because there are many books, and only a limited number of individuals, so there will be many connections between them. It may be more meaningful to filter the data, for example using the edge weight column, to only consider ‘stronger’ relationships in the network (nodes which share several books together).</p></li>
 <li><p>The network also has a large number of ‘isolates’: nodes which are disconnected completely from the full network. These could also be removed, for visual clarity at least. To do this, you could filter to remove nodes with a total degree of one.</p></li>
-<li><p>This projected network is inherently <em>undirected</em>, because the edge ‘shares a book title’ doesn’t have any direction attached to it.</p></li>
+<li><p>This projected network is inherently <em>undirected</em>, because the edge ‘shares a book title’ doesn’t have any direction associated with it.</p></li>
 </ul>
 </div>
 <div id="section" class="section level2">
