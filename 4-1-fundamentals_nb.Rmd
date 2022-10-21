@@ -1,9 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-
 # Week 4, Class 1: Network Concepts and Metrics
 
 ## Exercises

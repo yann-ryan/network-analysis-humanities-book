@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Week 1, Class 2: Introduction to R and the Tidyverse | Cleaning the Observed and Thinking About the Unobserved Data</title>
-  <meta name="description" content="Week 1, Class 2: Introduction to R and the Tidyverse | Cleaning the Observed and Thinking About the Unobserved Data" />
+  <title>Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities</title>
+  <meta name="description" content="Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Week 1, Class 2: Introduction to R and the Tidyverse | Cleaning the Observed and Thinking About the Unobserved Data" />
+  <meta property="og:title" content="Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="yann-ryan/network-analysis-humanities-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Week 1, Class 2: Introduction to R and the Tidyverse | Cleaning the Observed and Thinking About the Unobserved Data" />
+  <meta name="twitter:title" content="Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities" />
   
   
   
@@ -405,20 +405,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#available-datasets"><i class="fa fa-check"></i>Available datasets</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#unharmonised-and-missing-data-or-the-universals-of-data-analysis-1"><i class="fa fa-check"></i>Unharmonised and Missing data, or the Universals of Data Analysis</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#unharmonised-data---an-overview-1"><i class="fa fa-check"></i>Unharmonised Data - An Overview</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#harmonisation-table-1"><i class="fa fa-check"></i>Harmonisation Table</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#regular-expressions-and-the-stringr-tools-1"><i class="fa fa-check"></i>Regular Expressions and the Stringr Tools</a>
-<ul>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#cleaning-data-at-scale-1"><i class="fa fa-check"></i>Cleaning Data at Scale</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#using-stringr-and-regular-experssions-1"><i class="fa fa-check"></i>Using Stringr and Regular Experssions</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#more-about-regular-expressions-and-stringr-in-practice-1"><i class="fa fa-check"></i>More About Regular Expressions and Stringr in Practice</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#regular-expressions-and-stringr---a-summary-1"><i class="fa fa-check"></i>Regular Expressions and Stringr - a Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#other-solutions-to-harmonisation-of-data-1"><i class="fa fa-check"></i>Other Solutions To Harmonisation of Data</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#missing-data-2"><i class="fa fa-check"></i>Missing data</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#for-the-next-week-1"><i class="fa fa-check"></i>For the Next Week</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#references-2"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -432,7 +418,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cleaning the Observed and Thinking About the Unobserved Data</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applying Network Analysis to Humanities</a>
           </h1>
         </div>
 
@@ -679,13 +665,13 @@ div.csl-indent {
 <p>Some examples using the fruit data:</p>
 <p>Bar chart of different types of fruit (one each of bananas and oranges, two types of apple)</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fruit_data) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> amount))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <p>Counting the total amount of fruit:</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fruit_data) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> amount))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 <p>Charting amounts and fruit colours:</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fruit_data) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">weight =</span> amount, <span class="at">fill =</span> colour)) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 </div>
 </div>
 <div id="reading-in-external-data" class="section level2 hasAnchor">

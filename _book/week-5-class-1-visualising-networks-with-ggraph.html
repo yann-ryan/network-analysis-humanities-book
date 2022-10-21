@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Week 5, Class 1: Visualising Networks with ggraph | Cleaning the Observed and Thinking About the Unobserved Data</title>
-  <meta name="description" content="Week 5, Class 1: Visualising Networks with ggraph | Cleaning the Observed and Thinking About the Unobserved Data" />
+  <title>Week 5, Class 1: Visualising Networks with ggraph | Applying Network Analysis to Humanities</title>
+  <meta name="description" content="Week 5, Class 1: Visualising Networks with ggraph | Applying Network Analysis to Humanities" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Week 5, Class 1: Visualising Networks with ggraph | Cleaning the Observed and Thinking About the Unobserved Data" />
+  <meta property="og:title" content="Week 5, Class 1: Visualising Networks with ggraph | Applying Network Analysis to Humanities" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="yann-ryan/network-analysis-humanities-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Week 5, Class 1: Visualising Networks with ggraph | Cleaning the Observed and Thinking About the Unobserved Data" />
+  <meta name="twitter:title" content="Week 5, Class 1: Visualising Networks with ggraph | Applying Network Analysis to Humanities" />
   
   
   
@@ -405,20 +405,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#available-datasets"><i class="fa fa-check"></i>Available datasets</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#unharmonised-and-missing-data-or-the-universals-of-data-analysis-1"><i class="fa fa-check"></i>Unharmonised and Missing data, or the Universals of Data Analysis</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#unharmonised-data---an-overview-1"><i class="fa fa-check"></i>Unharmonised Data - An Overview</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#harmonisation-table-1"><i class="fa fa-check"></i>Harmonisation Table</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#regular-expressions-and-the-stringr-tools-1"><i class="fa fa-check"></i>Regular Expressions and the Stringr Tools</a>
-<ul>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#cleaning-data-at-scale-1"><i class="fa fa-check"></i>Cleaning Data at Scale</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#using-stringr-and-regular-experssions-1"><i class="fa fa-check"></i>Using Stringr and Regular Experssions</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#more-about-regular-expressions-and-stringr-in-practice-1"><i class="fa fa-check"></i>More About Regular Expressions and Stringr in Practice</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#regular-expressions-and-stringr---a-summary-1"><i class="fa fa-check"></i>Regular Expressions and Stringr - a Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#other-solutions-to-harmonisation-of-data-1"><i class="fa fa-check"></i>Other Solutions To Harmonisation of Data</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#missing-data-2"><i class="fa fa-check"></i>Missing data</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#for-the-next-week-1"><i class="fa fa-check"></i>For the Next Week</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#references-2"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -432,7 +418,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cleaning the Observed and Thinking About the Unobserved Data</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applying Network Analysis to Humanities</a>
           </h1>
         </div>
 
@@ -475,8 +461,8 @@ div.csl-indent {
 </div>
 <div id="avoiding-the-dreaded-hairball" class="section level4 hasAnchor">
 <h4>Avoiding the dreaded ‘hairball’<a href="week-5-class-1-visualising-networks-with-ggraph.html#avoiding-the-dreaded-hairball" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Visualising large networks using these methods can often result in a large tangled mass of nodes and edges, known perojatively as a ‘hairball’. This is particularly true of large graphs without much of a tendency to cluster together, such as this graph of Facebook page networks<span class="citation">(<a href="#ref-musae" role="doc-biblioref"><strong>musae?</strong></a>)</span>.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
+<p>Visualising large networks using these methods can often result in a large tangled mass of nodes and edges, known perojatively as a ‘hairball’. This is particularly true of large graphs without much of a tendency to cluster together, such as this graph of Facebook page networks<span class="citation">(<a href="#ref-musae" role="doc-biblioref">Rozemberczki, Allen, and Sarkar 2021</a>)</span>.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
 <p>These graphs have limited use, even as exploratory data. There are some ways to mitigate against them, however:</p>
 <ul>
 <li><p>Consider filtering the network, as in the previous steps. Make sure you’re aware of the consequences of filtering before and after you calculate network metrics, however.</p></li>
@@ -498,13 +484,13 @@ div.csl-indent {
 <span id="cb136-5"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb136-5" aria-hidden="true" tabindex="-1"></a>g <span class="sc">%&gt;%</span> <span class="fu">ggraph</span>(<span class="st">&#39;bipartite&#39;</span>)<span class="sc">+</span> </span>
 <span id="cb136-6"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb136-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> </span>
 <span id="cb136-7"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb136-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.character</span>(types)))  <span class="sc">+</span> <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="fu">theme_void</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;bottom&#39;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&#39;Type:&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
 </div>
 <div id="adjacency-matrix" class="section level4 hasAnchor">
 <h4>Adjacency Matrix<a href="week-5-class-1-visualising-networks-with-ggraph.html#adjacency-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>One popular alternative to a network diagram is an <em>adjacency matrix.</em> In this case, the x and y axes contain each name in the network. A filled square is drawn for each edge, where they intersect.</p>
 <p>This method can be particularly useful for small, dense networks.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
 </div>
 </div>
 </div>
@@ -526,7 +512,7 @@ div.csl-indent {
 <p>This object is then passed to the function <code>ggraph()</code>, using the pipes.</p>
 <p><code>ggraph()</code> tells R to begin drawing a graph. It has optional arguments: for example, you can set the layout to something other than the default using the argument <code>layout =</code>.</p>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb138-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">&#39;fr&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
 <p>You’ll notice that it doesn’t draw anything other than a blank grey background.</p>
 <p><code>ggraph</code> uses the syntax as the plotting library <code>ggplot2</code>. Recall from Week 1, class 2, that plots in <code>ggplot2</code> are created by adding <code>geom_</code> functions to the blank plot.</p>
 <p>The same principle applies here, except with special <code>ggraph</code> geoms:</p>
@@ -538,7 +524,7 @@ div.csl-indent {
 <span id="cb139-2"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb139-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
 <span id="cb139-3"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb139-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>() <span class="sc">+</span> </span>
 <span id="cb139-4"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb139-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
 <p>There are many additional ways you can manipulate the visual appearance of your nodes and edges, for example by adding color, size, shape, arrows, and so forth.</p>
 <p>In ggraph (and ggplot), visual elements can be manipulated in two ways: you can either specify a value for a visual property, or you can specify that a property is mapped to a particular data point.</p>
 <p>This is all done with the relevant geom. To do the former, specify the value directly in the geom, like this:</p>
@@ -546,14 +532,14 @@ div.csl-indent {
 <span id="cb140-2"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb140-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
 <span id="cb140-3"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb140-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> <span class="co"># we specified that size should be set at the value 3</span></span>
 <span id="cb140-4"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb140-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
 <p>To map data to a particular data point, specify the data to be used within the geom, within a command <code>aes()</code>:</p>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb141-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
 <span id="cb141-2"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb141-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> <span class="co"># calculate a value for degree</span></span>
 <span id="cb141-3"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb141-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
 <span id="cb141-4"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb141-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> <span class="co"># switch around the order of the nodes and edges as it&#39;s easier to see the node color</span></span>
 <span id="cb141-5"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb141-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree)) <span class="co"># as well as the size, color is now mapped to the degree score.</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
 <p>Other visual properties which can be mapped or specified include <code>shape</code> and <code>alpha</code>.</p>
 <p>The visual appearance of edges can also be adjusted, using the same syntax.</p>
 <p>Change to a dashed line using <code>linetype</code>:</p>
@@ -562,7 +548,7 @@ div.csl-indent {
 <span id="cb142-3"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb142-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
 <span id="cb142-4"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb142-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">linetype =</span> <span class="dv">5</span>) <span class="sc">+</span> </span>
 <span id="cb142-5"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb142-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
 <p>You can also add arrows, with the following syntax. The <code>length</code> and <code>endcap</code> arguments control the appearance of the arrow.</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb143-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
 <span id="cb143-2"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb143-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> </span>
@@ -571,7 +557,7 @@ div.csl-indent {
 <span id="cb143-5"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb143-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">&#39;mm&#39;</span>)), </span>
 <span id="cb143-6"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb143-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">end_cap =</span> <span class="fu">circle</span>(<span class="dv">3</span>, <span class="st">&#39;mm&#39;</span>)) <span class="sc">+</span> </span>
 <span id="cb143-7"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb143-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
 <div id="ggraph-and-other-tidyverse-functions" class="section level3 hasAnchor">
 <h3>Ggraph and other tidyverse functions<a href="week-5-class-1-visualising-networks-with-ggraph.html#ggraph-and-other-tidyverse-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can use the dplyr pipes to perform calculations, filter the data and then visualise it, all in one go:</p>
@@ -582,7 +568,7 @@ div.csl-indent {
 <span id="cb144-5"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb144-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
 <span id="cb144-6"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb144-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>() <span class="sc">+</span> </span>
 <span id="cb144-7"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb144-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
 </div>
 <div id="add-node-labels" class="section level3 hasAnchor">
 <h3>Add node labels<a href="week-5-class-1-visualising-networks-with-ggraph.html#add-node-labels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -598,7 +584,7 @@ div.csl-indent {
 <span id="cb145-6"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb145-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">if_else</span>(degree <span class="sc">&gt;</span><span class="dv">10</span>, name, <span class="cn">NULL</span>), <span class="at">size =</span> degree), <span class="at">repel =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> </span>
 <span id="cb145-7"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb145-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 240 rows containing missing values (geom_text_repel).</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-96-1.png" width="672" /></p>
 </div>
 <div id="calculating-and-coloring-by-community-detection" class="section level3 hasAnchor">
 <h3>Calculating and coloring by community detection<a href="week-5-class-1-visualising-networks-with-ggraph.html#calculating-and-coloring-by-community-detection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -621,7 +607,7 @@ div.csl-indent {
 ## with weighted edge betweenness community detection might not make sense --
 ## modularity treats edge weights as similarities while edge betwenness treats them
 ## as distances.</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-96-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
 </div>
 </div>
 <div id="what-makes-a-good-network-visualisation" class="section level2 hasAnchor">
@@ -663,7 +649,7 @@ div.csl-indent {
 <span id="cb152-11"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb152-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> degree, <span class="at">color =</span> <span class="fu">as.character</span>(community), <span class="at">shape =</span> politician))  <span class="sc">+</span> </span>
 <span id="cb152-12"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb152-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">ifelse</span>(degree <span class="sc">&gt;</span><span class="dv">2</span>, main_name, <span class="cn">NA</span>)), <span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">repel =</span> T) <span class="sc">+</span> </span>
 <span id="cb152-13"><a href="week-5-class-1-visualising-networks-with-ggraph.html#cb152-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-98-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
 <p>It does look like one of the four clusters (cluster 2) has far fewer politicians. This cluster seems to be a group of what might be described as natural philosophers.</p>
 <p>Other things to look out for in this visualisation:</p>
 <ul>
@@ -677,6 +663,12 @@ div.csl-indent {
 <p>Hopefully, from reading this chapter, you’ll be convinced that network visualisations are useful, but that they should also be approached with caution. The bottom line is, visualisations of themselves are not a result: at the very least, they need extensive commentary in order to explain them, and in some cases, they may simply be useful ways of describing the network.</p>
 <p>At the same time, in combination with the additional attributes from our data model, thoughtful visualisations can be incredibly useful for exploring a network dataset, revealing patterns that are otherwise hidden. I encourage you to use visualisations in your final project if they make sense, are not just ‘hairballs’, and if they can be justified with relevant commentary.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-musae" class="csl-entry">
+Rozemberczki, Benedek, Carl Allen, and Rik Sarkar. 2021. <span>“<span>Multi-Scale Attributed Node Embedding</span>.”</span> <em>Journal of Complex Networks</em> 9 (2).
 </div>
 </div>
             </section>

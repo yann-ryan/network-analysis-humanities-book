@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Week 1, class 1: Course Introduction | Cleaning the Observed and Thinking About the Unobserved Data</title>
-  <meta name="description" content="Week 1, class 1: Course Introduction | Cleaning the Observed and Thinking About the Unobserved Data" />
+  <title>Week 1, class 1: Course Introduction | Applying Network Analysis to Humanities</title>
+  <meta name="description" content="Week 1, class 1: Course Introduction | Applying Network Analysis to Humanities" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Week 1, class 1: Course Introduction | Cleaning the Observed and Thinking About the Unobserved Data" />
+  <meta property="og:title" content="Week 1, class 1: Course Introduction | Applying Network Analysis to Humanities" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="yann-ryan/network-analysis-humanities-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Week 1, class 1: Course Introduction | Cleaning the Observed and Thinking About the Unobserved Data" />
+  <meta name="twitter:title" content="Week 1, class 1: Course Introduction | Applying Network Analysis to Humanities" />
   
   
   
@@ -405,20 +405,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#available-datasets"><i class="fa fa-check"></i>Available datasets</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#unharmonised-and-missing-data-or-the-universals-of-data-analysis-1"><i class="fa fa-check"></i>Unharmonised and Missing data, or the Universals of Data Analysis</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#unharmonised-data---an-overview-1"><i class="fa fa-check"></i>Unharmonised Data - An Overview</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#harmonisation-table-1"><i class="fa fa-check"></i>Harmonisation Table</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#regular-expressions-and-the-stringr-tools-1"><i class="fa fa-check"></i>Regular Expressions and the Stringr Tools</a>
-<ul>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#cleaning-data-at-scale-1"><i class="fa fa-check"></i>Cleaning Data at Scale</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#using-stringr-and-regular-experssions-1"><i class="fa fa-check"></i>Using Stringr and Regular Experssions</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#more-about-regular-expressions-and-stringr-in-practice-1"><i class="fa fa-check"></i>More About Regular Expressions and Stringr in Practice</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#regular-expressions-and-stringr---a-summary-1"><i class="fa fa-check"></i>Regular Expressions and Stringr - a Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#other-solutions-to-harmonisation-of-data-1"><i class="fa fa-check"></i>Other Solutions To Harmonisation of Data</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#missing-data-2"><i class="fa fa-check"></i>Missing data</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#for-the-next-week-1"><i class="fa fa-check"></i>For the Next Week</a></li>
-<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#references-2"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -432,7 +418,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cleaning the Observed and Thinking About the Unobserved Data</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applying Network Analysis to Humanities</a>
           </h1>
         </div>
 
@@ -579,8 +565,8 @@ What might this letter count tell us about a relationship in a network? What pot
 <div id="network-paths" class="section level2 hasAnchor">
 <h2>Network paths<a href="week-1-class-1-course-introduction.html#network-paths" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>One of the central concepts behind networks is that they allow information to travel along the edges, moving from node to node. In a metaphorical sense, nodes with less ‘hops’ between them have an easier route to this information, and may be said to be close together or influential on each other. If we add more than three nodes to the network, these paths begin to emerge. A network path is simply a route, travelling along edges, from one node to another in a network. Some network metrics use these paths to estimate structural importance, for example. Paths work differently in <em>directed</em> networks: information can only move in the direction of the edges.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="_main_files/figure-html/unnamed-chunk-1-1.png" alt="Network diagram showing the shortest path between node 5 and node 6. Left-hand network is undirected, meaning the path can travel along any edge. Network on the right is directed, meaning a path only exists in the direction of the edge. " width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="_main_files/figure-html/unnamed-chunk-2-1.png" alt="Network diagram showing the shortest path between node 5 and node 6. Left-hand network is undirected, meaning the path can travel along any edge. Network on the right is directed, meaning a path only exists in the direction of the edge. " width="672" />
 <p class="caption">
 Figure 1: Network diagram showing the shortest path between node 5 and node 6. Left-hand network is undirected, meaning the path can travel along any edge. Network on the right is directed, meaning a path only exists in the direction of the edge.
 </p>
@@ -612,8 +598,8 @@ What would a projected network of the other type (books connected to books) look
 <div id="multigraphs" class="section level3 hasAnchor">
 <h3>Multigraphs<a href="week-1-class-1-course-introduction.html#multigraphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There can also be multiple <em>kinds</em> of edges, in the same network. For example in a network of historical correspondents, you might have ‘met in person’ as well as ‘sent a letter to/from’. If these edges are not merged, these graphs are known as <strong>multigraphs</strong>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
-<img src="_main_files/figure-html/unnamed-chunk-2-1.png" alt="A diagram of a multigraph: a network with edges of more than one type." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="_main_files/figure-html/unnamed-chunk-3-1.png" alt="A diagram of a multigraph: a network with edges of more than one type." width="672" />
 <p class="caption">
 Figure 2: A diagram of a multigraph: a network with edges of more than one type.
 </p>
@@ -686,7 +672,7 @@ What problems can you imagine with this experiment?
 <h2>The ‘New’ Science of Networks<a href="week-1-class-1-course-introduction.html#the-new-science-of-networks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The most common use of networks in academic research much of the 20th century was looking at these small, sociological networks of relationships between people. This changed in the late 1990s, when a group of scientists began to use network research to understand the structures governing many kinds of complex systems, initially using the approach to map out the structure of the World Wide Web. This research showed that many of these complex networks had a similar structure: a small number of nodes with a very large number of connections, known as <em>hubs,</em> and a large number of nodes with very few connections. In fact, they argued, the structure followed what is known as a <em>power-law</em>: essentially many nodes have a very small number of connections, an exponentially smaller number of nodes have an exponentially larger number of connections, and so forth until a tiny of number of nodes have very many connections.</p>
 <p>These researchers, notably Albert Barabasi, argued that this process was guided by <em>preferential attachment</em>, meaning that these networks were created because nodes in a network were much more likely to attach themselves to nodes which already had many connections, leading to a ‘rich get richer’ effect. Perhaps most importantly, they demonstrated empirically that this particular structure could be found across a range of networks, from computers, to people, to biological networks or the structure of neurons in the brain. And they have wide-ranging implications: a scale-free network means it is easy for a disease to spread, because once it reaches a hub node it can easily move throughout the network.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="images/Screenshot%202022-10-03%20at%2012.07.50.png" alt="These diagrams show how a scale-free network is susceptible to to targeted attack but not to random. Removing any two nodes at random in a network of hubs makes little difference to the overall structure or robustness. However, removing two hub or bridging nodes, as on the right, results in a network in which many of the paths are now severed, meaning the network structure has begun to fall apart. Images from https://cs.brynmawr.edu/Courses/cs380/spring2013/section02/slides/01Introduction.pdf" width="49%" height="20%" /><img src="images/Screenshot%202022-10-03%20at%2012.07.55.png" alt="These diagrams show how a scale-free network is susceptible to to targeted attack but not to random. Removing any two nodes at random in a network of hubs makes little difference to the overall structure or robustness. However, removing two hub or bridging nodes, as on the right, results in a network in which many of the paths are now severed, meaning the network structure has begun to fall apart. Images from https://cs.brynmawr.edu/Courses/cs380/spring2013/section02/slides/01Introduction.pdf" width="49%" height="20%" />
 <p class="caption">
 Figure 3: These diagrams show how a scale-free network is susceptible to to targeted attack but not to random. Removing any two nodes at random in a network of hubs makes little difference to the overall structure or robustness. However, removing two hub or bridging nodes, as on the right, results in a network in which many of the paths are now severed, meaning the network structure has begun to fall apart. Images from <a href="https://cs.brynmawr.edu/Courses/cs380/spring2013/section02/slides/01Introduction.pdf" class="uri">https://cs.brynmawr.edu/Courses/cs380/spring2013/section02/slides/01Introduction.pdf</a>

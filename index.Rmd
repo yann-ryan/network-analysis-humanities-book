@@ -13,6 +13,9 @@ editor_options:
   markdown: 
     wrap: 72
 ---
+```{r message=FALSE, warning=FALSE, include=FALSE}
+knitr::opts_chunk$set(cache = TRUE) 
+```
 
 # About this Book
 
@@ -54,7 +57,7 @@ Assessment is the following:
 -   Presentation on final project (1/5 of the grade)**, given on
     Wednesday or Friday of the final week.**
 
--   Final project (4/5 of the grade, s**ubmitted on December 23 at the
+-   Final project (4/5 of the grade, s**ubmitted on January 17 at the
     latest.**
 
 Full details on the [course page on Studies
