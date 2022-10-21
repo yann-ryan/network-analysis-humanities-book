@@ -131,7 +131,7 @@
 
 \title{Applying Network Analysis to Humanities}
 \author{Yann Ryan, Iiro Tihonen}
-\date{2022-09-29}
+\date{2022-10-03}
 
 \begin{document}
 \maketitle
@@ -179,6 +179,51 @@ Assessment is the following:
 
 Full details on the \href{https://studies.helsinki.fi/courses/cur/hy-opt-cur-2223-7c9cdedc-fc7b-4e66-b793-1dbe0db868b7}{course page on Studies
 Service}
+
+\hypertarget{reading}{%
+\section{Reading}\label{reading}}
+
+Each week will have one piece of set reading, usually an article or book
+chapter, to be discussed in-class the following week.
+
+There is no set textbook, but the following are good general
+introductions to networks:
+
+\textbf{Ahnert, R., Ahnert, S., Coleman, C., \& Weingart, S. (2021). \emph{The
+Network Turn: Changing Perspectives in the Humanities} (Elements in
+Publishing and Book Culture). Cambridge: Cambridge University Press.
+\url{doi:10.1017/9781108866804}}
+
+Short, very readable volume on networks, specifically focused on
+humanities applications. Free, open access copy available through the
+above link.
+
+\textbf{Easley, D., and Kleinberg,J. (2010). \emph{Networks, Crowds, and Markets:
+Reasoning about a Highly Connected World.} Cambridge University Press.}
+
+Very comprehensive textbook on networks, mostly relating to economics,
+sociology, computing. Pre-publication draft is available for free on the
+\href{https://www.cs.cornell.edu/home/kleinber/networks-book/}{book website}.
+
+\textbf{Barabási, A.-L. (2002). \emph{Linked: The New Science of Networks}. Perseus
+Pub.}
+
+Popular science book on networks, very influential in bringing the
+science of networks to a popular audience.
+
+\textbf{Newman, M. E. J. (2018). \emph{Networks} (Second edition). Oxford
+University Press.}
+
+Comprehensive textbook of network theory, recommended if you want to
+understand algorithms etc. in more detail.
+
+Also worth checking out is the \href{https://historicalnetworkresearch.org/bibliography/}{extensive
+bibliography} and
+\href{https://jhnr.uni.lu/index.php/jhnr}{journal} by the Historical Network
+Research Community.
+
+\hypertarget{slides}{%
+\section{Slides}\label{slides}}
 
 There are also a set of slides for each week, which you can access here:
 
@@ -242,12 +287,6 @@ As we haven't introduced R yet, for this week, your only task is to make a copy 
 
 The word `network' is ubiquitous in our daily lives. The Oxford English Dictionary tells us the term itself originally was first defined as \texttt{Work\ (esp.\ manufactured\ work)\ in\ which\ threads,\ wires,\ etc.,\ are\ crossed\ or\ interlaced\ in\ the\ fashion\ of\ a\ net.} (think patch work), but now we commonly use it for any complex system of interrelated things: we all use social networking, and the telephone, railway, and road networks; an area of a city might be described as having networks of alleyways, or a historian might write about a network of trading posts.
 
-Networks have long been used to understand aspects of historical or cultural change. In below video, accompanying a \href{https://www.science.org/doi/10.1126/science.1240064}{paper in \emph{Science}}, researchers graphed places of birth and death---taken from Wikidata---as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.
-
-Given that the information is taken from Wikidata, what problems could you envisage with this study?
-
-While Wikidata is a large data source, it is obviously very partial and has a particular focus, for example in favour of white, male, Western Europeans. The study may just replicate the biases of Wikidata itself, hiding the important cultural influences on the west, from other parts of the world.
-
 These are all in some way metaphorical. The networks we'll learn about and use on this course have a more specific definition. In mathematics, a network is an object made up of \emph{things} and \emph{connections.} To use the standard language, the \emph{things} are called \textbf{nodes} (or sometimes vertices), and the \emph{connections} called \textbf{edges}.
 
 These things (and connections) could be almost anything. Some typical examples include:
@@ -265,6 +304,55 @@ In this final example, what might the connections be?
 
 The connections between web pages are generally the hyperlinks: the system of links known as the World Wide Web.
 
+\hypertarget{networks-in-the-humanities}{%
+\subsection{Networks in the Humanities}\label{networks-in-the-humanities}}
+
+Networks have long been used to understand aspects of historical or cultural change. In below video, accompanying a \href{https://www.science.org/doi/10.1126/science.1240064}{paper in \emph{Science}}, researchers graphed places of birth and death---taken from Wikidata---as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.
+
+Given that the information is taken from Wikidata, what problems could you envisage with this study?
+
+While Wikidata is a large data source, it is obviously very partial and has a particular focus, for example in favour of white, male, Western Europeans. The study may just replicate the biases of Wikidata itself, hiding the important cultural influences on the west, from other parts of the world.
+
+Other typical uses of complex networks in humanities subjects include \href{https://model-articles.rrchnm.org/articles/midura/}{spatial networks}, \href{https://www.frontiersin.org/articles/10.3389/fdigh.2017.00017/full}{line of sight} or \href{https://academic.oup.com/book/40384/chapter-abstract/347130019?redirectedFrom=fulltext}{pottery similarity networks} in archaeology, \href{https://www.landesgeschichte.uni-goettingen.de/handelsstrassen/index.php}{historic road networks}, and \href{http://www.martingrandjean.ch/network-visualization-shakespeare/}{character networks in plays}. In this course, we'll mostly work with networks as tools for \textbf{descriptive} and \textbf{exploratory} data analysis. But network science also has wide uses in \textbf{statistical and predictive modelling}.
+
+\hypertarget{some-examples}{%
+\subsection{Some Examples}\label{some-examples}}
+
+Before we get in to some of the details, it's worth going through a few examples of interesting projects which have combined humanities data with network science.
+
+\hypertarget{tudor-networks}{%
+\subsubsection{Tudor networks}\label{tudor-networks}}
+
+Used a number of network measurements to make a `network fingerprint' for everyone in an archive of Tudor communication. This worked well to identify spies and Catholic conspirators, and those under surveillance.
+
+\includegraphics{images/Screenshot 2022-10-03 at 11.42.11.png}
+
+\hypertarget{using-multi-layered-networks-to-disclose-books-in-the-republic-of-letters}{%
+\subsubsection{\texorpdfstring{\textbf{Using Multi-Layered Networks to Disclose Books in the Republic of Letters}}{Using Multi-Layered Networks to Disclose Books in the Republic of Letters}}\label{using-multi-layered-networks-to-disclose-books-in-the-republic-of-letters}}
+
+This project combined a network of letters with a network of book mentions, to find out more about the letter network of Nicolaas Heinsius and his exchanges with the Florentine Medici court.
+
+\includegraphics[width=5.20833in,height=\textheight]{images/Screenshot 2022-10-03 at 11.23.15.png}
+
+\hypertarget{six-degrees-of-francis-bacon}{%
+\subsubsection{Six Degrees of Francis Bacon}\label{six-degrees-of-francis-bacon}}
+
+The Six Degrees of Francis Bacon project used co-occurrence networks (a technique we'll learn about later) to infer links between early modern individuals. This was then turned into an interactive social network.
+
+\includegraphics[width=6.25in,height=\textheight]{images/Screenshot 2022-10-03 at 11.26.54.png}
+
+\hypertarget{mapping-the-digital-humanities-community-of-twitter}{%
+\subsubsection{Mapping the digital humanities community of Twitter}\label{mapping-the-digital-humanities-community-of-twitter}}
+
+\includegraphics{images/Screenshot 2022-10-03 at 11.46.29.png}
+
+\begin{itemize}
+\item
+  Measured the centrality of a group of 2,500 Twitter users self-identified as digital humanities practioners
+\item
+  Looked a separate communities of languages, French was paricularly isolated.
+\end{itemize}
+
 \hypertarget{graph-theory}{%
 \section{Graph Theory}\label{graph-theory}}
 
@@ -281,7 +369,11 @@ This process: abstracting a system to its connections, and devising mathematical
 
 Network analysis has become one of the most popular (and perhaps one of the most overused) techniques in the digital humanities toolbox. Over this course, we'll ask you to think critically about the methods you use and when they might not always be the best way to think about your data.
 
+\begin{figure}
+\centering
 \includegraphics[width=5.20833in,height=\textheight]{images/shouldyoudonetworkanalysis_xxl.jpg}
+\caption{Almost anything can be a network, but should you use network analysis? Here is a handy flowchart which might help you decide.}
+\end{figure}
 
 At the same time, network analysis does have plenty to offer the digital humanist:
 
@@ -299,10 +391,12 @@ At the same time, network analysis does have plenty to offer the digital humanis
 \hypertarget{network-basics}{%
 \section{Network Basics}\label{network-basics}}
 
+This section introduces the fundamental basics of network analysis, including its key components, and various network types.
+
 \hypertarget{nodes-and-edges}{%
 \subsection{Nodes and Edges}\label{nodes-and-edges}}
 
-As already mentioned, a network is a graph consisting of nodes and edges (connections). These are often represented visually as points (the nodes) and lines (the edges), like this:
+As already mentioned, a network is a graph consisting of nodes and edges (connections). Typically (though not always), the edges are \emph{pairwise,} meaning they run between a pair of nodes. These are often represented visually as points (the nodes) and lines (the edges), like this:
 
 \includegraphics[width=3.125in,height=\textheight]{images/Screenshot 2022-09-26 at 11.42.32.png}
 
@@ -331,6 +425,17 @@ These directed edges can also have separate weights attached to them:
 
 \includegraphics[width=3.125in,height=\textheight]{images/Screenshot 2022-09-26 at 11.31.15.png}
 
+\hypertarget{network-paths}{%
+\section{Network paths}\label{network-paths}}
+
+One of the central concepts behind networks is that they allow information to travel along the edges, moving from node to node. In a metaphorical sense, nodes with less `hops' between them have an easier route to this information, and may be said to be close together or influential on each other. If we add more than three nodes to the network, these paths begin to emerge. A network path is simply a route, travelling along edges, from one node to another in a network. Some network metrics use these paths to estimate structural importance, for example. Paths work differently in \emph{directed} networks: information can only move in the direction of the edges.
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/unnamed-chunk-1-1.pdf}
+\caption{\label{fig:unnamed-chunk-1}Network diagram showing the shortest path between node 5 and node 6. Left-hand network is undirected, meaning the path can travel along any edge. Network on the right is directed, meaning a path only exists in the direction of the edge.}
+\end{figure}
+
 \hypertarget{different-network-types}{%
 \section{Different Network Types}\label{different-network-types}}
 
@@ -356,7 +461,7 @@ Many network measurements and algorithms are designed to be used on regular, \em
 
 In the figure on the left below, we have collapsed the network so that now, publishers are directly connected to each other, based on shared appearances on books. If publishers shared multiple books, this can be added to the new edge as weight.
 
-\includegraphics{images/bipartite.png}
+\includegraphics[width=5.20833in,height=\textheight]{images/bipartite.png}
 
 What would a projected network of the other type (books connected to books) look like?
 
@@ -367,7 +472,11 @@ All three books would be connected to each other, because they all have one publ
 
 There can also be multiple \emph{kinds} of edges, in the same network. For example in a network of historical correspondents, you might have `met in person' as well as `sent a letter to/from'. If these edges are not merged, these graphs are known as \textbf{multigraphs}.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-1-1.pdf}
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/unnamed-chunk-2-1.pdf}
+\caption{\label{fig:unnamed-chunk-2}A diagram of a multigraph: a network with edges of more than one type.}
+\end{figure}
 
 Multigraphs are also known as multi-layer networks: you could imagine each separate set of edges as a separate layer within a network. Conceptually, we might learn interesting things by understanding how the various layers overlap and interact. R and other programming languages have packages to plot and analyse them.
 
@@ -402,9 +511,11 @@ A final type of network is a spatial network: one where the nodes and edges have
 \hypertarget{from-bridges-to-social-networks}{%
 \section{From Bridges to Social Networks\ldots{}}\label{from-bridges-to-social-networks}}
 
-In the 20th century, this same approach began to be used by the new discipline of sociology, applied to friendship networks. The gave birth to the field of `social network analysis', which over the past half a century or so has developed a whole range of theories governing the ways networks of people are formed, and what implications this has for the way they act. Human nodes naturally behave quite differently to an island, after all.
+In the twentieth century, this graph theory began to be used by the new discipline of sociology now applied to human relationships, to understand the processes behind business, family, and friendship ties. This gave birth to the field of `social network analysis', which over the past half a century or so has developed a whole range of theories governing the ways networks of people are formed, and what implications this has for the way they act. Human nodes naturally behave quite differently to an island, after all.
 
-\textbf{In what specific way might the connection between two people have different attributes to a connection between two islands?}
+In what specific way might the connection between two people have different attributes to a connection between two islands?
+
+Bridges and islands, clearly, don't have any choices as to whom they will connect to: it is determined by their geographic position. So many network analysis techniques may not be appropriate. But it is a good example of how graph theory should be considered firstly as a set of mathematical tools.
 
 \hypertarget{the-strength-of-weak-ties}{%
 \subsection{The Strength of Weak Ties}\label{the-strength-of-weak-ties}}
@@ -437,12 +548,14 @@ It is also connected to the `strength of weak ties' theory by Granovetter. This 
 
 The most common use of networks in academic research much of the 20th century was looking at these small, sociological networks of relationships between people. This changed in the late 1990s, when a group of scientists began to use network research to understand the structures governing many kinds of complex systems, initially using the approach to map out the structure of the World Wide Web. This research showed that many of these complex networks had a similar structure: a small number of nodes with a very large number of connections, known as \emph{hubs,} and a large number of nodes with very few connections. In fact, they argued, the structure followed what is known as a \emph{power-law}: essentially many nodes have a very small number of connections, an exponentially smaller number of nodes have an exponentially larger number of connections, and so forth until a tiny of number of nodes have very many connections.
 
-These researchers, notably Albert Barabasi, argued that this process was guided by \emph{preferential attachment}, meaning that these networks were created because nodes were much more likely to attach themselves to nodes which already had many connections. Perhaps most importantly, they empirically showed that this particular structure could be found across a range of networks, from computers, to people, to biological networks or the structure of neurons in the brain.
+These researchers, notably Albert Barabasi, argued that this process was guided by \emph{preferential attachment}, meaning that these networks were created because nodes in a network were much more likely to attach themselves to nodes which already had many connections, leading to a `rich get richer' effect. Perhaps most importantly, they demonstrated empirically that this particular structure could be found across a range of networks, from computers, to people, to biological networks or the structure of neurons in the brain. And they have wide-ranging implications: a scale-free network means it is easy for a disease to spread, because once it reaches a hub node it can easily move throughout the network.
+
+These ideas, published at a time when the internet (and later social networking) moved into the mainstream, drove a huge interest in thinking about the world in a `networked' way. They spawned a range of popular science and psychology books. Barabasi wrote \href{https://en.wikipedia.org/wiki/Linked:_The_New_Science_of_Networks}{\emph{Linked}}\emph{,} one of the defining popular science books of the 2000s, and used networks to argue that this scale-free network structure could be used to explain a whole range of human behaviours, from epidemics, to economics, to politics.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
-This outline has hopefully got you thinking about this network approach to data. A word of warning: almost everything can be represented as some kind of network. However, many of the findings from them require some careful thought: do they tell us something interesting, such as why a group of contacts formed in a particular formed in this way, or do they just reflect the data that we have collected or have available? What does a complex `hairball' network diagram really tell us?
+This outline has hopefully got you thinking about this network approach to data. A word of warning: almost everything can be represented as some kind of network. However, many of the findings from them require some careful thought: do they tell us something interesting, such as why a group of contacts formed in a particular formed in this way, or do they just reflect the data that we have collected or have available? What does a complex `hairball' network diagram really tell us? Have the claims of \emph{Linked} really helped us to understand business, economics, and the spread of disease?
 
 Between now and the next class, try to consider the ways some of the data you have used in your studies might be thought of as a network, and what benefits (and pitfalls) that approach might bring.
 
@@ -912,7 +1025,7 @@ Bar chart of different types of fruit (one each of bananas and oranges, two type
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-24-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-25-1.pdf}
 
 Counting the total amount of fruit:
 
@@ -922,7 +1035,7 @@ Counting the total amount of fruit:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-25-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-26-1.pdf}
 
 Charting amounts and fruit colours:
 
@@ -932,7 +1045,7 @@ Charting amounts and fruit colours:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-26-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-27-1.pdf}
 
 \hypertarget{reading-in-external-data}{%
 \section{Reading in external data}\label{reading-in-external-data}}
@@ -1000,7 +1113,7 @@ Try executing this chunk by clicking the \emph{Run} button within the chunk or b
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-28-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-29-1.pdf}
 
 Add a new chunk by clicking the \emph{Insert Chunk} button on the toolbar or by pressing \emph{Cmd+Option+I}.
 
@@ -1021,7 +1134,7 @@ Try executing this chunk by clicking the \emph{Run} button within the chunk or b
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-29-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-30-1.pdf}
 
 Add a new chunk by clicking the \emph{Insert Chunk} button on the toolbar or by pressing \emph{Cmd+Option+I}.
 
@@ -1042,7 +1155,7 @@ Try executing this chunk by clicking the \emph{Run} button within the chunk or b
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-30-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-31-1.pdf}
 
 Add a new chunk by clicking the \emph{Insert Chunk} button on the toolbar or by pressing \emph{Cmd+Option+I}.
 
@@ -1063,7 +1176,7 @@ Try executing this chunk by clicking the \emph{Run} button within the chunk or b
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-31-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-32-1.pdf}
 
 Add a new chunk by clicking the \emph{Insert Chunk} button on the toolbar or by pressing \emph{Cmd+Option+I}.
 
@@ -1109,11 +1222,11 @@ Degree is used to measure structural properties of the network. We can do this u
 
 To illustrate the degree distribution, below is a histogram of the degree distribution for a randomly-created scale-free network with 1000 nodes and 1000 edges. It shows that 0 to 10 nodes have a degree score of 50, 11 - 20 have a degree score of 4, and at the other end, more than 400 nodes have a degree score of just 1.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-32-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-33-1.pdf}
 
 Another way to illustrate this is with a log-log plot. A log-log plot shows the same data, except the scales are logarithmic, making them easier to read.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-33-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-34-1.pdf}
 
 Networks with distributions which look like this on a histogram or log-log plot are likely to be scale-free, meaning their structure consists of a number of important hubs with high degree, followed by a larger number of less-important nodes.
 
@@ -1186,12 +1299,19 @@ Clustering is a complex topic which forms a large part of the field of Social Ne
 \hypertarget{community-structure-in-networks}{%
 \subsection{Community Structure in Networks}\label{community-structure-in-networks}}
 
-Louvain algorithm
+Networks and communities are often thought of as analogous, but in network analysis, the latter are considered a subset of the former. Discovering discrete communities---often called sub-graphs---within a wider network has long been one of the fundamental applications of network science. In epidemiological networks, for example, the extent to which a network tends to break into sub-graphs and the constitution of those parts has important implications for understanding the spread of disease through a system. While the ego networks of the previous chapters are communities in their own right,~ working with a large set of merged, overlapping ego networks invites us to think about the whole, and how this whole might be redivided into clusters not necessarily corresponding to the ego networks which constitute its parts.
 
-Other methods.
+In a network sense, a community might be generally defined as a sub-grouping within a network which is in some way more densely connected to its internal group members than to those outside the group. The problem, of course, is that if the graph is connected (i.e.~if all nodes can reach all other nodes eventually), then the boundaries of any detected community that goes beyond a simple ego network are necessarily arbitrary, flexible, and subjective. It is true that many individuals will sit firmly in the core of a given cluster, but there will be those on the margins who might be considered as members of more than one community---or none.~
+
+In spite of these problems, this rigid way of thinking about communities can serve as a useful tool, to which we can bring our existing knowledge of historical communities and compare them to an algorithm's results. By forcing us to over-simplify, they may not be able to capture the full extent of multiple overlapping communities of identity, but they do help us to reflect on how we think of individuals operating within communities of correspondence. For example, though we might think of person X primarily as a member of group Y, if we look just at their patterns of correspondence, they seem more firmly in group Z. This is not to say that we should necessarily re-evaluate the scholarship and declare that they were in group Z all along, but it might be an indication that we should re-assess that person's patterns of correspondence---after all, belonging to a community and being more likely to correspond with its members are not the same thing.~
+
+\hypertarget{community-detection-methods}{%
+\subsection{Community Detection Methods}\label{community-detection-methods}}
+
+Network science has a large of algorithsm for finding optimal communities in graphs. Many rely on a metric called modularity, explained in this next section.
 
 \hypertarget{modularity}{%
-\subsection{Modularity}\label{modularity}}
+\subsubsection{Modularity}\label{modularity}}
 
 Modularity is a score evaluating how well a given set of group labels describe the groups found in a network. It's calculated as the number of edges falling within groups minus the expected number in an equivalent network with edges placed at random (\href{https://www.pnas.org/content/103/23/8577}{link}). In the below diagram, the modularity is high, because the groups (coloured as either red or green nodes) correctly describe the two separate `communities' found in the network. Community detection algorithms work by trying to maximise this value.
 
@@ -1201,11 +1321,26 @@ As with the clustering coefficient, a high modularity indicates the extent to wh
 
 \begin{figure}
 \centering
-\includegraphics{_main_files/figure-latex/unnamed-chunk-34-1.pdf}
-\caption{\label{fig:unnamed-chunk-34}A network with high modularity. The given partitions (separate colours) successfully divide the network into groups with many more connections between the groups than to other groups.}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-35-1.pdf}
+\caption{\label{fig:unnamed-chunk-35}A network with high modularity. The given partitions (separate colours) successfully divide the network into groups with many more connections between the groups than to other groups.}
 \end{figure}
 
-A small warning: modularity is only as useful as the groups you feed it. The Gephi modularity score, for example, first uses a community detection algorithm, and the modularity score is just the maximum that it is able to find using this method. In most cases, the found groups will not be a perfect representation of the way the network is divided.
+\hypertarget{louvain-community-detection}{%
+\subsubsection{Louvain Community Detection}\label{louvain-community-detection}}
+
+The Louvain algorithm is one algorithm which uses modularity, developed specifically for use in large graphs. At first, each node in the network is assigned to a community of just itself. Then, one at a time, each node is temporarily moved to the community of each of its neighbours, and the modularity of the whole graph is re-checked using the method above. Each node is kept in the community which results in the highest change in overall modularity.~
+
+At this point, most nodes are now in a community of two (if there's no change in modularity, they stay in their own community). The next step treats these mini-communities as nodes in a network in their own right, and runs the same process again (putting each mini-community into the mini-community of its neighbour, calculating overall modularity, and moving to that which gives it the highest gain). This whole process then repeats until modularity stops increasing and communities stop merging with other communities---or a pre-supplied threshold is reached.
+
+In very large graphs, the process is more difficult and likely to give different results depending on the random starting point. Also, while the method may be a useful way of finding communities without preconceived starting points, it does require us to think of the network as being divided into communities of some kind. Every node must be placed in a community - none can be placed outside the communities, and, perhaps more controversially, with this method, no node can be a member of more than one community.~
+
+\begin{figure}
+\centering
+\includegraphics[width=7.29167in,height=\textheight]{images/louvain.png}
+\caption{From Traag, V.A., Waltman, L. \& van Eck, N.J. From Louvain to Leiden: guaranteeing well-connected communities. Sci Rep 9, 5233 (2019). \url{https://doi.org/10.1038/s41598-019-41695-z}}
+\end{figure}
+
+Important to note is that communities are to some degree subjective, and `densely-connected' can have different meanings depending on the algorithm. And needless to say, detecting communities on a graph alone does not make a research question!
 
 \hypertarget{conclusions}{%
 \section{Conclusions}\label{conclusions}}
@@ -1805,7 +1940,7 @@ When used correctly and with more knowledge about a network, force-directed diag
 
 Visualising large networks using these methods can often result in a large tangled mass of nodes and edges, known perojatively as a `hairball'. This is particularly true of large graphs without much of a tendency to cluster together, such as this graph of Facebook page networks\citep{musae}.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-53-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-54-1.pdf}
 
 These graphs have limited use, even as exploratory data. There are some ways to mitigate against them, however:
 
@@ -1840,7 +1975,7 @@ Some network types are particularly suited to other visualisation methods. Bipar
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-54-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-55-1.pdf}
 
 \hypertarget{adjacency-matrix}{%
 \subsubsection{Adjacency Matrix}\label{adjacency-matrix}}
@@ -1849,7 +1984,7 @@ One popular alternative to a network diagram is an \emph{adjacency matrix.} In t
 
 This method can be particularly useful for small, dense networks.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-55-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-56-1.pdf}
 
 \hypertarget{network-visualisations-with-r-and-ggraph.}{%
 \section{Network Visualisations with R and ggraph.}\label{network-visualisations-with-r-and-ggraph.}}
@@ -1884,7 +2019,7 @@ This object is then passed to the function \texttt{ggraph()}, using the pipes.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-57-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-58-1.pdf}
 
 You'll notice that it doesn't draw anything other than a blank grey background.
 
@@ -1908,7 +2043,7 @@ The same principle applies here, except with special \texttt{ggraph} geoms:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-58-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-59-1.pdf}
 
 There are many additional ways you can manipulate the visual appearance of your nodes and edges, for example by adding color, size, shape, arrows, and so forth.
 
@@ -1925,7 +2060,7 @@ This is all done with the relevant geom. To do the former, specify the value dir
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-59-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-60-1.pdf}
 
 To map data to a particular data point, specify the data to be used within the geom, within a command \texttt{aes()}:
 
@@ -1939,7 +2074,7 @@ To map data to a particular data point, specify the data to be used within the g
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-60-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-61-1.pdf}
 
 Other visual properties which can be mapped or specified include \texttt{shape} and \texttt{alpha}.
 
@@ -1957,7 +2092,7 @@ Change to a dashed line using \texttt{linetype}:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-61-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-62-1.pdf}
 
 You can also add arrows, with the following syntax. The \texttt{length} and \texttt{endcap} arguments control the appearance of the arrow.
 
@@ -1973,7 +2108,7 @@ You can also add arrows, with the following syntax. The \texttt{length} and \tex
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-62-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-63-1.pdf}
 
 \hypertarget{ggraph-and-other-tidyverse-functions}{%
 \subsection{Ggraph and other tidyverse functions}\label{ggraph-and-other-tidyverse-functions}}
@@ -1992,7 +2127,7 @@ You can use the dplyr pipes to perform calculations, filter the data and then vi
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-63-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-64-1.pdf}
 
 \hypertarget{add-node-labels}{%
 \subsection{Add node labels}\label{add-node-labels}}
@@ -2021,7 +2156,7 @@ A the moment, we only have the IDs for each node. In a further step we can join 
 ## Warning: Removed 240 rows containing missing values (geom_text_repel).
 \end{verbatim}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-64-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-65-1.pdf}
 
 \hypertarget{calculating-and-coloring-by-community-detection}{%
 \subsection{Calculating and coloring by community detection}\label{calculating-and-coloring-by-community-detection}}
@@ -2057,7 +2192,7 @@ One very common visualisation is colouring the various groups in the network, wh
 ## as distances.
 \end{verbatim}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-65-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-66-1.pdf}
 
 \hypertarget{case-study-scientists-and-politicians}{%
 \section{Case study: Scientists and Politicians}\label{case-study-scientists-and-politicians}}
@@ -2107,7 +2242,7 @@ To check whether this might be a clue towards the structure of the network, we w
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-67-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-68-1.pdf}
 
 It does look like one of the four clusters (cluster 2) has far fewer politicians. This cluster seems to be a group of what might be described as natural philosophers.
 
@@ -2141,7 +2276,7 @@ Many networks are not this straightforward, and have two, or more, types of node
 
 The following is a diagram of a bipartite network of Facebook users and group membership.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-68-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-69-1.pdf}
 
 In this network, the first type (red, on the left) are people, and the second type (green, on the right) are Facebook groups. A line is drawn from one to the other if they are a member of that group. Carol is a member of the rabbits and dog group, Carol, David, Bob, and Egbert are members of the dog group, and Egbert and Alice members of the cat group.
 
@@ -2157,7 +2292,7 @@ It's important, therefore, to understand the extent to which regular network met
 
 In many cases, then, we will need to do something to the network in order to get meaningful analysis from it. The most common thing to do is to \emph{project} the network. This involves collapsing the network, and directly connecting one of the node types, based on their connections to the other. For example, the network above can be collapsed into two separate networks: a network of people connected by shared group membership, and a network of groups connected by shared members:
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-69-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-70-1.pdf}
 
 The network on the left displays a very common aspect of bipartite network projections: \emph{cliques}, a cluster of nodes where each is connected to all the others.
 
@@ -2191,7 +2326,7 @@ grape & green\\
 
 There is nothing stopping you from turning this into a bipartite network of fruit connected to colours, and even projecting this to a network of fruit directly connected by shared colours. It is very easy to technically turn this into a network.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-71-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-72-1.pdf}
 
 But is it meaningful? Perhaps not, unless there was a very clear reason for doing (biologists may be interested in this very question!).
 
@@ -2284,7 +2419,7 @@ At this point, we can already visualise the network, setting the shape of the no
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-76-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-77-1.pdf}
 
 It already looks like a network structure, with a number of disconnected components (individuals who never collaborate, or only in a small group), with a central connected `component', consisting of publishers who often collaborate on books together.
 
@@ -2347,7 +2482,7 @@ The rest of the steps can be copied directly from the previous lesson on network
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-79-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-80-1.pdf}
 
 \hypertarget{conclusions-3}{%
 \section{Conclusions}\label{conclusions-3}}
@@ -2358,7 +2493,7 @@ The rest of the steps can be copied directly from the previous lesson on network
 \item
   The network also has a large number of `isolates': nodes which are disconnected completely from the full network. These could also be removed, for visual clarity at least. To do this, you could filter to remove nodes with a total degree of one.
 \item
-  This projected network is inherently \emph{undirected}, because the edge `shares a book title' doesn't have any direction attached to it.
+  This projected network is inherently \emph{undirected}, because the edge `shares a book title' doesn't have any direction associated with it.
 \end{itemize}
 
 \hypertarget{section}{%

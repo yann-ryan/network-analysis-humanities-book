@@ -1,0 +1,25 @@
+# Week 6, Class 2: Reflections and Pitfalls of Networks
+
+## What are implications of networks?
+
+Hierarchies
+
+'Rich get richer' effect
+
+## Network representations
+
+How do we communicate that this is one representation/model of data
+
+## Problems with network representation
+
+Pitfalls etc.
+
+### Missing data
+
+### Specific problems with networks and cultural/humanities data
+
+## Visualisations
+
+> "There is a tendency when using graphs to become smitten with one's own data. Even though a graph of a few hundred nodes quickly becomes unreadable, it is often satisfying for the creator because the resulting figure is elegant and complex and may be subjectively beautiful, and the notion that the creator's data is"complex" fits just fine with the creator's own interpretation of it. Graphs have a tendency of making a data set look sophisticated and important, without having solved the problem of enlightening the viewer." ---Ben Fry, *Visualizing Data: Exploring and Explaining Data with the Processing Environment* (Sebastopol, CA: O'Reilly Media, 2007)
+
+Do you agree with this statement? Another viewpoint is here: <https://gephi.wordpress.com/2011/10/12/everything-looks-like-a-graph-but-almost-nothing-should-ever-be-drawn-as-one/>

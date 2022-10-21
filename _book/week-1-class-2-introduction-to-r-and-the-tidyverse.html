@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities</title>
-  <meta name="description" content="Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities" />
+  <title>Week 1, Class 2: Introduction to R and the Tidyverse | Cleaning the Observed and Thinking About the Unobserved Data</title>
+  <meta name="description" content="Week 1, Class 2: Introduction to R and the Tidyverse | Cleaning the Observed and Thinking About the Unobserved Data" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities" />
+  <meta property="og:title" content="Week 1, Class 2: Introduction to R and the Tidyverse | Cleaning the Observed and Thinking About the Unobserved Data" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="yann-ryan/network-analysis-humanities-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Week 1, Class 2: Introduction to R and the Tidyverse | Applying Network Analysis to Humanities" />
+  <meta name="twitter:title" content="Week 1, Class 2: Introduction to R and the Tidyverse | Cleaning the Observed and Thinking About the Unobserved Data" />
   
   
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-10-03" />
+<meta name="date" content="2022-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.23/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -164,6 +172,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i>About the course</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#reading"><i class="fa fa-check"></i>Reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#final-project"><i class="fa fa-check"></i>Final Project</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#slides"><i class="fa fa-check"></i>Slides</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html"><i class="fa fa-check"></i>Week 1, class 1: Course Introduction</a>
@@ -171,6 +180,11 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#how-to-use-this-book-and-follow-the-course."><i class="fa fa-check"></i>How to use this book and follow the course.</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#what-do-we-mean-by-a-network"><i class="fa fa-check"></i>What do we mean by a ‘network’?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#why-use-networks"><i class="fa fa-check"></i>Why Use Networks?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#networks-in-the-humanities"><i class="fa fa-check"></i>Networks in the Humanities</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#some-examples"><i class="fa fa-check"></i>Some Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#graph-theory"><i class="fa fa-check"></i>Graph Theory</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#why-use-networks-in-humanities"><i class="fa fa-check"></i>Why use networks in humanities?</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-basics"><i class="fa fa-check"></i>Network Basics</a>
@@ -206,7 +220,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#using-r"><i class="fa fa-check"></i>Using R</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#base-r."><i class="fa fa-check"></i>‘Base’ R.</a></li>
-<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-types."><i class="fa fa-check"></i>Basic R data types.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-structures"><i class="fa fa-check"></i>Basic R data structures</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#data-types"><i class="fa fa-check"></i>Data types</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i>Tidyverse</a>
 <ul>
@@ -220,36 +235,71 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#reading-in-external-data"><i class="fa fa-check"></i>Reading in external data</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html"><i class="fa fa-check"></i>Week 2, Class 1: Acquiring and Working With Network Data</a></li>
-<li class="chapter" data-level="" data-path="week-2-class-2-data-cleaning.html"><a href="week-2-class-2-data-cleaning.html"><i class="fa fa-check"></i>Week 2, Class 2: Data Cleaning</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html"><i class="fa fa-check"></i>Week 2, Class 1: Acquiring and Working With Network Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#presenting-networks-as-data"><i class="fa fa-check"></i>Presenting Networks as Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#estc"><i class="fa fa-check"></i>ESTC</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#tweetsets-and-hydrator"><i class="fa fa-check"></i>Tweetsets and hydrator</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#instructions-for-homework"><i class="fa fa-check"></i>Instructions for homework</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><i class="fa fa-check"></i>Week 2, Class 2: Cleaning the Observed and Thinking About the Unobserved Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#unharmonised-and-missing-data-or-the-universals-of-data-analysis"><i class="fa fa-check"></i>Unharmonised and Missing data, or the Universals of Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#unharmonised-data---an-overview"><i class="fa fa-check"></i>Unharmonised Data - An Overview</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#harmonisation-table"><i class="fa fa-check"></i>Harmonisation Table</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#regular-expressions-and-the-stringr-tools"><i class="fa fa-check"></i>Regular Expressions and the Stringr Tools</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cleaning-data-at-scale"><i class="fa fa-check"></i>Cleaning Data at Scale</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#using-stringr-and-regular-experssions"><i class="fa fa-check"></i>Using Stringr and Regular Experssions</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#more-about-regular-expressions-and-stringr-in-practice"><i class="fa fa-check"></i>More About Regular Expressions and Stringr in Practice</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#regular-expressions-and-stringr---a-summary"><i class="fa fa-check"></i>Regular Expressions and Stringr - a Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#other-solutions-to-harmonisation-of-data"><i class="fa fa-check"></i>Other Solutions To Harmonisation of Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#missing-data"><i class="fa fa-check"></i>Missing data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#for-the-next-week"><i class="fa fa-check"></i>For the Next Week</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#references-1"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="week-3-class-1-data-modelling.html"><a href="week-3-class-1-data-modelling.html"><i class="fa fa-check"></i>Week 3, Class 1: Data modelling</a></li>
 <li class="chapter" data-level="" data-path="week-3-class-2-build-a-data-model-with-r.html"><a href="week-3-class-2-build-a-data-model-with-r.html"><i class="fa fa-check"></i>Week 3, Class 2: Build a Data Model with R</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html"><i class="fa fa-check"></i>Week 4, Class 1: Network Metrics</a>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html"><i class="fa fa-check"></i>Week 4, Class 1: Network Concepts and Metrics</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#node-level-metrics"><i class="fa fa-check"></i>Node-level metrics</a>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#social-network-concepts-triadic-closure-transitivity-brokerage"><i class="fa fa-check"></i>Social network concepts: triadic closure, transitivity, brokerage</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#degree"><i class="fa fa-check"></i>Degree</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#betweenness-centrality"><i class="fa fa-check"></i>Betweenness Centrality</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#eigenvector-centrality"><i class="fa fa-check"></i>Eigenvector Centrality</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#closeness-centrality"><i class="fa fa-check"></i>Closeness centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#triadic-closure"><i class="fa fa-check"></i>Triadic closure</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#edge-level-metrics"><i class="fa fa-check"></i>Edge-level metrics</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#global-metrics"><i class="fa fa-check"></i>Global Metrics</a>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#node-level-metrics"><i class="fa fa-check"></i>Node-level metrics</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#density"><i class="fa fa-check"></i>Density</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#clustering-coefficient"><i class="fa fa-check"></i>Clustering coefficient</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-structure-in-networks"><i class="fa fa-check"></i>Community Structure in Networks</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-detection-methods"><i class="fa fa-check"></i>Community Detection Methods</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#degree"><i class="fa fa-check"></i>Degree</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#betweenness-centrality"><i class="fa fa-check"></i>Betweenness Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#eigenvector-centrality"><i class="fa fa-check"></i>Eigenvector Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#closeness-centrality"><i class="fa fa-check"></i>Closeness centrality</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#edge-level-metrics"><i class="fa fa-check"></i>Edge-level metrics</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#global-metrics"><i class="fa fa-check"></i>Global Metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#density"><i class="fa fa-check"></i>Density</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#clustering-coefficient"><i class="fa fa-check"></i>Clustering coefficient</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#groups-and-community-structure-in-networks"><i class="fa fa-check"></i>Groups and Community Structure in Networks</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#components"><i class="fa fa-check"></i>Components</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#cliques"><i class="fa fa-check"></i>Cliques</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#community-detection-methods"><i class="fa fa-check"></i>Community Detection Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html"><i class="fa fa-check"></i>Week 4, Class 2: Network Analysis with R</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#creating-a-network-object-in-r"><i class="fa fa-check"></i>Creating a Network Object in R</a>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#introduction-3"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#network-data-structures"><i class="fa fa-check"></i>Network data structures</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#edge-lists"><i class="fa fa-check"></i>Edge lists</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#adjacency-matrices"><i class="fa fa-check"></i>Adjacency Matrices</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#creating-a-network-object-in-r-from-an-edge-list"><i class="fa fa-check"></i>Creating a Network Object in R from an Edge List</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#import-network-data"><i class="fa fa-check"></i>Import Network Data</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#turn-the-edge-list-into-a-tbl_graph"><i class="fa fa-check"></i>Turn the edge list into a tbl_graph</a></li>
@@ -261,6 +311,16 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#summarising-the-network-data"><i class="fa fa-check"></i>Summarising the network data</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#joining-additional-data"><i class="fa fa-check"></i>Joining additional data</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#transitivity-triads-structural-balance"><i class="fa fa-check"></i>Transitivity, Triads, structural balance</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#triad-census"><i class="fa fa-check"></i>Triad Census</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#group-detection"><i class="fa fa-check"></i>Group detection</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#components-1"><i class="fa fa-check"></i>Components</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#cliques-1"><i class="fa fa-check"></i>Cliques</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#community-detection"><i class="fa fa-check"></i>Community Detection</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#conclusions-1"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html"><i class="fa fa-check"></i>Week 5, Class 1: Visualising Networks with ggraph</a>
@@ -276,11 +336,14 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#add-node-labels"><i class="fa fa-check"></i>Add node labels</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#calculating-and-coloring-by-community-detection"><i class="fa fa-check"></i>Calculating and coloring by community detection</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#what-makes-a-good-network-visualisation"><i class="fa fa-check"></i>What makes a good network visualisation?</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#case-study-scientists-and-politicians"><i class="fa fa-check"></i>Case study: Scientists and Politicians</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#conclusions-2"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html"><i class="fa fa-check"></i>Week 5, class 2: Other network types</a>
 <ul>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#ego-networks"><i class="fa fa-check"></i>Ego Networks</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#case-study-a-spotify-ego-network"><i class="fa fa-check"></i>Case Study: A Spotify Ego Network</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#bipartite-networks-1"><i class="fa fa-check"></i>Bipartite networks</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#co-occurrence-and-co-authorship-networks."><i class="fa fa-check"></i>Co-occurrence and co-authorship networks.</a>
 <ul>
@@ -290,31 +353,72 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#conclusions-3"><i class="fa fa-check"></i>Conclusions</a></li>
 <li><a href="week-5-class-2-other-network-types.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#exercises-2"><i class="fa fa-check"></i>Exercises:</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html"><i class="fa fa-check"></i>Week 6, Class 1: Asking and Answering Questions with Networks</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#what-makes-a-good-question-of-a-network"><i class="fa fa-check"></i>What makes a good question of a network?</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#using-the-data-model"><i class="fa fa-check"></i>Using the data model</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#examples"><i class="fa fa-check"></i>Examples</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#existing-examples"><i class="fa fa-check"></i>Existing examples</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#practical-example-estc"><i class="fa fa-check"></i>Practical Example: ESTC</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#question-what-do-publishers-and-printers-cluster-by"><i class="fa fa-check"></i>Question: what do publishers and printers cluster by?</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#practical-example-determining-social-media-influence-using-pagerank"><i class="fa fa-check"></i>Practical example: Determining social media influence using PageRank</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#using-the-data-model"><i class="fa fa-check"></i>Using the data model</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#filtering-your-data-using-a-pipeline"><i class="fa fa-check"></i>filtering your data using a pipeline</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#getting-network-statistics-before-and-after-filtering."><i class="fa fa-check"></i>Getting network statistics before and after filtering.</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#using-visualisations"><i class="fa fa-check"></i>Using visualisations</a></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#network-statistics"><i class="fa fa-check"></i>Network statistics</a>
 <ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#getting-and-reporting-basic-global-network-metrics"><i class="fa fa-check"></i>Getting and reporting basic global network metrics</a></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#networks-and-regression"><i class="fa fa-check"></i>Networks and regression</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#ergms."><i class="fa fa-check"></i>ERGMs.</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#statistical-approaches-to-networks---ergm-and-soam-rsiena"><i class="fa fa-check"></i>Statistical approaches to networks - ERGM and SOAM (RSiena)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-6-class-2-putting-it-all-together.html"><a href="week-6-class-2-putting-it-all-together.html"><i class="fa fa-check"></i>Week 6, Class 2: Putting it all together</a>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html"><i class="fa fa-check"></i>Week 6, Class 2: Reflections and Pitfalls of Networks</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-6-class-2-putting-it-all-together.html"><a href="week-6-class-2-putting-it-all-together.html#course-project"><i class="fa fa-check"></i>Course Project</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-2-putting-it-all-together.html"><a href="week-6-class-2-putting-it-all-together.html#using-your-data-model"><i class="fa fa-check"></i>Using your data model</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-2-putting-it-all-together.html"><a href="week-6-class-2-putting-it-all-together.html#how-to-comment-on-a-network"><i class="fa fa-check"></i>How to comment on a network</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html"><i class="fa fa-check"></i>Week 7: Reflections</a>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#what-are-implications-of-networks"><i class="fa fa-check"></i>What are implications of networks?</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#network-representations"><i class="fa fa-check"></i>Network representations</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#problems-with-network-representation"><i class="fa fa-check"></i>Problems with network representation</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html#limitations-and-pitfalls"><i class="fa fa-check"></i>Limitations and pitfalls</a></li>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html#biases-representation"><i class="fa fa-check"></i>Biases, representation</a></li>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html#effects-of-missing-data"><i class="fa fa-check"></i>Effects of missing data</a></li>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html#dangers-of-a-network-view-of-the-world."><i class="fa fa-check"></i>Dangers of a network view of the world.</a></li>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html#networks-and-hegemonypower."><i class="fa fa-check"></i>Networks and hegemony/power.</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#missing-data-1"><i class="fa fa-check"></i>Missing data</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#specific-problems-with-networks-and-culturalhumanities-data"><i class="fa fa-check"></i>Specific problems with networks and cultural/humanities data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#visualisations"><i class="fa fa-check"></i>Visualisations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html"><i class="fa fa-check"></i>Week 7: Final Project</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#what-should-the-final-project-look-like"><i class="fa fa-check"></i>What should the final project look like?</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#practical-steps"><i class="fa fa-check"></i>Practical steps</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#project-aim"><i class="fa fa-check"></i>Project Aim</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#r-markdown"><i class="fa fa-check"></i>R Markdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#reproducible-research"><i class="fa fa-check"></i>Reproducible research</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#final-project-datasets"><i class="fa fa-check"></i>Final Project Datasets</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#available-datasets"><i class="fa fa-check"></i>Available datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#unharmonised-and-missing-data-or-the-universals-of-data-analysis-1"><i class="fa fa-check"></i>Unharmonised and Missing data, or the Universals of Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#unharmonised-data---an-overview-1"><i class="fa fa-check"></i>Unharmonised Data - An Overview</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#harmonisation-table-1"><i class="fa fa-check"></i>Harmonisation Table</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#regular-expressions-and-the-stringr-tools-1"><i class="fa fa-check"></i>Regular Expressions and the Stringr Tools</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#cleaning-data-at-scale-1"><i class="fa fa-check"></i>Cleaning Data at Scale</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#using-stringr-and-regular-experssions-1"><i class="fa fa-check"></i>Using Stringr and Regular Experssions</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#more-about-regular-expressions-and-stringr-in-practice-1"><i class="fa fa-check"></i>More About Regular Expressions and Stringr in Practice</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#regular-expressions-and-stringr---a-summary-1"><i class="fa fa-check"></i>Regular Expressions and Stringr - a Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#other-solutions-to-harmonisation-of-data-1"><i class="fa fa-check"></i>Other Solutions To Harmonisation of Data</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#missing-data-2"><i class="fa fa-check"></i>Missing data</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#for-the-next-week-1"><i class="fa fa-check"></i>For the Next Week</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#references-2"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -328,7 +432,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applying Network Analysis to Humanities</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cleaning the Observed and Thinking About the Unobserved Data</a>
           </h1>
         </div>
 
@@ -386,8 +490,8 @@ div.csl-indent {
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">!=</span> z</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
-<div id="basic-r-data-types." class="section level3 hasAnchor">
-<h3>Basic R data types.<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-types." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="basic-r-data-structures" class="section level3 hasAnchor">
+<h3>Basic R data structures<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-structures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It is worth understanding the main types of data that you’ll come across, in your environment window. First, you’ll have dataframes. These are the spreadsheet-like objects which you’ll use in most analyses. They have rows and columns.</p>
 <p>Next are variables. A variable is assigned to a name, and then used for various purposes.</p>
 <p>You’ll often hear of an item called a vector. A vector is a list of objects of the same type. A vector can be a single column in a dataframe (spreadsheet), which means they are used very often in R to manipulate data. A vector can have different types: for example, a character vector looks like this <code>c("apples", "bananas", "oranges")</code>.</p>
@@ -396,40 +500,59 @@ div.csl-indent {
 <span id="cb10-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb10-2" aria-hidden="true" tabindex="-1"></a>colour <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;red&quot;</span>)</span>
 <span id="cb10-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb10-3" aria-hidden="true" tabindex="-1"></a>amount <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">8</span>)</span></code></pre></div>
 <p>You can create a dataframe using the <code>data.frame()</code> command. You just need to pass the function each of your vectors, which will become your columns.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb11-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="ot">=</span> <span class="fu">data.frame</span>(fruit, colour, amount, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p>Notice above that the third column, the amount, has <int> under it instead of <chr>. That’s because R is treating it as a number, rather than a character. This means you can add them up and do all sorts of other mathy type things to them.</p>
-<p>All the items in a vector are <em>coerced</em> to the same type. So if you try to make a vector with a combination of numbers and strings, the numbers will be converted to strings. I wouldn’t worried <em>too</em> much about that for now.</p>
-<p>So for example if you create this vector, the numbers will get converted into strings.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb12-1" aria-hidden="true" tabindex="-1"></a>fruit <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;apples&quot;</span>, <span class="dv">5</span>, <span class="st">&quot;oranges&quot;</span>, <span class="dv">3</span>)</span>
-<span id="cb12-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb12-2" aria-hidden="true" tabindex="-1"></a>fruit</span></code></pre></div>
-<pre><code>## [1] &quot;apples&quot;  &quot;5&quot;       &quot;oranges&quot; &quot;3&quot;</code></pre>
+<p>We can also use the <code>glimpse()</code> or <code>str()</code> commands to view some basic information on the dataframe (particularly useful with longer data).</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb11-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="ot">=</span> <span class="fu">data.frame</span>(fruit, colour, amount, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(fruit_data)</span></code></pre></div>
+<pre><code>## Rows: 4
+## Columns: 3
+## $ fruit  &lt;chr&gt; &quot;apples&quot;, &quot;bananas&quot;, &quot;oranges&quot;, &quot;apples&quot;
+## $ colour &lt;chr&gt; &quot;green&quot;, &quot;yellow&quot;, &quot;orange&quot;, &quot;red&quot;
+## $ amount &lt;dbl&gt; 2, 5, 10, 8</code></pre>
+</div>
+<div id="data-types" class="section level3 hasAnchor">
+<h3>Data types<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#data-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Notice that to the right of the third column, the amount, has <code>&lt;dbl&gt;</code>under it, whereas the other two have <chr>`. That’s because R is treating the third as a number and others as a string of characters. It’s often important to know which data type your data is in: you can’t do arithmetic on characters, for example. R has 6 data types:</p>
+<ul>
+<li>character</li>
+<li>numeric (real or decimal)</li>
+<li>integer</li>
+<li>logical</li>
+<li>complex</li>
+<li>Raw</li>
+</ul>
+<p>The most commonly-used ones you’ll come across are <code>character</code>, <code>numeric</code>, and <code>logical</code>. <code>logical</code> is data which is either <code>TRUE</code> or <code>FALSE</code>. In R, all the items in a vector are <em>coerced</em> to the same type. So if you try to make a vector with a combination of numbers and strings, the numbers will be converted to strings, as in the example below:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb13-1" aria-hidden="true" tabindex="-1"></a>fruit <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;apples&quot;</span>, <span class="dv">5</span>, <span class="st">&quot;oranges&quot;</span>, <span class="dv">3</span>)</span>
+<span id="cb13-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(fruit)</span></code></pre></div>
+<pre><code>##  chr [1:4] &quot;apples&quot; &quot;5&quot; &quot;oranges&quot; &quot;3&quot;</code></pre>
 </div>
 </div>
 <div id="tidyverse" class="section level2 hasAnchor">
 <h2>Tidyverse<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Most of the work in these notebooks is done using a set of packages developed for R called the ‘tidyverse’. These enhance and improve a large range of R functions, with much nice syntax - and they’re faster too. It’s really a bunch of individual packages for sorting, filtering and plotting data frames. They can be divided into a number of diferent categories.</p>
 <p>All these functions work in the same way. The first argument is the thing you want to operate on. This is nearly always a data frame. After come other arguments, which are often specific columns, or certain variables you want to do something with.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <p>Here are a couple of the most important ones</p>
 <div id="select-pull" class="section level3 hasAnchor">
 <h3>select(), pull()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#select-pull" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>select()</code> allows you to select columns. You can use names or numbers to pick the columns, and you can use a <code>-</code> sign to select everything <em>but</em> a given column.</p>
 <p>Using the fruit data frame we created above: We can select just the fruit and colour columns:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(fruit_data, fruit, colour)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(fruit_data, fruit, colour)</span></code></pre></div>
 <pre><code>##     fruit colour
 ## 1  apples  green
 ## 2 bananas yellow
 ## 3 oranges orange
 ## 4  apples    red</code></pre>
 <p>Select everything but the colour column:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(fruit_data, <span class="sc">-</span>colour)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(fruit_data, <span class="sc">-</span>colour)</span></code></pre></div>
 <pre><code>##     fruit amount
 ## 1  apples      2
 ## 2 bananas      5
 ## 3 oranges     10
 ## 4  apples      8</code></pre>
 <p>Select the first two columns:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(fruit_data, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(fruit_data, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##     fruit colour
 ## 1  apples  green
 ## 2 bananas yellow
@@ -441,9 +564,9 @@ div.csl-indent {
 <p>The next group of functions group things together and count them. Sounds boring but you would be amazed by how much of data science just seems to be doing those two things in various combinations.</p>
 <p><code>group_by()</code> puts rows with the same value in a column of your dataframe into a group. Once they’re in a group, you can count them or summarise them by another variable.</p>
 <p>First you need to create a new dataframe with the grouped fruit.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb21-1" aria-hidden="true" tabindex="-1"></a>grouped_fruit <span class="ot">=</span> <span class="fu">group_by</span>(fruit_data, fruit)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb22-1" aria-hidden="true" tabindex="-1"></a>grouped_fruit <span class="ot">=</span> <span class="fu">group_by</span>(fruit_data, fruit)</span></code></pre></div>
 <p>Next we use <code>tally()</code>. This counts all the instances of each fruit group.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(grouped_fruit)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(grouped_fruit)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 2
 ##   fruit       n
 ##   &lt;chr&gt;   &lt;int&gt;
@@ -452,7 +575,7 @@ div.csl-indent {
 ## 3 oranges     1</code></pre>
 <p>See? Now the apples are grouped together rather than being two separate rows, and there’s a new column called <code>n</code>, which contains the result of the count.</p>
 <p>If we specify that we want to count by something else, we can add that in as a ‘weight’, by adding <code>wt =</code> as an argument in the function.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(grouped_fruit, <span class="at">wt =</span> amount)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(grouped_fruit, <span class="at">wt =</span> amount)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 2
 ##   fruit       n
 ##   &lt;chr&gt;   &lt;dbl&gt;
@@ -465,11 +588,11 @@ div.csl-indent {
 <h3>filter()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#filter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another quite obviously useful function. This filters the dataframe based on a condition which you set within the function. The first argument is the data to be filtered. The second is a condition (or multiple condition). The function will return every row where that condition is true.</p>
 <p>Just red fruit:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(fruit_data, colour <span class="sc">==</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(fruit_data, colour <span class="sc">==</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
 <pre><code>##    fruit colour amount
 ## 1 apples    red      8</code></pre>
 <p>Just fruit with at least 5 pieces:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(fruit_data, amount <span class="sc">&gt;=</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(fruit_data, amount <span class="sc">&gt;=</span><span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##     fruit colour amount
 ## 1 bananas yellow      5
 ## 2 oranges orange     10
@@ -478,28 +601,28 @@ div.csl-indent {
 <div id="sort-arrange" class="section level3 hasAnchor">
 <h3>sort(), arrange()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#sort-arrange" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another useful set of functions, often you want to sort things. The function <code>arrange()</code> does this very nicely. You specify the data frame, and the variable you would like to sort by.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, amount)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, amount)</span></code></pre></div>
 <pre><code>##     fruit colour amount
 ## 1  apples  green      2
 ## 2 bananas yellow      5
 ## 3  apples    red      8
 ## 4 oranges orange     10</code></pre>
 <p>Sorting is ascending by default, but you can specify descending using <code>desc()</code>:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, <span class="fu">desc</span>(amount))</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, <span class="fu">desc</span>(amount))</span></code></pre></div>
 <pre><code>##     fruit colour amount
 ## 1 oranges orange     10
 ## 2  apples    red      8
 ## 3 bananas yellow      5
 ## 4  apples  green      2</code></pre>
 <p>If you `sort<code>arrange()</code> by a list of characters, you’ll get alphabetical order:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, fruit)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, fruit)</span></code></pre></div>
 <pre><code>##     fruit colour amount
 ## 1  apples  green      2
 ## 2  apples    red      8
 ## 3 bananas yellow      5
 ## 4 oranges orange     10</code></pre>
 <p>You can sort by multiple things:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, fruit, <span class="fu">desc</span>(amount))</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, fruit, <span class="fu">desc</span>(amount))</span></code></pre></div>
 <pre><code>##     fruit colour amount
 ## 1  apples    red      8
 ## 2  apples  green      2
@@ -511,21 +634,21 @@ div.csl-indent {
 <h3>left_join(), inner_join(), anti_join()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#left_join-inner_join-anti_join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another set of commands we’ll use quite often in this course are the <code>join()</code> ‘family’. Joins are a very powerful but simple way of selecting certain subsets of data, and adding information from multiple tables together.</p>
 <p>Let’s make a second table of information giving the delivery day for each fruit type:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb38-1" aria-hidden="true" tabindex="-1"></a>fruit_type <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;apples&#39;</span>, <span class="st">&#39;bananas&#39;</span>,<span class="st">&#39;oranges&#39;</span>)</span>
-<span id="cb38-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb38-2" aria-hidden="true" tabindex="-1"></a>weekday <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Monday&#39;</span>, <span class="st">&#39;Wednesday&#39;</span>, <span class="st">&#39;Friday&#39;</span>)</span>
-<span id="cb38-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb38-4" aria-hidden="true" tabindex="-1"></a>fruit_days <span class="ot">=</span> <span class="fu">data.frame</span>(fruit_type, weekday, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb38-5"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-6"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb38-6" aria-hidden="true" tabindex="-1"></a>fruit_days</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb39-1" aria-hidden="true" tabindex="-1"></a>fruit_type <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;apples&#39;</span>, <span class="st">&#39;bananas&#39;</span>,<span class="st">&#39;oranges&#39;</span>)</span>
+<span id="cb39-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb39-2" aria-hidden="true" tabindex="-1"></a>weekday <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Monday&#39;</span>, <span class="st">&#39;Wednesday&#39;</span>, <span class="st">&#39;Friday&#39;</span>)</span>
+<span id="cb39-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb39-4" aria-hidden="true" tabindex="-1"></a>fruit_days <span class="ot">=</span> <span class="fu">data.frame</span>(fruit_type, weekday, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb39-5"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb39-6" aria-hidden="true" tabindex="-1"></a>fruit_days</span></code></pre></div>
 <pre><code>##   fruit_type   weekday
 ## 1     apples    Monday
 ## 2    bananas Wednesday
 ## 3    oranges    Friday</code></pre>
 <p>This can be ‘joined’ to the fruit information, to add the new data on the delivery day, without having to edit the original table (or repeat the information for apples twice). This is done using <code>left_join</code>.</p>
 <p>Joins need a common <code>key</code>, a column which allows the join to match the data tables up. It’s important that these are unique (a person’s name makes a bad key by itself, for example, because it’s likely more than one person will share the same name). Usually, we use codes as the join keys. If the columns containing the join keys have different names (as ours do), specify them using the syntax below:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb40-1" aria-hidden="true" tabindex="-1"></a>joined_fruit <span class="ot">=</span> fruit_data <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(fruit_days, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;fruit&quot;</span> <span class="ot">=</span> <span class="st">&quot;fruit_type&quot;</span>))</span>
-<span id="cb40-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb40-3" aria-hidden="true" tabindex="-1"></a>joined_fruit</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb41-1" aria-hidden="true" tabindex="-1"></a>joined_fruit <span class="ot">=</span> fruit_data <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(fruit_days, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;fruit&quot;</span> <span class="ot">=</span> <span class="st">&quot;fruit_type&quot;</span>))</span>
+<span id="cb41-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb41-3" aria-hidden="true" tabindex="-1"></a>joined_fruit</span></code></pre></div>
 <pre><code>##     fruit colour amount   weekday
 ## 1  apples  green      2    Monday
 ## 2 bananas yellow      5 Wednesday
@@ -536,11 +659,11 @@ div.csl-indent {
 <div id="piping" class="section level3 hasAnchor">
 <h3>Piping<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#piping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another useful feature of the tidyverse is that you can ‘pipe’ commands through a bunch of functions, making it easier to follow the logical order of the code. This means that you can do one operation, and pass the result to another operation. The previous dataframe is passed as the first argument of the next function by using the pipe <code>%&gt;%</code> command. It works like this:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb42-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> </span>
-<span id="cb42-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(colour <span class="sc">!=</span> <span class="st">&#39;yellow&#39;</span>) <span class="sc">%&gt;%</span> <span class="co"># remove any yellow colour fruit</span></span>
-<span id="cb42-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fruit) <span class="sc">%&gt;%</span> <span class="co"># group the fruit by type</span></span>
-<span id="cb42-4"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(amount) <span class="sc">%&gt;%</span> <span class="co"># count each group</span></span>
-<span id="cb42-5"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="co"># arrange in descending order of the count</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb43-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> </span>
+<span id="cb43-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(colour <span class="sc">!=</span> <span class="st">&#39;yellow&#39;</span>) <span class="sc">%&gt;%</span> <span class="co"># remove any yellow colour fruit</span></span>
+<span id="cb43-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fruit) <span class="sc">%&gt;%</span> <span class="co"># group the fruit by type</span></span>
+<span id="cb43-4"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(amount) <span class="sc">%&gt;%</span> <span class="co"># count each group</span></span>
+<span id="cb43-5"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="co"># arrange in descending order of the count</span></span></code></pre></div>
 <pre><code>## # A tibble: 2 × 2
 ##   fruit       n
 ##   &lt;chr&gt;   &lt;dbl&gt;
@@ -555,20 +678,20 @@ div.csl-indent {
 <p><code>ggplot</code> is an advanced package with many options and extensions, which cannot be covered here.</p>
 <p>Some examples using the fruit data:</p>
 <p>Bar chart of different types of fruit (one each of bananas and oranges, two types of apple)</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fruit_data) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> amount))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
-<p>Counting the total amount of fruit:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fruit_data) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> amount))</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fruit_data) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> amount))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
-<p>Charting amounts and fruit colours:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fruit_data) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">weight =</span> amount, <span class="at">fill =</span> colour)) </span></code></pre></div>
+<p>Counting the total amount of fruit:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fruit_data) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> amount))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p>Charting amounts and fruit colours:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fruit_data) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">weight =</span> amount, <span class="at">fill =</span> colour)) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 </div>
 </div>
 <div id="reading-in-external-data" class="section level2 hasAnchor">
 <h2>Reading in external data<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#reading-in-external-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Most of the time, you’ll be working with external data sources. These most commonly come in the form of comma separated values (.csv) or tab separated values (.tsv). The tidyverse commands to read these are <code>read_csv()</code> and <code>read_tsv</code>. You can also use <code>read_delim()</code>, and specify the type of delimited using <code>delim = ','</code> or <code>delim = '/t</code>. The path to the file is given as a string to the argument <code>file=</code>.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb47-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&#39;sample_network.csv&#39;</span>) <span class="co"># Read a .csv file as a network, specify the path to the file here.</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb48-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&#39;sample_network.csv&#39;</span>) <span class="co"># Read a .csv file as a network, specify the path to the file here.</span></span></code></pre></div>
 <pre><code>## Rows: 7 Columns: 3
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -577,7 +700,7 @@ div.csl-indent {
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb49-1" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb50-1" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
 <pre><code>## # A tibble: 7 × 3
 ##   from  to    weight
 ##   &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;

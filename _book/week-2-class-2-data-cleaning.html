@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-10-03" />
+<meta name="date" content="2022-10-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.23/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -164,6 +172,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i>About the course</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#reading"><i class="fa fa-check"></i>Reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#final-project"><i class="fa fa-check"></i>Final Project</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#slides"><i class="fa fa-check"></i>Slides</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html"><i class="fa fa-check"></i>Week 1, class 1: Course Introduction</a>
@@ -171,6 +180,11 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#how-to-use-this-book-and-follow-the-course."><i class="fa fa-check"></i>How to use this book and follow the course.</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#what-do-we-mean-by-a-network"><i class="fa fa-check"></i>What do we mean by a ‘network’?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#why-use-networks"><i class="fa fa-check"></i>Why Use Networks?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#networks-in-the-humanities"><i class="fa fa-check"></i>Networks in the Humanities</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#some-examples"><i class="fa fa-check"></i>Some Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#graph-theory"><i class="fa fa-check"></i>Graph Theory</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#why-use-networks-in-humanities"><i class="fa fa-check"></i>Why use networks in humanities?</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-basics"><i class="fa fa-check"></i>Network Basics</a>
@@ -206,7 +220,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#using-r"><i class="fa fa-check"></i>Using R</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#base-r."><i class="fa fa-check"></i>‘Base’ R.</a></li>
-<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-types."><i class="fa fa-check"></i>Basic R data types.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-structures"><i class="fa fa-check"></i>Basic R data structures</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#data-types"><i class="fa fa-check"></i>Data types</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i>Tidyverse</a>
 <ul>
@@ -220,36 +235,55 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#reading-in-external-data"><i class="fa fa-check"></i>Reading in external data</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html"><i class="fa fa-check"></i>Week 2, Class 1: Acquiring and Working With Network Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html"><i class="fa fa-check"></i>Week 2, Class 1: Acquiring and Working With Network Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#presenting-networks-as-data"><i class="fa fa-check"></i>Presenting Networks as Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#estc"><i class="fa fa-check"></i>ESTC</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#tweetsets-and-hydrator"><i class="fa fa-check"></i>Tweetsets and hydrator</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#instructions-for-homework"><i class="fa fa-check"></i>Instructions for homework</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="week-2-class-2-data-cleaning.html"><a href="week-2-class-2-data-cleaning.html"><i class="fa fa-check"></i>Week 2, Class 2: Data Cleaning</a></li>
 <li class="chapter" data-level="" data-path="week-3-class-1-data-modelling.html"><a href="week-3-class-1-data-modelling.html"><i class="fa fa-check"></i>Week 3, Class 1: Data modelling</a></li>
 <li class="chapter" data-level="" data-path="week-3-class-2-build-a-data-model-with-r.html"><a href="week-3-class-2-build-a-data-model-with-r.html"><i class="fa fa-check"></i>Week 3, Class 2: Build a Data Model with R</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html"><i class="fa fa-check"></i>Week 4, Class 1: Network Metrics</a>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html"><i class="fa fa-check"></i>Week 4, Class 1: Network Concepts and Metrics</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#node-level-metrics"><i class="fa fa-check"></i>Node-level metrics</a>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#social-network-concepts-triadic-closure-transitivity-brokerage"><i class="fa fa-check"></i>Social network concepts: triadic closure, transitivity, brokerage</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#degree"><i class="fa fa-check"></i>Degree</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#betweenness-centrality"><i class="fa fa-check"></i>Betweenness Centrality</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#eigenvector-centrality"><i class="fa fa-check"></i>Eigenvector Centrality</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#closeness-centrality"><i class="fa fa-check"></i>Closeness centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#triadic-closure"><i class="fa fa-check"></i>Triadic closure</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#edge-level-metrics"><i class="fa fa-check"></i>Edge-level metrics</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#global-metrics"><i class="fa fa-check"></i>Global Metrics</a>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#node-level-metrics"><i class="fa fa-check"></i>Node-level metrics</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#density"><i class="fa fa-check"></i>Density</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#clustering-coefficient"><i class="fa fa-check"></i>Clustering coefficient</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-structure-in-networks"><i class="fa fa-check"></i>Community Structure in Networks</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#community-detection-methods"><i class="fa fa-check"></i>Community Detection Methods</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#degree"><i class="fa fa-check"></i>Degree</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#betweenness-centrality"><i class="fa fa-check"></i>Betweenness Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#eigenvector-centrality"><i class="fa fa-check"></i>Eigenvector Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#closeness-centrality"><i class="fa fa-check"></i>Closeness centrality</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-metrics.html"><a href="week-4-class-1-network-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#edge-level-metrics"><i class="fa fa-check"></i>Edge-level metrics</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#global-metrics"><i class="fa fa-check"></i>Global Metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#density"><i class="fa fa-check"></i>Density</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#clustering-coefficient"><i class="fa fa-check"></i>Clustering coefficient</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#groups-and-community-structure-in-networks"><i class="fa fa-check"></i>Groups and Community Structure in Networks</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#components"><i class="fa fa-check"></i>Components</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#cliques"><i class="fa fa-check"></i>Cliques</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#community-detection-methods"><i class="fa fa-check"></i>Community Detection Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html"><i class="fa fa-check"></i>Week 4, Class 2: Network Analysis with R</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#creating-a-network-object-in-r"><i class="fa fa-check"></i>Creating a Network Object in R</a>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#introduction-3"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#network-data-structures"><i class="fa fa-check"></i>Network data structures</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#edge-lists"><i class="fa fa-check"></i>Edge lists</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#adjacency-matrices"><i class="fa fa-check"></i>Adjacency Matrices</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#creating-a-network-object-in-r-from-an-edge-list"><i class="fa fa-check"></i>Creating a Network Object in R from an Edge List</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#import-network-data"><i class="fa fa-check"></i>Import Network Data</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#turn-the-edge-list-into-a-tbl_graph"><i class="fa fa-check"></i>Turn the edge list into a tbl_graph</a></li>
@@ -261,6 +295,16 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#summarising-the-network-data"><i class="fa fa-check"></i>Summarising the network data</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#joining-additional-data"><i class="fa fa-check"></i>Joining additional data</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#transitivity-triads-structural-balance"><i class="fa fa-check"></i>Transitivity, Triads, structural balance</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#triad-census"><i class="fa fa-check"></i>Triad Census</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#group-detection"><i class="fa fa-check"></i>Group detection</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#components-1"><i class="fa fa-check"></i>Components</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#cliques-1"><i class="fa fa-check"></i>Cliques</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#community-detection"><i class="fa fa-check"></i>Community Detection</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#conclusions-1"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html"><i class="fa fa-check"></i>Week 5, Class 1: Visualising Networks with ggraph</a>
@@ -276,11 +320,14 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#add-node-labels"><i class="fa fa-check"></i>Add node labels</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#calculating-and-coloring-by-community-detection"><i class="fa fa-check"></i>Calculating and coloring by community detection</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#what-makes-a-good-network-visualisation"><i class="fa fa-check"></i>What makes a good network visualisation?</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#case-study-scientists-and-politicians"><i class="fa fa-check"></i>Case study: Scientists and Politicians</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#conclusions-2"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html"><i class="fa fa-check"></i>Week 5, class 2: Other network types</a>
 <ul>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#ego-networks"><i class="fa fa-check"></i>Ego Networks</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#case-study-a-spotify-ego-network"><i class="fa fa-check"></i>Case Study: A Spotify Ego Network</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#bipartite-networks-1"><i class="fa fa-check"></i>Bipartite networks</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#co-occurrence-and-co-authorship-networks."><i class="fa fa-check"></i>Co-occurrence and co-authorship networks.</a>
 <ul>
@@ -290,31 +337,58 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#conclusions-3"><i class="fa fa-check"></i>Conclusions</a></li>
 <li><a href="week-5-class-2-other-network-types.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#exercises-2"><i class="fa fa-check"></i>Exercises:</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html"><i class="fa fa-check"></i>Week 6, Class 1: Asking and Answering Questions with Networks</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#what-makes-a-good-question-of-a-network"><i class="fa fa-check"></i>What makes a good question of a network?</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#using-the-data-model"><i class="fa fa-check"></i>Using the data model</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#examples"><i class="fa fa-check"></i>Examples</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#existing-examples"><i class="fa fa-check"></i>Existing examples</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#practical-example-estc"><i class="fa fa-check"></i>Practical Example: ESTC</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#question-what-do-publishers-and-printers-cluster-by"><i class="fa fa-check"></i>Question: what do publishers and printers cluster by?</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#practical-example-determining-social-media-influence-using-pagerank"><i class="fa fa-check"></i>Practical example: Determining social media influence using PageRank</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#using-the-data-model"><i class="fa fa-check"></i>Using the data model</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#filtering-your-data-using-a-pipeline"><i class="fa fa-check"></i>filtering your data using a pipeline</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#getting-network-statistics-before-and-after-filtering."><i class="fa fa-check"></i>Getting network statistics before and after filtering.</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#using-visualisations"><i class="fa fa-check"></i>Using visualisations</a></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#network-statistics"><i class="fa fa-check"></i>Network statistics</a>
 <ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#getting-and-reporting-basic-global-network-metrics"><i class="fa fa-check"></i>Getting and reporting basic global network metrics</a></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#networks-and-regression"><i class="fa fa-check"></i>Networks and regression</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#ergms."><i class="fa fa-check"></i>ERGMs.</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#statistical-approaches-to-networks---ergm-and-soam-rsiena"><i class="fa fa-check"></i>Statistical approaches to networks - ERGM and SOAM (RSiena)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-6-class-2-putting-it-all-together.html"><a href="week-6-class-2-putting-it-all-together.html"><i class="fa fa-check"></i>Week 6, Class 2: Putting it all together</a>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html"><i class="fa fa-check"></i>Week 6, Class 2: Reflections and Pitfalls of Networks</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-6-class-2-putting-it-all-together.html"><a href="week-6-class-2-putting-it-all-together.html#course-project"><i class="fa fa-check"></i>Course Project</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-2-putting-it-all-together.html"><a href="week-6-class-2-putting-it-all-together.html#using-your-data-model"><i class="fa fa-check"></i>Using your data model</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-2-putting-it-all-together.html"><a href="week-6-class-2-putting-it-all-together.html#how-to-comment-on-a-network"><i class="fa fa-check"></i>How to comment on a network</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html"><i class="fa fa-check"></i>Week 7: Reflections</a>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#what-are-implications-of-networks"><i class="fa fa-check"></i>What are implications of networks?</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#network-representations"><i class="fa fa-check"></i>Network representations</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#problems-with-network-representation"><i class="fa fa-check"></i>Problems with network representation</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html#limitations-and-pitfalls"><i class="fa fa-check"></i>Limitations and pitfalls</a></li>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html#biases-representation"><i class="fa fa-check"></i>Biases, representation</a></li>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html#effects-of-missing-data"><i class="fa fa-check"></i>Effects of missing data</a></li>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html#dangers-of-a-network-view-of-the-world."><i class="fa fa-check"></i>Dangers of a network view of the world.</a></li>
-<li class="chapter" data-level="" data-path="week-7-reflections.html"><a href="week-7-reflections.html#networks-and-hegemonypower."><i class="fa fa-check"></i>Networks and hegemony/power.</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#missing-data"><i class="fa fa-check"></i>Missing data</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#specific-problems-with-networks-and-culturalhumanities-data"><i class="fa fa-check"></i>Specific problems with networks and cultural/humanities data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#visualisations"><i class="fa fa-check"></i>Visualisations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html"><i class="fa fa-check"></i>Week 7: Final Project</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#what-should-the-final-project-look-like"><i class="fa fa-check"></i>What should the final project look like?</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#practical-steps"><i class="fa fa-check"></i>Practical steps</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#project-aim"><i class="fa fa-check"></i>Project Aim</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#r-markdown"><i class="fa fa-check"></i>R Markdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#reproducible-research"><i class="fa fa-check"></i>Reproducible research</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#final-project-datasets"><i class="fa fa-check"></i>Final Project Datasets</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#available-datasets"><i class="fa fa-check"></i>Available datasets</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -341,7 +415,7 @@ div.csl-indent {
 <p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a> Notebook. When you execute code within the notebook, the results appear beneath the code.</p>
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Cmd+Shift+Enter</em>.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="week-2-class-2-data-cleaning.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Cmd+Option+I</em>.</p>
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
 <p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>

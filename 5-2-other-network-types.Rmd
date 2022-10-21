@@ -1,5 +1,288 @@
 # Week 5, class 2: Other network types
 
+## Ego Networks
+
+Very often when applying network analysis to humanities datasets, you'll be working with *ego networks*. An ego network is a network seen from the perspective of a focal node, known as the ego, and all the nodes to which it is connected, known as *alters*. In a true ego network, the network will include all the links *between* the alters.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "Example ego network", fig.height=3, fig.width=3, fig.align='center'}
+library(igraph)
+library(ggraph)
+library(tidygraph)
+tibble(to = c("A", 'A', 'A', 'A', 'C'), from = c('B', 'C', 'D', 'E', 'B')) %>% 
+  graph_from_data_frame() %>% 
+  ggraph('star') + 
+  geom_edge_link(width = 2) + geom_node_point(size = 20, pch = 21, fill = 'white', stroke = 2) + 
+  scale_x_continuous(expand = c(.1, .1))+ 
+  scale_y_continuous(expand = c(.1, .1)) +
+  annotate("text", x = -.5, y = .5, label = "Ego node")  +
+  annotate("curve", curvature = -.2, x = -.5, xend = 0, y = .4, yend = 0,
+           arrow = arrow(length=unit(0.30,"cm"), ends="last", type = "closed")) +
+  annotate("text", x = -.3, y = -.7, label = "Alter")  +
+  annotate("curve", curvature = -.2, x = -.2, xend = 0, y = -.75, yend = -1,
+           arrow = arrow(length=unit(0.30,"cm"), ends="last", type = "closed"))  +
+  annotate("text", x = .8, y = .8, label = "Alter link")  +
+  annotate("curve", curvature = .2, x = .7, xend = .5, y = .75, yend = .55,
+           arrow = arrow(length=unit(0.30,"cm"), ends="last", type = "closed"))+ 
+  
+  theme_void() 
+
+```
+
+These types of networks are very common in real-world networks because data is often collected from the perspective of an ego node or a number of ego nodes, for example, in a survey, or perhaps in a collection of correspondence. Because of this it is important to understand what they are, and think about whether the data is representative.
+
+At the same time, ego network data can be very useful. Studies have shown that many metrics in an ego network correlate strongly with metrics from a full network (meaning that if an alter is central to the ego network, it is likely also central if we had the full network data too.
+
+Network analysis from the point of view of egos can tell us about the structure of a particular node and its relationship to its neighbours. Comparing many ego networks can be used to good effect. [Lerman et al (2022)](https://www.pnas.org/doi/10.1073/pnas.2206070119) created a list of features (attributes) for the citation ego networks of authors elected to the National Academy of Sciences, successfully using those features to predict the gender of the author:
+
+> Women's ego networks have higher average degree, edge density, and clustering coefficient. Together, these features suggest that women are more tightly embedded within their research communities. This is consistent with previous findings that women tend to gravitate to certain communities ([11](https://www.pnas.org/doi/10.1073/pnas.2206070119#core-r11)). Women have fewer peers than men, but these peers are more productive (publish more papers) and receive more citations. Finally, women NAS members have more women among their peers.
+
+Many of the datasets you might be considering using for your final project may in fact be ego networks. It is worth thinking about the implications of this, and considering which kinds of metrics, or comparisons would work best. Is each ego network collected using the same method? If not, does this skew the results?
+
+## Case Study: A Spotify Ego Network
+
+This section walks through the code for creating and analysing an ego network drawn from a very different type of humanities dataset: Spotify's 'related' artists information. This is available through Spotify's API. One function of the API lets us download the twenty 'most-related' artists to a given 'seed' artist. The algorithm for how the most-related are calculated is not public, but it's likely by comparing overlapping listeners (if lots of people listen to both artist X and artist Y, those artists are marked as related).
+
+#### Requirements
+
+If you want to complete the (optional) exercise in the corresponding file on CSC notebooks, you'll need to sign up for a Spotify developer account. Once you've done this, create a new application using the dashboard. This will give you the necessary client ID and password. You'll then need to install the `spotifyr` package using `install.packages('spotifyr)`.
+
+An exercise relating to the bipartite network below is another option - if for whatever reason you don't want to sign up for an account, or have difficulty accessing the API. The data for this is already available.
+
+#### Get related artists from the Spotify API.
+
+The `spotifyr` package makes it easy to access the Spotify API functions using R.
+
+Once you have installed the spotifyr package, you need to tell it where to find your user ID and password. Copy these from your dashboard on the Spotify API page. Then, use the following code to temporarily store them in R's memory:
+
+```{r}
+ #Sys.setenv(SPOTIFY_CLIENT_ID = '') # uncomment these lines and add your client ID and password here, in between the quotation marks. 
+ #Sys.setenv(SPOTIFY_CLIENT_SECRET = '')
+
+```
+
+Next, you'll use the command `get_spotify_access_token()` to use this ID and password to generate an access token.
+
+Following this, we need to find the spotify ID for the 'ego' artist. The easiest way to do this is with the `get_artist_audio_features()` function. This can take a character string and will return the closest match, if an ID is not specified. To get the ID for the band Radiohead, we do the following:
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# install.packages('spotifyr') # install the package if necessary
+
+library(spotifyr)
+
+
+access_token <- get_spotify_access_token()
+
+
+radiohead <- get_artist_audio_features('radiohead')
+
+glimpse(radiohead)
+
+```
+
+This returns all of Radiohead's tracks along with some more information. The second column in each row is the `artist_id`, in this case `4Z8W4fKeB5YxbusRsdQVPb`, which we will use as the input for further functions.
+
+The function to get the related artists to one artist is `get_related_artists()`. The below syntax will get Radiohead's related artists list:
+
+```{r}
+radiohead_related = spotifyr::get_related_artists('4Z8W4fKeB5YxbusRsdQVPb')
+
+glimpse(radiohead_related)
+```
+
+The result is a dataframe with a list of the 20 closest-related artists to Radiohead, using Spotify's algorithm, with some more information including the artists' popularity and genres - and their Spotify ID. This can be visualised using the method from the previous lesson:
+
+```{r}
+
+library(ggraph)
+library(tidygraph)
+library(igraph)
+radiohead_related %>% 
+  mutate(ego_name = 'Radiohead') %>% 
+  distinct( ego_name, name) %>% 
+  as_tbl_graph() %>% 
+  ggraph('stress') + geom_edge_link() + 
+  geom_node_point(size = 20, fill = 'white', color = 'black', pch = 21)+ 
+  geom_node_text(size = 3, aes(label =name))
+
+
+```
+
+#### 'Crawling' through the related artists information
+
+As you might be able to tell, there is very little useful information in this type of ego network: which only includes links to and from the ego node. Each 'alter' has a degree of one, and will have the same scores for all network metrics.
+
+However, we can use the new artists' IDs to 'crawl' through the API and get the 20 most related artists for each of them, taking a [snowball sample](https://en.wikipedia.org/wiki/Snowball_sampling) approach to creating a network. The easiest way to do this is to use a R function `lapply`, which applies a function to every element in a list, and returns a new list.
+
+```{r}
+radiohead_related_related = lapply(radiohead_related$id, get_related_artists)
+
+radiohead_related_related = data.table::rbindlist(radiohead_related_related)
+
+radiohead_related_related = radiohead_related_related %>% 
+  mutate(seed_id = rep(radiohead_related$id, each= 20))%>% 
+  mutate(ego_name = rep(radiohead_related$name, each= 20))
+
+```
+
+This results in dataset of the twenty related nodes plus all their own connections, which can be drawn as a network:
+
+```{r}
+g = radiohead_related_related   %>% 
+  rbind(radiohead_related %>% 
+  mutate(seed_id = '4Z8W4fKeB5YxbusRsdQVPb')%>% 
+  mutate(ego_name = 'Radiohead') ) %>% 
+  distinct(ego_name, name) %>% 
+  as_tbl_graph(directed = F) %>% 
+  ggraph('fr')+ geom_edge_link(alpha = .5) + 
+  geom_node_point(size = 4, color = 'white') + 
+  geom_node_text(size = 2, aes(label =name))
+g
+```
+
+This network links all the alters to all 20 of their closest-related artists. You can see that many of the artists are not actually connected to: it is all the alters plus all their additional related artists. To simplify things, we can start with a 'true' ego network, which just includes the ego (Radiohead), the alters (the 20 related artists) and the alter links (any pairs of alters who are also related to each other).
+
+```{r}
+radiohead_related_related   %>% 
+  rbind(radiohead_related %>% 
+  mutate(seed_id = '4Z8W4fKeB5YxbusRsdQVPb') %>% 
+  mutate(ego_name = 'Radiohead') ) %>% 
+  filter(id %in% radiohead_related$id) %>% 
+  distinct(ego_name, name) %>% 
+  as_tbl_graph(directed = F) %>%
+  mutate(group = group_louvain()) %>%
+  ggraph('fr')+ geom_edge_link(alpha = .5) + 
+  geom_node_point(size = 10, aes(color = as.character(group))) + 
+  geom_node_text(size = 3, aes(label =name))
+```
+
+We can run community detection on the network to look for distinct clusters. Adding these alters we can see some clusters already emerging: 90s britpop (The Verve, Blur, Pulp), triphop (Portishead), Shoegaze (Slowdive, Mazzy Star), College rock/indie folk (NMH, Elliot Smith):
+
+This ego network can tell us a number of things:
+
+-   There are a large number of *triads*, meaning that artists are clustered together (if the Verve and Pulp are connected to Blur, it's also likely that they are connected to each other). What does a clustered network mean in this circumstance?
+
+-   There is almost a 'clique' (a group of fully-connected nodes), including all those in green. What does a clique tell us?
+
+-   There is one node (Smashing Pumpkins) with no other connections.
+
+As a further step, we can crawl another level deep into the related artists' network. This will give us all the connections at a *third* level removed from Radiohead.
+
+```{r}
+level_3_related = lapply(radiohead_related_related$id, get_related_artists)
+
+level_3_related = level_3_related %>% data.table::rbindlist() %>% 
+  mutate(seed_id = rep(radiohead_related_related$id, each= 20))%>% 
+  mutate(ego_name = rep(radiohead_related_related$name, each= 20))
+
+glimpse(level_3_related)
+```
+
+```{r}
+
+df = level_3_related %>% 
+  #filter(id %in% radiohead_related_related$id)%>% 
+  distinct(id, seed_id) %>% 
+  as_tbl_graph(directed = F) %>% 
+  mutate(total_degree = centrality_degree(mode = 'all')) %>% 
+  filter(total_degree>1) %>% 
+  mutate(group = group_louvain()) 
+
+
+df %>% 
+  ggraph('fr') + 
+  geom_edge_link(alpha = .1) + 
+  geom_node_point(aes(color =as.character(group)))
+
+```
+
+In this extended network, clusters are clearly visible again. There are too many nodes now to label them or easily divide them into genres. Instead, we'll use summarise functions to make a table of information on each of the groups.
+
+```{r}
+genres = level_3_related %>% distinct(id, genres, name)
+
+
+
+  genres_total  = df %>% as_tibble()%>% 
+  inner_join(genres, by = c('name' = 'id')) %>% 
+  unnest(genres) %>% 
+  count(group,genres) %>% 
+    arrange(desc(n)) %>% 
+    mutate(genres = paste0(genres, " (", n, ")")) %>% 
+  group_by(group) %>% 
+    slice_max(order_by = n, n = 20) %>% 
+    summarise(genres_total = paste0(genres, collapse = ' ;'))
+
+artist_total = df %>% as_tibble() %>% 
+  inner_join(genres, by = c('name' = 'id')) %>% 
+  mutate(name.y = paste0(name.y, " (", total_degree, ")")) %>% 
+  arrange(desc(total_degree)) %>% 
+  group_by(group) %>% slice_max(order_by = total_degree, n = 20) %>% 
+  summarise(artists = paste0(name.y, collapse = ' ;'))
+
+genres_total %>% left_join(artist_total) %>% DT::datatable()
+  
+```
+
+Most importantly, this shows that it's not always necessary to have access to the 'full' network in order to get results. In many cases, we will work with ego networks or sets of connected ego networks. Even so, it is possible to make interesting insights into the data regardless. The key takeaway is that you should take into account the perspective you're looking from.
+
+#### Network metrics
+
+Using the techniques from the previous lesson, we can make a table of network metrics:
+
+```{r}
+node_info = level_3_related %>% 
+  distinct(id, name, genres) %>% rbind(level_3_related %>% select(id = seed_id,name =  ego_name, genres) %>% distinct(id, name, genres)) %>% distinct(id, name, genres) %>% select(name = id, artist_name = name, genres) %>% distinct(name, .keep_all = T)
+
+g = level_3_related %>% 
+  #filter(id %in% radiohead_related_related$id) %>% 
+  distinct(id, seed_id) %>% 
+  as_tbl_graph(directed = TRUE) %>% 
+  left_join(node_info, by = 'name') %>% 
+  mutate(in_degree = centrality_degree(mode = 'in'))%>% 
+  mutate(out_degree = centrality_degree(mode = 'out'))%>% 
+  mutate(total_degree = centrality_degree(mode = 'all')) %>% 
+  mutate(between = centrality_betweenness()) %>% 
+  arrange(desc(total_degree)) 
+
+g %>% as_tibble() 
+```
+
+A few things to note:
+
+The network is asymmetric: if artist A is in the top twenty of artist B, it doesn't necessarily follow that B is in the top twenty of A. We can test that by calculating the network's *reciprocity*:
+
+```{r}
+g %>% 
+  filter(name %in% radiohead_related_related$id) %>% 
+  igraph::reciprocity()
+```
+
+Just over 60% of links are reciprocated.
+
+It's also transitive:
+
+```{r}
+g %>% 
+  filter(name %in% radiohead_related_related$id) %>% 
+  igraph::transitivity('global')
+
+```
+
+55% of possible triangles are complete.
+
+The degree distribution is very particular to the sampling method. We have the 'full graph' for each of the 400 seed names (Radiohead's top twenty plus all their top twenties), but for the rest of the network (the third level removed from Radiohead), we *only* have their links to the 400 seed names. These nodes all have an incoming degree of 0, because we don't have any of their related artists, only the artists they are related to...
+
+```{r}
+g %>% igraph::degree() %>% hist(main = "Histogram of degree distribution")
+```
+
+What does this tell us about the way music is organised?
+
+Relatedness is transitive, meaning artists tend to form triangles: if both your friends like a band, it's likely you'll like them too. Spotify can exploit this fact to make better playlist recommendations!
+
+Relatedness is not necessarily reciprocal: there's a difference between A related to B and B related to A. Why might this be?
+
 ## Bipartite networks
 
 The work we have done so far has been on networks which are naturally what is known as *unimodel* or *unipartite*: person A sends a letter to person B. In a letter network there is only one type of node (a letter author or recipient), and one type of node (sends/receives a letter).
@@ -142,7 +425,47 @@ We can take a similar approach to the information found in historical books. Whi
 
 ### The dataset
 
-The dataset we'll be working with the a dataset of metadata from the English Short Title Catalogue (known as the ESTC). This data lists a unique ID for each publisher, printer, bookseller and author listed on the title pages of books printed between 1500 and 1800.
+The dataset we'll be working with the a dataset of metadata from the English Short Title Catalogue (known as the ESTC). This data lists a unique ID for each publisher, printer, bookseller and author listed on the title pages of books printed between 1500 and 1800. This information comes from the **imprint** of the book: the list of authors, printers, publishers and so forth found on the title page.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+cowplot::ggdraw() + 
+  cowplot::draw_image("images/hist_eng_milar.png", width = 0.5) + 
+  cowplot::draw_image("images/millar-kincaid.png", width = 0.5, x = 0.5)
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE,fig.cap="Bipartite network from book imprints", out.height="20%", out.width='99%'}
+e = tibble(person = c('A. Millar', 'A. Millar', 'T. Cadell', 'A. Kincaid'), 
+       group = c('History of England', "Essays Moral and Political", "History of England", "Essays Moral and Political"))
+
+g = e %>% igraph::graph_from_data_frame()
+
+V(g)$type <- bipartite_mapping(g)$type
+
+b = igraph::bipartite.projection(g)
+layout = tibble(x = c(2,3,4), y = c(1,2,1))
+cowplot::plot_grid(g %>% ggraph::ggraph('bipartite') + 
+  geom_edge_link() + 
+  geom_node_point(size = 14,aes(), pch = 21) + 
+  geom_node_label(aes(label = name)) +
+  coord_flip() + 
+  theme_void() + 
+  scale_x_continuous(expand = c(.2,.2))+ 
+  scale_y_reverse(expand = c(.3,.3))  + 
+  theme(legend.position = 'none'), 
+  b[[1]] %>% ggraph::ggraph(layout = layout) + 
+  geom_edge_link(aes()) + 
+  geom_node_point(size = 10, pch = 21, fill = 'white') + 
+  geom_node_label(aes(label = name)) +
+  coord_flip() + 
+  theme_void() + 
+  scale_x_continuous(expand = c(.1,.1))+ 
+  scale_y_continuous(expand = c(.2,.2))  + 
+  theme(legend.position = 'bottom'))
+```
+
+As you can see, the title page lists a few pieces of information: the book is 'printed for' A. Millar (who is the publisher), and 'sold by' Thomas Cadell, the bookseller. These pieces of information, showing a connection between Millar and Cadell, can form the basis of a bipartite network.
 
 ### Method
 
@@ -231,3 +554,7 @@ proj[[2]] %>%
 -   This projected network is inherently *undirected*, because the edge 'shares a book title' doesn't have any direction associated with it.
 
 ## 
+
+## Exercises:
+
+a)  Construct two spotify ego networks. Write up the clusters found in them. Compare their global network metrics. What does this tell you about the difference between them - for instance how wide or narrow their reach is?

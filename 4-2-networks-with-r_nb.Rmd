@@ -4,7 +4,13 @@
 
 In this class, we'll talk through creating and analysing a network object in R. The network we'll work with is a sample of correspondence data taken from the British State Papers in the seventeenth century.
 
-## Creating a Network Object in R
+## Network data structures
+
+### Edge lists 
+
+### Adjacency Matrices  
+
+## Creating a Network Object in R from an Edge List
 
 One of the easiest data formats to construct a network is an edge list: a simple dataframe with two columns, representing the connections between two nodes, one per row. It makes particular sense with correspondence data, which is often stored as records of letters with a 'from' and a 'to'---more or less a ready-made edge list. In a correspondence dataset you might also have multiple sets of each of the edges (multiple letters between the same pair of individuals). This will be added to the edges as a 'weight'.
 
@@ -21,6 +27,7 @@ library(igraph)
 library(tidygraph)
 
 ```
+
 
 In this class, we'll use a dataset derived from the English State Papers. It takes the form of a .csv containing the information on the author, recipient, and date of sending for a small sample of state letters sent between 1670 and 1672. 
 
@@ -157,7 +164,7 @@ network_metrics_df %>% arrange(desc(degree))
 
 ## Joining additional data
 
-The value of working with a data model and tidygraph is that we can merge additional tables of data to our nodes or edges. In a separate table, we have a dataset of attributes about this set of nodes, including place and dates of birth and death, and gender. Using the `join()` commands, we can merge this table to the network data, and use it to sort, filter (and later visualise) the data: 
+The value of working with a data model and tidygraph is that we can merge additional tables of data attributes to our nodes or edges. In a separate table, we have a dataset of attributes about this set of nodes, including place and dates of birth and death, and gender. Using the `join()` commands, we can merge this table to the network data, and use it to sort, filter (and later visualise) the data: 
 
 First, load the table of data using `read_csv`:
 
@@ -204,6 +211,21 @@ sample_tbl_graph %>%
 as_tibble() %>% 
   arrange(desc(degree)) %>% select(name, main_name, degree)
 ```
+## Transitivity, Triads, structural balance  
+
+### Triad Census
+
+What this tells us about the macro-structure of a network  
+
+## Group detection
+
+### Components
+
+### Cliques
+
+### Community Detection  
+
+
 
 ## Conclusions  
 

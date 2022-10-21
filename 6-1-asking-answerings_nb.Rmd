@@ -2,13 +2,72 @@
 
 ## What makes a good question of a network?
 
+Because any network is only a model, it is probably best to speak of it being one of many. Even if you use all the data you have, it's only one possible way of modelling that set of data. You've already subsetted from the full network for the twitter data for example. 
+
+This also means you can create your own networks from your data, using subsets. For example maybe you want to look at a network of only a particular genre of books, or a particular type of person or hashtag in the Twitter network. 
+
+Difference between descriptive and analytic network analysis. Not that the latter is wrong but should be differentiated. 
+
+
+## Examples  
+
+This is divided into two sections: first, we'll walk through some examples of existing projects, with the aim of explaining how they use network methods to make claims or findings. Hopefully these will inspire you with your own network datasets. 
+
+### Existing examples  
+
+#### Ahnerts Tudor project
+
+#### John Ladd - dedications
+
+#### Ingeborg van Vugt - multi-layer networks
+
+#### Michael Gavin, book network 
+
+
+### Practical Example: ESTC
+
+### Question: what do publishers and printers cluster by?
+
+#### Looking for groups within ESTC data
+
+#### Run community detection
+
+#### Creat visualisation of results
+
+#### With results, 
+
+#### Create report of communities plus members, chart communities and membership over time. For each community, we list the count of book attributes for its members: publication years, genres, publication places, format, book type. 
+
+#### Visualise these elements
+
+#### Analyse the results
+
+What is the makeup of each group? 
+What findings do we make out of this? 
+
+### Practical example: Determining social media influence using PageRank
+
+#### What is the page rank algorithm?
+
 ## Using the data model
+
+### filtering your data using a pipeline
+
+Pick a subset of your data - filtered by time or geography, or some other facet of the nodes?
+
+### Getting network statistics before and after filtering.
 
 ## Using visualisations
 
+Faceting by some variable - drawing different networks. (maybe using cowplot/patchwork)
+
 ## Network statistics
+
+Getting statistics, turning into a tibble, ordering by different measurements
+
+### Getting and reporting basic global network metrics
 
 ### Networks and regression
 
-### ERGMs.
+### Statistical approaches to networks - ERGM and SOAM (RSiena)
 

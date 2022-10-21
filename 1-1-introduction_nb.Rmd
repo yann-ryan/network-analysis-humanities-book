@@ -1,7 +1,3 @@
----
----
----
-
 # Week 1, class 1: Course Introduction
 
 [Slides for this week](https://comhis.github.io/applying-network-analysis-to-humanities/slides/1-1-introduction.html#/title-slide)
@@ -40,6 +36,20 @@ The connections between web pages are generally the hyperlinks: the system of li
 
 <br>
 
+## Why Use Networks?
+
+This is a very valid question, and there are plenty of circumstances when a network model is not the best was of representing a dataset, as we'll learn. However, when networks are used correctly, they have a number of benefits:
+
+-   Networks allow us to reduce or understand **complexity:** we can reduce complicated data to its overall structure. Network visualisations, when used well, allow us to **spot patterns** and make inferences on the structure of our data.
+
+-   Rather than consider each individual data point as isolated, networks allow us to consider how **data is interrelated**, and how the relationships between nodes effect each other and the overall structure.
+
+-   Network techniques allow us to move **beyond pairs** to putting entities and their relationships in a much larger context, showing how they bridge the local and the global. They allow us to consider **groups** within data, particularly in communication networks.
+
+-   Networks can point to data subsets worth investigating in more detail: allowing us to move from **close to distant reading**, and in-between.
+
+## Networks in the Humanities
+
 Networks have long been used to understand aspects of historical or cultural change. In below video, accompanying a [paper in *Science*](https://www.science.org/doi/10.1126/science.1240064), researchers graphed places of birth and death---taken from Wikidata---as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -60,6 +70,36 @@ While Wikidata is a large data source, it is obviously very partial and has a pa
 
 Other typical uses of complex networks in humanities subjects include [spatial networks](https://model-articles.rrchnm.org/articles/midura/), [line of sight](https://www.frontiersin.org/articles/10.3389/fdigh.2017.00017/full) or [pottery similarity networks](https://academic.oup.com/book/40384/chapter-abstract/347130019?redirectedFrom=fulltext) in archaeology, [historic road networks](https://www.landesgeschichte.uni-goettingen.de/handelsstrassen/index.php), and [character networks in plays](http://www.martingrandjean.ch/network-visualization-shakespeare/). In this course, we'll mostly work with networks as tools for **descriptive** and **exploratory** data analysis. But network science also has wide uses in **statistical and predictive modelling**.
 
+### Some Examples
+
+Before we get in to some of the details, it's worth going through a few examples of interesting projects which have combined humanities data with network science.
+
+#### Tudor networks
+
+Ahnert and Ahnert used a number of network measurements to make a 'network fingerprint' for individuals in an archive of Tudor state papers. Using this measure fingerprint, they were able to identify or confirm spies and collaborators. Specifically, they looked at individuals with a high betweenness (a bridging measurement) in comparison to their degree (measuring their overall connections): the points underneath the trendline in the graph below. The biggest outlier is Jon Snowden: an alias of John Cecil, a Catholic priest in exile in Elizabeth I's regime. Looking at others with a similar profile revealed other conspirators.
+
+![](images/Screenshot%202022-10-03%20at%2011.42.11.png)
+
+#### **Using Multi-Layered Networks to Disclose Books in the Republic of Letters**
+
+This project made a 'multi-layer network' by combining a network of letters with a network of book mentions.
+
+![](images/Screenshot%202022-10-03%20at%2011.23.15.png){width="500"}
+
+#### Six Degrees of Francis Bacon
+
+The Six Degrees of Francis Bacon project used co-occurrence networks (a technique we'll learn about later) to infer links between early modern individuals. Specifically, they looked for co-occurrence of individuals in the Oxford Dictionary of National Biography, inferring links if two individuals were mentioned together more than was statistically significant. This data was then turned into an interactive social network.
+
+![](images/Screenshot%202022-10-03%20at%2011.26.54.png){width="600"}
+
+#### Mapping the digital humanities community of Twitter
+
+![](images/Screenshot%202022-10-03%20at%2011.46.29.png)
+
+-   Measured the centrality of a group of 2,500 Twitter users self-identified as digital humanities practioners
+
+-   Looked a separate communities of languages, French was particularly isolated.
+
 ## Graph Theory
 
 Representing data in this way allows us to use the mathematics of *graph theory* to find out things about it. The origins of this date back to the 18th century, and the mathematician Leonard Euler. The city of Königsberg (now Kaliningrad) was built on a river with two islands and a system (a network, perhaps?) of seven bridges connecting them. The inhabitants of the city had long wondered if there it was possible to devise a route which would cross each bridge exactly once.
@@ -74,7 +114,7 @@ This process: abstracting a system to its connections, and devising mathematical
 
 Network analysis has become one of the most popular (and perhaps one of the most overused) techniques in the digital humanities toolbox. Over this course, we'll ask you to think critically about the methods you use and when they might not always be the best way to think about your data.
 
-![Almost anything can be a network, but should you use network analysis? Here is a handy flowchart which might help you decide.](images/shouldyoudonetworkanalysis_xxl.jpg){width="500"}
+![Almost anything can be a network, but should you use network analysis? Here is a handy flowchart which might help you decide.](images/shouldyoudonetworkanalysis_xxl.jpg){width="700"}
 
 At the same time, network analysis does have plenty to offer the digital humanist:
 
@@ -306,6 +346,10 @@ It is also connected to the 'strength of weak ties' theory by Granovetter. This 
 The most common use of networks in academic research much of the 20th century was looking at these small, sociological networks of relationships between people. This changed in the late 1990s, when a group of scientists began to use network research to understand the structures governing many kinds of complex systems, initially using the approach to map out the structure of the World Wide Web. This research showed that many of these complex networks had a similar structure: a small number of nodes with a very large number of connections, known as *hubs,* and a large number of nodes with very few connections. In fact, they argued, the structure followed what is known as a *power-law*: essentially many nodes have a very small number of connections, an exponentially smaller number of nodes have an exponentially larger number of connections, and so forth until a tiny of number of nodes have very many connections.
 
 These researchers, notably Albert Barabasi, argued that this process was guided by *preferential attachment*, meaning that these networks were created because nodes in a network were much more likely to attach themselves to nodes which already had many connections, leading to a 'rich get richer' effect. Perhaps most importantly, they demonstrated empirically that this particular structure could be found across a range of networks, from computers, to people, to biological networks or the structure of neurons in the brain. And they have wide-ranging implications: a scale-free network means it is easy for a disease to spread, because once it reaches a hub node it can easily move throughout the network.
+
+```{r, echo=FALSE,out.width="49%", out.height="20%",fig.cap="These diagrams show how a scale-free network is susceptible to to targeted attack but not to random. Removing any two nodes at random in a network of hubs makes little difference to the overall structure or robustness. However, removing two hub or bridging nodes, as on the right, results in a network in which many of the paths are now severed, meaning the network structure has begun to fall apart. Images from https://cs.brynmawr.edu/Courses/cs380/spring2013/section02/slides/01Introduction.pdf",fig.show='hold',fig.align='center'}
+knitr::include_graphics(c("images/Screenshot 2022-10-03 at 12.07.50.png","images/Screenshot 2022-10-03 at 12.07.55.png"))
+```
 
 These ideas, published at a time when the internet (and later social networking) moved into the mainstream, drove a huge interest in thinking about the world in a 'networked' way. They spawned a range of popular science and psychology books. Barabasi wrote [*Linked*](https://en.wikipedia.org/wiki/Linked:_The_New_Science_of_Networks)*,* one of the defining popular science books of the 2000s, and used networks to argue that this scale-free network structure could be used to explain a whole range of human behaviours, from epidemics, to economics, to politics.
 

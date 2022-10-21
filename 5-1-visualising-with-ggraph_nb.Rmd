@@ -290,6 +290,18 @@ sample_tbl_graph %>%
   geom_edge_link(alpha = .2)
 ```
 
+## What makes a good network visualisation?
+
+You will rarely be able to make a good network visualisation simply by pushing a button and using the default settings. You should think about what your network is trying to communicate and to what audience, and spend some time
+
+-   Treat the diagram as carefully as you would an essay or other piece of text. Is it easy to understand?
+
+-   Make sure you really need a network graph, and that another method of communicating the information wouldn't be better. For example, if your diagram is simply showing the most influential nodes, would a bar chart (or even a table) with their degree work just as well?
+
+-   Use colour/shape/size if you need to, but make sure you explain what each element is doing.
+
+-   Spend some time showing your readers how to 'read' the visualisation. What is interesting about the left/right/top/bottom of the diagram? What is the significance of nodes grouped together, and what about nodes in the centre versus nodes towards the edge? Are there obvious clusters and gaps, and do these show up in the visualisation?
+
 ## Case study: Scientists and Politicians
 
 In this final section, I'll demonstrate how these methods might be used to carry out exploratory data analysis on the sample letter dataset.

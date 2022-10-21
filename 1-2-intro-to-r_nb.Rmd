@@ -67,7 +67,7 @@ x != z
 
 ```
 
-### Basic R data types.
+### Basic R data structures
 
 It is worth understanding the main types of data that you'll come across, in your environment window. First, you'll have dataframes. These are the spreadsheet-like objects which you'll use in most analyses. They have rows and columns.
 
@@ -85,19 +85,31 @@ amount = c(2,5,10,8)
 
 You can create a dataframe using the `data.frame()` command. You just need to pass the function each of your vectors, which will become your columns.
 
+We can also use the `glimpse()` or `str()` commands to view some basic information on the dataframe (particularly useful with longer data).
+
 ```{r}
 fruit_data = data.frame(fruit, colour, amount, stringsAsFactors = FALSE)
+
+glimpse(fruit_data)
 ```
 
-Notice above that the third column, the amount, has <int> under it instead of <chr>. That's because R is treating it as a number, rather than a character. This means you can add them up and do all sorts of other mathy type things to them.
+### Data types
 
-All the items in a vector are *coerced* to the same type. So if you try to make a vector with a combination of numbers and strings, the numbers will be converted to strings. I wouldn't worried *too* much about that for now.
+Notice that to the right of the third column, the amount, has `<dbl>`under it, whereas the other two have <chr>\`. That's because R is treating the third as a number and others as a string of characters. It's often important to know which data type your data is in: you can't do arithmetic on characters, for example. R has 6 data types:
 
-So for example if you create this vector, the numbers will get converted into strings.
+-   character
+-   numeric (real or decimal)
+-   integer
+-   logical
+-   complex
+-   Raw
+
+The most commonly-used ones you'll come across are `character`, `numeric`, and `logical`. `logical` is data which is either `TRUE` or `FALSE`. In R, all the items in a vector are *coerced* to the same type. So if you try to make a vector with a combination of numbers and strings, the numbers will be converted to strings, as in the example below:
 
 ```{r}
 fruit = c("apples", 5, "oranges", 3)
-fruit
+
+glimpse(fruit)
 ```
 
 ## Tidyverse
@@ -253,12 +265,11 @@ That code block, written in prose: "take fruit data, remove any yellow colour fr
 
 ### Plotting using ggplot()
 
-The tidyverse includes a plotting library called `ggplot2`. To use it, first use the function `ggplot()` and specify the dataset you wish to graph using `data = `. Next, add what is known as a 'geom': a function which tells the package to represent the data using a particular geometric form (such as a bar, or a line). These functions begin with the standard form `geom_`.  
+The tidyverse includes a plotting library called `ggplot2`. To use it, first use the function `ggplot()` and specify the dataset you wish to graph using `data =`. Next, add what is known as a 'geom': a function which tells the package to represent the data using a particular geometric form (such as a bar, or a line). These functions begin with the standard form `geom_`.
 
-Within this geom, you'll add 'aesthetics', which specify to the package which part of the data needs to be mapped to which particular element of the geom. The most common ones include `x` and `y` for the x and y axes, `color` or `fill` to map colors in your plot to particular data. 
+Within this geom, you'll add 'aesthetics', which specify to the package which part of the data needs to be mapped to which particular element of the geom. The most common ones include `x` and `y` for the x and y axes, `color` or `fill` to map colors in your plot to particular data.
 
 `ggplot` is an advanced package with many options and extensions, which cannot be covered here.
-
 
 Some examples using the fruit data:
 
@@ -303,4 +314,3 @@ This has been a very quick introduction to R. There are lots of places to learn 
 [R for data science, which teaches the tidyverse in detail](https://r4ds.had.co.nz)
 
 [Learn how to make a book like this using Bookdown](https://bookdown.org/yihui/bookdown/introduction.html)
-

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 2, Class 2: Cleaning the Observed and Thinking About the Unobserved Data | Cleaning the Observed and Thinking About the Unobserved Data</title>
+  <meta name="description" content="Week 2, Class 2: Cleaning the Observed and Thinking About the Unobserved Data | Cleaning the Observed and Thinking About the Unobserved Data" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 2, Class 2: Cleaning the Observed and Thinking About the Unobserved Data | Cleaning the Observed and Thinking About the Unobserved Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="yann-ryan/network-analysis-humanities-book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 2, Class 2: Cleaning the Observed and Thinking About the Unobserved Data | Cleaning the Observed and Thinking About the Unobserved Data" />
+  
+  
+  
+
+<meta name="author" content="Yann Ryan, Iiro Tihonen" />
+
+
+<meta name="date" content="2022-10-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-2-class-1-acquiring-and-working-with-network-data.html"/>
+<link rel="next" href="week-3-class-1-data-modelling.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.23/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Network Analysis Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i>About the course</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reading"><i class="fa fa-check"></i>Reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#final-project"><i class="fa fa-check"></i>Final Project</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#slides"><i class="fa fa-check"></i>Slides</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html"><i class="fa fa-check"></i>Week 1, class 1: Course Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#how-to-use-this-book-and-follow-the-course."><i class="fa fa-check"></i>How to use this book and follow the course.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#what-do-we-mean-by-a-network"><i class="fa fa-check"></i>What do we mean by a ‘network’?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#why-use-networks"><i class="fa fa-check"></i>Why Use Networks?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#networks-in-the-humanities"><i class="fa fa-check"></i>Networks in the Humanities</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#some-examples"><i class="fa fa-check"></i>Some Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#graph-theory"><i class="fa fa-check"></i>Graph Theory</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#why-use-networks-in-humanities"><i class="fa fa-check"></i>Why use networks in humanities?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-basics"><i class="fa fa-check"></i>Network Basics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#nodes-and-edges"><i class="fa fa-check"></i>Nodes and Edges</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#edge-weights"><i class="fa fa-check"></i>Edge weights</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#edge-direction"><i class="fa fa-check"></i>Edge direction</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#weighted-and-directed"><i class="fa fa-check"></i>Weighted and directed</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-paths"><i class="fa fa-check"></i>Network paths</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#different-network-types"><i class="fa fa-check"></i>Different Network Types</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#bipartite-networks"><i class="fa fa-check"></i>Bipartite networks</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#multigraphs"><i class="fa fa-check"></i>Multigraphs</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#hypergraphs"><i class="fa fa-check"></i>Hypergraphs</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#spatial-networks"><i class="fa fa-check"></i>Spatial networks</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#from-bridges-to-social-networks"><i class="fa fa-check"></i>From Bridges to Social Networks…</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#the-strength-of-weak-ties"><i class="fa fa-check"></i>The Strength of Weak Ties</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#its-a-small-world"><i class="fa fa-check"></i>It’s a Small World</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#the-new-science-of-networks"><i class="fa fa-check"></i>The ‘New’ Science of Networks</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#conclusion"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><i class="fa fa-check"></i>Week 1, Class 2: Introduction to R and the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#r-and-r-studio"><i class="fa fa-check"></i>R and R-Studio</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#logging-into-csc-notebooks-and-opening-a-notebook."><i class="fa fa-check"></i>Logging into CSC notebooks and opening a notebook.</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#using-r"><i class="fa fa-check"></i>Using R</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#base-r."><i class="fa fa-check"></i>‘Base’ R.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-structures"><i class="fa fa-check"></i>Basic R data structures</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#data-types"><i class="fa fa-check"></i>Data types</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i>Tidyverse</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#select-pull"><i class="fa fa-check"></i>select(), pull()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#group_by-tally-summarise"><i class="fa fa-check"></i>group_by(), tally(), summarise()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#filter"><i class="fa fa-check"></i>filter()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#sort-arrange"><i class="fa fa-check"></i>sort(), arrange()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#left_join-inner_join-anti_join"><i class="fa fa-check"></i>left_join(), inner_join(), anti_join()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#piping"><i class="fa fa-check"></i>Piping</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#plotting-using-ggplot"><i class="fa fa-check"></i>Plotting using ggplot()</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#reading-in-external-data"><i class="fa fa-check"></i>Reading in external data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html"><i class="fa fa-check"></i>Week 2, Class 1: Acquiring and Working With Network Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#presenting-networks-as-data"><i class="fa fa-check"></i>Presenting Networks as Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#estc"><i class="fa fa-check"></i>ESTC</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#tweetsets-and-hydrator"><i class="fa fa-check"></i>Tweetsets and hydrator</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#instructions-for-homework"><i class="fa fa-check"></i>Instructions for homework</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><i class="fa fa-check"></i>Week 2, Class 2: Cleaning the Observed and Thinking About the Unobserved Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#unharmonised-and-missing-data-or-the-universals-of-data-analysis"><i class="fa fa-check"></i>Unharmonised and Missing data, or the Universals of Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#unharmonised-data---an-overview"><i class="fa fa-check"></i>Unharmonised Data - An Overview</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#harmonisation-table"><i class="fa fa-check"></i>Harmonisation Table</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#regular-expressions-and-the-stringr-tools"><i class="fa fa-check"></i>Regular Expressions and the Stringr Tools</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cleaning-data-at-scale"><i class="fa fa-check"></i>Cleaning Data at Scale</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#using-stringr-and-regular-experssions"><i class="fa fa-check"></i>Using Stringr and Regular Experssions</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#more-about-regular-expressions-and-stringr-in-practice"><i class="fa fa-check"></i>More About Regular Expressions and Stringr in Practice</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#regular-expressions-and-stringr---a-summary"><i class="fa fa-check"></i>Regular Expressions and Stringr - a Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#other-solutions-to-harmonisation-of-data"><i class="fa fa-check"></i>Other Solutions To Harmonisation of Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#missing-data"><i class="fa fa-check"></i>Missing data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#for-the-next-week"><i class="fa fa-check"></i>For the Next Week</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#references-1"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-data-modelling.html"><a href="week-3-class-1-data-modelling.html"><i class="fa fa-check"></i>Week 3, Class 1: Data modelling</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-build-a-data-model-with-r.html"><a href="week-3-class-2-build-a-data-model-with-r.html"><i class="fa fa-check"></i>Week 3, Class 2: Build a Data Model with R</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html"><i class="fa fa-check"></i>Week 4, Class 1: Network Concepts and Metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#social-network-concepts-triadic-closure-transitivity-brokerage"><i class="fa fa-check"></i>Social network concepts: triadic closure, transitivity, brokerage</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#triadic-closure"><i class="fa fa-check"></i>Triadic closure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#node-level-metrics"><i class="fa fa-check"></i>Node-level metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#degree"><i class="fa fa-check"></i>Degree</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#betweenness-centrality"><i class="fa fa-check"></i>Betweenness Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#eigenvector-centrality"><i class="fa fa-check"></i>Eigenvector Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#closeness-centrality"><i class="fa fa-check"></i>Closeness centrality</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#edge-level-metrics"><i class="fa fa-check"></i>Edge-level metrics</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#global-metrics"><i class="fa fa-check"></i>Global Metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#density"><i class="fa fa-check"></i>Density</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#clustering-coefficient"><i class="fa fa-check"></i>Clustering coefficient</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#groups-and-community-structure-in-networks"><i class="fa fa-check"></i>Groups and Community Structure in Networks</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#components"><i class="fa fa-check"></i>Components</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#cliques"><i class="fa fa-check"></i>Cliques</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#community-detection-methods"><i class="fa fa-check"></i>Community Detection Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html"><i class="fa fa-check"></i>Week 4, Class 2: Network Analysis with R</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#introduction-3"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#network-data-structures"><i class="fa fa-check"></i>Network data structures</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#edge-lists"><i class="fa fa-check"></i>Edge lists</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#adjacency-matrices"><i class="fa fa-check"></i>Adjacency Matrices</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#creating-a-network-object-in-r-from-an-edge-list"><i class="fa fa-check"></i>Creating a Network Object in R from an Edge List</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#import-network-data"><i class="fa fa-check"></i>Import Network Data</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#turn-the-edge-list-into-a-tbl_graph"><i class="fa fa-check"></i>Turn the edge list into a tbl_graph</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#calculating-network-metrics"><i class="fa fa-check"></i>Calculating Network Metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#global-metrics-1"><i class="fa fa-check"></i>Global metrics</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#node-level-metrics."><i class="fa fa-check"></i>Node-level metrics.</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#summarising-the-network-data"><i class="fa fa-check"></i>Summarising the network data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#joining-additional-data"><i class="fa fa-check"></i>Joining additional data</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#transitivity-triads-structural-balance"><i class="fa fa-check"></i>Transitivity, Triads, structural balance</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#triad-census"><i class="fa fa-check"></i>Triad Census</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#group-detection"><i class="fa fa-check"></i>Group detection</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#components-1"><i class="fa fa-check"></i>Components</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#cliques-1"><i class="fa fa-check"></i>Cliques</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#community-detection"><i class="fa fa-check"></i>Community Detection</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#conclusions-1"><i class="fa fa-check"></i>Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html"><i class="fa fa-check"></i>Week 5, Class 1: Visualising Networks with ggraph</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#network-visualisations"><i class="fa fa-check"></i>Network visualisations</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#force-directed-network-visualisations"><i class="fa fa-check"></i>Force-directed network visualisations</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#other-network-visualisations"><i class="fa fa-check"></i>Other Network Visualisations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#network-visualisations-with-r-and-ggraph."><i class="fa fa-check"></i>Network Visualisations with R and ggraph.</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#ggraph-and-other-tidyverse-functions"><i class="fa fa-check"></i>Ggraph and other tidyverse functions</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#add-node-labels"><i class="fa fa-check"></i>Add node labels</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#calculating-and-coloring-by-community-detection"><i class="fa fa-check"></i>Calculating and coloring by community detection</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#what-makes-a-good-network-visualisation"><i class="fa fa-check"></i>What makes a good network visualisation?</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#case-study-scientists-and-politicians"><i class="fa fa-check"></i>Case study: Scientists and Politicians</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#conclusions-2"><i class="fa fa-check"></i>Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html"><i class="fa fa-check"></i>Week 5, class 2: Other network types</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#ego-networks"><i class="fa fa-check"></i>Ego Networks</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#case-study-a-spotify-ego-network"><i class="fa fa-check"></i>Case Study: A Spotify Ego Network</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#bipartite-networks-1"><i class="fa fa-check"></i>Bipartite networks</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#co-occurrence-and-co-authorship-networks."><i class="fa fa-check"></i>Co-occurrence and co-authorship networks.</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#a-type-of-co-authorship-publisher-networks"><i class="fa fa-check"></i>A type of co-authorship: publisher networks</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#the-dataset"><i class="fa fa-check"></i>The dataset</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#method"><i class="fa fa-check"></i>Method</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#conclusions-3"><i class="fa fa-check"></i>Conclusions</a></li>
+<li><a href="week-5-class-2-other-network-types.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#exercises-2"><i class="fa fa-check"></i>Exercises:</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html"><i class="fa fa-check"></i>Week 6, Class 1: Asking and Answering Questions with Networks</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#what-makes-a-good-question-of-a-network"><i class="fa fa-check"></i>What makes a good question of a network?</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#examples"><i class="fa fa-check"></i>Examples</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#existing-examples"><i class="fa fa-check"></i>Existing examples</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#practical-example-estc"><i class="fa fa-check"></i>Practical Example: ESTC</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#question-what-do-publishers-and-printers-cluster-by"><i class="fa fa-check"></i>Question: what do publishers and printers cluster by?</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#practical-example-determining-social-media-influence-using-pagerank"><i class="fa fa-check"></i>Practical example: Determining social media influence using PageRank</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#using-the-data-model"><i class="fa fa-check"></i>Using the data model</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#filtering-your-data-using-a-pipeline"><i class="fa fa-check"></i>filtering your data using a pipeline</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#getting-network-statistics-before-and-after-filtering."><i class="fa fa-check"></i>Getting network statistics before and after filtering.</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#using-visualisations"><i class="fa fa-check"></i>Using visualisations</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#network-statistics"><i class="fa fa-check"></i>Network statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#getting-and-reporting-basic-global-network-metrics"><i class="fa fa-check"></i>Getting and reporting basic global network metrics</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#networks-and-regression"><i class="fa fa-check"></i>Networks and regression</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#statistical-approaches-to-networks---ergm-and-soam-rsiena"><i class="fa fa-check"></i>Statistical approaches to networks - ERGM and SOAM (RSiena)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html"><i class="fa fa-check"></i>Week 6, Class 2: Reflections and Pitfalls of Networks</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#what-are-implications-of-networks"><i class="fa fa-check"></i>What are implications of networks?</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#network-representations"><i class="fa fa-check"></i>Network representations</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#problems-with-network-representation"><i class="fa fa-check"></i>Problems with network representation</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#missing-data-1"><i class="fa fa-check"></i>Missing data</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#specific-problems-with-networks-and-culturalhumanities-data"><i class="fa fa-check"></i>Specific problems with networks and cultural/humanities data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#visualisations"><i class="fa fa-check"></i>Visualisations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html"><i class="fa fa-check"></i>Week 7: Final Project</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#what-should-the-final-project-look-like"><i class="fa fa-check"></i>What should the final project look like?</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#practical-steps"><i class="fa fa-check"></i>Practical steps</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#project-aim"><i class="fa fa-check"></i>Project Aim</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#r-markdown"><i class="fa fa-check"></i>R Markdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#reproducible-research"><i class="fa fa-check"></i>Reproducible research</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#final-project-datasets"><i class="fa fa-check"></i>Final Project Datasets</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#available-datasets"><i class="fa fa-check"></i>Available datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#unharmonised-and-missing-data-or-the-universals-of-data-analysis-1"><i class="fa fa-check"></i>Unharmonised and Missing data, or the Universals of Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#unharmonised-data---an-overview-1"><i class="fa fa-check"></i>Unharmonised Data - An Overview</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#harmonisation-table-1"><i class="fa fa-check"></i>Harmonisation Table</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#regular-expressions-and-the-stringr-tools-1"><i class="fa fa-check"></i>Regular Expressions and the Stringr Tools</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#cleaning-data-at-scale-1"><i class="fa fa-check"></i>Cleaning Data at Scale</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#using-stringr-and-regular-experssions-1"><i class="fa fa-check"></i>Using Stringr and Regular Experssions</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#more-about-regular-expressions-and-stringr-in-practice-1"><i class="fa fa-check"></i>More About Regular Expressions and Stringr in Practice</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#regular-expressions-and-stringr---a-summary-1"><i class="fa fa-check"></i>Regular Expressions and Stringr - a Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#other-solutions-to-harmonisation-of-data-1"><i class="fa fa-check"></i>Other Solutions To Harmonisation of Data</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#missing-data-2"><i class="fa fa-check"></i>Missing data</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#for-the-next-week-1"><i class="fa fa-check"></i>For the Next Week</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#references-2"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cleaning the Observed and Thinking About the Unobserved Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data" class="section level1 hasAnchor">
+<h1>Week 2, Class 2: Cleaning the Observed and Thinking About the Unobserved Data<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="unharmonised-and-missing-data-or-the-universals-of-data-analysis" class="section level2 hasAnchor">
+<h2>Unharmonised and Missing data, or the Universals of Data Analysis<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#unharmonised-and-missing-data-or-the-universals-of-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Although network analysis is the topic of this course, it shares many elements with other approaches to research that apply data, statistics and computation. Perhaps most universal of these similarities are the problems that need to be solved before (network) analysis can begin: those of unharmonised and missing data. In the worst case, jumping over or failing the steps to tackle them can lead to completely faulty results or interpretations. Fortunately, there are things you can do to make your data (or, very least, your interpretation of it) better.</p>
+</div>
+<div id="unharmonised-data---an-overview" class="section level2 hasAnchor">
+<h2>Unharmonised Data - An Overview<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#unharmonised-data---an-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Computers do not have an understanding of relevant and irrelevant differences. This means, that even the smallest of inconsistencies in denoting a thing can have big differences in data analysis. These inconsistencies stem from various sources. There were often various ways to write a name of a city or a person during the early modern period, so often even data that has been “accurately” collected ends up being unharmonised. Both modern and pre-modern data are also subject to mistakes that happen when the data is recorded or transformed from one format to another. Regular users of research libraries will often find instances where mistakes have been made in the cataloging process, and the users of Twitter that make the contents of a social network data sets might not respect spelling rules to begin with. If these different variants of the same thing are not accounted for, the data will be inflated by pseudo persons, cities, books or other entities, that should be grouped together.</p>
+<pre><code>## [1] &quot;Some name variants of the City of Aachen according to CERL Thesaurus:&quot;</code></pre>
+<pre><code>## [1] &quot;Aach&quot;            &quot;Achen&quot;           &quot;Aix la Chapelle&quot; &quot;Aix-la-Chapelle&quot;</code></pre>
+<p>This process of matching and standardising different ways of denoting the same things is called data harmonisation.
+There are various ways of doing data harmonisation. In fact, it is a field of research on its own right <span class="citation">(<a href="#ref-Christen2012" role="doc-biblioref">Christen 2012</a>)</span>, and many algorithms and tools have been developed to help database developers and users to find and match instances of the same thing. Fortunately, it is not necessary to become an expert in all of these techniques to solve most data harmonisation tasks that you will encounter. Here, we introduce two entry-level tools, that will already solve significant number of harmonisation problems, and keep being useful even if you familiarise yourself with more advanced ones.</p>
+</div>
+<div id="harmonisation-table" class="section level2 hasAnchor">
+<h2>Harmonisation Table<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#harmonisation-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The technically simplest solution is to construct a harmonisation table. The table has at least two columns, one for the unharmonised values and other for corresponding harmonised values. The number unharmonised and harmonised columns can also be greater. The pros of this approach are the technical ease and the possibility of doing such matching that would be hard to automate, like converting variations of <a href="https://rbms.info/lpn/a/">latin place names to moden standardised names</a>. You can then join the harmonised values of the variable to your table with the unharmonised values with the join-functions of R. However, this approach does not scale well and always requires manual labor. But for a small data set with intricacies of who maps to what (like is often the case with e.g. historical data) manual approach is sometimes the best choice.</p>
+<pre><code>## [1] &quot;A simple harmonisation table&quot;</code></pre>
+<pre><code>##     name_variants harmonised_name
+## 1            Aach          Aachen
+## 2           Achen          Aachen
+## 3 Aix la Chapelle          Aachen
+## 4 Aix-la-Chapelle          Aachen</code></pre>
+</div>
+<div id="regular-expressions-and-the-stringr-tools" class="section level2 hasAnchor">
+<h2>Regular Expressions and the Stringr Tools<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#regular-expressions-and-the-stringr-tools" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="cleaning-data-at-scale" class="section level3 hasAnchor">
+<h3>Cleaning Data at Scale<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cleaning-data-at-scale" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Cleaning data often involves making the same kind of operation over many things. For example, a very common source of spelling variation
+is that at the very end of a string (e.g “City of London.”) there is a white space (“City of London .”), and this same error occurs for
+tens or even hundreds of entities in our data (“Aachen .”, “Paris .” etc.). A slightly more abstract problem of similar kind would be data that is consistent, but at the wrong level of granularity. If we wanted to analyse families instead of persons, but in our data people were named the following way:</p>
+<pre><code>## [1] &quot;Thomas Hobbes&quot; &quot;Maria Hobbes&quot;  &quot;John Locke&quot;    &quot;Adam Locke&quot;</code></pre>
+<p>Then we would need to extract the latter part of each name not to count individuals (in this case duplicate variants of the family), and
+to do this over all names.</p>
+<p>Fortunately, there is a collection of R tools that allow us to detect textual patterns of both sorts and more than we demonstrated above,
+and, after finding the patterns, to apply different kinds of operations over them.</p>
+</div>
+<div id="using-stringr-and-regular-experssions" class="section level3 hasAnchor">
+<h3>Using Stringr and Regular Experssions<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#using-stringr-and-regular-experssions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Stringr is a R package <span class="citation">(<a href="#ref-Wickham2022" role="doc-biblioref">Wickham 2022</a>)</span> that is part of the Tidyverse, the collection of R tools that were introduced last week. It is not the only way to do text pattern detection and manipulation with R, but it being part of a bigger system (that we are already using) and covering the basic tools makes mastering it a good starting point for learning data harmonisation by coding.</p>
+<p>There are seven main functions in the Str package, and all of them share a component called pattern. The pattern is written as a regular expression. Regular expression is a description of a string of text. It can be as concrete as description of the letter a (the corresponding pattern being “a”), number between 1 and 5 ([1-5]) or a letters-only piece of text at the end of the string ( [a-z]+$) These descriptions follow a certain grammar, that we will discuss more soon. Regular expressions can be used to find spelling variations, data in the wrong format and other things that make data unharmonised for your purposes.</p>
+<p>The functions of Stringr allow different kinds of operations over the patterns? We consider four of the functions in the String package (for those interested, all of the main 7 are shortly introduced <a href="https://stringr.tidyverse.org/">here</a>) that are especially useful for harmonisation and getting to know your data in general. In all cases, the “pattern” parameter is the regular expression, and string is a character vector.</p>
+<div id="str_detect" class="section level4 hasAnchor">
+<h4>str_detect<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#str_detect" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Returns TRUE or FALSE based on whether it found the pattern from the text. Very useful for exploring your data.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb57-1" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="fu">c</span>(<span class="st">&quot;Maria Hobbes&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;John Locke&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;Adam Locke&quot;</span>))</span>
+<span id="cb57-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb57-2" aria-hidden="true" tabindex="-1"></a>is_hobbes <span class="ot">&lt;-</span> <span class="fu">str_detect</span>(example,<span class="at">pattern =</span> <span class="st">&quot;Hobbes&quot;</span>)</span>
+<span id="cb57-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(is_hobbes)</span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE FALSE FALSE</code></pre>
+</div>
+<div id="str_subset" class="section level4 hasAnchor">
+<h4>str_subset<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#str_subset" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Returns those instances where there is match with the pattern. Useful for exploring your data.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb59-1" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="fu">c</span>(<span class="st">&quot;Maria Hobbes&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;John Locke&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;Adam Locke&quot;</span>))</span>
+<span id="cb59-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb59-2" aria-hidden="true" tabindex="-1"></a>is_hobbes <span class="ot">&lt;-</span> <span class="fu">str_subset</span>(example,<span class="at">pattern =</span> <span class="st">&quot;Hobbes&quot;</span>)</span>
+<span id="cb59-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(is_hobbes)</span></code></pre></div>
+<pre><code>## [1] &quot;Thomas Hobbes&quot; &quot;Maria Hobbes&quot;</code></pre>
+</div>
+<div id="str_replace" class="section level4 hasAnchor">
+<h4>str_replace<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#str_replace" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Replace the pattern with something else. Note that we used a slightly more complicated regular expression, that
+replaces the letters only part of the string at the end, and that notices that the first letter of the family name is a capital
+letter. The text that replaces the matched pattern goes to the replacement parameter.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb61-1" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="fu">c</span>(<span class="st">&quot;Maria Hobbes&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;John Locke&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;Adam Locke&quot;</span>))</span>
+<span id="cb61-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb61-2" aria-hidden="true" tabindex="-1"></a>family_name_replaced <span class="ot">&lt;-</span> example <span class="sc">%&gt;%</span>  <span class="fu">str_replace</span>(.,<span class="at">pattern =</span> <span class="st">&quot; [A-Z]{1}[a-z]+$&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; insert_family_name_here&quot;</span>)</span>
+<span id="cb61-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(family_name_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot;Thomas insert_family_name_here&quot; &quot;Maria insert_family_name_here&quot; 
+## [3] &quot;John insert_family_name_here&quot;   &quot;Adam insert_family_name_here&quot;</code></pre>
+</div>
+<div id="str_extract" class="section level4 hasAnchor">
+<h4>str_extract<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#str_extract" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Returns the first match of the pattern. For example, we could use the function to turn the names in our data set to family names. Notice also that we use the str_replace function to remove the whitespace after exracting the family name.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb63-1" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="fu">c</span>(<span class="st">&quot;Maria Hobbes&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;John Locke&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;Adam Locke&quot;</span>))</span>
+<span id="cb63-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb63-2" aria-hidden="true" tabindex="-1"></a>family_name_extracted <span class="ot">&lt;-</span> example <span class="sc">%&gt;%</span>  <span class="fu">str_extract</span>(.,<span class="at">pattern =</span> <span class="st">&quot; [A-Z]{1}[a-z]+$&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">str_replace</span>(.,<span class="at">pattern =</span> <span class="st">&quot; &quot;</span>,<span class="at">replacement =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb63-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(family_name_extracted)</span></code></pre></div>
+<pre><code>## [1] &quot;Hobbes&quot; &quot;Hobbes&quot; &quot;Locke&quot;  &quot;Locke&quot;</code></pre>
+</div>
+</div>
+<div id="more-about-regular-expressions-and-stringr-in-practice" class="section level3 hasAnchor">
+<h3>More About Regular Expressions and Stringr in Practice<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#more-about-regular-expressions-and-stringr-in-practice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For effective use of String and similar tools, certain familiarity with the language of regular expressions is needed. We don’t aim
+to teach you all about regular expressions, but enough to get you started. Don’t worry about memorising everything by heart, there is an official <a href="https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf">cheat cheet</a>. It is more important to get a touch to how
+regular expressions work. The cheat sheet has both the Stringr and regular expressions basics condensed to it, so it is a good idea to bookmark or download to your computer. There are also more comprehensive Stringr tutorials like <a href="https://r4ds.had.co.nz/strings.html">this one</a>.</p>
+<p>Next, we go through some examples that make use of different elements of the “grammar” of regular expressions. It might be a good idea to also look at the str_function examples again after these examples. We use str_replace, because it makes it easy to demonstrate what was the detected pattern (that is then replaced).</p>
+<div id="trivial-patterns" class="section level5 hasAnchor">
+<h5>Trivial patterns<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#trivial-patterns" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matching a singe element, the letter T</span></span>
+<span id="cb65-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb65-2" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="fu">c</span>(<span class="st">&quot;Maria Hobbes&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;John Locke&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;Adam Locke&quot;</span>))</span>
+<span id="cb65-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb65-3" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;T&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb65-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot; match was here homas Hobbes&quot; &quot;Maria Hobbes&quot;                
+## [3] &quot;John Locke&quot;                   &quot;Adam Locke&quot;</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matching collection of elements, e.g a name</span></span>
+<span id="cb67-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb67-2" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="fu">c</span>(<span class="st">&quot;Maria Hobbes&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;John Locke&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;Adam Locke&quot;</span>))</span>
+<span id="cb67-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb67-3" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;Thomas&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb67-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot; match was here  Hobbes&quot; &quot;Maria Hobbes&quot;           
+## [3] &quot;John Locke&quot;              &quot;Adam Locke&quot;</code></pre>
+</div>
+<div id="alternates" class="section level5 hasAnchor">
+<h5>Alternates<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#alternates" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The pattern might allow for different options, which is what the examples in this subsection are about.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matching either or (one of the two names in this case)</span></span>
+<span id="cb69-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb69-2" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="fu">c</span>(<span class="st">&quot;Maria Hobbes&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;John Locke&quot;</span>),<span class="fu">c</span>(<span class="st">&quot;Adam Locke&quot;</span>))</span>
+<span id="cb69-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb69-3" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;Thomas|Maria&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb69-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot; match was here  Hobbes&quot; &quot; match was here  Hobbes&quot;
+## [3] &quot;John Locke&quot;              &quot;Adam Locke&quot;</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matching from a range, here they are numbers from 0 to 9, but they could also be e.g. letters from a to z [a-z].</span></span>
+<span id="cb71-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="co"># In general, the brackets [] allow for alternative matches.</span></span>
+<span id="cb71-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb71-3" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes 1&quot;</span>,<span class="st">&quot;Maria Hobbes 7&quot;</span>,<span class="st">&quot;John Locke&quot;</span>,<span class="st">&quot;Adam Locke&quot;</span>)</span>
+<span id="cb71-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb71-4" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;[1-9]&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb71-5"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot;Thomas Hobbes  match was here &quot; &quot;Maria Hobbes  match was here &quot; 
+## [3] &quot;John Locke&quot;                     &quot;Adam Locke&quot;</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matching from a collection of values, notice that we once again use brackets [] for alternatives, but this time</span></span>
+<span id="cb73-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="co">#without range.</span></span>
+<span id="cb73-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb73-3" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;T&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;L&quot;</span>)</span>
+<span id="cb73-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb73-4" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;[TM]&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb73-5"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot; match was here &quot; &quot; match was here &quot; &quot;L&quot;</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The alternatives can also be used to replace anything but what is specified within the []. This happens with ^</span></span>
+<span id="cb75-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb75-2" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;7&quot;</span>)</span>
+<span id="cb75-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb75-3" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;[^1-9]&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb75-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb75-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot; match was here &quot; &quot;7&quot;</code></pre>
+</div>
+<div id="anchoring" class="section level4 hasAnchor">
+<h4>Anchoring<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#anchoring" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The pattern can be specified to relate to certain parts of the string, namely the start or the end.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The match can be anchored to the start of the string with ^</span></span>
+<span id="cb77-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb77-2" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;this is not a number 9&quot;</span>,<span class="st">&quot;7 is a number&quot;</span>)</span>
+<span id="cb77-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb77-3" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;^[1-9]&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb77-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot;this is not a number 9&quot;       &quot; match was here  is a number&quot;</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The match can be anchored to the end of the string with $</span></span>
+<span id="cb79-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb79-2" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;this is not a number 9&quot;</span>,<span class="st">&quot;7 is a number&quot;</span>)</span>
+<span id="cb79-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb79-3" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;[1-9]$&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb79-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb79-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot;this is not a number  match was here &quot;
+## [2] &quot;7 is a number&quot;</code></pre>
+</div>
+<div id="grouping" class="section level4 hasAnchor">
+<h4>Grouping<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#grouping" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Elements in the pattern can be grouped with parentheses.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Search for either Maria or Thomas, and Hobbes after that</span></span>
+<span id="cb81-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb81-2" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="st">&quot;Maria Hobbes&quot;</span>,<span class="st">&quot;John Locke&quot;</span>,<span class="st">&quot;Adam Locke&quot;</span>)</span>
+<span id="cb81-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb81-3" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;(Thomas|Maria) Hobbes&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb81-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb81-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot; match was here &quot; &quot; match was here &quot; &quot;John Locke&quot;       &quot;Adam Locke&quot;</code></pre>
+</div>
+<div id="quantification" class="section level4 hasAnchor">
+<h4>Quantification<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#quantification" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The pattern can include a specification about the number of times something occurs in the string, this
+subsection provides examples of that.</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Replace Thomas when it occurs from two to three times.</span></span>
+<span id="cb83-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb83-2" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="st">&quot;Thomas Thomas Hobbes&quot;</span>,<span class="st">&quot;Thomas Thomas Thomas Hobbes&quot;</span>)</span>
+<span id="cb83-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb83-3" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;(Thomas ){2,3}&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb83-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot;Thomas Hobbes&quot;          &quot; match was here Hobbes&quot; &quot; match was here Hobbes&quot;</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co">#? * and + can also be used to control how many times something need to occur in a match. Here we demonstrate the use of</span></span>
+<span id="cb85-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="co">#+, that means that the pattern needs to be found at least once, but possibly more times.</span></span>
+<span id="cb85-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb85-3" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="st">&quot;Thomas Thomas Hobbes&quot;</span>,<span class="st">&quot;Thomas Thomas Thomas Hobbes&quot;</span>)</span>
+<span id="cb85-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb85-4" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;(Thomas )+&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb85-5"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb85-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot; match was here Hobbes&quot; &quot; match was here Hobbes&quot; &quot; match was here Hobbes&quot;</code></pre>
+</div>
+<div id="look-arounds" class="section level4 hasAnchor">
+<h4>Look arounds<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#look-arounds" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Match can be conditioned to the surrounding elements. Here, the regular expression looks for Maria followed by Hobbes.</span></span>
+<span id="cb87-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="co">#More ways to do this on the cheat sheet.</span></span>
+<span id="cb87-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb87-3" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="st">&quot;Maria Hobbes&quot;</span>,<span class="st">&quot;John Locke&quot;</span>,<span class="st">&quot;Adam Locke&quot;</span>)</span>
+<span id="cb87-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb87-4" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;Maria(?= Hobbes)&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb87-5"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb87-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot;Thomas Hobbes&quot;           &quot; match was here  Hobbes&quot;
+## [3] &quot;John Locke&quot;              &quot;Adam Locke&quot;</code></pre>
+</div>
+<div id="character-matching" class="section level4 hasAnchor">
+<h4>Character matching<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#character-matching" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>There are some characters or character combinations with special meaning in regular expressions. We demonstrate some examples,
+the cheat sheet has a more comprehensive list.</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># . matches any character except a new line. Here, we use it with + to allow any string without new lines to be a match</span></span>
+<span id="cb89-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb89-2" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes&quot;</span>,<span class="st">&quot;Maria Hobbes&quot;</span>,<span class="st">&quot;John Locke&quot;</span>,<span class="st">&quot;Adam Locke&quot;</span>)</span>
+<span id="cb89-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb89-3" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;.+&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb89-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb89-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot; match was here &quot; &quot; match was here &quot; &quot; match was here &quot; &quot; match was here &quot;</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># . is an example of a character, that needs to be written as \\., if the aims is to match a dot and not reference to the special</span></span>
+<span id="cb91-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="co">#meaning, in this case any character, of that character in regular expressions. The same applies if one is searching e.g for [ or (.</span></span>
+<span id="cb91-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb91-3" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes.&quot;</span>,<span class="st">&quot;Maria Hobbes&quot;</span>,<span class="st">&quot;John Locke&quot;</span>,<span class="st">&quot;Adam Locke&quot;</span>)</span>
+<span id="cb91-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb91-4" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb91-5"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb91-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot;Thomas Hobbes match was here &quot; &quot;Maria Hobbes&quot;                 
+## [3] &quot;John Locke&quot;                    &quot;Adam Locke&quot;</code></pre>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [:digit:] is an example of command that matches a distinct set of characters, in this case digits.</span></span>
+<span id="cb93-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb93-2" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Thomas Hobbes 12&quot;</span>,<span class="st">&quot;Maria Hobbes&quot;</span>,<span class="st">&quot;John Locke 7&quot;</span>,<span class="st">&quot;Adam Locke&quot;</span>)</span>
+<span id="cb93-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb93-3" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;[:digit:]&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb93-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb93-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot;Thomas Hobbes  match was here 2&quot; &quot;Maria Hobbes&quot;                   
+## [3] &quot;John Locke  match was here &quot;     &quot;Adam Locke&quot;</code></pre>
+</div>
+<div id="combining-elements" class="section level4 hasAnchor">
+<h4>Combining elements<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#combining-elements" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Some of the examples have already used many of the properties of regular expressions at once, and this is often
+extremely helpful, as it makes regular expressions much more expressive. The last example uses many of the things
+we have dicussed at the same time.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task, match the people who were born at the 17th century and have a de at their names</span></span>
+<span id="cb95-2"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb95-2" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Baruch de Spinoza 1632-1677&quot;</span>,<span class="st">&quot;John Locke 1632-1704&quot;</span>,<span class="st">&quot;François Fénelon 1651-1715&quot;</span>)</span>
+<span id="cb95-3"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb95-3" aria-hidden="true" tabindex="-1"></a>example_replaced <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(example,<span class="at">pattern =</span> <span class="st">&quot;.* de .* 16[0-9]{2}-1[0-9]{3}&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot; match was here &quot;</span>)</span>
+<span id="cb95-4"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cb95-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_replaced)</span></code></pre></div>
+<pre><code>## [1] &quot; match was here &quot;           &quot;John Locke 1632-1704&quot;      
+## [3] &quot;François Fénelon 1651-1715&quot;</code></pre>
+<p>Here we first allowed string of any length (first name), then we required de, then allowed for another string of any length or type,
+after which we required 16 followed by two other numbers (birth year in the 17th century), followed by - and the year of death.
+And this is by no means as expressive as a regular expression can get.</p>
+</div>
+</div>
+<div id="regular-expressions-and-stringr---a-summary" class="section level3 hasAnchor">
+<h3>Regular Expressions and Stringr - a Summary<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#regular-expressions-and-stringr---a-summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now, you should have a some sort of understanding in how regular expressions can be used in the manipulation of strings.
+We will demonstrate the practical usefulness of these tools in the exercise set of this week, where we will use some of
+these tools to clean the Twitter data set you obtained last time.</p>
+</div>
+</div>
+<div id="other-solutions-to-harmonisation-of-data" class="section level2 hasAnchor">
+<h2>Other Solutions To Harmonisation of Data<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#other-solutions-to-harmonisation-of-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It should also be mentioned, that data harmonisation can be done without building a code workflow. <a href="https://openrefine.org/">Openrefine</a> is an example of a harmonisation tool with an user interface. We do not prohibit the use of such tools for e.g. harmonising your data set for the final project, and it can a reasonable choice in many instances. However, it will serve you in the long run to get familiar at least with regular expressions, and possibly more. Building workflows of data harmonisation often takes as much
+or more time than the actual analysis in DH research, so building competence in these skills is useful.</p>
+</div>
+<div id="missing-data" class="section level2 hasAnchor">
+<h2>Missing data<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#missing-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Another major theme is data that is lacking. It is very common in the humanities and the social sciences, that some of the data that should be part of the data set is not actually there. This phenomenon comes in two major forms, as
+the data can be either completely or partially missing. Here, we take a quick overview to these two types of missingness, and to some of the ways the problems caused by them can be alleviated (or at least understood).</p>
+<p>Partially missing data is a known unknown, you can observe just by looking at the data set. In R, you might have seen value NA in a cell of a table, where you would have expected a character or numeric value. In other words, partially missing data refers to instances where we are missing some of the values of variables for an observation. The reasons for missing data vary. People might not answer all the questions in a survey, the piece of data might be unavailable (e.g. books imprint might lack
+the name of the publisher), query used to get the data might miss values in the wrong format, or any other reason. The end result is still the same: a collection of missing elements in your data.</p>
+<pre><code>##            name  occupation
+## 1 Thomas Hobbes philosopher
+## 2  Steven Steel        &lt;NA&gt;</code></pre>
+<p>There are two reasons why the partially missing data matters. One is purely technical: many operations can not be performed over missing values. For example, lets assume that you want to take the average number of pages for three books, but for one of the books, the number of pages is missing. As “missing” or NA is not a number, you can’t sum it with numbers, hence you can not take
+the average. Most of data analysis in the humanities and the social sciences would be impossible if problems like this stopped as from taking averages or from doing other sorts of analyses that can’t tolerate missing values. One common solution is simply to ignore the missing values as if they did not exist in the data. In the example, this would mean that the average is taken over the number of pages of the two books with page number information available.</p>
+<p>The other reason for why partially missing data is problematic, is that missing values might not be missing at random. For example, think of a survey that asks peoples opinions about a polarising topic: people who are not answering might do this because they think their opinion is controversial, and they don’t trust the anonymity of the survey. This is one of the reasons why the simplest solution - just ignoring the missing values, more formally omission - is sometimes dangerous. Other solutions include imputation (filling of missing information with an estimate) and analyses that are designed to be less affected by missing data.</p>
+<p>We do not teach imputation or analyses robust to missing data on this course, but we emphasize that they are motivated by a question anyone analysing their data should consider: are the missing values Missing Completely at Random (MCAR), or does data missing correlate with the properties of the data? If yes, is it possible that this affects the results of a (network) analysis done with the data? There is no out-of-the-box solutions to these problems, which makes (among other reasons) the expertise that scholars from the humanities have about their subject very valuable to data analysis as well, as they often know about such potential pitfalls in the sources they are working with (even if they don’t articulate these things in terms of statistics).</p>
+<p>Completely missing data makes the unknown unknowns related to your data, those instances that are not there at all. Like partially missing data, completely missing data can have various causes. For example, some information in social media can be hidden, meaning that queries or scraping will miss it. Historians, archeologist and others working with pre-modern societies face missing data all the time,
+as many books, letters and other artifacts known to have existed have been completely lost.</p>
+<p>Completely missing data does not create the same kind of technical problems as partially missing data, as they are not present in your database in any form. However, their implications for the meaningfulness and interpretation of, lets say, your network, can be as or even more severe than those cases that are partially missing. Entire observations can also be missing at random, or it might be related to the properties of the observations themselves. For example, there is strong evidence that the ESTC is heavily biased towards certain kinds of items before 1641, covering them extensively (e.g. bibles) while missing most examples of other types of items <span class="citation">(<a href="#ref-Hill2016" role="doc-biblioref">A. Hill 2016</a>)</span>. In some instances, it is possible to evaluate how much and what is missing, like with the ESTC, that can be compared to other sources. However, this is not always the case.</p>
+<p>Fortunately, it is always possible to think what your (network) data needs to be to serve your research question. For example, is it necessary that your network covers all the persons and connections that could be involved, or is a good proportion or a sample (representative set of data from the population of your interest) enough? Do the relevant results change radically if you drop some of the network edges away at random to test how sensitive the results are to some variation of the data set? If so, is it possible that your results are very sensitive to missing data as well. Very often, the research process and closer analysis of the data reveals that the original question required too much from the data, or that it is much more suited to analyse something else that was revealed during the research process. But this is a normal part of research, and should not be feared.</p>
+</div>
+<div id="for-the-next-week" class="section level2 hasAnchor">
+<h2>For the Next Week<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#for-the-next-week" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The treatment of missing data can lead to dramatic changes in results. The <a href="https://www.nature.com/articles/s41586-021-03655-4">article to read for the next week</a> is a critique of another article, published in a very prestigious journal.
+You should be able to access the article through Helka. The article is not the easiest, but try to understand the main ideas. We will discuss the article next week. Especially, everyone should be prepared to answer these four questions in front of the class. Who answers will be selected randomly during the lecture (one person per question, no more than one question per student). The questions are:</p>
+<ol style="list-style-type: decimal">
+<li>Q: What is the forward bias in the Seshat data according to the authors?</li>
+<li>Q: How the missing information about moralising gods was handled in the R script of the original article?</li>
+<li>Q: How the predicted emergence of moralising gods differ between the revised regressions and the original Seshat data set?</li>
+<li>Q: What has happened to the original article?</li>
+</ol>
+</div>
+<div id="references-1" class="section level2 hasAnchor">
+<h2>References<a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Christen2012" class="csl-entry">
+Christen, Peter. 2012. <em>Data Matching: Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection</em>. Springer Publishing Company, Incorporated.
+</div>
+<div id="ref-Hill2016" class="csl-entry">
+Hill, Alexandra. 2016. <span>“Lost Print in England: Entries in the Stationers’ Company Register, 1557–1640.”</span> In <em>Lost Books. Reconstructing the Print World of Pre-Industrial Europe</em>, 144–59. Leiden, The Netherlands: Brill.
+</div>
+<div id="ref-Wickham2022" class="csl-entry">
+Wickham, Hadley. 2022. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-2-class-1-acquiring-and-working-with-network-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-3-class-1-data-modelling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/2-2-data-cleaning_nb.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
