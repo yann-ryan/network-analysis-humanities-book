@@ -237,6 +237,103 @@ sample_tbl_graph %>%
 
 ```
 
+### Network Graph Layouts
+
+Igraph has a number of graph layouts. Depending on your network size and structure, different ones may be appropriate. Where possible, it is a good idea to add some other information, for example group membership or simply node names to your visualisation, at least temporarily. That way you can check to see if the visual structures, such as clusters, centre-periphery, and orientation, make any sense. Here are the most common graph layouts:
+
+#### Fruchterman-Reingold
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('fr') + 
+  geom_edge_link(linetype = 5,
+                 arrow = arrow(length = unit(4, 'mm')), 
+                   end_cap = circle(3, 'mm')) + 
+  geom_node_point(size = 3, aes(color = degree))
+```
+
+
+#### DRL  
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('drl') + 
+  geom_edge_link(linetype = 5,
+                 arrow = arrow(length = unit(4, 'mm')), 
+                   end_cap = circle(3, 'mm')) + 
+  geom_node_point(size = 3, aes(color = degree))
+```
+
+#### KK
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('kk') + 
+  geom_edge_link(linetype = 5,
+                 arrow = arrow(length = unit(4, 'mm')), 
+                   end_cap = circle(3, 'mm')) + 
+  geom_node_point(size = 3, aes(color = degree))
+```
+
+
+#### Circle
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('circle') + 
+  geom_edge_link(linetype = 5,
+                 arrow = arrow(length = unit(4, 'mm')), 
+                   end_cap = circle(3, 'mm')) + 
+  geom_node_point(size = 3, aes(color = degree))
+```
+
+#### Edge types
+
+You can also make extenstive changes to the type of edge. In many cases, these may make the diagram more readable. Some have particular uses, for example `geom_edge_fan()` is used for a multigraph (where you have multiple different types of edges), and `geom_edge_arc` can be useful for when you want to visualise the difference between incoming and outgoing edges:
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('fr') + 
+  geom_edge_bend(linetype = 5,
+                 arrow = arrow(length = unit(4, 'mm')), 
+                   end_cap = circle(3, 'mm')) + 
+  geom_node_point(size = 3, aes(color = degree))
+```
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('fr') + 
+  geom_edge_arc(linetype = 5,
+                 arrow = arrow(length = unit(4, 'mm')), 
+                   end_cap = circle(3, 'mm')) + 
+  geom_node_point(size = 3, aes(color = degree))
+```
+
+
+#### Tree
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('tree') + 
+  geom_edge_bend(linetype = 5,
+                 arrow = arrow(length = unit(4, 'mm')), 
+                   end_cap = circle(3, 'mm')) + 
+  geom_node_point(size = 3, aes(color = degree))
+```
+
+#### Bipartite  
+
+It is worth checking some of these out, particularly if you have a specific network structure, for example a hierarchy, or if you have a bipartite network. 
+
+Also note there are lots of other ways to visualise a network, for example by making a heatmap from an adjacency matrix. It's worth experimenting a bit with these (and explaining choices in your final project). 
+
 ### Ggraph and other tidyverse functions
 
 You can use the dplyr pipes to perform calculations, filter the data and then visualise it, all in one go:

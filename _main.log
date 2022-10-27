@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.3)  3 OCT 2022 11:48
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.25)  26 OCT 2022 14:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,105 +293,15 @@ Package graphics Info: Driver file: xetex.def on input line 107.
 )
 \Gin@req@height=\dimen176
 \Gin@req@width=\dimen177
-) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip62
-\multirow@cntb=\count302
-\multirow@dima=\skip63
-\bigstrutjot=\dimen178
-) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen179
-\WF@size=\dimen180
-\c@WF@wrappedlines=\count303
-\WF@box=\box63
-\WF@everypar=\toks24
-Package: wrapfig 2003/01/31  v 3.6
-) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count304
-\float@exts=\toks25
-\float@box=\box64
-\@float@everytoks=\toks26
-\@floatcapt=\box65
-) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
-\everycr=\toks27
-\minrowclearance=\skip64
-\rownum=\count305
-) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
-(/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
-Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
-)
-Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
-(/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
-Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
-package with kernel methods
-)) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
-Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
-(/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box66
-\sift@deathcycles=\count306
-\@vwid@loff=\dimen181
-\@vwid@roff=\dimen182
-)
-\c@taburow=\count307
-\tabu@nbcols=\count308
-\tabu@cnt=\count309
-\tabu@Xcol=\count310
-\tabu@alloc=\count311
-\tabu@nested=\count312
-\tabu@target=\dimen183
-\tabu@spreadtarget=\dimen184
-\tabu@naturalX=\dimen185
-\tabucolX=\dimen186
-\tabu@Xsum=\dimen187
-\extrarowdepth=\dimen188
-\abovetabulinesep=\dimen189
-\belowtabulinesep=\dimen190
-\tabustrutrule=\dimen191
-\tabu@thebody=\toks28
-\tabu@footnotes=\toks29
-\tabu@box=\box67
-\tabu@arstrutbox=\box68
-\tabu@hleads=\box69
-\tabu@vleads=\box70
-\tabu@cellskip=\skip65
-) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
-Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box71
-) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
-Package: threeparttablex 2013/07/23 v0.3 by daleif
-(/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
-Package: environ 2014/05/04 v0.3 A new way to define environments
-(/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
-Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-))
-\TPTL@width=\skip66
-) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box72
-\UL@hyphenbox=\box73
-\UL@skip=\skip67
-\UL@hook=\toks30
-\UL@height=\dimen192
-\UL@pe=\count313
-\UL@pixel=\dimen193
-\ULC@box=\box74
-Package: ulem 2019/11/18
-\ULdepth=\dimen194
-) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
-Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen195
-\c@nlinenum=\count314
-\TeXr@lab=\toks31
 ) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip68
-\bibsep=\skip69
+\bibhang=\skip62
+\bibsep=\skip63
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count315
-) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+\c@NAT@ctr=\count302
+) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+(/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2022-09-22 v7.00t Hypertext links for LaTeX
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
@@ -403,8 +313,8 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
-) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 ) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
@@ -424,11 +334,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count316
+\c@section@level=\count303
 )
-\@linkdim=\dimen196
-\Hy@linkcounter=\count317
-\Hy@pagecounter=\count318
+\@linkdim=\dimen178
+\Hy@linkcounter=\count304
+\Hy@pagecounter=\count305
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-09-22 v7.00t Hyperref: PDFDocEncoding definition (HO)
 ) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
@@ -436,7 +346,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count319
+\Hy@SavedSpaceFactor=\count306
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-09-22 v7.00t Hyperref: PDF Unicode definition (HO)
 )
@@ -448,21 +358,21 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4410.
-\c@Hy@tempcnt=\count320
+\c@Hy@tempcnt=\count307
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4748.
-\XeTeXLinkMargin=\dimen197
+\XeTeXLinkMargin=\dimen179
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count321
-\Field@Width=\dimen198
-\Fld@charsize=\dimen199
+\Fld@menulength=\count308
+\Field@Width=\dimen180
+\Fld@charsize=\dimen181
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -470,9 +380,13 @@ Package hyperref Info: backreferencing OFF on input line 6042.
 Package hyperref Info: Link coloring OFF on input line 6047.
 Package hyperref Info: Link coloring with OCG OFF on input line 6052.
 Package hyperref Info: PDF/A mode OFF on input line 6057.
-\Hy@abspage=\count322
-\c@Item=\count323
-\c@Hfootnote=\count324
+(/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count309
+\c@Item=\count310
+\c@Hfootnote=\count311
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
@@ -480,11 +394,11 @@ File: hxetex.def 2022-09-22 v7.00t Hyperref driver for XeTeX
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\pdfm@box=\box75
-\c@Hy@AnnotLevel=\count325
-\HyField@AnnotCount=\count326
-\Fld@listcount=\count327
-\c@bookmark@seq@number=\count328
+\pdfm@box=\box63
+\c@Hy@AnnotLevel=\count312
+\HyField@AnnotCount=\count313
+\Fld@listcount=\count314
+\c@bookmark@seq@number=\count315
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
@@ -495,44 +409,47 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip70
-) (./_main.aux)
+\Hy@SectionHShift=\skip64
+) (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
+File: bkm-dvipdfm.def 2020-11-06 v1.29 bookmark driver for dvipdfm (HO)
+\BKM@id=\count316
+)) (./_main.aux)
 \openout1 = `_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 136.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 136.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 136.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 136.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 136.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 136.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 136.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 122.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -558,7 +475,7 @@ Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 136.
+(Font)              scaled to size 10.0pt on input line 122.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -590,15 +507,15 @@ Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 136.
+(Font)              scaled to size 10.0pt on input line 122.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 136.
+(Font)              `operators' in the math version `normal' on input line 122.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 136.
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 122.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 136.
+(Font)              `operators' in the math version `bold' on input line 122.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 136.
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 122.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -677,13 +594,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 136.
+(Font)              `symbols' in the math version `normal' on input line 122.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 136.
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 122.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 136.
+(Font)              `symbols' in the math version `bold' on input line 122.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 136.
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 122.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -744,45 +661,41 @@ Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             =6.0pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 136.
+(Font)              `largesymbols' in the math version `normal' on input line 122.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 136.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 122.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 136.
+(Font)              `largesymbols' in the math version `bold' on input line 122.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 136.
-Package hyperref Info: Link coloring OFF on input line 136.
-(./_main.out) (./_main.out)
-\@outlinefile=\write4
-\openout4 = `_main.out'.
-
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 122.
+Package hyperref Info: Link coloring OFF on input line 122.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 138.
+(Font)              scaled to size 12.0pt on input line 124.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 138.
+(Font)              scaled to size 8.0pt on input line 124.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 138.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 138.
+(Font)              scaled to size 6.0pt on input line 124.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 124.
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 138.
+(Font)              scaled to size 12.0011pt on input line 124.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 138.
+(Font)              scaled to size 8.00073pt on input line 124.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 138.
+(Font)              scaled to size 6.00055pt on input line 124.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 138.
+(Font)              scaled to size 11.99872pt on input line 124.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 138.
+(Font)              scaled to size 7.99915pt on input line 124.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 138.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 138.
+(Font)              scaled to size 5.99936pt on input line 124.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 124.
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 138.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 124.
 (/Users/yannryan/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -807,122 +720,133 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 2.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 2.
-[3] [4])
-\tf@toc=\write5
-\openout5 = `_main.toc'.
+[3] [4] [5])
+\tf@toc=\write4
+\openout4 = `_main.toc'.
 
-[5] [6
-
-]
+[6]
 Chapter 1.
-[7] [8] [9] [10
+[7
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
+[]\TU/lmr/m/n/10 ([]$[][][][][] [] [] [] [][][][][] [] [][][][][][][] [] [][][][] [] [][][] [] [][] [][] [][][][][][][] [] [][][][][][][] [] [][][][][][][][] [][] [][][][] [][] [][][][][][] [][]
+ []
+
+[8] [9] [10]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 \TU/lmtt/m/n/10 manufactured work) in which threads, wires, etc., are crossed or
  []
 
-[11] [12]
+[11
+
+] [12]
 File: images/Screenshot 2022-10-03 at 11.42.11.png Graphic file (type bmp)
 <images/Screenshot 2022-10-03 at 11.42.11.png>
-
-Underfull \vbox (badness 3514) has occurred while \output is active []
-
 [13]
 File: images/Screenshot 2022-10-03 at 11.23.15.png Graphic file (type bmp)
 <images/Screenshot 2022-10-03 at 11.23.15.png>
 
-Overfull \hbox (31.40282pt too wide) in paragraph at lines 335--336
+Overfull \hbox (31.40282pt too wide) in paragraph at lines 398--399
 [][] 
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[14]
 File: images/Screenshot 2022-10-03 at 11.26.54.png Graphic file (type bmp)
 <images/Screenshot 2022-10-03 at 11.26.54.png>
 
-Overfull \hbox (106.6729pt too wide) in paragraph at lines 342--343
+Overfull \hbox (106.6729pt too wide) in paragraph at lines 407--408
 [][] 
  []
 
-
-Underfull \vbox (badness 3417) has occurred while \output is active []
-
-[14]
+[15]
 File: images/Screenshot 2022-10-03 at 11.46.29.png Graphic file (type bmp)
 <images/Screenshot 2022-10-03 at 11.46.29.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[15] [16]
+[16] [17]
 File: images/Screenshot 2022-09-26 at 11.25.49.png Graphic file (type bmp)
 <images/Screenshot 2022-09-26 at 11.25.49.png>
 
 Underfull \vbox (badness 7030) has occurred while \output is active []
 
-[17]
+[18]
 File: images/shouldyoudonetworkanalysis_xxl.jpg Graphic file (type bmp)
 <images/shouldyoudonetworkanalysis_xxl.jpg>
 
-Overfull \hbox (31.40192pt too wide) in paragraph at lines 374--375
+Overfull \hbox (114.839pt too wide) in paragraph at lines 434--435
  [][] 
  []
 
+
+LaTeX Warning: Float too large for page by 36.06349pt on input line 436.
+
 File: images/Screenshot 2022-09-26 at 11.42.32.png Graphic file (type bmp)
 <images/Screenshot 2022-09-26 at 11.42.32.png>
-[18] [19]
+[19] [20]
 File: images/Screenshot 2022-09-26 at 11.42.58.png Graphic file (type bmp)
 <images/Screenshot 2022-09-26 at 11.42.58.png>
-[20]
+[21]
 File: images/Screenshot 2022-09-26 at 11.31.15.png Graphic file (type bmp)
 <images/Screenshot 2022-09-26 at 11.31.15.png>
-File: _main_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-1-1.pdf>
-[21] [22]
+File: _main_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-2-1.pdf>
+[22] [23]
 File: images/bipartite.png Graphic file (type bmp)
 <images/bipartite.png>
 
-Overfull \hbox (31.4105pt too wide) in paragraph at lines 464--465
+Overfull \hbox (31.4105pt too wide) in paragraph at lines 524--525
 [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[23]
-File: _main_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-2-1.pdf>
+[24]
+File: _main_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-3-1.pdf>
 File: images/1920px-Hypergraph-wikipedia.svg.png Graphic file (type bmp)
 <images/1920px-Hypergraph-wikipedia.svg.png>
 
-Overfull \hbox (31.40532pt too wide) in paragraph at lines 490--491
+Overfull \hbox (31.40532pt too wide) in paragraph at lines 550--551
  [][] 
  []
 
-[24]
+[25]
 File: images/viabundus.png Graphic file (type bmp)
 <images/viabundus.png>
 
-Overfull \hbox (31.40166pt too wide) in paragraph at lines 507--508
+Overfull \hbox (31.40166pt too wide) in paragraph at lines 567--568
  [][] 
  []
 
-[25] [26] [27] [28] [29] [30]
+[26] [27] [28] [29]
+File: images/Screenshot 2022-10-03 at 12.07.50.png Graphic file (type bmp)
+<images/Screenshot 2022-10-03 at 12.07.50.png>
+File: images/Screenshot 2022-10-03 at 12.07.55.png Graphic file (type bmp)
+<images/Screenshot 2022-10-03 at 12.07.55.png>
+
+Overfull \hbox (44.01001pt too wide) in paragraph at lines 619--619
+\TU/lmr/m/n/10 https://cs.brynmawr.edu/Courses/cs380/spring2013/section02/slides/01Introduction.pdf 
+ []
+
+[30] [31] [32
+
+]
 Chapter 3.
 
 Underfull \vbox (badness 1215) has occurred while \output is active []
 
-[31
-
-]
+[33]
 File: images/Screenshot 2022-09-27 at 12.50.25.png Graphic file (type bmp)
 <images/Screenshot 2022-09-27 at 12.50.25.png>
 
-Overfull \hbox (40.81934pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 32 \TU/lmr/m/sl/10 CHAPTER 3.  WEEK 1, CLASS 2: INTRODUCTION TO R AND THE TIDYVERSE
- []
-
-[32] [33]
 Overfull \hbox (40.81934pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 34 \TU/lmr/m/sl/10 CHAPTER 3.  WEEK 1, CLASS 2: INTRODUCTION TO R AND THE TIDYVERSE
  []
@@ -938,631 +862,2207 @@ Overfull \hbox (40.81934pt too wide) has occurred while \output is active
  []
 
 [38] [39]
-File: _main_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-25-1.pdf>
-
-Underfull \vbox (badness 2653) has occurred while \output is active []
-
-
 Overfull \hbox (40.81934pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 40 \TU/lmr/m/sl/10 CHAPTER 3.  WEEK 1, CLASS 2: INTRODUCTION TO R AND THE TIDYVERSE
  []
 
-[40]
-File: _main_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-26-1.pdf>
-[41]
-File: _main_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-27-1.pdf>
-
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ## -- Column specification --------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ## i Use `spec()` to retrieve the full column specification for this data.[] 
- []
-
-
-Overfull \hbox (96.0pt too wide) in paragraph at lines 1070--1070
-[]\TU/lmtt/m/n/10 ## i Specify the column types or set `show_col_types = FALSE` to quiet this message.[] 
- []
-
-
+[40] [41]
 Overfull \hbox (40.81934pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 42 \TU/lmr/m/sl/10 CHAPTER 3.  WEEK 1, CLASS 2: INTRODUCTION TO R AND THE TIDYVERSE
  []
 
-[42] [43]
+[42]
+File: _main_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-28-1.pdf>
+[43]
+File: _main_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-29-1.pdf>
+File: _main_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-30-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (40.81934pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 44 \TU/lmr/m/sl/10 CHAPTER 3.  WEEK 1, CLASS 2: INTRODUCTION TO R AND THE TIDYVERSE
  []
 
-[44
+[44]
+Overfull \hbox (90.75pt too wide) in paragraph at lines 1181--1181
+[]\TU/lmtt/m/n/10 ## -- Column specification --------------------------------------------------------[] 
+ []
 
-]
-Chapter 4.
-File: _main_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-29-1.pdf>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (43.5pt too wide) in paragraph at lines 1181--1181
+[]\TU/lmtt/m/n/10 ## i Use `spec()` to retrieve the full column specification for this data.[] 
+ []
+
+
+Overfull \hbox (96.0pt too wide) in paragraph at lines 1181--1181
+[]\TU/lmtt/m/n/10 ## i Specify the column types or set `show_col_types = FALSE` to quiet this message.[] 
+ []
 
 [45]
-Overfull \hbox (78.04935pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 46 \TU/lmr/m/sl/10 CHAPTER 4.  WEEK 2, CLASS 1: ACQUIRING AND WORKING WITH NETWORK DATA
+Overfull \hbox (40.81934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 46 \TU/lmr/m/sl/10 CHAPTER 3.  WEEK 1, CLASS 2: INTRODUCTION TO R AND THE TIDYVERSE
  []
 
 [46]
-Chapter 5.
-File: _main_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-30-1.pdf>
+Chapter 4.
 [47
 
-] [48]
-Chapter 6.
-File: _main_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-31-1.pdf>
-[49
+]
+File: _main_files/figure-latex/unnamed-chunk-36-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-36-1.pdf>
 
-] [50]
-Chapter 7.
-File: _main_files/figure-latex/unnamed-chunk-32-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-32-1.pdf>
-[51
+Overfull \hbox (78.04935pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 48 \TU/lmr/m/sl/10 CHAPTER 4.  WEEK 2, CLASS 1: ACQUIRING AND WORKING WITH NETWORK DATA
+ []
 
-] [52]
-Chapter 8.
+[48] [49]
+Overfull \hbox (78.04935pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 50 \TU/lmr/m/sl/10 CHAPTER 4.  WEEK 2, CLASS 1: ACQUIRING AND WORKING WITH NETWORK DATA
+ []
 
-Underfull \vbox (badness 5862) has occurred while \output is active []
+[50] [51]
+Overfull \hbox (78.04935pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 52 \TU/lmr/m/sl/10 CHAPTER 4.  WEEK 2, CLASS 1: ACQUIRING AND WORKING WITH NETWORK DATA
+ []
 
+[52]
+Chapter 5.
 [53
 
 ]
+Overfull \hbox (64.5pt too wide) in paragraph at lines 1363--1363
+[]\TU/lmtt/m/n/10 ## [1] "Some name variants of the City of Aachen according to CERL Thesaurus:"[] 
+ []
+
+
+Overfull \hbox (64.5pt too wide) in paragraph at lines 1367--1367
+[]\TU/lmtt/m/n/10 ## [1] "Aach"            "Achen"           "Aix la Chapelle" "Aix-la-Chapelle"[] 
+ []
+
+
+Overfull \hbox (202.92607pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 54 \TU/lmr/m/sl/10 CHAPTER 5.  WEEK 2, CLASS 2: CLEANING THE OBSERVED AND THINKING ABOUT THE UNOBSERVED DATA
+ []
+
+[54]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 1401--1401
+[]\TU/lmtt/m/n/10 ## [1] "Thomas Hobbes" "Maria Hobbes"  "John Locke"    "Adam Locke"[] 
+ []
+
+
+Package natbib Warning: Citation `Wickham2022' on page 55 undefined on input line 1412.
+
+[55]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1470--1470
+[]\TU/lmtt/m/n/10 ## [1] "Thomas insert_family_name_here" "Maria insert_family_name_here"[] 
+ []
+
+
+Overfull \hbox (22.5pt too wide) in paragraph at lines 1470--1470
+[]\TU/lmtt/m/n/10 ## [3] "John insert_family_name_here"   "Adam insert_family_name_here"[] 
+ []
+
+
+Overfull \hbox (202.92607pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 56 \TU/lmr/m/sl/10 CHAPTER 5.  WEEK 2, CLASS 2: CLEANING THE OBSERVED AND THINKING ABOUT THE UNOBSERVED DATA
+ []
+
+[56] [57]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1561--1561
+[]\TU/lmtt/m/n/10 ## [1] "Thomas Hobbes  match was here " "Maria Hobbes  match was here "[] 
+ []
+
+
+Overfull \hbox (202.92607pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 58 \TU/lmr/m/sl/10 CHAPTER 5.  WEEK 2, CLASS 2: CLEANING THE OBSERVED AND THINKING ABOUT THE UNOBSERVED DATA
+ []
+
+[58]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1606--1606
+[]\TU/lmtt/m/n/10 ## [1] "this is not a number 9"       " match was here  is a number"[] 
+ []
+
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 1638--1638
+[]\TU/lmtt/m/n/10 ## [1] " match was here " " match was here " "John Locke"       "Adam Locke"[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1657--1657
+[]\TU/lmtt/m/n/10 ## [1] "Thomas Hobbes"          " match was here Hobbes" " match was here Hobbes"[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1671--1671
+[]\TU/lmtt/m/n/10 ## [1] " match was here Hobbes" " match was here Hobbes" " match was here Hobbes"[] 
+ []
+
+[59]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1708--1708
+[]\TU/lmtt/m/n/10 ## [1] " match was here " " match was here " " match was here " " match was here "[] 
+ []
+
+
+Overfull \hbox (202.92607pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 60 \TU/lmr/m/sl/10 CHAPTER 5.  WEEK 2, CLASS 2: CLEANING THE OBSERVED AND THINKING ABOUT THE UNOBSERVED DATA
+ []
+
+[60] [61]
+Overfull \hbox (202.92607pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 62 \TU/lmr/m/sl/10 CHAPTER 5.  WEEK 2, CLASS 2: CLEANING THE OBSERVED AND THINKING ABOUT THE UNOBSERVED DATA
+ []
+
+[62] [63]
+Overfull \hbox (202.92607pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 64 \TU/lmr/m/sl/10 CHAPTER 5.  WEEK 2, CLASS 2: CLEANING THE OBSERVED AND THINKING ABOUT THE UNOBSERVED DATA
+ []
+
+[64]
+Chapter 6.
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1848--1848
+[]\TU/lmtt/m/n/10 ##   sender receiver occupation_sender occupation_receiver receiver_city[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1848--1848
+[]\TU/lmtt/m/n/10 ## 1  Dewey      Hue       philosopher          theologian     Frankfurt[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1848--1848
+[]\TU/lmtt/m/n/10 ## 2    Hue    Louie        theologian        lens grinder        Aachen[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1848--1848
+[]\TU/lmtt/m/n/10 ## 3  Louie    Dewey      lens grinder         philosopher     Frankfurt[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 1848--1848
+[]\TU/lmtt/m/n/10 ##   receiver_location                                   letter    letter_topic[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 1848--1848
+[]\TU/lmtt/m/n/10 ## 1              Main               Absence of data management            data[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 1848--1848
+[]\TU/lmtt/m/n/10 ## 2         Westfalen     Absense of tenures for lens grinders         economy[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 1848--1848
+[]\TU/lmtt/m/n/10 ## 3              Oder Absence of pseudo name for letter titles meta commentary[] 
+ []
+
+[65
+
+]
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1901--1901
+[]\TU/lmtt/m/n/10 ##   letter_id                              letter_name    letter_topic sender_id[] 
+ []
+
+[66]
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1901--1901
+[]\TU/lmtt/m/n/10 ## 1    l_id_1               Absence of data management            data    p_id_3[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1901--1901
+[]\TU/lmtt/m/n/10 ## 2    l_id_2     Absense of tenures for lens grinders         economy    p_id_1[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1901--1901
+[]\TU/lmtt/m/n/10 ## 3    l_id_3 Absence of pseudo name for letter titles meta commentary    p_id_2[] 
+ []
+
+[67] [68]
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1951--1951
+[]\TU/lmtt/m/n/10 ##   sender receiver occupation_sender occupation_receiver receiver_city[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1951--1951
+[]\TU/lmtt/m/n/10 ## 1  Dewey      Hue       philosopher          theologian     Frankfurt[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1951--1951
+[]\TU/lmtt/m/n/10 ## 2    Hue    Louie        theologian        lens grinder        Aachen[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1951--1951
+[]\TU/lmtt/m/n/10 ## 3  Louie    Dewey      lens grinder         philosopher     Frankfurt[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 1951--1951
+[]\TU/lmtt/m/n/10 ##   receiver_location                                   letter    letter_topic[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 1951--1951
+[]\TU/lmtt/m/n/10 ## 1              Main               Absence of data management            data[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 1951--1951
+[]\TU/lmtt/m/n/10 ## 2         Westfalen     Absense of tenures for lens grinders         economy[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 1951--1951
+[]\TU/lmtt/m/n/10 ## 3              Oder Absence of pseudo name for letter titles meta commentary[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1968--1968
+[]\TU/lmtt/m/n/10 ##                                     letter    letter_topic receiver_id city_id[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1968--1968
+[]\TU/lmtt/m/n/10 ## 1               Absence of data management            data      p_id_1  c_id_1[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1968--1968
+[]\TU/lmtt/m/n/10 ## 2     Absense of tenures for lens grinders         economy      p_id_2  c_id_2[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1968--1968
+[]\TU/lmtt/m/n/10 ## 3 Absence of pseudo name for letter titles meta commentary      p_id_3  c_id_3[] 
+ []
+
+[69] [70] [71] [72
+
+]
+Chapter 7.
+[73]
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2106--2106
+[]\TU/lmtt/m/n/10 ##   letter_id                              letter_name    letter_topic sender_id[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2106--2106
+[]\TU/lmtt/m/n/10 ## 1    l_id_1               Absence of data management            data    p_id_3[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2106--2106
+[]\TU/lmtt/m/n/10 ## 2    l_id_2     Absence of tenures for lens grinders         economy    p_id_1[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2106--2106
+[]\TU/lmtt/m/n/10 ## 3    l_id_3 Absence of pseudo name for letter titles meta commentary    p_id_2[] 
+ []
+
+[74]
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2130--2130
+[]\TU/lmtt/m/n/10 ##                                letter_name    letter_topic receiver_id[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2130--2130
+[]\TU/lmtt/m/n/10 ## 1     Absence of tenures for lens grinders         economy      p_id_2[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2130--2130
+[]\TU/lmtt/m/n/10 ## 2 Absence of pseudo name for letter titles meta commentary      p_id_3[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2130--2130
+[]\TU/lmtt/m/n/10 ## 3               Absence of data management            data      p_id_1[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2151--2151
+[]\TU/lmtt/m/n/10 ##                            letter_name letter_topic receiver_id[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2151--2151
+[]\TU/lmtt/m/n/10 ## 1 Absence of tenures for lens grinders      economy      p_id_2[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2151--2151
+[]\TU/lmtt/m/n/10 ## 2           Absence of data management         data      p_id_1[] 
+ []
+
+[75]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2190--2190
+[]\TU/lmtt/m/n/10 ##   person_id person_name.x person_occupation.x person_name.y person_occupation.y[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2190--2190
+[]\TU/lmtt/m/n/10 ## 1    p_id_1           Hue          theologian          <NA>                <NA>[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2190--2190
+[]\TU/lmtt/m/n/10 ## 2    p_id_2         Louie        lens grinder          <NA>                <NA>[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2190--2190
+[]\TU/lmtt/m/n/10 ## 3    p_id_3         Dewey         philosopher         Dewey         philosopher[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2190--2190
+[]\TU/lmtt/m/n/10 ## 4    p_id_4          <NA>                <NA>         Agnus          theologian[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2190--2190
+[]\TU/lmtt/m/n/10 ## 5    p_id_5          <NA>                <NA>       Crassus natural philosopher[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2206--2206
+[]\TU/lmtt/m/n/10 ##   person_id person_name.x person_occupation.x person_name.y person_occupation.y[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2206--2206
+[]\TU/lmtt/m/n/10 ## 1    p_id_3         Dewey         philosopher         Dewey         philosopher[] 
+ []
+
+[76]
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2257--2257
+[]\TU/lmtt/m/n/10 ##   letter_id                letter_name letter_topic sender_id receiver_id[] 
+ []
+
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2257--2257
+[]\TU/lmtt/m/n/10 ## 1    l_id_1 Absence of data management         data    p_id_3      p_id_1[] 
+ []
+
+[77]
+File: _main_files/figure-latex/unnamed-chunk-79-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-79-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[78] [79] [80]
+
+Package natbib Warning: Citation `Blaney2017' on page 81 undefined on input line 2368.
+
+[81] [82
+
+]
+Chapter 8.
+[83]
 File: images/degree.png Graphic file (type bmp)
 <images/degree.png>
 
 Underfull \vbox (badness 1292) has occurred while \output is active []
 
-[54]
-File: _main_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-33-1.pdf>
-File: _main_files/figure-latex/unnamed-chunk-34-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-34-1.pdf>
+
+Overfull \hbox (8.62152pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 84 \TU/lmr/m/sl/10 CHAPTER 8.  WEEK 4, CLASS 1: NETWORK CONCEPTS AND METRICS
+ []
+
+[84]
+File: _main_files/figure-latex/unnamed-chunk-81-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-81-1.pdf>
+File: _main_files/figure-latex/unnamed-chunk-82-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-82-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[55]
+[85]
 File: images/betweenness.png Graphic file (type bmp)
 <images/betweenness.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[56]
+
+Overfull \hbox (8.62152pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 86 \TU/lmr/m/sl/10 CHAPTER 8.  WEEK 4, CLASS 1: NETWORK CONCEPTS AND METRICS
+ []
+
+[86]
 File: images/eigenvector.png Graphic file (type bmp)
 <images/eigenvector.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[57]
+[87]
 File: images/closeness.png Graphic file (type bmp)
 <images/closeness.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[58]
+
+Overfull \hbox (8.62152pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 88 \TU/lmr/m/sl/10 CHAPTER 8.  WEEK 4, CLASS 1: NETWORK CONCEPTS AND METRICS
+ []
+
+[88]
 File: images/density.png Graphic file (type bmp)
 <images/density.png>
-[59] [60]
+[89]
+Overfull \hbox (8.62152pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 90 \TU/lmr/m/sl/10 CHAPTER 8.  WEEK 4, CLASS 1: NETWORK CONCEPTS AND METRICS
+ []
+
+[90]
 File: images/modularity.png Graphic file (type bmp)
 <images/modularity.png>
+[91]
+File: _main_files/figure-latex/unnamed-chunk-83-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-83-1.pdf>
 
-Underfull \vbox (badness 6792) has occurred while \output is active []
+Overfull \hbox (8.62152pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 92 \TU/lmr/m/sl/10 CHAPTER 8.  WEEK 4, CLASS 1: NETWORK CONCEPTS AND METRICS
+ []
 
-[61]
-File: _main_files/figure-latex/unnamed-chunk-35-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-35-1.pdf>
-[62]
+[92]
 File: images/louvain.png Graphic file (type bmp)
 <images/louvain.png>
 
-Overfull \hbox (182.00499pt too wide) in paragraph at lines 1339--1340
+Overfull \hbox (31.4061pt too wide) in paragraph at lines 2548--2549
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 47.8252pt on input line 1341.
+Overfull \hbox (90.81673pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 8.6.  SOCIAL NETWORK CONCEPTS: TRIADIC CLOSURE, TRANSITIVITY, BROKERAGE \TU/lmr/m/n/10 93
+ []
 
-[63] [64]
+[93]
+Overfull \hbox (8.62152pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 94 \TU/lmr/m/sl/10 CHAPTER 8.  WEEK 4, CLASS 1: NETWORK CONCEPTS AND METRICS
+ []
+
+[94]
+File: _main_files/figure-latex/unnamed-chunk-84-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-84-1.pdf>
+File: images/triad_census.jpg Graphic file (type bmp)
+<images/triad_census.jpg>
+File: _main_files/figure-latex/unnamed-chunk-85-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-85-1.pdf>
+
+Overfull \hbox (90.81673pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 8.6.  SOCIAL NETWORK CONCEPTS: TRIADIC CLOSURE, TRANSITIVITY, BROKERAGE \TU/lmr/m/n/10 95
+ []
+
+[95]
+Overfull \hbox (8.62152pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 96 \TU/lmr/m/sl/10 CHAPTER 8.  WEEK 4, CLASS 1: NETWORK CONCEPTS AND METRICS
+ []
+
+[96]
+File: images/brokerage_custom.jpg Graphic file (type bmp)
+<images/brokerage_custom.jpg>
+
+Overfull \hbox (90.81673pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 8.6.  SOCIAL NETWORK CONCEPTS: TRIADIC CLOSURE, TRANSITIVITY, BROKERAGE \TU/lmr/m/n/10 97
+ []
+
+[97]
+Overfull \hbox (8.62152pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 98 \TU/lmr/m/sl/10 CHAPTER 8.  WEEK 4, CLASS 1: NETWORK CONCEPTS AND METRICS
+ []
+
+[98]
 Chapter 9.
-[65
 
-] [66] [67] [68] [69] [70] [71]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 1694--1694
+Overfull \hbox (79.3789pt too wide) in paragraph at lines 2634--2635
+[]\TU/lmr/m/n/10 Adjacency matrices can be easily read into R using \TU/lmtt/m/n/10 igraph \TU/lmr/m/n/10 and \TU/lmtt/m/n/10 graph_from_adjacency_matrix()\TU/lmr/m/n/10 . 
+ []
+
+
+Underfull \vbox (badness 5161) has occurred while \output is active []
+
+[99
+
+] [100] [101] [102] [103] [104] [105] [106]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 2972--2972
 []\TU/lmtt/m/n/10 ## Warning in betweenness(graph = graph, v = V(graph), directed = directed, :[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1694--1694
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2972--2972
 []\TU/lmtt/m/n/10 ## 'nobigint' is deprecated since igraph 1.3 and will be removed in igraph 1.4[] 
  []
 
-[72]
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1743--1743
+[107]
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3021--3021
 []\TU/lmtt/m/n/10 ## -- Column specification --------------------------------------------------------[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1743--1743
+Overfull \hbox (85.5pt too wide) in paragraph at lines 3021--3021
 []\TU/lmtt/m/n/10 ## chr (11): name, main_name, all_names, links, gender, roles_titles, wikidata_...[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 1743--1743
+Overfull \hbox (43.5pt too wide) in paragraph at lines 3021--3021
 []\TU/lmtt/m/n/10 ## i Use `spec()` to retrieve the full column specification for this data.[] 
  []
 
 
-Overfull \hbox (96.0pt too wide) in paragraph at lines 1743--1743
+Overfull \hbox (96.0pt too wide) in paragraph at lines 3021--3021
 []\TU/lmtt/m/n/10 ## i Specify the column types or set `show_col_types = FALSE` to quiet this message.[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ##    name     main_~1 all_n~2 links birth~3 death~4 gender roles~5 wikid~6 occup~7[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (80.25pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ##    <chr>    <chr>   <chr>   <chr>   <dbl>   <dbl> <chr>  <chr>   <chr>   <chr>[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ##  1 E006019~ Dr. Ra~ Dr. Ra~ http~    1617    1688 male   theolo~ http:/~ theolo~[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ##  2 E011771~ Hyde, ~ Edward~ http~    1609    1674 male   judge;~ http:/~ judge;~[] 
  []
 
-[73]
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1769--1769
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ##  3 E015103~ Sir Ph~ Sir Ph~ http~    1607    1678 male   politi~ http:/~ politi~[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ##  4 E020134~ Taylor~ Silas ~ http~    1624    1678 male   compos~ http:/~ compos~[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ##  5 E014743~ Sir Ed~ Sir Ed~ http~    1608    1654 male   econom~ http:/~ econom~[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ##  6 E020485~ Sir Th~ Sir Th~ http~    1612    1685 male   naval ~ http:/~ naval ~[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ##  7 E004654~ Charle~ Charle~ http~    1630    1685 male   sovere~ http:/~ sovere~[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ##  8 E007992~ Heneag~ Heneag~ http~    1628    1689 male   diplom~ http:/~ diplom~[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (85.5pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ##  9 E007902~ John F~ John F~ http~    1625    1686 male   priest  http:/~ priest[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ## 10 S035587  Philad~ Philad~ http~    1612    1665 female politi~ http:/~ politi~[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ## # ... with 238 more rows, 3 more variables: place_of_birth <chr>,[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ## #   place_of_death <chr>, politician <chr>, and abbreviated variable names[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (80.25pt too wide) in paragraph at lines 3047--3047
 []\TU/lmtt/m/n/10 ## #   1: main_name, 2: all_names, 3: birth_year, 4: death_year, 5: roles_titles,[] 
  []
 
-
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1804--1804
+[108]
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3082--3082
 []\TU/lmtt/m/n/10 ##   name  main_n~ all_na~ links birth_~ death_~ gender roles_~ wikida~ occupa~[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3082--3082
 []\TU/lmtt/m/n/10 ##   <chr> <chr>   <chr>   <chr>   <dbl>   <dbl> <chr>  <chr>   <chr>   <chr>[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3082--3082
 []\TU/lmtt/m/n/10 ## 1 E000~ Dr. La~ Dr. La~ http~    1632    1703 male   chapla~ http:/~ chapla~[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3082--3082
 []\TU/lmtt/m/n/10 ## 2 E000~ Edward~ Edward~ http~    1638    1697 male   astron~ http:/~ astron~[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3082--3082
 []\TU/lmtt/m/n/10 ## 3 E000~ Dr. Ri~ Dr. Ri~ http~    1619    1681 male   priest  http:/~ priest[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3082--3082
 []\TU/lmtt/m/n/10 ## 4 E000~ Solms-~ Prince~ http~    1602    1675 female art co~ http:/~ art co~[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3082--3082
 []\TU/lmtt/m/n/10 ## 5 E000~ Arthur~ Arthur~ http~    1614    1686 male   politi~ http:/~ politi~[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3082--3082
 []\TU/lmtt/m/n/10 ## 6 E000~ Sir Jo~ Sir Jo~ http~    1603    1671 male   politi~ http:/~ politi~[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (33.0pt too wide) in paragraph at lines 3082--3082
 []\TU/lmtt/m/n/10 ## # ... with 242 more rows, and 3 more variables: place_of_birth <chr>,[] 
  []
 
-[74]
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1841--1841
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3119--3119
 []\TU/lmtt/m/n/10 ##   name  main_n~ all_na~ links birth_~ death_~ gender roles_~ wikida~ occupa~[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 1841--1841
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3119--3119
 []\TU/lmtt/m/n/10 ##   <chr> <chr>   <chr>   <chr>   <dbl>   <dbl> <chr>  <chr>   <chr>   <chr>[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1841--1841
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3119--3119
 []\TU/lmtt/m/n/10 ## 1 E000~ Arthur~ Arthur~ http~    1614    1686 male   politi~ http:/~ politi~[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1841--1841
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3119--3119
 []\TU/lmtt/m/n/10 ## 2 E000~ Sir Jo~ Sir Jo~ http~    1603    1671 male   politi~ http:/~ politi~[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1841--1841
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3119--3119
 []\TU/lmtt/m/n/10 ## 3 E001~ Henry ~ Henry ~ http~    1618    1685 male   politi~ http:/~ politi~[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1841--1841
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3119--3119
 []\TU/lmtt/m/n/10 ## 4 E002~ Willia~ Willia~ http~    1649    1717 male   politi~ http:/~ politi~[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1841--1841
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3119--3119
 []\TU/lmtt/m/n/10 ## 5 E002~ Edward~ Edward~ http~    1623    1683 male   politi~ http:/~ politi~[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1841--1841
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3119--3119
 []\TU/lmtt/m/n/10 ## 6 E002~ Roger ~ Roger ~ http~    1621    1679 male   writer~ http:/~ writer~[] 
  []
 
-
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1841--1841
+[109]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3119--3119
 []\TU/lmtt/m/n/10 ## # ... with 88 more rows, and 4 more variables: place_of_birth <chr>,[] 
  []
 
-[75]
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ##    name                    main_name                                      degree[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ##    <chr>                   <chr>                                           <dbl>[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ##  1 E022443-S042999-T000000 Williamson, Joseph (Sir)                          174[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ##  2 E001993-S018912-T000000 Henry Bennet, Earl of Arlington                    54[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ##  3 E004654-S006979-T000000 Charles II, King of England, Scotland, and Ir~     53[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ##  4 E002620-S051125-T000000 William Blathwaite                                 47[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ##  5 E002622-S014197-T000000 Edward Conway, Earl of Conway                      30[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ##  6 S016294                 Francis, Lord Aungier                              28[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ##  7 E903376-S024822-T000000 Witt, Johan de                                     28[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ##  8 S047442                 Thomas Belasyse, Earl of Fauconberg                26[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ##  9 E921955-S041743-T000000 Sir George Rawdon                                  25[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 1875--1875
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3153--3153
 []\TU/lmtt/m/n/10 ## 10 E021031-S049939-T000000 Van Beuningen                                      21[] 
  []
 
-[76]
-Chapter 10.
-[77
+[110]
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##   [1]         NaN 0.095238095 1.000000000 1.000000000 0.000000000         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##   [7]         NaN         NaN         NaN 0.030252101         NaN 0.000000000[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [13]         NaN         NaN         NaN 0.100000000 0.000000000 0.000000000[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [19]         NaN 1.000000000 0.020390071 0.010796221         NaN 0.333333333[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [25] 1.000000000 0.000000000 1.000000000         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [31]         NaN 0.166666667         NaN         NaN 0.000000000         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [37]         NaN 0.333333333 1.000000000         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [43] 0.000000000         NaN 0.025000000         NaN         NaN 0.000000000[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [49] 0.200000000         NaN 0.000000000 1.000000000         NaN 0.000000000[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [55] 0.333333333         NaN         NaN         NaN 0.333333333         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [61] 0.000000000         NaN 0.000000000         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [67]         NaN         NaN         NaN         NaN         NaN 0.500000000[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [73] 1.000000000 0.142857143 1.000000000         NaN 0.000000000         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [79]         NaN         NaN         NaN         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [85] 0.000000000 1.000000000 0.000000000 0.000000000 0.009937888         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [91] 0.000000000         NaN 0.000000000 0.333333333 1.000000000         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ##  [97]         NaN         NaN         NaN         NaN         NaN 0.000000000[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [103]         NaN 1.000000000 0.000000000 0.090909091 0.333333333 1.000000000[] 
+ []
+
+[111]
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [109] 0.333333333 0.000000000         NaN 0.000000000         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [115]         NaN         NaN         NaN         NaN 0.000000000         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [121]         NaN         NaN         NaN         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [127]         NaN         NaN 0.000000000         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [133] 1.000000000         NaN         NaN         NaN 1.000000000         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [139]         NaN         NaN         NaN         NaN         NaN 1.000000000[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [145]         NaN         NaN         NaN         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [151] 0.000000000 0.000000000         NaN 0.000000000         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [157]         NaN         NaN 0.000000000         NaN 1.000000000         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [163]         NaN         NaN         NaN         NaN         NaN 1.000000000[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [169] 1.000000000         NaN         NaN         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [175]         NaN 1.000000000 0.333333333         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [181]         NaN         NaN 0.000000000         NaN         NaN 0.500000000[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [187] 1.000000000         NaN         NaN         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [193] 1.000000000 1.000000000 1.000000000         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [199]         NaN         NaN 0.035714286         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [205] 0.000000000         NaN         NaN         NaN         NaN 0.000000000[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [211]         NaN         NaN         NaN         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [217]         NaN         NaN         NaN         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [223] 0.000000000         NaN         NaN         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [229]         NaN         NaN         NaN         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [235]         NaN 0.333333333 0.000000000         NaN         NaN         NaN[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3228--3228
+[]\TU/lmtt/m/n/10 ## [241]         NaN         NaN         NaN         NaN         NaN         NaN[] 
+ []
+
+[112] [113]
+Overfull \hbox (421.5pt too wide) in paragraph at lines 3309--3309
+[]\TU/lmtt/m/n/10 ##   ..- attr(*, "names")= chr [1:248] "E000145-S012650-T000000" "E000189-S014115-T000000" "E000312-S012741-T000000" "E000393-S036175-T000000" ...[] 
+ []
+
+[114]
+File: _main_files/figure-latex/unnamed-chunk-112-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-112-1.pdf>
+[115] [116
 
 ]
+Chapter 10.
+[117]
 File: images/full_net.png Graphic file (type bmp)
 <images/full_net.png>
 
-Overfull \hbox (33.00153pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 78 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 118 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
  []
 
-[78]
-File: _main_files/figure-latex/unnamed-chunk-54-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-54-1.pdf>
-[79]
-Overfull \hbox (33.00153pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 80 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+[118]
+File: _main_files/figure-latex/unnamed-chunk-113-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-113-1.pdf>
+[119]
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 120 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
  []
 
-[80]
-File: _main_files/figure-latex/unnamed-chunk-55-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-55-1.pdf>
-File: _main_files/figure-latex/unnamed-chunk-56-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-56-1.pdf>
+[120]
+File: _main_files/figure-latex/unnamed-chunk-114-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-114-1.pdf>
+File: _main_files/figure-latex/unnamed-chunk-115-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-115-1.pdf>
 
 Underfull \vbox (badness 8132) has occurred while \output is active []
 
-[81]
-Overfull \hbox (33.00153pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 82 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+[121]
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 122 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
  []
 
-[82]
-File: _main_files/figure-latex/unnamed-chunk-58-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-58-1.pdf>
-File: _main_files/figure-latex/unnamed-chunk-59-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-59-1.pdf>
-[83]
-File: _main_files/figure-latex/unnamed-chunk-60-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-60-1.pdf>
+[122]
+File: _main_files/figure-latex/unnamed-chunk-117-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-117-1.pdf>
+File: _main_files/figure-latex/unnamed-chunk-118-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-118-1.pdf>
+[123]
+File: _main_files/figure-latex/unnamed-chunk-119-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-119-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (33.00153pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 84 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 124 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
  []
 
-[84]
-File: _main_files/figure-latex/unnamed-chunk-61-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-61-1.pdf>
+[124]
+File: _main_files/figure-latex/unnamed-chunk-120-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-120-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[85]
-File: _main_files/figure-latex/unnamed-chunk-62-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-62-1.pdf>
+[125]
+File: _main_files/figure-latex/unnamed-chunk-121-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-121-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (33.00153pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 86 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 126 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
  []
 
-[86]
-File: _main_files/figure-latex/unnamed-chunk-63-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-63-1.pdf>
+[126]
+File: _main_files/figure-latex/unnamed-chunk-122-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-122-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[87]
-File: _main_files/figure-latex/unnamed-chunk-64-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-64-1.pdf>
+[127]
+File: _main_files/figure-latex/unnamed-chunk-123-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-123-1.pdf>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1675) has occurred while \output is active []
 
 
-Overfull \hbox (33.00153pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 88 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 128 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
  []
 
-[88]
-Overfull \hbox (38.25pt too wide) in paragraph at lines 2157--2157
+[128]
+File: _main_files/figure-latex/unnamed-chunk-124-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-124-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[129]
+File: _main_files/figure-latex/unnamed-chunk-125-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-125-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 130 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+ []
+
+[130]
+File: _main_files/figure-latex/unnamed-chunk-126-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-126-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[131]
+File: _main_files/figure-latex/unnamed-chunk-127-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-127-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 132 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+ []
+
+[132]
+File: _main_files/figure-latex/unnamed-chunk-128-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-128-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[133]
+File: _main_files/figure-latex/unnamed-chunk-129-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-129-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 134 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+ []
+
+[134]
+File: _main_files/figure-latex/unnamed-chunk-130-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-130-1.pdf>
+[135]
+Overfull \hbox (38.25pt too wide) in paragraph at lines 3778--3778
 []\TU/lmtt/m/n/10 ## Warning: Removed 240 rows containing missing values (geom_text_repel).[] 
  []
 
-File: _main_files/figure-latex/unnamed-chunk-65-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-65-1.pdf>
-[89]
-Overfull \hbox (85.5pt too wide) in paragraph at lines 2185--2185
+File: _main_files/figure-latex/unnamed-chunk-131-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-131-1.pdf>
+
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 136 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+ []
+
+[136]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 3806--3806
 []\TU/lmtt/m/n/10 ## Warning in cluster_edge_betweenness(graph = .G(), weights = weights, directed =[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 2185--2185
+Overfull \hbox (85.5pt too wide) in paragraph at lines 3806--3806
 []\TU/lmtt/m/n/10 ## directed): At core/community/edge_betweenness.c:485 : Membership vector will be[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 2193--2193
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3814--3814
 []\TU/lmtt/m/n/10 ## Warning in cluster_edge_betweenness(graph = .G(), weights = weights, directed[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2193--2193
+Overfull \hbox (80.25pt too wide) in paragraph at lines 3814--3814
 []\TU/lmtt/m/n/10 ## = directed): At core/community/edge_betweenness.c:492 : Modularity calculation[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 2193--2193
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3814--3814
 []\TU/lmtt/m/n/10 ## with weighted edge betweenness community detection might not make sense --[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 2193--2193
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3814--3814
 []\TU/lmtt/m/n/10 ## modularity treats edge weights as similarities while edge betwenness treats them[] 
  []
 
+[137]
+File: _main_files/figure-latex/unnamed-chunk-132-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-132-1.pdf>
 
-Overfull \hbox (33.00153pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 90 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 138 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
  []
 
-[90]
-File: _main_files/figure-latex/unnamed-chunk-66-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-66-1.pdf>
-
-Overfull \hbox (90.75pt too wide) in paragraph at lines 2221--2221
+[138]
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3858--3858
 []\TU/lmtt/m/n/10 ## -- Column specification --------------------------------------------------------[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 2221--2221
+Overfull \hbox (85.5pt too wide) in paragraph at lines 3858--3858
 []\TU/lmtt/m/n/10 ## chr (11): name, main_name, all_names, links, gender, roles_titles, wikidata_...[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 2221--2221
+Overfull \hbox (43.5pt too wide) in paragraph at lines 3858--3858
 []\TU/lmtt/m/n/10 ## i Use `spec()` to retrieve the full column specification for this data.[] 
  []
 
 
-Overfull \hbox (96.0pt too wide) in paragraph at lines 2221--2221
+Overfull \hbox (96.0pt too wide) in paragraph at lines 3858--3858
 []\TU/lmtt/m/n/10 ## i Specify the column types or set `show_col_types = FALSE` to quiet this message.[] 
  []
 
-[91]
-File: _main_files/figure-latex/unnamed-chunk-68-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-68-1.pdf>
-
-Overfull \hbox (33.00153pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 92 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+File: _main_files/figure-latex/unnamed-chunk-134-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-134-1.pdf>
+[139]
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 140 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
  []
 
-[92] [93]
-Overfull \hbox (33.00153pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 94 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
+[140] [141]
+Overfull \hbox (38.00153pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 142 \TU/lmr/m/sl/10 CHAPTER 10.  WEEK 5, CLASS 1: VISUALISING NETWORKS WITH GGRAPH
  []
 
-[94
+[142
 
 ]
 Chapter 11.
-File: _main_files/figure-latex/unnamed-chunk-69-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-69-1.pdf>
+File: _main_files/figure-latex/unnamed-chunk-135-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-135-1.pdf>
+[143] [144]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ artist_name                  <chr> "Radiohead", "Radiohead", "Radiohead", "R~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ artist_id                    <chr> "4Z8W4fKeB5YxbusRsdQVPb", "4Z8W4fKeB5Yxbu~[] 
+ []
+
+[145]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ album_id                     <chr> "6ofEQubaL265rIW6WnCU8y", "6ofEQubaL265rI~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ album_type                   <chr> "album", "album", "album", "album", "albu~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ album_images                 <list> [<data.frame[3 x 3]>], [<data.frame[3 x ~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ album_release_date           <chr> "2021-11-05", "2021-11-05", "2021-11-05",~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ album_release_year           <dbl> 2021, 2021, 2021, 2021, 2021, 2021, 2021,~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ album_release_date_precision <chr> "day", "day", "day", "day", "day", "day",~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ danceability                 <dbl> 0.296, 0.630, 0.488, 0.167, 0.165, 0.402,~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ energy                       <dbl> 0.463, 0.428, 0.754, 0.302, 0.146, 0.757,~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ key                          <int> 5, 5, 2, 6, 6, 7, 0, 3, 2, 7, 7, 0, 11, 1~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ loudness                     <dbl> -11.412, -15.520, -8.552, -11.644, -21.35~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ mode                         <int> 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0,~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ speechiness                  <dbl> 0.0449, 0.0358, 0.0378, 0.0345, 0.0362, 0~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ acousticness                 <dbl> 7.05e-01, 2.62e-01, 2.37e-03, 3.16e-01, 8~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ instrumentalness             <dbl> 4.82e-02, 8.52e-01, 8.51e-01, 7.97e-01, 8~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ liveness                     <dbl> 0.0954, 0.2780, 0.2240, 0.1100, 0.1090, 0~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ valence                      <dbl> 0.0629, 0.1590, 0.3880, 0.1900, 0.0577, 0~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ tempo                        <dbl> 123.943, 112.923, 91.517, 102.026, 134.50~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ track_id                     <chr> "62dUmjtkYOUwYOALt6pefh", "797AyTQcqoQgqW~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ analysis_url                 <chr> "https://api.spotify.com/v1/audio-analysi~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ time_signature               <int> 5, 4, 4, 4, 3, 4, 4, 3, 5, 4, 3, 4, 4, 4,~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ artists                      <list> [<data.frame[1 x 6]>], [<data.frame[1 x ~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ available_markets            <list> <"AD", "AE", "AG", "AL", "AM", "AO", "AR~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ disc_number                  <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2,~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ duration_ms                  <int> 251426, 284506, 351693, 356333, 222600, 3~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ explicit                     <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ track_href                   <chr> "https://api.spotify.com/v1/tracks/62dUmj~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ is_local                     <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ track_name                   <chr> "Everything In Its Right Place", "Kid A",~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ track_preview_url            <chr> "https://p.scdn.co/mp3-preview/74e765ad68~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ track_number                 <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2, ~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ type                         <chr> "track", "track", "track", "track", "trac~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ track_uri                    <chr> "spotify:track:62dUmjtkYOUwYOALt6pefh", "~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ external_urls.spotify        <chr> "https://open.spotify.com/track/62dUmjtkY~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ album_name                   <chr> "KID A MNESIA", "KID A MNESIA", "KID A MN~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ key_name                     <chr> "F", "F", "D", "F#", "F#", "G", "C", "D#"~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ mode_name                    <chr> "minor", "major", "major", "minor", "majo~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4021--4021
+[]\TU/lmtt/m/n/10 ## $ key_mode                     <chr> "F minor", "F major", "D major", "F# mino~[] 
+ []
+
+
+Underfull \hbox (badness 1383) in paragraph at lines 4023--4024
+[]\TU/lmr/m/n/10 This returns all of Radiohead’s tracks along with some more informa-
+ []
+
+[146]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4049--4049
+[]\TU/lmtt/m/n/10 ## $ genres                <list> <"art pop", "electronica", "glitch pop", "indie~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4049--4049
+[]\TU/lmtt/m/n/10 ## $ href                  <chr> "https://api.spotify.com/v1/artists/4CvTDPKA6W06~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4049--4049
+[]\TU/lmtt/m/n/10 ## $ id                    <chr> "4CvTDPKA6W06DRfBnZKrau", "7MhMgCo0Bl0Kukl93PZbY~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4049--4049
+[]\TU/lmtt/m/n/10 ## $ images                <list> [<data.frame[3 x 3]>], [<data.frame[3 x 3]>], [~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4049--4049
+[]\TU/lmtt/m/n/10 ## $ name                  <chr> "Thom Yorke", "Blur", "Pixies", "Portishead", "J~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4049--4049
+[]\TU/lmtt/m/n/10 ## $ popularity            <int> 58, 69, 72, 61, 61, 60, 58, 59, 59, 56, 64, 64, ~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4049--4049
+[]\TU/lmtt/m/n/10 ## $ type                  <chr> "artist", "artist", "artist", "artist", "artist"~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4049--4049
+[]\TU/lmtt/m/n/10 ## $ uri                   <chr> "spotify:artist:4CvTDPKA6W06DRfBnZKrau", "spotif~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4049--4049
+[]\TU/lmtt/m/n/10 ## $ external_urls.spotify <chr> "https://open.spotify.com/artist/4CvTDPKA6W06DRf~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4049--4049
+[]\TU/lmtt/m/n/10 ## $ followers.href        <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, ~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4049--4049
+[]\TU/lmtt/m/n/10 ## $ followers.total       <int> 863865, 2631056, 2315315, 1645710, 901898, 76871~[] 
+ []
+
+File: _main_files/figure-latex/unnamed-chunk-139-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-139-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[95]
+[147] [148]
+File: _main_files/figure-latex/unnamed-chunk-141-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-141-1.pdf>
+[149]
+File: _main_files/figure-latex/unnamed-chunk-142-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-142-1.pdf>
+[150]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ genres                <list> <"art pop", "electronica", "glitch pop", "indie~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ href                  <chr> "https://api.spotify.com/v1/artists/4CvTDPKA6W06~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ id                    <chr> "4CvTDPKA6W06DRfBnZKrau", "2f88S1uYsEwP0n4x36wvG~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ images                <list> [<data.frame[3 x 3]>], [<data.frame[3 x 3]>], [~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ name                  <chr> "Thom Yorke", "Ultraísta", "Modeselektor", "Jonn~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ popularity            <int> 58, 32, 48, 47, 39, 40, 45, 38, 52, 57, 29, 44, ~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ type                  <chr> "artist", "artist", "artist", "artist", "artist"~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ uri                   <chr> "spotify:artist:4CvTDPKA6W06DRfBnZKrau", "spotif~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ external_urls.spotify <chr> "https://open.spotify.com/artist/4CvTDPKA6W06DRf~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ followers.href        <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, ~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ followers.total       <int> 863865, 23237, 217805, 139429, 22749, 111608, 97~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ seed_id               <chr> "7tA9Eeeb68kkiG9Nrvuzmi", "7tA9Eeeb68kkiG9Nrvuzm~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4171--4171
+[]\TU/lmtt/m/n/10 ## $ ego_name              <chr> "Atoms For Peace", "Atoms For Peace", "Atoms For~[] 
+ []
+
+File: _main_files/figure-latex/unnamed-chunk-144-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-144-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[151] [152]
+File: _main_files/figure-latex/unnamed-chunk-145-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-145-1.pdf>
+[153]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 4257--4257
+[]\TU/lmtt/m/n/10 ## Warning in betweenness(graph = graph, v = V(graph), directed = directed, :[] 
+ []
+
+
+Overfull \hbox (64.5pt too wide) in paragraph at lines 4257--4257
+[]\TU/lmtt/m/n/10 ## 'nobigint' is deprecated since igraph 1.3 and will be removed in igraph 1.4[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ##    name                   artist_name     genres in_de~1 out_d~2 total~3 between[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ##    <chr>                  <chr>           <list>   <dbl>   <dbl>   <dbl>   <dbl>[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ##  1 0sHeX8oQ6o7xic3wMf4NBU Supergrass      <chr>       20      32      52  19438.[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ##  2 3mbVe260Kgvs1P8YFcCyY7 The Seahorses   <chr>       20      30      50    723.[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ##  3 5vIOGcdmx1eIkq3ZtuS12U Ocean Colour S~ <chr>       20      29      49    653.[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ##  4 5fScAXreYFnuqwOgBsJgSd The Charlatans  <chr>       20      29      49    804.[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ##  5 3s398TKZNahAURRacx7oIT Ian Brown       <chr>       20      29      49   1263.[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ##  6 2wrhBKGC3DTNNNDRJPaxW6 Sebadoh         <chr>       20      29      49   8472.[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ##  7 0vBDEQ1aLZpe4zgn2fPH6Z Cast            <chr>       20      28      48    991.[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ##  8 4oV5EVJ0XFWsJKoOvdRPvl Guided By Voic~ <chr>       20      28      48   7610.[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ##  9 0LVrQUinPUBFvVD5pLqmWY Doves           <chr>       20      26      46  23005.[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ## 10 0WY2ddzQUF9eh16GiqrElA Pale Saints     <chr>       20      26      46   3237.[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 4281--4281
+[]\TU/lmtt/m/n/10 ## # ... with 1,269 more rows, and abbreviated variable names 1: in_degree,[] 
+ []
+
+[154]
+File: _main_files/figure-latex/unnamed-chunk-149-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-149-1.pdf>
+[155]
+File: _main_files/figure-latex/unnamed-chunk-150-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-150-1.pdf>
+[156]
 File: images/nz_topics.png Graphic file (type bmp)
 <images/nz_topics.png>
-[96] [97]
-File: _main_files/figure-latex/unnamed-chunk-70-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-70-1.pdf>
-[98]
-File: _main_files/figure-latex/unnamed-chunk-72-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-72-1.pdf>
+[157]
+File: _main_files/figure-latex/unnamed-chunk-151-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-151-1.pdf>
+[158]
+File: _main_files/figure-latex/unnamed-chunk-153-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-153-1.pdf>
 
-Underfull \hbox (badness 7186) in paragraph at lines 2334--2334
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[159]
+Underfull \hbox (badness 7186) in paragraph at lines 4397--4397
 []\TU/lmr/bx/n/14.4 Co-occurrence and co-authorship net-
  []
 
-[99]
+[160]
 File: images/co-authorship.png Graphic file (type bmp)
 <images/co-authorship.png>
 
-Overfull \hbox (106.69583pt too wide) in paragraph at lines 2348--2349
+Overfull \hbox (106.69583pt too wide) in paragraph at lines 4411--4412
  [][] 
  []
 
-[100] [101] [102]
-File: _main_files/figure-latex/unnamed-chunk-77-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-77-1.pdf>
-[103]
-File: _main_files/figure-latex/unnamed-chunk-80-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-80-1.pdf>
+File: _main_files/figure-latex/unnamed-chunk-154-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-154-1.pdf>
+File: _main_files/figure-latex/unnamed-chunk-155-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-155-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[104] [105] [106
+[161] [162] [163]
+File: _main_files/figure-latex/unnamed-chunk-160-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-160-1.pdf>
+[164] [165]
+File: _main_files/figure-latex/unnamed-chunk-163-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-163-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[166] [167] [168]
+Chapter 12.
+[169
 
 ]
-Chapter 12.
-[107]
 Overfull \hbox (117.24934pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 108 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+\TU/lmr/m/n/10 170 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
  []
 
-[108
+[170]
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4659--4659
+[]\TU/lmtt/m/n/10 ## -- Column specification --------------------------------------------------------[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 4659--4659
+[]\TU/lmtt/m/n/10 ## i Use `spec()` to retrieve the full column specification for this data.[] 
+ []
+
+
+Overfull \hbox (96.0pt too wide) in paragraph at lines 4659--4659
+[]\TU/lmtt/m/n/10 ## i Specify the column types or set `show_col_types = FALSE` to quiet this message.[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4676--4676
+[]\TU/lmtt/m/n/10 ## -- Column specification --------------------------------------------------------[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4676--4676
+[]\TU/lmtt/m/n/10 ## chr (5): estc_id, short_title, publication_place, author_id, author_name_pri...[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 4676--4676
+[]\TU/lmtt/m/n/10 ## i Use `spec()` to retrieve the full column specification for this data.[] 
+ []
+
+
+Overfull \hbox (96.0pt too wide) in paragraph at lines 4676--4676
+[]\TU/lmtt/m/n/10 ## i Specify the column types or set `show_col_types = FALSE` to quiet this message.[] 
+ []
+
+[171]
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4729--4729
+[]\TU/lmtt/m/n/10 ##   edge_size node_size  density global_clustering average_local_cluster average~1[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4729--4729
+[]\TU/lmtt/m/n/10 ##       <dbl>     <int>    <dbl>             <dbl>                 <dbl>     <dbl>[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4729--4729
+[]\TU/lmtt/m/n/10 ## 1     50383     10621 0.000893             0.225                 0.731      4.80[] 
+ []
+
+
+Overfull \hbox (117.24934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 172 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+ []
+
+[172]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 4750--4750
+[]\TU/lmtt/m/n/10 ## Warning in betweenness(graph = graph, v = V(graph), directed = directed, :[] 
+ []
+
+
+Overfull \hbox (64.5pt too wide) in paragraph at lines 4750--4750
+[]\TU/lmtt/m/n/10 ## 'nobigint' is deprecated since igraph 1.3 and will be removed in igraph 1.4[] 
+ []
+
+File: _main_files/figure-latex/unnamed-chunk-170-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-170-1.pdf>
+[173]
+File: _main_files/figure-latex/unnamed-chunk-171-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-171-1.pdf>
+
+Overfull \hbox (117.24934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 174 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+ []
+
+[174]
+File: _main_files/figure-latex/unnamed-chunk-173-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-173-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[175]
+File: _main_files/figure-latex/unnamed-chunk-174-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-174-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (117.24934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 176 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+ []
+
+[176]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 4865--4865
+[]\TU/lmtt/m/n/10 ## `summarise()` has grouped output by 'actor_id'. You can override using the[] 
+ []
+
+[177]
+File: _main_files/figure-latex/unnamed-chunk-176-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-176-1.pdf>
+
+Underfull \hbox (badness 1092) in paragraph at lines 4902--4903
+\TU/lmr/m/n/10 using the Twitter data. We’ll take a look at the networks of tweets
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 4902--4903
+\TU/lmr/m/n/10 and retweets surrounding the conversation about the [campaign to re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4902--4903
+\TU/lmr/m/n/10 move Ireland’s ban on abortion([]$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][] [][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4902--4903
+[][][][][] [] [][][][][][][][][] [] [][] [] [][][] [] [][][][][][][][][][][][] [] [][] [] [][][][][][][]$[]\TU/lmr/m/n/10 ). The campaign
+ []
+
+
+Overfull \hbox (117.24934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 178 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+ []
+
+[178]
+Overfull \hbox (43.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ## Classes 'data.table' and 'data.frame':   1367666 obs. of  35 variables:[] 
+ []
+
+
+Overfull \hbox (568.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ created_at                : chr  "Sat May 19 22:32:42 +0000 2018" "Sat May 19 22:33:28 +0000 2018" "Fri May 25 09:33:40 +0000 2018" "Sat May 19 22:32:43 +0000 2018" ...[] 
+ []
+
+
+Overfull \hbox (243.0pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ hashtags                  : chr  "LoveBothVoteNo 8thref" "" "repealthe8th" "together4Yes RepealThe8th" ...[] 
+ []
+
+
+Overfull \hbox (605.25pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ media                     : chr  "https://twitter.com/loveboth8/status/997876898578550790/photo/1" "" "" "https://twitter.com/phlaimeaux/status/997917600343568384/video/1" ...[] 
+ []
+
+
+Overfull \hbox (248.25pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ urls                      : chr  "" "" "https://twitter.com/oliviao_neill/status/999416027858505728" "" ...[] 
+ []
+
+
+Overfull \hbox (699.75pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ id                        :integer64 997968315049005056 997968507257151489 999946594870005760 997968319142682624 997968588807032832 995076037695324160 997968273416294401 1000342780827365377 ...[] 
+ []
+
+
+Overfull \hbox (22.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ in_reply_to_status_id     :integer64 NA NA NA NA NA NA NA NA ...[] 
+ []
+
+
+Overfull \hbox (22.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ in_reply_to_user_id       :integer64 NA NA NA NA NA NA NA NA ...[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ possibly_sensitive        : logi  FALSE NA FALSE FALSE FALSE NA ...[] 
+ []
+
+
+Overfull \hbox (22.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ quote_id                  :integer64 NA NA NA NA NA NA NA NA ...[] 
+ []
+
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ retweet_count             : int  4 6 9 681 5 102 271 63 0 5 ...[] 
+ []
+
+
+Overfull \hbox (615.75pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ retweet_id                :integer64 997876898578550790 997865462531698688 NA 997917600343568384 997850111223853056 995028735102541825 997930648382902272 1000294993360076800 ...[] 
+ []
+
+
+Overfull \hbox (148.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ retweet_screen_name       : chr  "lovebothireland" "lovebothireland" "" "phlaimeaux" ...[] 
+ []
+
+
+Overfull \hbox (1681.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ source                    : chr  "<a href=\"\"http://twitter.com\"\" rel=\"\"nofollow\"\">Twitter Web Client</a>" "<a href=\"\"http://twitter.com\"\" rel=\"\"nofollow\"\">Twitter Web Client</a>" "<a href=\"\"http://twitter.com/#!/download/ipad\"\" rel=\"\"nofollow\"\">Twitter for iPad</a>" "<a href=\"\"https://mobile.twitter.com\"\" rel=\"\"nofollow\"\">Twitter Web App</a>" ...[] 
+ []
+
+
+Overfull \hbox (1975.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ text                      : chr  "#LoveBothVoteNo #8thref https://t.co/xc4jslD0nm" "Have you heard this? “Abortion is happening anyway”. Then you should read this: \"\"2-3 weeks pregnant. I freak"| __truncated__ "Ireland, beautiful warm friendly funny lyrical welcoming Ireland, stop doing this to your sisters, daughters, m"| __truncated__ "my first and I promise only ever vlog #together4Yes #RepealThe8th https://t.co/fvqWEDg6iV" ...[] 
+ []
+
+
+Overfull \hbox (1151.25pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ tweet_url                 : chr  "https://twitter.com/corkmankeane/status/997968315049005056" "https://twitter.com/corkmankeane/status/997968507257151489" "https://twitter.com/barneyfarmer/status/999946594870005760" "https://twitter.com/cacenlleuad/status/997968319142682624" ...[] 
+ []
+
+
+Overfull \hbox (568.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_created_at           : chr  "Mon Apr 30 07:24:29 +0000 2012" "Mon Apr 30 07:24:29 +0000 2012" "Fri Jan 07 14:52:54 +0000 2011" "Fri Nov 06 20:51:08 +0000 2015" ...[] 
+ []
+
+
+Overfull \hbox (316.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_id                   :integer64 567006745 567006745 235172191 4149894277 567006745 45134244 254184569 104557818 ...[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_default_profile_image: logi  FALSE FALSE FALSE FALSE FALSE FALSE ...[] 
+ []
+
+
+Overfull \hbox (1203.75pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_description          : chr  "Prolife\nHusband and Dad" "Prolife\nHusband and Dad" "Yūgen appreciation society. Writes Drunken bakers etc for Viz. Wrote this https://t.co/EkFvmRP7kD this https://"| __truncated__ "Ebychiadau achlysurol, di-flewyn-ar-dafod, gan Gymraes yn yr Alban." ...[] 
+ []
+
+
+Overfull \hbox (28.79344pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 12.2.  PRACTICAL EXAMPLE: TWITTER (AND DEALING WITH BIG DATA) \TU/lmr/m/n/10 179
+ []
+
+[179]
+Overfull \hbox (164.25pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_favourites_count     : int  44701 44701 177490 6814 44701 5518 6605 49400 3175 628 ...[] 
+ []
+
+
+Overfull \hbox (101.25pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_followers_count      : int  680 680 27325 292 680 329 184 1546 528 832 ...[] 
+ []
+
+
+Overfull \hbox (127.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_friends_count        : int  1287 1287 14899 1222 1287 1393 558 1741 983 969 ...[] 
+ []
+
+
+Overfull \hbox (22.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_listed_count         : int  20 20 143 3 20 2 1 28 16 42 ...[] 
+ []
+
+
+Overfull \hbox (111.75pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_location             : chr  "Ireland" "Ireland" "" "Edinburgh, Scotland" ...[] 
+ []
+
+
+Overfull \hbox (190.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_name                 : chr  "Joseph Keane" "Joseph Keane" "barney farmer" "cacenlleuad" ...[] 
+ []
+
+
+Overfull \hbox (185.25pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_screen_name          : chr  "corkmankeane" "corkmankeane" "barneyfarmer" "cacenlleuad" ...[] 
+ []
+
+
+Overfull \hbox (169.5pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_statuses_count       : int  48207 48207 133078 1089 48207 5544 3298 9249 1738 40441 ...[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_urls                 : chr  "" "" "http://barneyfarmer.com" "" ...[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 4955--4955
+[]\TU/lmtt/m/n/10 ##  $ user_verified             : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...[] 
+ []
+
+
+Overfull \hbox (117.24934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 180 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+ []
+
+[180] [181]
+Overfull \hbox (117.24934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 182 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+ []
+
+[182]
+File: _main_files/figure-latex/unnamed-chunk-185-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-185-1.pdf>
+[183]
+Overfull \hbox (69.75pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ##    name            indegree outdegree max_friends max_followers date_created[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ##    <chr>              <dbl>     <dbl>       <int>         <int> <chr>[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ##  1 Together4yes       39087       782         823         24458 Fri Feb 02 10:4~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ##  2 SaveLivesAlways    18353       401         546          4202 Wed Jun 07 22:1~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ##  3 lovebothireland    14366       241         732          4634 Thu Oct 06 13:5~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ##  4 MorabitoCM         14184         0        1227          1026 Thu Jul 16 06:4~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ##  5 Colmogorman        13454      1104         912         59411 Sat Apr 18 12:0~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ##  6 LeoVaradkar        13138        16        1785        451116 Wed Dec 22 13:3~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ##  7 louiseckenny        9556       314        1941         13975 Sat Aug 01 21:3~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ##  8 becksk              8563        41        1774          1078 Mon May 18 23:5~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ##  9 john_mcguirk        7759       106        2470         24676 Thu Mar 12 13:5~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5152--5152
+[]\TU/lmtt/m/n/10 ## 10 markohalloran       7046      1113        3535         18512 Tue Apr 21 23:2~[] 
+ []
+
+
+Overfull \hbox (117.24934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 184 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+ []
+
+[184]
+File: _main_files/figure-latex/unnamed-chunk-189-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-189-1.pdf>
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ##    name          indeg~1 outde~2 max_f~3 max_f~4 date_~5 max_f~6 max_f~7 date_~8[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ##    <chr>           <dbl>   <dbl>   <int>   <int> <chr>     <int>   <int> <chr>[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ##  1 kaydnan             0    7524     173     136 Wed Ma~     173     136 Wed Ma~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ##  2 Irishprolifer    1631    4707    7930    7087 Wed No~    7930    7087 Wed No~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ##  3 mobyrne100       1100    3809    2498    1050 Sat Ju~    2498    1050 Sat Ju~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ##  4 MaryOGrady8         6    3785     183     863 Wed Ja~     183     863 Wed Ja~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ##  5 christi85573~      54    3125    5003    2432 Tue Ju~    5003    2432 Tue Ju~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ##  6 Declan1497          3    3042    2390    1110 Sun Ma~    2390    1110 Sun Ma~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ##  7 DunL4Choice       943    2921     911    1434 Sat Se~     911    1434 Sat Se~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ##  8 BernadetteCo~       4    2641     231     189 Sun Fe~     231     189 Sun Fe~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ##  9 EmmaMurphy12~    3607    2439    3932    3149 Fri Au~    3932    3149 Fri Au~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ## 10 Paul71           1843    2066    3894    1566 Thu Ma~    3894    1566 Thu Ma~[] 
+ []
+
+[185]
+Overfull \hbox (54.0pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ## # ... with 252,286 more rows, and abbreviated variable names 1: indegree,[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 5204--5204
+[]\TU/lmtt/m/n/10 ## #   2: outdegree, 3: max_friends.x, 4: max_followers.x, 5: date_created.x,[] 
+ []
+
+
+Overfull \hbox (117.24934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 186 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+ []
+
+[186]
+Overfull \hbox (43.5pt too wide) in paragraph at lines 5257--5257
+[]\TU/lmtt/m/n/10 ## Warning: Transformation introduced infinite values in continuous y-axis[] 
+ []
+
+File: _main_files/figure-latex/unnamed-chunk-192-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-192-1.pdf>
+File: _main_files/figure-latex/unnamed-chunk-193-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-193-1.pdf>
+[187]
+Overfull \hbox (117.24934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 188 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+ []
+
+[188]
+File: _main_files/figure-latex/unnamed-chunk-195-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-195-1.pdf>
+[189]
+File: _main_files/figure-latex/unnamed-chunk-198-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-198-1.pdf>
+
+Overfull \hbox (117.24934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 190 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+ []
+
+[190] [191]
+Overfull \hbox (117.24934pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 192 \TU/lmr/m/sl/10 CHAPTER 12.  WEEK 6, CLASS 1: ASKING AND ANSWERING QUESTIONS WITH NETWORKS
+ []
+
+[192
 
 ]
 Chapter 13.
-[109] [110
 
-]
+Overfull \hbox (32.388pt too wide) in paragraph at lines 5401--5401
+[]\TU/lmr/bx/n/12 Specific problems with networks and cultural/humanities
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[193]
+Underfull \hbox (badness 10000) in paragraph at lines 5410--5411
+[] [] [][][][][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][] [] [][] [] [][][][][][][][][][] [][] [][][][][] [][] [][][][] [][] [] [][] [][][][][] [][] [][][] [][] [][][][][][] [][]
+ []
+
+
+Overfull \hbox (58.91043pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 194 \TU/lmr/m/sl/10 CHAPTER 13.  WEEK 6, CLASS 2: REFLECTIONS AND PITFALLS OF NETWORKS
+ []
+
+[194]
 Chapter 14.
-(./_main.bbl [111] [112
+[195
 
-]) [113] (./_main.aux)
-Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: C1C051982737B6560F8EE81D9784B1CB;11683.
- ) 
+] [196] [197] (./_main.bbl [198])
+
+Package natbib Warning: There were undefined citations.
+
+[199
+
+] (./_main.aux) ) 
 Here is how much of TeX's memory you used:
- 19459 strings out of 477743
- 366156 string characters out of 5842997
- 849075 words of memory out of 5000000
- 40161 multiletter control sequences out of 15000+600000
- 475840 words of font info for 85 fonts, out of 8000000 for 9000
+ 18688 strings out of 477743
+ 362373 string characters out of 5842996
+ 841438 words of memory out of 5000000
+ 39407 multiletter control sequences out of 15000+600000
+ 475734 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,7n,121p,988b,563s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,6n,121p,1062b,561s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (113 pages).
+Output written on _main.pdf (199 pages).

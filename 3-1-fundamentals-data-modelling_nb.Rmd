@@ -1,18 +1,207 @@
-# Week 3, Class 1: Data modelling
+# Week 3, Class 1: Relational Data Part 1
 
 
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
-
-```{r}
-plot(cars)
+```{r include = FALSE}
+library(tidyverse)
+library(igraph)
+library(knitr)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+## Managing Data
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+The aim of this week is to teach skills that are useful in managing large collections of data. These skills are not particular to
+network analysis, but this makes them even more important, as a digital humanist (or researcher of any other sort with data in their hands) can not run away from questions of data management just by changing methods. On the other hand, one element of these skills is to see your data as a network. 
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+What this managing means in practice? One way to illuminate this is to demonstrate what the absence of it looks like with (pseudo) data.
 
+```{r echo=FALSE}
+
+receiver_city <- c("Frankfurt","Aachen","Frankfurt")
+receiver_location <- c("Main","Westfalen","Oder")
+sender <- c("Dewey","Hue","Louie")
+occupation_sender <- c("philosopher","theologian","lens grinder")
+receiver <- c("Hue","Louie","Dewey")
+occupation_receiver <- c("theologian","lens grinder","philosopher")
+letter <- c("Absence of data management","Absense of tenures for lens grinders","Absence of pseudo name for letter titles")
+letter_topic <- c("data","economy","meta commentary")
+
+pseudo_data <- cbind.data.frame(sender,receiver,occupation_sender,occupation_receiver,receiver_city,receiver_location,letter,letter_topic)
+
+print(pseudo_data)
+
+```
+As we can see, the table is a collection of at least of three sort of things, persons, cities and letters. But it is not a good
+a good way to represent the information in it for various reasons. First of all, it is confusing. Instead of each row representing
+information about a single thing (e.g information about an individual), each row has variables related to the place, the sender, the receiver and the letter itself. If we were to add even more variables, the data set would become even more unwieldy.
+
+Another problem is, that the data is a time bomb waiting for errors to happen. Senders, receivers and cities are identified by their names,
+but it is very likely that - if this data set was to grow larger - at some point distinct persons, cities and letters will share the same name. This has already happened with one of the cities, Frankfurt, as the data set has both Frankfurt am Main and Frankfurt am Oder in it.
+Without another way to handle identification, this data will most likely result in faulty analysis if it expands to more than three row. These problems that can already be seen with three participants of an imaginary letter exchange network become even more 
+apparent when the data grows into realistic size.
+
+The solution that we discuss is to transform your data into relational data, collection of linked data sets, each of which stores entities of one type. To do that, we need data modeling and primary keys.  Data modeling might sound complicated, but for our purposes it is not. At the level of a conceptual data model, it is about identifying entities from your data set. At the level of logical data modeling, it is about adding more concrete elements to the conceptual data model. Primary keys identify entities uniquely, and make the data relational. The rest of this chapter is about making these steps and concepts that are useful for creating relational data (as well as the concept itself) more concrete.
+
+## Relational data
+
+Instead of starting with a definition, we demonstrate what the data of the previous example would look like as relational data, after the data modeling and addition of primary keys and such. The data set above will be transformed into three separate tables:
+
+```{r echo=FALSE}
+
+receiver_city <- c("Frankfurt","Aachen","Frankfurt")
+receiver_location <- c("Main","Westfalen","Oder")
+sender <- c("Dewey","Hue","Louie")
+occupation_sender <- c("philosopher","theologian","lens grinder")
+receiver <- c("Hue","Louie","Dewey")
+occupation_receiver <- c("theologian","lens grinder","philosopher")
+letter <- c("Absence of data management","Absense of tenures for lens grinders","Absence of pseudo name for letter titles")
+letter_topic <- c("data","economy","meta commentary")
+
+pseudo_data <- cbind.data.frame(sender,receiver,occupation_sender,occupation_receiver,receiver_city,receiver_location,letter,letter_topic)
+
+person_id <- c("p_id_1","p_id_2","p_id_3")
+city_id <- c("c_id_1","c_id_2","c_id_3")
+letter_id <- c("l_id_1","l_id_2","l_id_3")
+
+pseudo_data_person <- cbind.data.frame(person_id,receiver,occupation_receiver)
+colnames(pseudo_data_person) <- c("person_id","person_name","person_occupation")
+
+
+pseudo_data_city <- cbind.data.frame(city_id,receiver_city,receiver_location)
+colnames(pseudo_data_city) <- c("city_id","city_name","city_location")
+
+sender_id <- c("p_id_3","p_id_1","p_id_2")
+
+pseudo_data_letter <- cbind.data.frame(letter_id,letter,letter_topic,sender_id,person_id,city_id)
+colnames(pseudo_data_letter) <- c("letter_id","letter_name","letter_topic","sender_id","receiver_id","city_in_which_received_id")
+
+print("A table of persons:")
+print(pseudo_data_person)
+
+
+print("A table of cities:")
+print(pseudo_data_city)
+
+
+print("A table of letters:")
+print(pseudo_data_letter)
+
+```
+It is the same data, but now stored in three separate tables of different kinds of entities, people, locations and letters. The connections between e.g. letters and their senders are now stored to the columns of these tables. For example, letters connect to receivers and senders by the columns "sender_id" and "receiver_id" and to cities by the column "city_in_which_received_id". It is also worth noting that the entities now have unique identifiers instead of being recognised by their names. When reading the next sections, it might be useful to do it by thinking how the steps help us to get closer to this point.
+
+In general, the idea of relational data is to store data into a collection of separate tables connected to each other by unique identifiers. Each table stores information about entities of one type. For example, our relational version of the correspondence data has three tables. One for people, one for cities and one for letters. In each of these tables, one row corresponds with one and only one entity of that type, and it is identified by the unique identifier, also known as primary key, which is defined by one or more columns. In our case, the primary keys are the person, city and letter ids in the tables of people, cities and letters.
+
+However, although unique identifiers are unique in the primary key column(s) of each table, they can appear in other columns more, equally or less often, and this makes relational data relational. For example, both letters 1 and 2 (l_id_1 and l_id_2) connect to person 1 (p_id_1, Hue), as he is a receiver of one letter and sender of another. This means, that by linking the table of people to the table of letters by matching the person_id with sender or receiver ids, we can connect letters to their senders and receivers. Connecting the tables is possible with the join functions that were discussed during the first week, and we are going to return to them later this week. The same applies to the connections between letters and cities, as those are also recoverable by linking the receiver_city_ids to city_ids. 
+
+
+## Conceptual Data Model
+
+Conceptual data model aims to divide data to different types of entities, and to elaborate if they are related to other entity types in the data. Here by entities we mean the main categories of "things" in your data, so the conceptual data model can be thought of as a map that describes the structure of your data at a very general level. Conceptual data model is necessary (at least implicitly) to split your data into a collection of related tables, as doing that requires an understanding of what we are splitting to what. 
+
+Let's take a look at what a conceptual data model could look like for the example correspondence (pseudo) data set that we discussed at the start of this chapter. The data set is made up of of eight columns, so the immediate idea could be that the conceptual data model involves eight types of entities. However, when we start thinking about the data more closely, the number of distinct type of "things" in the data is much smaller. For example, both sender and receiver are people, and the occupation is an attribute that describes the person. Person, then, would be a good candidate for an entity. With similar reasoning, both the city of the receiver and the letter would make for good entities. 
+
+We are already halfway through making our conceptual data model, as we have identified the main things (entities) in the data set. But we still have to consider what the relationships between these entities to complete our conceptual data model. Letters have senders and receivers, and those are people, other types of entities. In the conceptual data model, we would mark this by connecting letters to people. Letters also connect to the places, in our example to the place in which they were received (although place from which they were sent might be more realistic). As cities are also entities in our conceptual data model, the cities and letters are also connected in our conceptual data model.
+
+If drawn, this conceptual data model would look something like [this](https://docs.google.com/presentation/d/1J5XqMFTlJysqI0s-4TsOamL7qz48ml38VQO0s5g1doE/pub?start=false&loop=false&delayms=3000#slide=id.g21405589cb_1_0). The details of visualisation can vary, but the important thing is that the entities and their connections can be read
+from the conceptual data model.
+
+## Logical Data Model
+
+The next step in data modeling is to add details to the overview given by the conceptual data model. Logical data model always includes the attributes of entities listed under them. So, in our case, the logical data model would not only divide entities to people, cities and letters, but also specify that all of them have a name attribute, people have occupations and letters have a city of reception, sender and receiver.
+
+Logical data model is also a good step to specify what is the unique identifier for each entity type, and how these unique identifiers link between the entities. For example, a logical data model made of our example data set would depict how the primary key of the person table (person_id) would connect with attributes sender (sender_id) and receiver (receiver_id) of the letters. As the logical data model
+already lists all the attributes, primary keys and relations between the entities, it can already be used to "see" what a data set 
+would look like in relational form. Logical data model (made for data set that is very close to our example) looks like [this](https://docs.google.com/presentation/d/1Smp7f4hx62PvEkdsG5lB8JDcT9OwD-OzrLvXMw2XJEc/pub?start=false&loop=false&delayms=3000#slide=id.g21405589cb_1_0) in practice. Once again, the details of visualisation are not important, but the listing of attributes,identifiers and relationships between the entities (People,Letter,Cities).
+
+The logical data model is already a good enough conceptualisation of your data, that you can turn it into relational format.
+We will demonstrate this next, and we will practice it more in the exercises of this session.
+
+## Relational Data in Practice
+
+Following the logical data model for our example data set, we see that three tables are needed: one for people, another for cities and third for letters. We will also define unique identifiers for all of these entity, as the names are not unique enough to ensure that we can always disambiguate between entities of the same type. The original table with the unique identifiers added looks like this:
+
+```{r echo=FALSE}
+
+receiver_city <- c("Frankfurt","Aachen","Frankfurt")
+receiver_location <- c("Main","Westfalen","Oder")
+sender <- c("Dewey","Hue","Louie")
+occupation_sender <- c("philosopher","theologian","lens grinder")
+receiver <- c("Hue","Louie","Dewey")
+occupation_receiver <- c("theologian","lens grinder","philosopher")
+letter <- c("Absence of data management","Absense of tenures for lens grinders","Absence of pseudo name for letter titles")
+letter_topic <- c("data","economy","meta commentary")
+
+
+
+person_id <- c("p_id_1","p_id_2","p_id_3")
+city_id <- c("c_id_1","c_id_2","c_id_3")
+letter_id <- c("l_id_1","l_id_2","l_id_3")
+
+pseudo_data_person <- cbind.data.frame(person_id,receiver,occupation_receiver)
+colnames(pseudo_data_person) <- c("person_id","person_name","person_occupation")
+
+
+pseudo_data_city <- cbind.data.frame(city_id,receiver_city,receiver_location)
+colnames(pseudo_data_city) <- c("city_id","city_name","city_location")
+
+sender_id <- c("p_id_3","p_id_1","p_id_2")
+
+
+pseudo_data <- cbind.data.frame(sender,receiver,occupation_sender,occupation_receiver,receiver_city,receiver_location,letter,letter_topic,person_id,city_id,letter_id,sender_id)
+colnames(pseudo_data)[9:12] <- c("receiver_id","city_id","letter_id","sender_id")
+
+print(pseudo_data)
+
+```
+While adding the identifiers ensured that our Frankfurts will not get mixed up, the table has become even more unwieldy, as we now have 12 columns that connect to three different types of entities.
+
+The next step of splitting the data in to the tables of the entities would normally require more data wrangling. Here we work with 
+the simplifying assumption that each identifier maps only to one name, occupation etc. In reality, it would often take more effort to split a single data set to relational data. We will also assume that each person is both a receiver and sender of a letter, so we don't have
+to create a new table of both senders and receivers. 
+
+
+
+```{r echo=FALSE}
+
+#Make a table of letters and their attributes
+pseudo_data_letter <- pseudo_data %>% distinct(letter_id,letter,letter_topic,receiver_id,sender_id,city_id)
+
+print(pseudo_data_letter)
+
+#Make a table of people and their attributes. Change column names.
+pseudo_data_person <- pseudo_data %>% distinct(receiver_id,occupation_receiver,receiver) %>% rename(.,person_id=receiver_id,person_name=receiver,person_occupation=occupation_receiver)
+
+print(pseudo_data_person)
+
+#Make a table of people and their attributes. Change column names.
+pseudo_data_city <- pseudo_data %>% distinct(city_id,receiver_city,receiver_location) %>% rename(.,city_id=city_id,city_name=receiver_city,city_location=receiver_location)
+
+print(pseudo_data_city)
+
+```
+We have now walked through a simple example of recognising entities from a data set and mapping the attributes and relationships to and between these entities. These steps required conceptual and logical data modeling. Finally we transformed the data set to relational data by following the logical data model.
+
+Very often, relational data is stored in to databases, and queried with SQL. However, while useful, databases and SQL are not necessary
+to work efficiently with relational data. Next chapter of this week will return to the join_operations (already introduced during the first week) and other functions in the tidyverse, that are needed to work with our relational data in practice.
+
+## Data Modeling and Networks
+
+You might have noticed that the example visualisations of conceptual and logical data models seemed familiar not only in terms of content, but also structurally. This is not a coincidence, as the structure is that of a graph. Data models are like networks in the sense that they depict relationships. In both logical and conceptual data models, nodes can be thought of as entity types and edges as relationships between different types of entities. Logical data model can be thought of as adding attributes to nodes (like we discussed when we introduced the node list) and additional information about the edges. In fact, logical data model is already a quite complex network,
+as there can be different kinds of connections between the nodes. For example, in our example data set letters are connected to people 
+both by senders and receivers.
+
+From this perspective, the question is not only about what relational data can do to network analysis,
+but what networks (as a framework) can do to managing data. The answer would be, that conceptual and logical data modeling are about
+making a network representation about the data, and this representation can then serve as basis for creating a relational data(base).
+
+## Note About Unique Identifiers
+
+The primary keys of a relational data set can be specific to your data collection, but there is often a better alternative.
+Internet is full of databases that identify people, cities and other entities, and these databases often have useful information 
+in them. Choosing e.g. a [VIAF](https://viaf.org/) identifier for authors, or a identifier of a historical place name from [Getty Thesaurus of Geographic Names](https://www.getty.edu/research/tools/vocabularies/tgn/) might allow linking of your data set to useful information. What is even better, that many of these internet resources are linked data. Linked data is interlinked with other internet data resources, which means that an identifier obtained for a "thing" from one database can often be linked with its identifier in another database. Linked data, then, can in some cases allow you to significantly enrich your data set, if you can match the entities in your data set with corresponding identifiers in a linked data set. 
+
+Linked data is also uniformly structured, and it can be queried with SPARQL. We do not teach SPARQL in this course, but we greatly recommend getting familiar with it, as it can be used to query data from an enormous collection of interlinked data sets on the internet. This data, then, can be used to enrich your data, if you can get your hands on it, for which SPARQL is the easiest solution. Both linked data 
+and SPARQL will be discussed in more detail in the reading for this week.
+
+## References

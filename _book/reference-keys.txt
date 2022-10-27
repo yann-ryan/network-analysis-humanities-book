@@ -1,7 +1,8 @@
 fig:unnamed-chunk-2
 fig:unnamed-chunk-3
 fig:unnamed-chunk-4
-fig:unnamed-chunk-63
-fig:unnamed-chunk-66
-fig:unnamed-chunk-100
-fig:unnamed-chunk-120
+fig:unnamed-chunk-88
+fig:unnamed-chunk-89
+fig:unnamed-chunk-90
+fig:unnamed-chunk-140
+fig:unnamed-chunk-160

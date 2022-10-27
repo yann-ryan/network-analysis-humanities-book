@@ -6,13 +6,15 @@ In this class, we'll talk through creating and analysing a network object in R. 
 
 ## Network data structures
 
-### Edge lists 
+Network data comes in a number of forms. Two common ones are adjacency matrices and edge lists. An adjacency matrix is a matrix of rows and columns, one for each node. If there is a link between two nodes, a 1 is put in at that point. If it is a weighted network, the weight can be entered in the correct space. In some cases, your data may be in a format where it is easy to use it as an adjacency matrix. 
 
-### Adjacency Matrices  
+Adjacency matrices can be easily read into R using `igraph` and `graph_from_adjacency_matrix()`. 
+
+The other common type is what we will work with in this lesson: an edge list. An edge list is actually also a 'sparse matrix'. 
 
 ## Creating a Network Object in R from an Edge List
 
-One of the easiest data formats to construct a network is an edge list: a simple dataframe with two columns, representing the connections between two nodes, one per row. It makes particular sense with correspondence data, which is often stored as records of letters with a 'from' and a 'to'---more or less a ready-made edge list. In a correspondence dataset you might also have multiple sets of each of the edges (multiple letters between the same pair of individuals). This will be added to the edges as a 'weight'.
+One of the easiest data formats to construct a network is an edge list: a simple dataframe with two columns, representing the connections between two nodes, one per row. If the network is directed, generally the 'Source' node is on the left side, and the 'Target' node on the right. It makes particular sense with correspondence data, which is often stored as records of letters with a 'from' and a 'to'---more or less a ready-made edge list. In a correspondence dataset you might also have multiple sets of each of the edges (multiple letters between the same pair of individuals). This will be added to the edges as a 'weight'.
 
 We will use three R network libraries to do almost everything network-related, from analysis to visualisation: `igraph`, `tidygraph` and `ggraph`. The goal is to port everything to a format which is easy to work with using existing an established data analysis workflow. That format is known as 'tidy data', and it is a way of working with data which is easily transferable across a range of uses. It also means you need to learn very little new programming to do network analysis if you stay within this 'ecosystem'.
 
@@ -211,22 +213,100 @@ sample_tbl_graph %>%
 as_tibble() %>% 
   arrange(desc(degree)) %>% select(name, main_name, degree)
 ```
-## Transitivity, Triads, structural balance  
+## Social Network Analysis with R
 
-### Triad Census
+This last part goes through some of the functions which are more related to the 'social network analysis'. Many of these are accessed directly through the package `igraph`. 
 
-What this tells us about the macro-structure of a network  
+### Transitivity, Triads, structural balance  
 
-## Group detection
+As we learned in the last lesson, counting the ratio of completed triangles in a network is a good way to understand its structure. This ratio is known as the **clustering coefficient**, and there are two types: **global**, which measures the ratio of complete and not complete triangles in the entire network, and **local**, which measures the complete triangles for each individual node. This measurement is also known as **transitivity**. 
 
-### Components
+Use the following command to calculate the global clustering, or transitivity of the network. It returns a single number, which is just the ratio of completed triangles to the total possible number of triangles in the graph:  
 
-### Cliques
+```{r}
+sample_tbl_graph %>% transitivity(type = 'global')
+```
 
-### Community Detection  
+Use the following to measure the local clustering coefficient for each node in the graph. It returns a vector of numbers, one for each node:
+
+```{r}
+sample_tbl_graph %>% transitivity(type = 'local') 
+
+```
+
+Anoter related measurement is the average local clustering, calculated using the following: 
 
 
+```{r}
+sample_tbl_graph %>% transitivity(type = 'average') 
 
-## Conclusions  
 
+```
+
+We can also calculate the total reciprocity of a graph (the proportion of links which are reciprocated):
+
+```{r}
+sample_tbl_graph %>% reciprocity()
+
+
+```
+
+We can also calculate the 'triad census', the number of each type of triad in a directed network. First, run the `triad_census()` function, and turn it into a dataframe with one column. Next add the correct triad codes as a second column. 
+
+```{r}
+census = sample_tbl_graph %>% triad_census() %>% as_tibble()
+
+census$type <- c("003","012","102","021D","021U","021C","111D","111U",
+                         "030T","030C","201","120D","120U","120C","210","300")
+
+census
+```
+You can now connect these codes to the triad diagrams from the last chapter, and use them to infer things about the structure and formation of the network. 
+
+<details>
+
+<summary>Imagine that this is a complete network. Why, for example, might 021U (A and B both send a letter to C, but there's not reciprocation, and they are not connected to each other) be such a common triad?</summary>
+
+The answer lies in the origin of this network, as a letter archive. Because a letter archive contains mostly incoming letters to an ego node, many of the triads are pairs of nodes who both have an incoming connection to one of these ego nodes, but are not themselves connected.  
+
+</details>
+
+<br>
+
+Another set of metrics are to do with groups found in a network. First, components. A component is a group of nodes which are connected together through a path in the network. The `components()` function returns a list which includes a named vector with a component number for each node, along with the number of nodes in each component, and the total number of components. Looking at this list with `glimpse` tells us that there are six components, the largest being 237 nodes and the smallest has 2. 
+
+```{r}
+sample_tbl_graph %>% igraph::components() %>% glimpse()
+```
+
+Another global metric we can calculate is the number of **cliques** in a network. A clique is a fully connected set of nodes. We can calculate the total number of cliques with `clique_num`:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+sample_tbl_graph %>% igraph::clique_num()
+```
+
+Another way to look at groups in networks is to use community detection. As explained in the previous chapter, community detection attempts to find groups of nodes which are more connected to each other than they are to nodes outside the group. Unlike components or cliques, communities can be found using a number of methods. Here, we'll use the louvain algorithm. To make it easy to use the results, we'll calculate the community for each node using tidygraph. This particularly implementation of the algorithm only works for undirected graphs, so we have to create our network again from scratch, this time specifying that it's undirected. 
+
+```{r}
+
+sample_tbl_graph_u = edge_list %>% 
+  as_tbl_graph(directed = FALSE)
+
+sample_tbl_graph_u %>% 
+  mutate(group = group_louvain())
+```
+
+By turning this information into a dataframe, we can get some basic statistics on the groups. By adding this information to the node information we collected earlier, we can get a summary of the average degree and betweenness scores for each of the detected communities: 
+
+```{r message=FALSE, warning=FALSE}
+sample_tbl_graph_u %>% 
+  mutate(group = group_louvain())%>% 
+  activate(nodes) %>% # make sure correct table is active
+  mutate(degree = centrality_degree(weights = weight, mode = 'all')) %>% # calculate degree
+  mutate(between = centrality_betweenness(weights = weight,directed = F)) %>%  # calculate betweenness centrality
+  as_tibble()  %>% group_by(group) %>%
+  summarise(mean_degree = mean(degree,na.rm = TRUE), mean_between = mean(between, na.rm = TRUE), nodes = n()) %>% pivot_longer(2:4) %>% 
+  ggplot() + geom_col(aes(x = group, y = value)) + facet_wrap(~name, scales = 'free')
+
+```
 

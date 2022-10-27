@@ -6,79 +6,9 @@ This lesson has a corresponding editable notebook containing some exercises. The
 
 ## Introduction
 
-This lesson will cover a number of things. First, it talks through some further conceptual things relating specifically to social networks, and second, introduces a large number of measurements by which we can understand more about a given network. These are generally divided into node-level and global metrics. Many node-level metrics are interested in *centrality*, that is, working out the most important and most influential nodes in a network. In a social network, this may point to individuals with a particular influence or role in the network, but it can also have other uses: Google's PageRank algorithm uses a version of centrality to work out which web pages are likely of the highest quality or usefulness for a particular search, for example.
+This lesson will cover a number of concepts First, it outlines the concept and theory behind a number of key network metrics. These are generally divided into node-level and global metrics. Many node-level metrics are interested in *centrality*, that is, working out the most important and most influential nodes in a network. In a social network, this may point to individuals with a particular influence or role in the network, but it can also have other uses: Google's PageRank algorithm uses a version of centrality to work out which web pages are likely of the highest quality or usefulness for a particular search, for example.
 
-## Social network concepts: triadic closure, transitivity, brokerage
-
-### Triadic closure
-
-Triadic closure is the simple idea that people in a social network are more likely to connect to each other if they share another common connection. In social network theory, this is very common, and thought to drive much of the process of network formation.
-
-#### Undirected Network
-
-```{r echo=FALSE, message=FALSE,warning = FALSE, fig.cap="Four possible triad types in an undirected network"}
-library(tidyverse)
-library(igraph)
-library(ggraph)
-library(tidygraph)
-
-layout = tibble(x = c(2,3,4), y = c(1,2,1))
-
-a =  tibble(from = c('A', 'A', 'B'), to = c('B', 'C', 'C') ) %>% 
-  graph_from_data_frame(directed = F) %>%
-  as_tbl_graph() %>% 
-  activate(edges)  %>% 
-  ggraph(layout = layout) + 
-  geom_edge_link(width = 2) +  
-  geom_node_point(size = 20, fill = 'white', pch = 21, stroke = 2) + 
-  geom_node_text(aes(label = name)) + 
-   theme_void() + 
-  scale_x_continuous(expand = c(.2, .2)) + 
-  scale_y_continuous(expand = c(.2, .2))
-
-b =  tibble(from = c('A', 'A', 'B'), to = c('B', 'C', 'C') ) %>% 
-  graph_from_data_frame(directed = F) %>%
-  as_tbl_graph() %>% 
-  activate(edges)  %>% slice(-2) %>% 
-  ggraph(layout = layout) + 
-  geom_edge_link(width = 2) +  
-  geom_node_point(size = 20, fill = 'white', pch = 21, stroke = 2) + 
-  geom_node_text(aes(label = name)) + 
-   theme_void() + 
-  scale_x_continuous(expand = c(.2, .2)) + 
-  scale_y_continuous(expand = c(.2, .2))
-
-c =  tibble(from = c('A', 'A', 'B'), to = c('B', 'C', 'C') ) %>% 
-  graph_from_data_frame(directed = F) %>%
-  as_tbl_graph() %>% 
-  activate(edges)  %>% slice(-1, -3) %>% 
-  ggraph(layout = layout) + 
-  geom_edge_link(width = 2) +  
-  geom_node_point(size = 20, fill = 'white', pch = 21, stroke = 2) + 
-  geom_node_text(aes(label = name)) + 
-   theme_void() + 
-  scale_x_continuous(expand = c(.2, .2)) + 
-  scale_y_continuous(expand = c(.2, .2))
-
-d =  tibble(from = c('A', 'A', 'B'), to = c('B', 'C', 'C') ) %>% 
-  graph_from_data_frame(directed = F) %>%
-  as_tbl_graph() %>% 
-  activate(edges)  %>% 
-  ggraph(layout = layout) + 
-  geom_edge_link(width = 2, color = 'white') +  
-  geom_node_point(size = 20, fill = 'white', pch = 21, stroke = 2) + 
-  geom_node_text(aes(label = name)) + 
-   theme_void() + 
-  scale_x_continuous(expand = c(.2, .2)) + 
-  scale_y_continuous(expand = c(.2, .2))
-
-
-cowplot::plot_grid(a,b,c,d, labels = c('closed triad', 'open triad', 'connected pair', 'unconnected'))
-```
-
-#### Directed Network
-
-![The 16 possible triad combinations in a directed network](images/triad_census.jpg)
+Second, we'll talk briefly about some theories specific to *social network analysis* (or SNA). Social networks (that is, networks of people, where the connections and structure is governed by social factors) have their own set of concepts, which do not apply to all networks. We won't go into detail (that could be a whole other course), but it's useful to understand.
 
 ## Node-level metrics
 
@@ -227,6 +157,8 @@ Network science has a large of algorithsm for finding optimal communities in gra
 
 Modularity is a score evaluating how well a given set of group labels describe the groups found in a network. It's calculated as the number of edges falling within groups minus the expected number in an equivalent network with edges placed at random ([link](https://www.pnas.org/content/103/23/8577)). In the below diagram, the modularity is high, because the groups (coloured as either red or green nodes) correctly describe the two separate 'communities' found in the network. Community detection algorithms work by trying to maximise this value.
 
+
+
 ![](images/modularity.png)
 
 As with the clustering coefficient, a high modularity indicates the extent to which the network might be described as a collection of densely-connected sub-groups, or whether the links are spread out evenly across the network.
@@ -249,9 +181,130 @@ At this point, most nodes are now in a community of two (if there's no change in
 
 In very large graphs, the process is more difficult and likely to give different results depending on the random starting point. Also, while the method may be a useful way of finding communities without preconceived starting points, it does require us to think of the network as being divided into communities of some kind. Every node must be placed in a community - none can be placed outside the communities, and, perhaps more controversially, with this method, no node can be a member of more than one community. 
 
-![From Traag, V.A., Waltman, L. & van Eck, N.J. From Louvain to Leiden: guaranteeing well-connected communities. Sci Rep 9, 5233 (2019). <https://doi.org/10.1038/s41598-019-41695-z>](images/louvain.png){width="700"}
+<center>
+
+![From Traag, V.A., Waltman, L. & van Eck, N.J. From Louvain to Leiden: guaranteeing well-connected communities. Sci Rep 9, 5233 (2019). <https://doi.org/10.1038/s41598-019-41695-z>](images/louvain.png){width="500"}
+
+</center>
 
 Important to note is that communities are to some degree subjective, and 'densely-connected' can have different meanings depending on the algorithm. And needless to say, detecting communities on a graph alone does not make a research question!
+
+
+## Social network concepts: triadic closure, transitivity, brokerage
+
+### Triads
+
+There are a number of different triad types, each of which, according to social theorists, tell us something about the particular role of that set of people. The proportion of various triad types in a network can tell us about its structure, and, in the case of a complex network, something of the process by which connections are formed. In this way, we connect the *micro* structure (the information on individual pairs or triads) with the *macro* (what this tells us about the overall formation and structure of a network).
+
+In an undirected network, there are four possble triad types, as seen in the diagram below. The first, a **closed triad**, is when each node is connected to the other two. The other possibilities are **open triad**, where one of the three possible connections is not present, a **closed pair**, where just one pair of the three is connected, and a **disconnected triad**.
+
+```{r echo=FALSE, message=FALSE,warning = FALSE, fig.cap="Four possible triad types in an undirected network", fig.align='center'}
+library(tidyverse)
+library(igraph)
+library(ggraph)
+library(tidygraph)
+
+layout = tibble(x = c(2,3,4), y = c(1,2,1))
+
+a =  tibble(from = c('A', 'A', 'B'), to = c('B', 'C', 'C') ) %>% 
+  graph_from_data_frame(directed = F) %>%
+  as_tbl_graph() %>% 
+  activate(edges)  %>% 
+  ggraph(layout = layout) + 
+  geom_edge_link(width = 2) +  
+  geom_node_point(size = 20, fill = 'white', pch = 21, stroke = 2) + 
+  geom_node_text(aes(label = name)) + 
+   theme_void() + 
+  scale_x_continuous(expand = c(.2, .2)) + 
+  scale_y_continuous(expand = c(.2, .2))
+
+b =  tibble(from = c('A', 'A', 'B'), to = c('B', 'C', 'C') ) %>% 
+  graph_from_data_frame(directed = F) %>%
+  as_tbl_graph() %>% 
+  activate(edges)  %>% slice(-2) %>% 
+  ggraph(layout = layout) + 
+  geom_edge_link(width = 2) +  
+  geom_node_point(size = 20, fill = 'white', pch = 21, stroke = 2) + 
+  geom_node_text(aes(label = name)) + 
+   theme_void() + 
+  scale_x_continuous(expand = c(.2, .2)) + 
+  scale_y_continuous(expand = c(.2, .2))
+
+c =  tibble(from = c('A', 'A', 'B'), to = c('B', 'C', 'C') ) %>% 
+  graph_from_data_frame(directed = F) %>%
+  as_tbl_graph() %>% 
+  activate(edges)  %>% slice(-1, -3) %>% 
+  ggraph(layout = layout) + 
+  geom_edge_link(width = 2) +  
+  geom_node_point(size = 20, fill = 'white', pch = 21, stroke = 2) + 
+  geom_node_text(aes(label = name)) + 
+   theme_void() + 
+  scale_x_continuous(expand = c(.2, .2)) + 
+  scale_y_continuous(expand = c(.2, .2))
+
+d =  tibble(from = c('A', 'A', 'B'), to = c('B', 'C', 'C') ) %>% 
+  graph_from_data_frame(directed = F) %>%
+  as_tbl_graph() %>% 
+  activate(edges)  %>% 
+  ggraph(layout = layout) + 
+  geom_edge_link(width = 2, color = 'white') +  
+  geom_node_point(size = 20, fill = 'white', pch = 21, stroke = 2) + 
+  geom_node_text(aes(label = name)) + 
+   theme_void() + 
+  scale_x_continuous(expand = c(.2, .2)) + 
+  scale_y_continuous(expand = c(.2, .2))
+
+
+cowplot::plot_grid(a,b,c,d, labels = c('closed triad', 'open triad', 'connected pair', 'unconnected'), label_size = 8)
+```
+
+In a directed network, the situation is more complex. Each of the connections can be incoming or outgoing, meaning there are 16 possible triad connections. Don't worry, if you want to use these, network analysis software has methods for taking a 'census' of the various triads and their counts in a particular network.
+
+<center>
+
+![The 16 possible triad combinations in a directed network. The code underneath each triad refers to the numbers of mutual, asymmetric, and null dyads, with a further identifying letter: Up, Down, Cyclical, Transitive. E.g., 120D has 1 mutual, 2 asymmetric, 0 null dyads, and the Down orientation.](images/triad_census.jpg)
+
+</center> 
+
+#### Triadic Closure
+
+Triadic closure is the simple idea that people in a social network are more likely to connect to each other if they share another common connection. In social network theory, this is very common, and thought to drive the process of network formation. It's called triadic closure, because it measures the relation between triads - sets of three nodes. It's easy to measure in a network: we can do so simply by measuring the number of 'complete' triangles.
+
+Why is this interesting? As well as helping to explain network formation, we can think about how various triads work on a micro-level. Let's start with a simple example: an undirected friendship network between three people. A and B know each other, as do B and C, but A and C have never met:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height=2, fig.width=2, fig.align='center', fig.cap ="An open triad, meaning one with a missing third connection."}
+
+b =  tibble(from = c('A', 'A', 'B'), to = c('B', 'C', 'C') ) %>% 
+  graph_from_data_frame(directed = F) %>%
+  as_tbl_graph() %>% 
+  activate(edges)  %>% slice(-2) %>% 
+  ggraph(layout = layout) + 
+  geom_edge_link(width = 2) +  
+  geom_node_point(size = 20, fill = 'white', pch = 21, stroke = 2) + 
+  geom_node_text(aes(label = name)) + 
+   theme_void() + 
+  scale_x_continuous(expand = c(.2, .2)) + 
+  scale_y_continuous(expand = c(.2, .2))
+b
+```
+
+Mark Granovetter's paper ['The Strength of Weak Ties'](https://www.jstor.org/stable/2776392) looked at the formation of these triads their role in a network. For Granovetter, edges in a network are formed of either 'strong' or 'weak' ties. He writes that in an unclosed triad, if the two existing edges are strong ties, a third edge will always eventually appear between the final two nodes, forming a closed triad. An unclosed triad containing two strong edges is impossible and he calls this the 'forbidden triad'.
+
+This gap, from A to C, is sometimes called a 'structural hole'. In this triad, B is particularly important because they are needed for information to be shared between A and C. B may even work to keep A and C from meeting and 'closing' the triad. The sociologist Ronald Burt, in his book *Structural Holes: The Social Structure of Competition* theorised that these gaps could be beneficial to individuals, and that people with many of these kinds of relationships were often successful in business.
+
+Another influential paper, by Gould and Fernandez, used triads in their theory of *brokerage*. This is a process, according them, where individuals act as intermediaries in a network, helping to share information. They identify five types of brokerage roles, based on specific triad types, as seen in the image below:
+
+
+<center>
+
+![The five different brokerage roles, according to Gould and Fernandez (1989). In each case, the ellipses represent different 'sub-groups' of the wider network that each node belongs to.](images/brokerage_custom.jpg)
+
+</center>
+
+#### A Word of Warning...
+
+It's easy to see the appeal of these methods applied to historical or cultural sources, which we might use to uncover the specific social relations within a network of historical actors, understand the formation by which a particular correspondence network came about, or maybe measure the 'success' of a particular historical figure by the existence of 'structural holes' in their networks. I encourage you to think about and use these theories. However, do bear in mind that these theories were often developed using modern, 'complete' social network data, where every interaction was carefully recorded, often for the purposes of a particular test. As these methods rely heavily on these 'micro' structures (such as the presence or absence of a particular tie), they may be particularly sensitive to the kinds of missing data often found in historical sources, which are not usually collected systematically. 
+
 
 ## Conclusions
 

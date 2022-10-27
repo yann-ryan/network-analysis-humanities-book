@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-10-21" />
+<meta name="date" content="2022-10-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -62,6 +62,10 @@
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -180,7 +184,6 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#how-to-use-this-book-and-follow-the-course."><i class="fa fa-check"></i>How to use this book and follow the course.</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#what-do-we-mean-by-a-network"><i class="fa fa-check"></i>What do we mean by a ‘network’?</a></li>
-<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#why-use-networks"><i class="fa fa-check"></i>Why Use Networks?</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#networks-in-the-humanities"><i class="fa fa-check"></i>Networks in the Humanities</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#some-examples"><i class="fa fa-check"></i>Some Examples</a></li>
@@ -222,12 +225,14 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#base-r."><i class="fa fa-check"></i>‘Base’ R.</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-structures"><i class="fa fa-check"></i>Basic R data structures</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#data-types"><i class="fa fa-check"></i>Data types</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#installing-and-loading-packages"><i class="fa fa-check"></i>Installing and loading packages:</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i>Tidyverse</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#select-pull"><i class="fa fa-check"></i>select(), pull()</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#group_by-tally-summarise"><i class="fa fa-check"></i>group_by(), tally(), summarise()</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#filter"><i class="fa fa-check"></i>filter()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#slice_max-slice_min"><i class="fa fa-check"></i>slice_max(), slice_min()</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#sort-arrange"><i class="fa fa-check"></i>sort(), arrange()</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#left_join-inner_join-anti_join"><i class="fa fa-check"></i>left_join(), inner_join(), anti_join()</a></li>
 <li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#piping"><i class="fa fa-check"></i>Piping</a></li>
@@ -261,16 +266,29 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#for-the-next-week"><i class="fa fa-check"></i>For the Next Week</a></li>
 <li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#references-1"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-3-class-1-data-modelling.html"><a href="week-3-class-1-data-modelling.html"><i class="fa fa-check"></i>Week 3, Class 1: Data modelling</a></li>
-<li class="chapter" data-level="" data-path="week-3-class-2-build-a-data-model-with-r.html"><a href="week-3-class-2-build-a-data-model-with-r.html"><i class="fa fa-check"></i>Week 3, Class 2: Build a Data Model with R</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html"><i class="fa fa-check"></i>Week 3, Class 1: Relational Data Part 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#managing-data"><i class="fa fa-check"></i>Managing Data</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#relational-data"><i class="fa fa-check"></i>Relational data</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#conceptual-data-model"><i class="fa fa-check"></i>Conceptual Data Model</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#logical-data-model"><i class="fa fa-check"></i>Logical Data Model</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#relational-data-in-practice"><i class="fa fa-check"></i>Relational Data in Practice</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#data-modeling-and-networks"><i class="fa fa-check"></i>Data Modeling and Networks</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#note-about-unique-identifiers"><i class="fa fa-check"></i>Note About Unique Identifiers</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#references-2"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html"><i class="fa fa-check"></i>Week 3, Class 2: Relational Data Part 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html#working-with-relational-data"><i class="fa fa-check"></i>Working With Relational Data</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html#creating-a-network-from-relational-data"><i class="fa fa-check"></i>Creating A Network From Relational Data</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html#other-practical-questions-with-relational-data"><i class="fa fa-check"></i>Other Practical Questions With Relational Data</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html#for-the-next-week-1"><i class="fa fa-check"></i>For the Next Week</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html#references-3"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html"><i class="fa fa-check"></i>Week 4, Class 1: Network Concepts and Metrics</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#social-network-concepts-triadic-closure-transitivity-brokerage"><i class="fa fa-check"></i>Social network concepts: triadic closure, transitivity, brokerage</a>
-<ul>
-<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#triadic-closure"><i class="fa fa-check"></i>Triadic closure</a></li>
-</ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#node-level-metrics"><i class="fa fa-check"></i>Node-level metrics</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#degree"><i class="fa fa-check"></i>Degree</a></li>
@@ -289,16 +307,16 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#cliques"><i class="fa fa-check"></i>Cliques</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#community-detection-methods"><i class="fa fa-check"></i>Community Detection Methods</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#social-network-concepts-triadic-closure-transitivity-brokerage"><i class="fa fa-check"></i>Social network concepts: triadic closure, transitivity, brokerage</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#triads"><i class="fa fa-check"></i>Triads</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html"><i class="fa fa-check"></i>Week 4, Class 2: Network Analysis with R</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#introduction-3"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#network-data-structures"><i class="fa fa-check"></i>Network data structures</a>
-<ul>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#edge-lists"><i class="fa fa-check"></i>Edge lists</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#adjacency-matrices"><i class="fa fa-check"></i>Adjacency Matrices</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#network-data-structures"><i class="fa fa-check"></i>Network data structures</a></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#creating-a-network-object-in-r-from-an-edge-list"><i class="fa fa-check"></i>Creating a Network Object in R from an Edge List</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#import-network-data"><i class="fa fa-check"></i>Import Network Data</a></li>
@@ -311,17 +329,10 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#summarising-the-network-data"><i class="fa fa-check"></i>Summarising the network data</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#joining-additional-data"><i class="fa fa-check"></i>Joining additional data</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#transitivity-triads-structural-balance"><i class="fa fa-check"></i>Transitivity, Triads, structural balance</a>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#social-network-analysis-with-r"><i class="fa fa-check"></i>Social Network Analysis with R</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#triad-census"><i class="fa fa-check"></i>Triad Census</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#transitivity-triads-structural-balance"><i class="fa fa-check"></i>Transitivity, Triads, structural balance</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#group-detection"><i class="fa fa-check"></i>Group detection</a>
-<ul>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#components-1"><i class="fa fa-check"></i>Components</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#cliques-1"><i class="fa fa-check"></i>Cliques</a></li>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#community-detection"><i class="fa fa-check"></i>Community Detection</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#conclusions-1"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html"><i class="fa fa-check"></i>Week 5, Class 1: Visualising Networks with ggraph</a>
 <ul>
@@ -332,13 +343,14 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#network-visualisations-with-r-and-ggraph."><i class="fa fa-check"></i>Network Visualisations with R and ggraph.</a>
 <ul>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#network-graph-layouts"><i class="fa fa-check"></i>Network Graph Layouts</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#ggraph-and-other-tidyverse-functions"><i class="fa fa-check"></i>Ggraph and other tidyverse functions</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#add-node-labels"><i class="fa fa-check"></i>Add node labels</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#calculating-and-coloring-by-community-detection"><i class="fa fa-check"></i>Calculating and coloring by community detection</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#what-makes-a-good-network-visualisation"><i class="fa fa-check"></i>What makes a good network visualisation?</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#case-study-scientists-and-politicians"><i class="fa fa-check"></i>Case study: Scientists and Politicians</a></li>
-<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#conclusions-2"><i class="fa fa-check"></i>Conclusions</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph.html"><a href="week-5-class-1-visualising-networks-with-ggraph.html#conclusions-1"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html"><i class="fa fa-check"></i>Week 5, class 2: Other network types</a>
 <ul>
@@ -351,29 +363,35 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#the-dataset"><i class="fa fa-check"></i>The dataset</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#method"><i class="fa fa-check"></i>Method</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#conclusions-3"><i class="fa fa-check"></i>Conclusions</a></li>
-<li><a href="week-5-class-2-other-network-types.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#conclusions-2"><i class="fa fa-check"></i>Conclusions</a></li>
 <li class="chapter" data-level="" data-path="week-5-class-2-other-network-types.html"><a href="week-5-class-2-other-network-types.html#exercises-2"><i class="fa fa-check"></i>Exercises:</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html"><i class="fa fa-check"></i>Week 6, Class 1: Asking and Answering Questions with Networks</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#what-makes-a-good-question-of-a-network"><i class="fa fa-check"></i>What makes a good question of a network?</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#examples"><i class="fa fa-check"></i>Examples</a>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#introduction-4"><i class="fa fa-check"></i>Introduction</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#existing-examples"><i class="fa fa-check"></i>Existing examples</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#how-to-go-about-tackling-humanities-questions-of-networks"><i class="fa fa-check"></i>How to go about tackling humanities questions of networks?</a></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#practical-example-estc"><i class="fa fa-check"></i>Practical Example: ESTC</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#question-what-do-publishers-and-printers-cluster-by"><i class="fa fa-check"></i>Question: what do publishers and printers cluster by?</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#practical-example-determining-social-media-influence-using-pagerank"><i class="fa fa-check"></i>Practical example: Determining social media influence using PageRank</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#conclusions-3"><i class="fa fa-check"></i>Conclusions</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#using-the-data-model"><i class="fa fa-check"></i>Using the data model</a>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#practical-example-twitter-and-dealing-with-big-data"><i class="fa fa-check"></i>Practical example: Twitter (and dealing with big data)</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#filtering-your-data-using-a-pipeline"><i class="fa fa-check"></i>filtering your data using a pipeline</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#getting-network-statistics-before-and-after-filtering."><i class="fa fa-check"></i>Getting network statistics before and after filtering.</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#download-data"><i class="fa fa-check"></i>Download data</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#extend-the-data-model-by-creating-a"><i class="fa fa-check"></i>Extend the data model by creating a</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#using-visualisations"><i class="fa fa-check"></i>Using visualisations</a></li>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#network-statistics"><i class="fa fa-check"></i>Network statistics</a>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#basic-network-statistics"><i class="fa fa-check"></i>Basic network statistics</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#node-level-metrics-1"><i class="fa fa-check"></i>Node-level metrics</a>
 <ul>
-<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#getting-and-reporting-basic-global-network-metrics"><i class="fa fa-check"></i>Getting and reporting basic global network metrics</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#pagerank"><i class="fa fa-check"></i>PageRank</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#some-other-questions-you-might-ask-of-this-data"><i class="fa fa-check"></i>Some other questions you might ask of this data?</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#community-detection"><i class="fa fa-check"></i>Community Detection</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#adding-other-analysis-text-mining"><i class="fa fa-check"></i>Adding other analysis: text mining</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#exporting-the-edge-list-for-gephi."><i class="fa fa-check"></i>Exporting the edge list for Gephi.</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#conclusions-4"><i class="fa fa-check"></i>Conclusions</a></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#networks-and-regression"><i class="fa fa-check"></i>Networks and regression</a></li>
 <li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#statistical-approaches-to-networks---ergm-and-soam-rsiena"><i class="fa fa-check"></i>Statistical approaches to networks - ERGM and SOAM (RSiena)</a></li>
 </ul></li>
@@ -391,6 +409,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html"><i class="fa fa-check"></i>Week 7: Final Project</a>
 <ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#presentation"><i class="fa fa-check"></i>Presentation:</a></li>
 <li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#what-should-the-final-project-look-like"><i class="fa fa-check"></i>What should the final project look like?</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#practical-steps"><i class="fa fa-check"></i>Practical steps</a></li>
@@ -456,19 +475,20 @@ In this final example, what might the connections be?
 </details>
 <p><br></p>
 </div>
-<div id="why-use-networks" class="section level2 hasAnchor">
-<h2>Why Use Networks?<a href="week-1-class-1-course-introduction.html#why-use-networks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This is a very valid question, and there are plenty of circumstances when a network model is not the best was of representing a dataset, as we’ll learn. However, when networks are used correctly, they have a number of benefits:</p>
-<ul>
-<li><p>Networks allow us to reduce or understand <strong>complexity:</strong> we can reduce complicated data to its overall structure. Network visualisations, when used well, allow us to <strong>spot patterns</strong> and make inferences on the structure of our data.</p></li>
-<li><p>Rather than consider each individual data point as isolated, networks allow us to consider how <strong>data is interrelated</strong>, and how the relationships between nodes effect each other and the overall structure.</p></li>
-<li><p>Network techniques allow us to move <strong>beyond pairs</strong> to putting entities and their relationships in a much larger context, showing how they bridge the local and the global. They allow us to consider <strong>groups</strong> within data, particularly in communication networks.</p></li>
-<li><p>Networks can point to data subsets worth investigating in more detail: allowing us to move from <strong>close to distant reading</strong>, and in-between.</p></li>
-</ul>
-</div>
 <div id="networks-in-the-humanities" class="section level2 hasAnchor">
 <h2>Networks in the Humanities<a href="week-1-class-1-course-introduction.html#networks-in-the-humanities" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Networks have long been used to understand aspects of historical or cultural change. In below video, accompanying a <a href="https://www.science.org/doi/10.1126/science.1240064">paper in <em>Science</em></a>, researchers graphed places of birth and death—taken from Wikidata—as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.</p>
+<p>Networks have long been used to understand aspects of historical or cultural change. Some typical uses of complex networks in humanities subjects include <a href="https://model-articles.rrchnm.org/articles/midura/">spatial networks</a>, <a href="https://www.frontiersin.org/articles/10.3389/fdigh.2017.00017/full">line of sight</a> or <a href="https://academic.oup.com/book/40384/chapter-abstract/347130019?redirectedFrom=fulltext">pottery similarity networks</a> in archaeology, <a href="https://www.landesgeschichte.uni-goettingen.de/handelsstrassen/index.php">historic road networks</a>, and <a href="http://www.martingrandjean.ch/network-visualization-shakespeare/">character networks in plays</a>. In this course, we’ll mostly work with networks as tools for <strong>descriptive</strong> and <strong>exploratory</strong> data analysis. But network science also has wide uses in <strong>statistical and predictive modelling</strong>.</p>
+<div id="some-examples" class="section level3 hasAnchor">
+<h3>Some Examples<a href="week-1-class-1-course-introduction.html#some-examples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before we get in to some of the details, it’s worth going through a few examples of interesting projects which have combined humanities data with network science.</p>
+<div id="tudor-networks" class="section level4 hasAnchor">
+<h4>Tudor networks<a href="week-1-class-1-course-introduction.html#tudor-networks" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>As found in your reading this week, Ahnert and Ahnert used a number of network measurements to make a ‘network fingerprint’ for individuals in an archive of Tudor state papers. Using this measure, they were able to identify or confirm spies and collaborators. Specifically, they looked at individuals with a high betweenness (a bridging measurement) in comparison to their degree (measuring their overall connections): represented by the points underneath the trendline in the graph below. The biggest outlier is Jon Snowden: an alias of John Cecil, a Catholic priest in exile in Elizabeth I’s regime. Looking at others with a similar profile revealed other conspirators.</p>
+<p><img src="images/Screenshot%202022-10-03%20at%2011.42.11.png" /></p>
+</div>
+<div id="networking-cultural-history" class="section level4 hasAnchor">
+<h4>Networking Cultural History<a href="week-1-class-1-course-introduction.html#networking-cultural-history" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In below video, accompanying a <a href="https://www.science.org/doi/10.1126/science.1240064">paper in <em>Science</em></a>, researchers graphed places of birth and death—taken from Wikidata—as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.</p>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <p><br></p>
@@ -479,38 +499,28 @@ Given that the information is taken from Wikidata, what problems could you envis
 <p>While Wikidata is a large data source, it is obviously very partial and has a particular focus, for example in favour of white, male, Western Europeans. The study may just replicate the biases of Wikidata itself, hiding the important cultural influences on the west, from other parts of the world.</p>
 </details>
 <p><br></p>
-<p>Other typical uses of complex networks in humanities subjects include <a href="https://model-articles.rrchnm.org/articles/midura/">spatial networks</a>, <a href="https://www.frontiersin.org/articles/10.3389/fdigh.2017.00017/full">line of sight</a> or <a href="https://academic.oup.com/book/40384/chapter-abstract/347130019?redirectedFrom=fulltext">pottery similarity networks</a> in archaeology, <a href="https://www.landesgeschichte.uni-goettingen.de/handelsstrassen/index.php">historic road networks</a>, and <a href="http://www.martingrandjean.ch/network-visualization-shakespeare/">character networks in plays</a>. In this course, we’ll mostly work with networks as tools for <strong>descriptive</strong> and <strong>exploratory</strong> data analysis. But network science also has wide uses in <strong>statistical and predictive modelling</strong>.</p>
-<div id="some-examples" class="section level3 hasAnchor">
-<h3>Some Examples<a href="week-1-class-1-course-introduction.html#some-examples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Before we get in to some of the details, it’s worth going through a few examples of interesting projects which have combined humanities data with network science.</p>
-<div id="tudor-networks" class="section level4 hasAnchor">
-<h4>Tudor networks<a href="week-1-class-1-course-introduction.html#tudor-networks" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Ahnert and Ahnert used a number of network measurements to make a ‘network fingerprint’ for individuals in an archive of Tudor state papers. Using this measure fingerprint, they were able to identify or confirm spies and collaborators. Specifically, they looked at individuals with a high betweenness (a bridging measurement) in comparison to their degree (measuring their overall connections): the points underneath the trendline in the graph below. The biggest outlier is Jon Snowden: an alias of John Cecil, a Catholic priest in exile in Elizabeth I’s regime. Looking at others with a similar profile revealed other conspirators.</p>
-<p><img src="images/Screenshot%202022-10-03%20at%2011.42.11.png" /></p>
 </div>
 <div id="using-multi-layered-networks-to-disclose-books-in-the-republic-of-letters" class="section level4 hasAnchor">
 <h4><strong>Using Multi-Layered Networks to Disclose Books in the Republic of Letters</strong><a href="week-1-class-1-course-introduction.html#using-multi-layered-networks-to-disclose-books-in-the-republic-of-letters" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>This project made a ‘multi-layer network’ by combining a network of letters with a network of book mentions.</p>
+<p>In <a href="https://jhnr.uni.lu/index.php/jhnr/article/view/7">this project</a>, Ingeborg van Vugt made a ‘multi-layer network’ by combining a network of letters with a network of book mentions. The paper compared the networks of the Dutch philologist, Nicolaas Heinsius, and the Florentine librarian Antonio Magliabechi. Dynamic visualisations were made using the Nodegoat software. One key finding was that having access to books turned these people into experts - scholars would send their books to them, and then in turn they would use this information to inform their correspondents. Van Vugt showed that these two separate spheres (books and correspondence) were related to each other, that a book dedication could influence whether two individuals would write to each other, and so forth.</p>
 <p><img src="images/Screenshot%202022-10-03%20at%2011.23.15.png" width="500" /></p>
 </div>
 <div id="six-degrees-of-francis-bacon" class="section level4 hasAnchor">
 <h4>Six Degrees of Francis Bacon<a href="week-1-class-1-course-introduction.html#six-degrees-of-francis-bacon" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The Six Degrees of Francis Bacon project used co-occurrence networks (a technique we’ll learn about later) to infer links between early modern individuals. Specifically, they looked for co-occurrence of individuals in the Oxford Dictionary of National Biography, inferring links if two individuals were mentioned together more than was statistically significant. This data was then turned into an interactive social network.</p>
+<p>The <a href="http://www.sixdegreesoffrancisbacon.com/">Six Degrees of Francis Bacon</a> project used co-occurrence networks (a technique we’ll learn about later) to infer links between early modern individuals. Specifically, they looked for co-occurrences of individuals in the Oxford Dictionary of National Biography, inferring links if two individuals were mentioned together more than was statistically significant. This data was then turned into an interactive social network.</p>
+<p>Rather than answering a specific question, the Six Degrees project is a good example of how we can use networks as exploratory tools. The interactive site can be used to explore patterns and groups who were likely connected, and can be used as a starting-point to understanding the social relations of a figure of interest.</p>
 <p><img src="images/Screenshot%202022-10-03%20at%2011.26.54.png" width="600" /></p>
 </div>
 <div id="mapping-the-digital-humanities-community-of-twitter" class="section level4 hasAnchor">
 <h4>Mapping the digital humanities community of Twitter<a href="week-1-class-1-course-introduction.html#mapping-the-digital-humanities-community-of-twitter" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><img src="images/Screenshot%202022-10-03%20at%2011.46.29.png" /></p>
-<ul>
-<li><p>Measured the centrality of a group of 2,500 Twitter users self-identified as digital humanities practioners</p></li>
-<li><p>Looked a separate communities of languages, French was particularly isolated.</p></li>
-</ul>
+<p>Network analysis has naturally been used extensively to understand the structure of social networks and sites like Reddit. In <a href="https://halshs.archives-ouvertes.fr/hal-01517493">this study</a>, the authors measured the centrality of a group of 2,500 Twitter users self-identified as digital humanities practioners. They found that there were separate communities of languages, and that French was particularly isolated.</p>
 </div>
 </div>
 </div>
 <div id="graph-theory" class="section level2 hasAnchor">
 <h2>Graph Theory<a href="week-1-class-1-course-introduction.html#graph-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Representing data in this way allows us to use the mathematics of <em>graph theory</em> to find out things about it. The origins of this date back to the 18th century, and the mathematician Leonard Euler. The city of Königsberg (now Kaliningrad) was built on a river with two islands and a system (a network, perhaps?) of seven bridges connecting them. The inhabitants of the city had long wondered if there it was possible to devise a route which would cross each bridge exactly once.</p>
+<p>Representing data in this way allows us to use the mathematics of <em>graph theory</em> to analyse and explore it. The origins of graph theory date back to the 18th century, and the mathematician Leonard Euler. The city of Königsberg (now Kaliningrad) was built on a river with two islands and a system (a network, perhaps?) of seven bridges connecting them. The inhabitants of the city had long wondered if there it was possible to devise a route which would cross each bridge exactly once.</p>
 <p>Euler solved this problem by abstracting the bridge system into what we now call a graph: a structure with nodes and edges. He used this approach to prove that the path was only possible if the graph had exactly zero or two nodes with a <em>degree</em> (a count of the total connections) with an odd number.</p>
 <p><img src="images/Screenshot%202022-09-26%20at%2011.25.49.png" /></p>
 <p>This process: abstracting a system to its connections, and devising mathematical rules to understand it, forms the basis of modern graph theory. Graph theory has methods to perform all sorts of calculations on the network: both on the individual nodes (for example to find the most important nodes by various measurements), and on the network as a whole. Rather than think about each individual relationship separately, a network model means that we can understand some more about how each part is interrelated, how the structure itself is important, and how one node might affect another in complex ways.</p>
@@ -522,17 +532,17 @@ Given that the information is taken from Wikidata, what problems could you envis
 <img src="images/shouldyoudonetworkanalysis_xxl.jpg" width="700" alt="" />
 <p class="caption">Almost anything can be a network, but should you use network analysis? Here is a handy flowchart which might help you decide.</p>
 </div>
-<p>At the same time, network analysis does have plenty to offer the digital humanist:</p>
+<p>There are plenty of circumstances when a network model is not the best was of representing a dataset, as we’ll learn. However, representing data as a network has a number of unique benefits:</p>
 <ul>
-<li><p>Humanities data is messy and complex, and network analysis deals well with complexity. The ubiquitous ‘hairball graph’, for example, might in some cases be the best way to get an overview of the structure of a large set of humanities data.</p></li>
-<li><p>Human relationships are naturally interrelated. The reason two individuals might exchange correspondence is not generally random, but strongly dependent on a wider network, for example whether they have friends in common. Networks can help to untangle these dependencies.</p></li>
-<li><p>Network analysis doesn’t always provide the answers, but it can be a way to filter down to particularly important individuals or relationships in a dataset, worthy of a further look with your humanities hat on.</p></li>
-<li><p>There are lots of other ways the tools of networks are useful, where understanding the network itself is not the end goal. For example, knowledge graphs, or certain techniques for information retrieval.</p></li>
+<li><p>Networks allow us to reduce or understand <strong>complexity:</strong> we can reduce complicated data to its overall structure. Network visualisations, when used well, allow us to <strong>spot patterns</strong> and make inferences on the structure of our data.</p></li>
+<li><p>Rather than consider each individual data point as isolated, networks allow us to consider how <strong>data is interrelated</strong>, and how the relationships between nodes effect each other and the overall structure.</p></li>
+<li><p>Network techniques allow us to move <strong>beyond pairs</strong> to putting entities and their relationships in a much larger context, showing how they bridge the local and the global. They allow us to consider <strong>groups</strong> within data, particularly in communication networks.</p></li>
+<li><p>Networks can point to data subsets worth investigating in more detail: allowing us to move from <strong>close to distant reading</strong>, and in-between.</p></li>
 </ul>
 </div>
 <div id="network-basics" class="section level2 hasAnchor">
 <h2>Network Basics<a href="week-1-class-1-course-introduction.html#network-basics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This section introduces the fundamental basics of network analysis, including its key components, and various network types.</p>
+<p>This section introduces the fundamental ideas behind network analysis, including its key components, and various network types.</p>
 <div id="nodes-and-edges" class="section level3 hasAnchor">
 <h3>Nodes and Edges<a href="week-1-class-1-course-introduction.html#nodes-and-edges" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As already mentioned, a network is a graph consisting of nodes and edges (connections). Typically (though not always), the edges are <em>pairwise,</em> meaning they run between a pair of nodes. These are often represented visually as points (the nodes) and lines (the edges), like this:</p>
@@ -545,8 +555,7 @@ Given that the information is taken from Wikidata, what problems could you envis
 </div>
 <div id="edge-direction" class="section level3 hasAnchor">
 <h3>Edge direction<a href="week-1-class-1-course-introduction.html#edge-direction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Edges can also have <em>directions,</em> meaning that the incoming and outgoing links are counted separately: for example we might count incoming and outgoing letters separately.</p>
-<p><br></p>
+<p>Edges can also have <em>directions,</em> meaning that the incoming and outgoing links are counted separately: for example we might count incoming and outgoing letters separately. <br></p>
 <details>
 <summary>
 What might this letter count tell us about a relationship in a network? What potential danger is there is reading something from this?
@@ -554,7 +563,7 @@ What might this letter count tell us about a relationship in a network? What pot
 <p>It might be worth considering how the letter network was constructed. Often they are reconstructed from personal letter archives, which tend to be collections of mostly incoming letters to a single person or family. In that case, it’s likely the difference between incoming and outgoing letters is not statistically significant, but simpy a product of the method of data collection.</p>
 </details>
 <p><br></p>
-<hr />
+<p>Another typical illustration of directed and undirected networks is the difference between Twitter and Facebook. Facebook friends must be reciprocated - both people have to accept the friend request, meaning that a Facebook network is undirected. Twitter, on the other hand, is a directed network, because an individual can have separate <em>follower</em> and <em>following</em> numbers.</p>
 </div>
 <div id="weighted-and-directed" class="section level3 hasAnchor">
 <h3>Weighted and directed<a href="week-1-class-1-course-introduction.html#weighted-and-directed" class="anchor-section" aria-label="Anchor link to header"></a></h3>

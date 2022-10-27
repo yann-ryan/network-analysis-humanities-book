@@ -36,21 +36,25 @@ The connections between web pages are generally the hyperlinks: the system of li
 
 <br>
 
-## Why Use Networks?
-
-This is a very valid question, and there are plenty of circumstances when a network model is not the best was of representing a dataset, as we'll learn. However, when networks are used correctly, they have a number of benefits:
-
--   Networks allow us to reduce or understand **complexity:** we can reduce complicated data to its overall structure. Network visualisations, when used well, allow us to **spot patterns** and make inferences on the structure of our data.
-
--   Rather than consider each individual data point as isolated, networks allow us to consider how **data is interrelated**, and how the relationships between nodes effect each other and the overall structure.
-
--   Network techniques allow us to move **beyond pairs** to putting entities and their relationships in a much larger context, showing how they bridge the local and the global. They allow us to consider **groups** within data, particularly in communication networks.
-
--   Networks can point to data subsets worth investigating in more detail: allowing us to move from **close to distant reading**, and in-between.
 
 ## Networks in the Humanities
 
-Networks have long been used to understand aspects of historical or cultural change. In below video, accompanying a [paper in *Science*](https://www.science.org/doi/10.1126/science.1240064), researchers graphed places of birth and death---taken from Wikidata---as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.
+Networks have long been used to understand aspects of historical or cultural change. Some typical uses of complex networks in humanities subjects include [spatial networks](https://model-articles.rrchnm.org/articles/midura/), [line of sight](https://www.frontiersin.org/articles/10.3389/fdigh.2017.00017/full) or [pottery similarity networks](https://academic.oup.com/book/40384/chapter-abstract/347130019?redirectedFrom=fulltext) in archaeology, [historic road networks](https://www.landesgeschichte.uni-goettingen.de/handelsstrassen/index.php), and [character networks in plays](http://www.martingrandjean.ch/network-visualization-shakespeare/). In this course, we'll mostly work with networks as tools for **descriptive** and **exploratory** data analysis. But network science also has wide uses in **statistical and predictive modelling**.
+
+### Some Examples
+
+Before we get in to some of the details, it's worth going through a few examples of interesting projects which have combined humanities data with network science.
+
+#### Tudor networks
+
+As found in your reading this week, Ahnert and Ahnert used a number of network measurements to make a 'network fingerprint' for individuals in an archive of Tudor state papers. Using this measure, they were able to identify or confirm spies and collaborators. Specifically, they looked at individuals with a high betweenness (a bridging measurement) in comparison to their degree (measuring their overall connections): represented by the points underneath the trendline in the graph below. The biggest outlier is Jon Snowden: an alias of John Cecil, a Catholic priest in exile in Elizabeth I's regime. Looking at others with a similar profile revealed other conspirators.
+
+![](images/Screenshot%202022-10-03%20at%2011.42.11.png)
+
+
+#### Networking Cultural History
+
+In below video, accompanying a [paper in *Science*](https://www.science.org/doi/10.1126/science.1240064), researchers graphed places of birth and death---taken from Wikidata---as nodes and edges, using it as a way to trace the movement of culture from one area of the world to another, and how this changed over time.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 
@@ -68,27 +72,17 @@ While Wikidata is a large data source, it is obviously very partial and has a pa
 
 <br>
 
-Other typical uses of complex networks in humanities subjects include [spatial networks](https://model-articles.rrchnm.org/articles/midura/), [line of sight](https://www.frontiersin.org/articles/10.3389/fdigh.2017.00017/full) or [pottery similarity networks](https://academic.oup.com/book/40384/chapter-abstract/347130019?redirectedFrom=fulltext) in archaeology, [historic road networks](https://www.landesgeschichte.uni-goettingen.de/handelsstrassen/index.php), and [character networks in plays](http://www.martingrandjean.ch/network-visualization-shakespeare/). In this course, we'll mostly work with networks as tools for **descriptive** and **exploratory** data analysis. But network science also has wide uses in **statistical and predictive modelling**.
-
-### Some Examples
-
-Before we get in to some of the details, it's worth going through a few examples of interesting projects which have combined humanities data with network science.
-
-#### Tudor networks
-
-Ahnert and Ahnert used a number of network measurements to make a 'network fingerprint' for individuals in an archive of Tudor state papers. Using this measure fingerprint, they were able to identify or confirm spies and collaborators. Specifically, they looked at individuals with a high betweenness (a bridging measurement) in comparison to their degree (measuring their overall connections): the points underneath the trendline in the graph below. The biggest outlier is Jon Snowden: an alias of John Cecil, a Catholic priest in exile in Elizabeth I's regime. Looking at others with a similar profile revealed other conspirators.
-
-![](images/Screenshot%202022-10-03%20at%2011.42.11.png)
-
 #### **Using Multi-Layered Networks to Disclose Books in the Republic of Letters**
 
-This project made a 'multi-layer network' by combining a network of letters with a network of book mentions.
+In [this project](https://jhnr.uni.lu/index.php/jhnr/article/view/7), Ingeborg van Vugt made a 'multi-layer network' by combining a network of letters with a network of book mentions. The paper compared the networks of the Dutch philologist, Nicolaas Heinsius, and the Florentine librarian Antonio Magliabechi. Dynamic visualisations were made using the Nodegoat software. One key finding was that having access to books turned these people into experts - scholars would send their books to them, and then in turn they would use this information to inform their correspondents. Van Vugt showed that these two separate spheres (books and correspondence) were related to each other, that a book dedication could influence whether two individuals would write to each other, and so forth. 
 
 ![](images/Screenshot%202022-10-03%20at%2011.23.15.png){width="500"}
 
 #### Six Degrees of Francis Bacon
 
-The Six Degrees of Francis Bacon project used co-occurrence networks (a technique we'll learn about later) to infer links between early modern individuals. Specifically, they looked for co-occurrence of individuals in the Oxford Dictionary of National Biography, inferring links if two individuals were mentioned together more than was statistically significant. This data was then turned into an interactive social network.
+The [Six Degrees of Francis Bacon](http://www.sixdegreesoffrancisbacon.com/) project used co-occurrence networks (a technique we'll learn about later) to infer links between early modern individuals. Specifically, they looked for co-occurrences of individuals in the Oxford Dictionary of National Biography, inferring links if two individuals were mentioned together more than was statistically significant. This data was then turned into an interactive social network.
+
+Rather than answering a specific question, the Six Degrees project is a good example of how we can use networks as exploratory tools. The interactive site can be used to explore patterns and groups who were likely connected, and can be used as a starting-point to understanding the social relations of a figure of interest. 
 
 ![](images/Screenshot%202022-10-03%20at%2011.26.54.png){width="600"}
 
@@ -96,13 +90,11 @@ The Six Degrees of Francis Bacon project used co-occurrence networks (a techniqu
 
 ![](images/Screenshot%202022-10-03%20at%2011.46.29.png)
 
--   Measured the centrality of a group of 2,500 Twitter users self-identified as digital humanities practioners
-
--   Looked a separate communities of languages, French was particularly isolated.
+Network analysis has naturally been used extensively to understand the structure of social networks and sites like Reddit. In [this study](https://halshs.archives-ouvertes.fr/hal-01517493), the authors measured the centrality of a group of 2,500 Twitter users self-identified as digital humanities practioners. They found that there were separate communities of languages, and that French was particularly isolated.
 
 ## Graph Theory
 
-Representing data in this way allows us to use the mathematics of *graph theory* to find out things about it. The origins of this date back to the 18th century, and the mathematician Leonard Euler. The city of Königsberg (now Kaliningrad) was built on a river with two islands and a system (a network, perhaps?) of seven bridges connecting them. The inhabitants of the city had long wondered if there it was possible to devise a route which would cross each bridge exactly once.
+Representing data in this way allows us to use the mathematics of *graph theory* to analyse and explore it. The origins of graph theory date back to the 18th century, and the mathematician Leonard Euler. The city of Königsberg (now Kaliningrad) was built on a river with two islands and a system (a network, perhaps?) of seven bridges connecting them. The inhabitants of the city had long wondered if there it was possible to devise a route which would cross each bridge exactly once.
 
 Euler solved this problem by abstracting the bridge system into what we now call a graph: a structure with nodes and edges. He used this approach to prove that the path was only possible if the graph had exactly zero or two nodes with a *degree* (a count of the total connections) with an odd number.
 
@@ -116,19 +108,19 @@ Network analysis has become one of the most popular (and perhaps one of the most
 
 ![Almost anything can be a network, but should you use network analysis? Here is a handy flowchart which might help you decide.](images/shouldyoudonetworkanalysis_xxl.jpg){width="700"}
 
-At the same time, network analysis does have plenty to offer the digital humanist:
+There are plenty of circumstances when a network model is not the best was of representing a dataset, as we'll learn. However, representing data as a network has a number of unique benefits:
 
--   Humanities data is messy and complex, and network analysis deals well with complexity. The ubiquitous 'hairball graph', for example, might in some cases be the best way to get an overview of the structure of a large set of humanities data.
+-   Networks allow us to reduce or understand **complexity:** we can reduce complicated data to its overall structure. Network visualisations, when used well, allow us to **spot patterns** and make inferences on the structure of our data.
 
--   Human relationships are naturally interrelated. The reason two individuals might exchange correspondence is not generally random, but strongly dependent on a wider network, for example whether they have friends in common. Networks can help to untangle these dependencies.
+-   Rather than consider each individual data point as isolated, networks allow us to consider how **data is interrelated**, and how the relationships between nodes effect each other and the overall structure.
 
--   Network analysis doesn't always provide the answers, but it can be a way to filter down to particularly important individuals or relationships in a dataset, worthy of a further look with your humanities hat on.
+-   Network techniques allow us to move **beyond pairs** to putting entities and their relationships in a much larger context, showing how they bridge the local and the global. They allow us to consider **groups** within data, particularly in communication networks.
 
--   There are lots of other ways the tools of networks are useful, where understanding the network itself is not the end goal. For example, knowledge graphs, or certain techniques for information retrieval.
+-   Networks can point to data subsets worth investigating in more detail: allowing us to move from **close to distant reading**, and in-between.
 
 ## Network Basics
 
-This section introduces the fundamental basics of network analysis, including its key components, and various network types.
+This section introduces the fundamental ideas behind network analysis, including its key components, and various network types.
 
 ### Nodes and Edges
 
@@ -144,9 +136,7 @@ These connections can often have a *weight* attached, for example the number of 
 
 ### Edge direction
 
-Edges can also have *directions,* meaning that the incoming and outgoing links are counted separately: for example we might count incoming and outgoing letters separately.
-
-<br>
+Edges can also have *directions,* meaning that the incoming and outgoing links are counted separately: for example we might count incoming and outgoing letters separately. <br>
 
 <details>
 
@@ -158,7 +148,7 @@ It might be worth considering how the letter network was constructed. Often they
 
 <br>
 
-------------------------------------------------------------------------
+Another typical illustration of directed and undirected networks is the difference between Twitter and Facebook. Facebook friends must be reciprocated - both people have to accept the friend request, meaning that a Facebook network is undirected. Twitter, on the other hand, is a directed network, because an individual can have separate *follower* and *following* numbers.
 
 ### Weighted and directed
 

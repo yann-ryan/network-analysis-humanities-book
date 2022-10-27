@@ -6,6 +6,20 @@ There are two stages to the final project:
 
 -   The final project itself is due on Friday, December 23.
 
+## Presentation:
+
+A good presentation should try and cover the following:
+
+Outline your research question
+
+What are the steps you need to carry out?
+
+How will you get your data? What size is the dataset, is it manageable with your resources, how long will it take to put together (for example if you are hydrating tweets, how long will this take?)
+
+What expertise do you need, what do you have and who will you ask for help?
+
+What problems might arise and how are you going to deal with them?
+
 ## What should the final project look like?
 
 The final project tasks you with using your network data and related data model to tackle an interesting research questions. The project should take the form of an R Markdown notebook, as you have learned to create in the first few weeks of the course. An R Markdown document is a format which allows you to combine text, chunks of code, and the output of those chunks. You'll write up this document and then turn it into a HTML page - a process known as 'knitting'.
@@ -25,6 +39,8 @@ Include the original markdown, all data used, and the knitted html version.
 Some examples of literate programming final projects
 
 ## R Markdown
+
+The final project takes the form of a **notebook** - think of this as a modern-day 'lab notebook', where you share the steps you carried out, but also what you were thinking when you did them, the rationale behind them, and the conclusions you came to. This allows you to communicate your findings, and others to reproduce your steps, but also understand your thought processes and why you took the decisions you did.
 
 We have already gone through R Markdown in detail, but it has a number of other features/packages you can use if you want to extend your final project. The packages [VisNetwork](https://datastorm-open.github.io/visNetwork/) and [Plotly](https://plotly.com/r/) allow you to include interactive visualisations within the report. The [DT](https://rstudio.github.io/DT/) package allows you to do the same for tables. These elements are not essential, but can help to communicate your results to the reader in some cases.
 
