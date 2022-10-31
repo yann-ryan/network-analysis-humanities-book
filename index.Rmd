@@ -54,14 +54,41 @@ Assessment is the following:
 -   Completion of weekly assignments (pass/fail, carried out during
     class and finished afterwards if necessary).
 
--   Presentation on final project (1/5 of the grade)**, given on
+-   Presentation on final project (1/5 of the grade), **given on
     Wednesday or Friday of the final week.**
 
--   Final project (4/5 of the grade, s**ubmitted on January 17 at the
+-   Final project (4/5 of the grade, **submitted on January 17 at the
     latest.**
 
 Full details on the [course page on Studies
 Service](https://studies.helsinki.fi/courses/cur/hy-opt-cur-2223-7c9cdedc-fc7b-4e66-b793-1dbe0db868b7)
+
+
+## Final Project
+
+The final project is due on January 17.
+
+You can start on the project as early as you like. To help you with your
+project, you'll present your ideas and proposed methods in the final
+week of the course. At this point, you should hopefully have some
+preliminary research and outputs, or at the least a plan for your
+project and how it will come together, which you will communicate to the
+group in a presentation. Because of this, it's recommended to begin
+preliminary work on your project a couple of weeks before this.
+
+You'll also be asked to give feedback and ask questions of the other
+class participants, with the aim of helping their own projects.
+
+The final project tasks you with using your network data and related
+data model to carry out an analysis. The project should take the form of
+an R Markdown notebook, which you'll learn how to create over the next
+few weeks. An R Markdown document is a format which allows you to
+combine text, chunks of code, and the output of those chunks. You'll
+write up this document and then turn it into a HTML page - a process
+known as 'knitting'.
+
+When you're finished, upload to the [course Moodle area](https://moodle.helsinki.fi/course/view.php?id=52795) before deadline.
+
 
 ## Reading
 
@@ -145,29 +172,6 @@ bibliography](https://historicalnetworkresearch.org/bibliography/) and
 [journal](https://jhnr.uni.lu/index.php/jhnr) by the Historical Network
 Research Community.
 
-## Final Project
-
-The final project is due on December 23.
-
-You can start on the project as early as you like. To help you with your
-project, you'll present your ideas and proposed methods in the final
-week of the course. At this point, you should hopefully have some
-preliminary research and outputs, or at the least a plan for your
-project and how it will come together, which you will communicate to the
-group in a presentation. Because of this, it's recommended to begin
-preliminary work on your project a couple of weeks before this.
-
-You'll also be asked to give feedback and ask questions of the other
-class participants, with the aim of helping their own projects.
-
-The final project tasks you with using your network data and related
-data model to carry out an analysis. The project should take the form of
-an R Markdown notebook, which you'll learn how to create over the next
-few weeks. An R Markdown document is a format which allows you to
-combine text, chunks of code, and the output of those chunks. You'll
-write up this document and then turn it into a HTML page - a process
-known as 'knitting'.
-
 ## Slides
 
 There are also a set of slides for each week, which you can access here:
@@ -178,14 +182,14 @@ There are also a set of slides for each week, which you can access here:
     2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/1-2-intro-to-r.html)
 
 -   Week 2: [class
-    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/2-1-network-data.html),
+    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/2-1-acquiring-networks.html),
     [class
-    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/2-2-data-cleaning.html)
+    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/2-2-data-harmonisation.html)
 
 -   Week 3: [class
-    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/3-1-fundamentals-data-modelling.html),
+    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/3-1-data-modeling.html),
     [class
-    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/3-2-building-data-model.html)
+    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/3-2-relational-data.html)
 
 -   Week 4: [class
     1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/4-1-fundamentals.html),
