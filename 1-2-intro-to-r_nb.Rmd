@@ -223,6 +223,13 @@ Just fruit with at least 5 pieces:
 filter(fruit_data, amount >=5)
 ```
 
+You can also filter with multiple terms by using a vector (as above), and the special command `%in%`:
+
+```{r}
+filter(fruit_data, colour %in% c('red', 'green'))
+```
+
+
 ### slice_max(), slice_min()
 
 These functions return the top or bottom number of rows, ordered by the data in a particular column. 

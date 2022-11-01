@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-10-31" />
+<meta name="date" content="2022-11-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -464,19 +464,19 @@ div.csl-indent {
 <div id="import-network-data" class="section level3 hasAnchor">
 <h3>Import Network Data<a href="week-4-class-2-network-analysis-with-r.html#import-network-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The workflow uses a number of R packages. In the CSC Notebooks environment, these have already been installed and can be loaded using the commands below. If you are doing this on a local machine, you may have to install them first using the command <code>install.packages()</code>, with the package name specified as a string, for example <code>install.packages('igraph')</code>.</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="week-4-class-2-network-analysis-with-r.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb156-2"><a href="week-4-class-2-network-analysis-with-r.html#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb156-3"><a href="week-4-class-2-network-analysis-with-r.html#cb156-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygraph)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="week-4-class-2-network-analysis-with-r.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb158-2"><a href="week-4-class-2-network-analysis-with-r.html#cb158-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
+<span id="cb158-3"><a href="week-4-class-2-network-analysis-with-r.html#cb158-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygraph)</span></code></pre></div>
 <p>In this class, we’ll use a dataset derived from the English State Papers. It takes the form of a .csv containing the information on the author, recipient, and date of sending for a small sample of state letters sent between 1670 and 1672.</p>
 <p>Read the file into R with the <code>read_csv()</code> function from a previous lesson:</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="week-4-class-2-network-analysis-with-r.html#cb157-1" aria-hidden="true" tabindex="-1"></a>letters <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;letter_data.csv&quot;</span>, <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">.default =</span> <span class="st">&quot;c&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="week-4-class-2-network-analysis-with-r.html#cb159-1" aria-hidden="true" tabindex="-1"></a>letters <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;letter_data.csv&quot;</span>, <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">.default =</span> <span class="st">&quot;c&quot;</span>))</span></code></pre></div>
 <p>The letters dataset is a simple dataframe. Each row represents a letter record, and has a unique ID. Essentially, each row is a record of who the author and recipient of the letter. Each of these senders and recipients also have both a unique ID, and the original name of the letter writer and sender. The unique ID is used because it’s quite likely that the names are not unique, and the network could combine two nodes with the same name together, for example.</p>
 <p>This is used to construct an edge list. If you have multiple letters between individuals, you can count them and use as a weight in the network, or you can ignore it. This is done with <code>tidyverse</code> commands we learned previously: <code>group_by()</code> and <code>tally()</code>, changing the name of the new column to ‘weight’.</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="week-4-class-2-network-analysis-with-r.html#cb158-1" aria-hidden="true" tabindex="-1"></a>edge_list <span class="ot">=</span> letters <span class="sc">%&gt;%</span> </span>
-<span id="cb158-2"><a href="week-4-class-2-network-analysis-with-r.html#cb158-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(from_id, to_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb158-3"><a href="week-4-class-2-network-analysis-with-r.html#cb158-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(<span class="at">name =</span> <span class="st">&#39;weight&#39;</span>)</span>
-<span id="cb158-4"><a href="week-4-class-2-network-analysis-with-r.html#cb158-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb158-5"><a href="week-4-class-2-network-analysis-with-r.html#cb158-5" aria-hidden="true" tabindex="-1"></a>edge_list</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="week-4-class-2-network-analysis-with-r.html#cb160-1" aria-hidden="true" tabindex="-1"></a>edge_list <span class="ot">=</span> letters <span class="sc">%&gt;%</span> </span>
+<span id="cb160-2"><a href="week-4-class-2-network-analysis-with-r.html#cb160-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(from_id, to_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb160-3"><a href="week-4-class-2-network-analysis-with-r.html#cb160-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(<span class="at">name =</span> <span class="st">&#39;weight&#39;</span>)</span>
+<span id="cb160-4"><a href="week-4-class-2-network-analysis-with-r.html#cb160-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb160-5"><a href="week-4-class-2-network-analysis-with-r.html#cb160-5" aria-hidden="true" tabindex="-1"></a>edge_list</span></code></pre></div>
 <pre><code>## # A tibble: 364 × 3
 ## # Groups:   from_id [198]
 ##    from_id                 to_id                   weight
@@ -498,10 +498,10 @@ div.csl-indent {
 <h3>Turn the edge list into a tbl_graph<a href="week-4-class-2-network-analysis-with-r.html#turn-the-edge-list-into-a-tbl_graph" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Next transform the edge list into a network object called a tbl_graph, using <a href="https://www.data-imaginist.com/2017/introducing-tidygraph/">tidygraph</a>. A tbl_graph is a graph object which can be manipulated using tidyverse grammar. This means you can create a network and then use a range of standard data analysis functions on it as needed.</p>
 <p>Use <code>as_tbl_graph()</code> to turn the edge list into a network. The first two columns will be taken as the from and to data, and any additional columns added as attributes. An important option is the <code>directed =</code> argument. This will specify whether the network is directed (the path goes from the first column to the second) or undirected. Because this network is inherently directed (a letter is sent from one person to another), we use <code>directed = TRUE</code>. In many cases, the network will be undirected, and this should be specified using <code>directed = FALSE</code>.</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="week-4-class-2-network-analysis-with-r.html#cb160-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="ot">=</span> edge_list <span class="sc">%&gt;%</span> </span>
-<span id="cb160-2"><a href="week-4-class-2-network-analysis-with-r.html#cb160-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>(<span class="at">directed =</span> T)</span>
-<span id="cb160-3"><a href="week-4-class-2-network-analysis-with-r.html#cb160-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb160-4"><a href="week-4-class-2-network-analysis-with-r.html#cb160-4" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="week-4-class-2-network-analysis-with-r.html#cb162-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="ot">=</span> edge_list <span class="sc">%&gt;%</span> </span>
+<span id="cb162-2"><a href="week-4-class-2-network-analysis-with-r.html#cb162-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>(<span class="at">directed =</span> T)</span>
+<span id="cb162-3"><a href="week-4-class-2-network-analysis-with-r.html#cb162-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-4"><a href="week-4-class-2-network-analysis-with-r.html#cb162-4" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph</span></code></pre></div>
 <pre><code>## # A tbl_graph: 248 nodes and 364 edges
 ## #
 ## # A directed simple graph with 6 components
@@ -525,8 +525,8 @@ div.csl-indent {
 ## 3     2   199      1
 ## # … with 361 more rows</code></pre>
 <p>The tbl_graph is an object containing two linked tables, one for the edges and one for the nodes. You can access each of the tables using the function <code>activate(nodes)</code> or <code>activate(edges)</code>. The active table is listed first and has the word ‘active’ in the description.</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="week-4-class-2-network-analysis-with-r.html#cb162-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb162-2"><a href="week-4-class-2-network-analysis-with-r.html#cb162-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(edges)</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="week-4-class-2-network-analysis-with-r.html#cb164-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb164-2"><a href="week-4-class-2-network-analysis-with-r.html#cb164-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(edges)</span></code></pre></div>
 <pre><code>## # A tbl_graph: 248 nodes and 364 edges
 ## #
 ## # A directed simple graph with 6 components
@@ -550,9 +550,9 @@ div.csl-indent {
 ## 3 E000312-S012741-T000000
 ## # … with 245 more rows</code></pre>
 <p>You can use many of the tidyverse commands we learned in the earlier lesson on this object, for example filtering to include only edges with a weight of more than 1:</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="week-4-class-2-network-analysis-with-r.html#cb164-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb164-2"><a href="week-4-class-2-network-analysis-with-r.html#cb164-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(edges) <span class="sc">%&gt;%</span></span>
-<span id="cb164-3"><a href="week-4-class-2-network-analysis-with-r.html#cb164-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weight<span class="sc">&gt;</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="week-4-class-2-network-analysis-with-r.html#cb166-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb166-2"><a href="week-4-class-2-network-analysis-with-r.html#cb166-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(edges) <span class="sc">%&gt;%</span></span>
+<span id="cb166-3"><a href="week-4-class-2-network-analysis-with-r.html#cb166-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weight<span class="sc">&gt;</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## # A tbl_graph: 248 nodes and 165 edges
 ## #
 ## # A directed simple graph with 121 components
@@ -585,33 +585,33 @@ div.csl-indent {
 <div id="density-1" class="section level4 hasAnchor">
 <h4>Density<a href="week-4-class-2-network-analysis-with-r.html#density-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>(the number of links present out of all possible links):</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="week-4-class-2-network-analysis-with-r.html#cb166-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> igraph<span class="sc">::</span><span class="fu">graph.density</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="week-4-class-2-network-analysis-with-r.html#cb168-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> igraph<span class="sc">::</span><span class="fu">graph.density</span>()</span></code></pre></div>
 <pre><code>## [1] 0.005942275</code></pre>
 </div>
 <div id="average-path-length-1" class="section level4 hasAnchor">
 <h4>Average path length<a href="week-4-class-2-network-analysis-with-r.html#average-path-length-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>(the average number of hops between every pair of nodes in the network):</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="week-4-class-2-network-analysis-with-r.html#cb168-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> igraph<span class="sc">::</span><span class="fu">average.path.length</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="week-4-class-2-network-analysis-with-r.html#cb170-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> igraph<span class="sc">::</span><span class="fu">average.path.length</span>()</span></code></pre></div>
 <pre><code>## [1] 11.04997</code></pre>
 </div>
 <div id="clustering-coefficient-1" class="section level4 hasAnchor">
 <h4>Clustering coefficient:<a href="week-4-class-2-network-analysis-with-r.html#clustering-coefficient-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Because there are a number of ways to calculate clustering in a network, a method needs to be specified. The clustering coefficient is also known as <em>transitivity</em>, and it is defined as the ratio of completed triangles and connected triples in the graph. This measurement can be <em>global</em> (which counts the overall ratio) or <em>local</em> (which counts the individual ratio for each node). Because we want the global measurement, specific this with the <code>type =</code> argument.</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="week-4-class-2-network-analysis-with-r.html#cb170-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> igraph<span class="sc">::</span><span class="fu">transitivity</span>(<span class="at">type =</span> <span class="st">&#39;global&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="week-4-class-2-network-analysis-with-r.html#cb172-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> igraph<span class="sc">::</span><span class="fu">transitivity</span>(<span class="at">type =</span> <span class="st">&#39;global&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] 0.02453653</code></pre>
 </div>
 </div>
 <div id="node-level-metrics." class="section level3 hasAnchor">
 <h3>Node-level metrics.<a href="week-4-class-2-network-analysis-with-r.html#node-level-metrics." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are a number of ways to calculate node-level metrics (these are things like degree, betweenness as explained in the previous class). For example, you can use igraph functions to calculate the degree of single node or group of nodes. The following code returns the degree for the node with the ID <code>E004654-S006979-T000000</code> (King Charles II of England). The argument <code>mode =</code> specifies the type of degree: in, out, or all, as we learned in the previous lesson.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="week-4-class-2-network-analysis-with-r.html#cb172-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> igraph<span class="sc">::</span><span class="fu">degree</span>(<span class="at">v =</span> <span class="st">&#39;E004654-S006979-T000000&#39;</span>, <span class="at">mode =</span> <span class="st">&#39;all&#39;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="week-4-class-2-network-analysis-with-r.html#cb174-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> igraph<span class="sc">::</span><span class="fu">degree</span>(<span class="at">v =</span> <span class="st">&#39;E004654-S006979-T000000&#39;</span>, <span class="at">mode =</span> <span class="st">&#39;all&#39;</span>) </span></code></pre></div>
 <pre><code>## E004654-S006979-T000000 
 ##                      52</code></pre>
 <p>For most purposes, a table containing each of the nodes and the relevant metrics would be more useful (and something that can be analysed using R later). To do this, we use a function called <code>mutate()</code>. Mutate creates a new column containing the value from some calculation, which is performed on each row in the dataset.</p>
 <p>Assign the name <code>degree</code> to the new column with <code>degree =</code>. The column should contain the total degree score for each node. This is done using the function <code>centrality_degree()</code>. With the two additional arguments in this function, specify the mode (in, out, or all) and, if a weighted degree score is desired, the column to be used as weights.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="week-4-class-2-network-analysis-with-r.html#cb174-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb174-2"><a href="week-4-class-2-network-analysis-with-r.html#cb174-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> <span class="co"># make sure the nodes table is active</span></span>
-<span id="cb174-3"><a href="week-4-class-2-network-analysis-with-r.html#cb174-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;all&#39;</span>, <span class="at">weights =</span> weight))</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="week-4-class-2-network-analysis-with-r.html#cb176-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb176-2"><a href="week-4-class-2-network-analysis-with-r.html#cb176-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> <span class="co"># make sure the nodes table is active</span></span>
+<span id="cb176-3"><a href="week-4-class-2-network-analysis-with-r.html#cb176-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;all&#39;</span>, <span class="at">weights =</span> weight))</span></code></pre></div>
 <pre><code>## # A tbl_graph: 248 nodes and 364 edges
 ## #
 ## # A directed simple graph with 6 components
@@ -635,10 +635,10 @@ div.csl-indent {
 ## 3     2   199      1
 ## # … with 361 more rows</code></pre>
 <p>The data format allows you to use dplyr pipes <code>%&gt;%</code> to perform one calculation on the data, then pass that new dataframe along to the next function. Here we calculate the degree scores first, then filter to include only nodes with a degree score over two:</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="week-4-class-2-network-analysis-with-r.html#cb176-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb176-2"><a href="week-4-class-2-network-analysis-with-r.html#cb176-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> </span>
-<span id="cb176-3"><a href="week-4-class-2-network-analysis-with-r.html#cb176-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;total&#39;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb176-4"><a href="week-4-class-2-network-analysis-with-r.html#cb176-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(degree <span class="sc">&gt;</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="week-4-class-2-network-analysis-with-r.html#cb178-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb178-2"><a href="week-4-class-2-network-analysis-with-r.html#cb178-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> </span>
+<span id="cb178-3"><a href="week-4-class-2-network-analysis-with-r.html#cb178-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;total&#39;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb178-4"><a href="week-4-class-2-network-analysis-with-r.html#cb178-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(degree <span class="sc">&gt;</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## # A tbl_graph: 51 nodes and 124 edges
 ## #
 ## # A directed simple graph with 2 components
@@ -665,15 +665,15 @@ div.csl-indent {
 <div id="summarising-the-network-data" class="section level3 hasAnchor">
 <h3>Summarising the network data<a href="week-4-class-2-network-analysis-with-r.html#summarising-the-network-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To work with your new network metrics, the data can be outputted to a standard R dataframe. Create a new dataframe by doing this, using the tidyverse function for creating dataframes, <code>as_tibble()</code>:</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="week-4-class-2-network-analysis-with-r.html#cb178-1" aria-hidden="true" tabindex="-1"></a>network_metrics_df <span class="ot">=</span> sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb178-2"><a href="week-4-class-2-network-analysis-with-r.html#cb178-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> <span class="co"># make sure correct table is active</span></span>
-<span id="cb178-3"><a href="week-4-class-2-network-analysis-with-r.html#cb178-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">weights =</span> weight, <span class="at">mode =</span> <span class="st">&#39;all&#39;</span>)) <span class="sc">%&gt;%</span> <span class="co"># calculate degree</span></span>
-<span id="cb178-4"><a href="week-4-class-2-network-analysis-with-r.html#cb178-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">between =</span> <span class="fu">centrality_betweenness</span>(<span class="at">weights =</span> weight,<span class="at">directed =</span> F)) <span class="sc">%&gt;%</span>  <span class="co"># calculate betweenness centrality</span></span>
-<span id="cb178-5"><a href="week-4-class-2-network-analysis-with-r.html#cb178-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="co"># turn the nodes table into a plain dataframe</span></span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="week-4-class-2-network-analysis-with-r.html#cb180-1" aria-hidden="true" tabindex="-1"></a>network_metrics_df <span class="ot">=</span> sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb180-2"><a href="week-4-class-2-network-analysis-with-r.html#cb180-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> <span class="co"># make sure correct table is active</span></span>
+<span id="cb180-3"><a href="week-4-class-2-network-analysis-with-r.html#cb180-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">weights =</span> weight, <span class="at">mode =</span> <span class="st">&#39;all&#39;</span>)) <span class="sc">%&gt;%</span> <span class="co"># calculate degree</span></span>
+<span id="cb180-4"><a href="week-4-class-2-network-analysis-with-r.html#cb180-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">between =</span> <span class="fu">centrality_betweenness</span>(<span class="at">weights =</span> weight,<span class="at">directed =</span> F)) <span class="sc">%&gt;%</span>  <span class="co"># calculate betweenness centrality</span></span>
+<span id="cb180-5"><a href="week-4-class-2-network-analysis-with-r.html#cb180-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="co"># turn the nodes table into a plain dataframe</span></span></code></pre></div>
 <pre><code>## Warning in betweenness(graph = graph, v = V(graph), directed = directed, :
 ## &#39;nobigint&#39; is deprecated since igraph 1.3 and will be removed in igraph 1.4</code></pre>
 <p>This new table can be sorted, totals counted, and so forth:</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="week-4-class-2-network-analysis-with-r.html#cb180-1" aria-hidden="true" tabindex="-1"></a>network_metrics_df <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(degree))</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="week-4-class-2-network-analysis-with-r.html#cb182-1" aria-hidden="true" tabindex="-1"></a>network_metrics_df <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(degree))</span></code></pre></div>
 <pre><code>## # A tibble: 248 × 3
 ##    name                    degree between
 ##    &lt;chr&gt;                    &lt;dbl&gt;   &lt;dbl&gt;
@@ -694,7 +694,7 @@ div.csl-indent {
 <h2>Joining additional data<a href="week-4-class-2-network-analysis-with-r.html#joining-additional-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The value of working with a data model and tidygraph is that we can merge additional tables of data attributes to our nodes or edges. In a separate table, we have a dataset of attributes about this set of nodes, including place and dates of birth and death, and gender. Using the <code>join()</code> commands, we can merge this table to the network data, and use it to sort, filter (and later visualise) the data:</p>
 <p>First, load the table of data using <code>read_csv</code>:</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="week-4-class-2-network-analysis-with-r.html#cb182-1" aria-hidden="true" tabindex="-1"></a>node_attributes <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&#39;node_attributes.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="week-4-class-2-network-analysis-with-r.html#cb184-1" aria-hidden="true" tabindex="-1"></a>node_attributes <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&#39;node_attributes.csv&#39;</span>)</span></code></pre></div>
 <pre><code>## Rows: 248 Columns: 13
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -703,7 +703,7 @@ div.csl-indent {
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="week-4-class-2-network-analysis-with-r.html#cb184-1" aria-hidden="true" tabindex="-1"></a>node_attributes</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="week-4-class-2-network-analysis-with-r.html#cb186-1" aria-hidden="true" tabindex="-1"></a>node_attributes</span></code></pre></div>
 <pre><code>## # A tibble: 248 × 13
 ##    name     main_…¹ all_n…² links birth…³ death…⁴ gender roles…⁵ wikid…⁶ occup…⁷
 ##    &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
@@ -722,8 +722,8 @@ div.csl-indent {
 ## #   ¹​main_name, ²​all_names, ³​birth_year, ⁴​death_year, ⁵​roles_titles,
 ## #   ⁶​wikidata_item, ⁷​occupations</code></pre>
 <p>This table contains further information about the nodes, each of which are identified by their unique ID. This can be joined to the network object using <code>join()</code> commands:</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="week-4-class-2-network-analysis-with-r.html#cb186-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb186-2"><a href="week-4-class-2-network-analysis-with-r.html#cb186-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(node_attributes, <span class="at">by =</span> <span class="st">&#39;name&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="week-4-class-2-network-analysis-with-r.html#cb188-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb188-2"><a href="week-4-class-2-network-analysis-with-r.html#cb188-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(node_attributes, <span class="at">by =</span> <span class="st">&#39;name&#39;</span>)</span></code></pre></div>
 <pre><code>## # A tbl_graph: 248 nodes and 364 edges
 ## #
 ## # A directed simple graph with 6 components
@@ -748,10 +748,10 @@ div.csl-indent {
 ## 3     2   199      1
 ## # … with 361 more rows</code></pre>
 <p>Using this approach you can now make subsets of the network, and calculate global or node-level statistics for these. This example would return a network containing only individuals with politician listed as one of their occupations, for example:</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="week-4-class-2-network-analysis-with-r.html#cb188-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb188-2"><a href="week-4-class-2-network-analysis-with-r.html#cb188-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(node_attributes, <span class="at">by =</span> <span class="st">&#39;name&#39;</span>) <span class="sc">%&gt;%</span> <span class="co"># first join the attributes table again</span></span>
-<span id="cb188-3"><a href="week-4-class-2-network-analysis-with-r.html#cb188-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(occupations, <span class="st">&quot;politician&quot;</span>)) <span class="sc">%&gt;%</span> <span class="co"># returns any row with the string &#39;politician&#39; in it</span></span>
-<span id="cb188-4"><a href="week-4-class-2-network-analysis-with-r.html#cb188-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">weights =</span> weight, <span class="at">mode =</span> <span class="st">&#39;all&#39;</span>)) <span class="co"># calculate network metrics on this new subset of the data.</span></span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="week-4-class-2-network-analysis-with-r.html#cb190-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb190-2"><a href="week-4-class-2-network-analysis-with-r.html#cb190-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(node_attributes, <span class="at">by =</span> <span class="st">&#39;name&#39;</span>) <span class="sc">%&gt;%</span> <span class="co"># first join the attributes table again</span></span>
+<span id="cb190-3"><a href="week-4-class-2-network-analysis-with-r.html#cb190-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(occupations, <span class="st">&quot;politician&quot;</span>)) <span class="sc">%&gt;%</span> <span class="co"># returns any row with the string &#39;politician&#39; in it</span></span>
+<span id="cb190-4"><a href="week-4-class-2-network-analysis-with-r.html#cb190-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">weights =</span> weight, <span class="at">mode =</span> <span class="st">&#39;all&#39;</span>)) <span class="co"># calculate network metrics on this new subset of the data.</span></span></code></pre></div>
 <pre><code>## # A tbl_graph: 94 nodes and 106 edges
 ## #
 ## # A directed simple graph with 18 components
@@ -784,12 +784,12 @@ Node attributes could be added and used to filter at several steps: before the n
 </details>
 <p><br></p>
 <p>This new table can be outputted as a dataframe, as above. Here we use this to calculate the highest-degree nodes from the ‘polticians network’, keep their real names, and sort in descending order of degree:</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="week-4-class-2-network-analysis-with-r.html#cb190-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb190-2"><a href="week-4-class-2-network-analysis-with-r.html#cb190-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(node_attributes, <span class="at">by =</span> <span class="st">&#39;name&#39;</span>) <span class="sc">%&gt;%</span> <span class="co"># first join the attributes table again</span></span>
-<span id="cb190-3"><a href="week-4-class-2-network-analysis-with-r.html#cb190-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(occupations, <span class="st">&quot;politician&quot;</span>)) <span class="sc">%&gt;%</span> <span class="co"># returns any row containing the string &#39;politician&#39;</span></span>
-<span id="cb190-4"><a href="week-4-class-2-network-analysis-with-r.html#cb190-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">weights =</span> weight, <span class="at">mode =</span> <span class="st">&#39;all&#39;</span>))  <span class="sc">%&gt;%</span>   <span class="co"># calculate network metrics on this new subset of the data.</span></span>
-<span id="cb190-5"><a href="week-4-class-2-network-analysis-with-r.html#cb190-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb190-6"><a href="week-4-class-2-network-analysis-with-r.html#cb190-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(degree)) <span class="sc">%&gt;%</span> <span class="fu">select</span>(name, main_name, degree)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="week-4-class-2-network-analysis-with-r.html#cb192-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb192-2"><a href="week-4-class-2-network-analysis-with-r.html#cb192-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(node_attributes, <span class="at">by =</span> <span class="st">&#39;name&#39;</span>) <span class="sc">%&gt;%</span> <span class="co"># first join the attributes table again</span></span>
+<span id="cb192-3"><a href="week-4-class-2-network-analysis-with-r.html#cb192-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(occupations, <span class="st">&quot;politician&quot;</span>)) <span class="sc">%&gt;%</span> <span class="co"># returns any row containing the string &#39;politician&#39;</span></span>
+<span id="cb192-4"><a href="week-4-class-2-network-analysis-with-r.html#cb192-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">weights =</span> weight, <span class="at">mode =</span> <span class="st">&#39;all&#39;</span>))  <span class="sc">%&gt;%</span>   <span class="co"># calculate network metrics on this new subset of the data.</span></span>
+<span id="cb192-5"><a href="week-4-class-2-network-analysis-with-r.html#cb192-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb192-6"><a href="week-4-class-2-network-analysis-with-r.html#cb192-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(degree)) <span class="sc">%&gt;%</span> <span class="fu">select</span>(name, main_name, degree)</span></code></pre></div>
 <pre><code>## # A tibble: 94 × 3
 ##    name                    main_name                                      degree
 ##    &lt;chr&gt;                   &lt;chr&gt;                                           &lt;dbl&gt;
@@ -812,10 +812,10 @@ Node attributes could be added and used to filter at several steps: before the n
 <h3>Transitivity, Triads, structural balance<a href="week-4-class-2-network-analysis-with-r.html#transitivity-triads-structural-balance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As we learned in the last lesson, counting the ratio of completed triangles in a network is a good way to understand its structure. This ratio is known as the <strong>clustering coefficient</strong>, and there are two types: <strong>global</strong>, which measures the ratio of complete and not complete triangles in the entire network, and <strong>local</strong>, which measures the complete triangles for each individual node. This measurement is also known as <strong>transitivity</strong>.</p>
 <p>Use the following command to calculate the global clustering, or transitivity of the network. It returns a single number, which is just the ratio of completed triangles to the total possible number of triangles in the graph:</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="week-4-class-2-network-analysis-with-r.html#cb192-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">transitivity</span>(<span class="at">type =</span> <span class="st">&#39;global&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="week-4-class-2-network-analysis-with-r.html#cb194-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">transitivity</span>(<span class="at">type =</span> <span class="st">&#39;global&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] 0.02453653</code></pre>
 <p>Use the following to measure the local clustering coefficient for each node in the graph. It returns a vector of numbers, one for each node:</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="week-4-class-2-network-analysis-with-r.html#cb194-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">transitivity</span>(<span class="at">type =</span> <span class="st">&#39;local&#39;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="week-4-class-2-network-analysis-with-r.html#cb196-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">transitivity</span>(<span class="at">type =</span> <span class="st">&#39;local&#39;</span>) </span></code></pre></div>
 <pre><code>##   [1]         NaN 0.095238095 1.000000000 1.000000000 0.000000000         NaN
 ##   [7]         NaN         NaN         NaN 0.030252101         NaN 0.000000000
 ##  [13]         NaN         NaN         NaN 0.100000000 0.000000000 0.000000000
@@ -859,18 +859,18 @@ Node attributes could be added and used to filter at several steps: before the n
 ## [241]         NaN         NaN         NaN         NaN         NaN         NaN
 ## [247]         NaN         NaN</code></pre>
 <p>Anoter related measurement is the average local clustering, calculated using the following:</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="week-4-class-2-network-analysis-with-r.html#cb196-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">transitivity</span>(<span class="at">type =</span> <span class="st">&#39;average&#39;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="week-4-class-2-network-analysis-with-r.html#cb198-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">transitivity</span>(<span class="at">type =</span> <span class="st">&#39;average&#39;</span>) </span></code></pre></div>
 <pre><code>## [1] 0.361597</code></pre>
 <p>We can also calculate the total reciprocity of a graph (the proportion of links which are reciprocated):</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="week-4-class-2-network-analysis-with-r.html#cb198-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">reciprocity</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="week-4-class-2-network-analysis-with-r.html#cb200-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">reciprocity</span>()</span></code></pre></div>
 <pre><code>## [1] 0.2912088</code></pre>
 <p>We can also calculate the ‘triad census’, the number of each type of triad in a directed network. First, run the <code>triad_census()</code> function, and turn it into a dataframe with one column. Next add the correct triad codes as a second column.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="week-4-class-2-network-analysis-with-r.html#cb200-1" aria-hidden="true" tabindex="-1"></a>census <span class="ot">=</span> sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">triad_census</span>() <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>()</span>
-<span id="cb200-2"><a href="week-4-class-2-network-analysis-with-r.html#cb200-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb200-3"><a href="week-4-class-2-network-analysis-with-r.html#cb200-3" aria-hidden="true" tabindex="-1"></a>census<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;003&quot;</span>,<span class="st">&quot;012&quot;</span>,<span class="st">&quot;102&quot;</span>,<span class="st">&quot;021D&quot;</span>,<span class="st">&quot;021U&quot;</span>,<span class="st">&quot;021C&quot;</span>,<span class="st">&quot;111D&quot;</span>,<span class="st">&quot;111U&quot;</span>,</span>
-<span id="cb200-4"><a href="week-4-class-2-network-analysis-with-r.html#cb200-4" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;030T&quot;</span>,<span class="st">&quot;030C&quot;</span>,<span class="st">&quot;201&quot;</span>,<span class="st">&quot;120D&quot;</span>,<span class="st">&quot;120U&quot;</span>,<span class="st">&quot;120C&quot;</span>,<span class="st">&quot;210&quot;</span>,<span class="st">&quot;300&quot;</span>)</span>
-<span id="cb200-5"><a href="week-4-class-2-network-analysis-with-r.html#cb200-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb200-6"><a href="week-4-class-2-network-analysis-with-r.html#cb200-6" aria-hidden="true" tabindex="-1"></a>census</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="week-4-class-2-network-analysis-with-r.html#cb202-1" aria-hidden="true" tabindex="-1"></a>census <span class="ot">=</span> sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">triad_census</span>() <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>()</span>
+<span id="cb202-2"><a href="week-4-class-2-network-analysis-with-r.html#cb202-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-3"><a href="week-4-class-2-network-analysis-with-r.html#cb202-3" aria-hidden="true" tabindex="-1"></a>census<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;003&quot;</span>,<span class="st">&quot;012&quot;</span>,<span class="st">&quot;102&quot;</span>,<span class="st">&quot;021D&quot;</span>,<span class="st">&quot;021U&quot;</span>,<span class="st">&quot;021C&quot;</span>,<span class="st">&quot;111D&quot;</span>,<span class="st">&quot;111U&quot;</span>,</span>
+<span id="cb202-4"><a href="week-4-class-2-network-analysis-with-r.html#cb202-4" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;030T&quot;</span>,<span class="st">&quot;030C&quot;</span>,<span class="st">&quot;201&quot;</span>,<span class="st">&quot;120D&quot;</span>,<span class="st">&quot;120U&quot;</span>,<span class="st">&quot;120C&quot;</span>,<span class="st">&quot;210&quot;</span>,<span class="st">&quot;300&quot;</span>)</span>
+<span id="cb202-5"><a href="week-4-class-2-network-analysis-with-r.html#cb202-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-6"><a href="week-4-class-2-network-analysis-with-r.html#cb202-6" aria-hidden="true" tabindex="-1"></a>census</span></code></pre></div>
 <pre><code>## # A tibble: 16 × 2
 ##      value type 
 ##      &lt;dbl&gt; &lt;chr&gt;
@@ -899,7 +899,7 @@ Imagine that this is a complete network. Why, for example, might 021U (A and B b
 </details>
 <p><br></p>
 <p>Another set of metrics are to do with groups found in a network. First, components. A component is a group of nodes which are connected together through a path in the network. The <code>components()</code> function returns a list which includes a named vector with a component number for each node, along with the number of nodes in each component, and the total number of components. Looking at this list with <code>glimpse</code> tells us that there are six components, the largest being 237 nodes and the smallest has 2.</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="week-4-class-2-network-analysis-with-r.html#cb202-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> igraph<span class="sc">::</span><span class="fu">components</span>() <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="week-4-class-2-network-analysis-with-r.html#cb204-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> igraph<span class="sc">::</span><span class="fu">components</span>() <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## List of 3
 ##  $ membership: Named num [1:248] 1 1 1 1 1 1 1 1 1 1 ...
 ##   ..- attr(*, &quot;names&quot;)= chr [1:248] &quot;E000145-S012650-T000000&quot; &quot;E000189-S014115-T000000&quot; &quot;E000312-S012741-T000000&quot; &quot;E000393-S036175-T000000&quot; ...
@@ -908,11 +908,11 @@ Imagine that this is a complete network. Why, for example, might 021U (A and B b
 <p>Another global metric we can calculate is the number of <strong>cliques</strong> in a network. A clique is a fully connected set of nodes. We can calculate the total number of cliques with <code>clique_num</code>:</p>
 <pre><code>## [1] 4</code></pre>
 <p>Another way to look at groups in networks is to use community detection. As explained in the previous chapter, community detection attempts to find groups of nodes which are more connected to each other than they are to nodes outside the group. Unlike components or cliques, communities can be found using a number of methods. Here, we’ll use the louvain algorithm. To make it easy to use the results, we’ll calculate the community for each node using tidygraph. This particularly implementation of the algorithm only works for undirected graphs, so we have to create our network again from scratch, this time specifying that it’s undirected.</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="week-4-class-2-network-analysis-with-r.html#cb205-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph_u <span class="ot">=</span> edge_list <span class="sc">%&gt;%</span> </span>
-<span id="cb205-2"><a href="week-4-class-2-network-analysis-with-r.html#cb205-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>(<span class="at">directed =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb205-3"><a href="week-4-class-2-network-analysis-with-r.html#cb205-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb205-4"><a href="week-4-class-2-network-analysis-with-r.html#cb205-4" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph_u <span class="sc">%&gt;%</span> </span>
-<span id="cb205-5"><a href="week-4-class-2-network-analysis-with-r.html#cb205-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">group_louvain</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="week-4-class-2-network-analysis-with-r.html#cb207-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph_u <span class="ot">=</span> edge_list <span class="sc">%&gt;%</span> </span>
+<span id="cb207-2"><a href="week-4-class-2-network-analysis-with-r.html#cb207-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>(<span class="at">directed =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb207-3"><a href="week-4-class-2-network-analysis-with-r.html#cb207-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb207-4"><a href="week-4-class-2-network-analysis-with-r.html#cb207-4" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph_u <span class="sc">%&gt;%</span> </span>
+<span id="cb207-5"><a href="week-4-class-2-network-analysis-with-r.html#cb207-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">group_louvain</span>())</span></code></pre></div>
 <pre><code>## # A tbl_graph: 248 nodes and 364 edges
 ## #
 ## # An undirected multigraph with 6 components
@@ -936,15 +936,15 @@ Imagine that this is a complete network. Why, for example, might 021U (A and B b
 ## 3     2   199      1
 ## # … with 361 more rows</code></pre>
 <p>By turning this information into a dataframe, we can get some basic statistics on the groups. By adding this information to the node information we collected earlier, we can get a summary of the average degree and betweenness scores for each of the detected communities:</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="week-4-class-2-network-analysis-with-r.html#cb207-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph_u <span class="sc">%&gt;%</span> </span>
-<span id="cb207-2"><a href="week-4-class-2-network-analysis-with-r.html#cb207-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">group_louvain</span>())<span class="sc">%&gt;%</span> </span>
-<span id="cb207-3"><a href="week-4-class-2-network-analysis-with-r.html#cb207-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> <span class="co"># make sure correct table is active</span></span>
-<span id="cb207-4"><a href="week-4-class-2-network-analysis-with-r.html#cb207-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">weights =</span> weight, <span class="at">mode =</span> <span class="st">&#39;all&#39;</span>)) <span class="sc">%&gt;%</span> <span class="co"># calculate degree</span></span>
-<span id="cb207-5"><a href="week-4-class-2-network-analysis-with-r.html#cb207-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">between =</span> <span class="fu">centrality_betweenness</span>(<span class="at">weights =</span> weight,<span class="at">directed =</span> F)) <span class="sc">%&gt;%</span>  <span class="co"># calculate betweenness centrality</span></span>
-<span id="cb207-6"><a href="week-4-class-2-network-analysis-with-r.html#cb207-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()  <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span></span>
-<span id="cb207-7"><a href="week-4-class-2-network-analysis-with-r.html#cb207-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_degree =</span> <span class="fu">mean</span>(degree,<span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">mean_between =</span> <span class="fu">mean</span>(between, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">nodes =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb207-8"><a href="week-4-class-2-network-analysis-with-r.html#cb207-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> value)) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>name, <span class="at">scales =</span> <span class="st">&#39;free&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-117-1.png" width="672" /></p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="week-4-class-2-network-analysis-with-r.html#cb209-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph_u <span class="sc">%&gt;%</span> </span>
+<span id="cb209-2"><a href="week-4-class-2-network-analysis-with-r.html#cb209-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">group_louvain</span>())<span class="sc">%&gt;%</span> </span>
+<span id="cb209-3"><a href="week-4-class-2-network-analysis-with-r.html#cb209-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> <span class="co"># make sure correct table is active</span></span>
+<span id="cb209-4"><a href="week-4-class-2-network-analysis-with-r.html#cb209-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">weights =</span> weight, <span class="at">mode =</span> <span class="st">&#39;all&#39;</span>)) <span class="sc">%&gt;%</span> <span class="co"># calculate degree</span></span>
+<span id="cb209-5"><a href="week-4-class-2-network-analysis-with-r.html#cb209-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">between =</span> <span class="fu">centrality_betweenness</span>(<span class="at">weights =</span> weight,<span class="at">directed =</span> F)) <span class="sc">%&gt;%</span>  <span class="co"># calculate betweenness centrality</span></span>
+<span id="cb209-6"><a href="week-4-class-2-network-analysis-with-r.html#cb209-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()  <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span></span>
+<span id="cb209-7"><a href="week-4-class-2-network-analysis-with-r.html#cb209-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_degree =</span> <span class="fu">mean</span>(degree,<span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">mean_between =</span> <span class="fu">mean</span>(between, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">nodes =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb209-8"><a href="week-4-class-2-network-analysis-with-r.html#cb209-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> value)) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>name, <span class="at">scales =</span> <span class="st">&#39;free&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
 
 </div>
 </div>

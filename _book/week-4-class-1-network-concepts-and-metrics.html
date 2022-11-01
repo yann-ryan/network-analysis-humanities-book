@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-10-31" />
+<meta name="date" content="2022-11-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -470,9 +470,9 @@ div.csl-indent {
 <h4>Degree distribution<a href="week-4-class-1-network-concepts-and-metrics.html#degree-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Degree is used to measure structural properties of the network. We can do this using the <strong>degree distribution</strong>. A distribution counts how many nodes have a degree of 1, a degree of two, three, and so forth, or sometimes a range, such as a degree of between 1 and 5, 6 and 10, and so on. As mentioned in a previous chapter, this degree distribution tells us some valuable structural properties about the network, such as the extent to which it is a collection of hubs and less important nodes (known as ‘scale-free’).</p>
 <p>To illustrate the degree distribution, below is a histogram of the degree distribution for a randomly-created scale-free network with 1000 nodes and 1000 edges. It shows that 0 to 10 nodes have a degree score of 50, 11 - 20 have a degree score of 4, and at the other end, more than 400 nodes have a degree score of just 1.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
-<p>Another way to illustrate this is with a log-log plot. A log-log plot shows the same data, except the scales are logarithmic, making them easier to read.</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
+<p>Another way to illustrate this is with a log-log plot. A log-log plot shows the same data, except the scales are logarithmic, making them easier to read.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
 <p>Networks with distributions which look like this on a histogram or log-log plot are likely to be scale-free, meaning their structure consists of a number of important hubs with high degree, followed by a larger number of less-important nodes.</p>
 <p>Network science has shown that these network types are very common in all sorts of real-world situations, from biological, to social, to computer networks. They’ve also been shown to have a number of particular properties: for example, it may make a computer network resistant to random ‘attack’, because its only when hubs are removed that the network begins to become disconnected. Removing unimportant nodes doesn’t affect the overall system. At the same time, this can make them vulnerable, if hub nodes are specifically targeted.</p>
 </div>
@@ -553,8 +553,8 @@ Consider a letter network with an average path length of 4. Does this mean that 
 <p>Modularity is a score evaluating how well a given set of group labels describe the groups found in a network. It’s calculated as the number of edges falling within groups minus the expected number in an equivalent network with edges placed at random (<a href="https://www.pnas.org/content/103/23/8577">link</a>). In the below diagram, the modularity is high, because the groups (coloured as either red or green nodes) correctly describe the two separate ‘communities’ found in the network. Community detection algorithms work by trying to maximise this value.</p>
 <p><img src="images/modularity.png" /></p>
 <p>As with the clustering coefficient, a high modularity indicates the extent to which the network might be described as a collection of densely-connected sub-groups, or whether the links are spread out evenly across the network.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-88"></span>
-<img src="_main_files/figure-html/unnamed-chunk-88-1.png" alt="A network with high modularity. The given partitions (separate colours) successfully divide the network into groups with many more connections between the groups than to other groups." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-89"></span>
+<img src="_main_files/figure-html/unnamed-chunk-89-1.png" alt="A network with high modularity. The given partitions (separate colours) successfully divide the network into groups with many more connections between the groups than to other groups." width="672" />
 <p class="caption">
 Figure 4: A network with high modularity. The given partitions (separate colours) successfully divide the network into groups with many more connections between the groups than to other groups.
 </p>
@@ -581,8 +581,8 @@ Figure 4: A network with high modularity. The given partitions (separate colours
 <h3>Triads<a href="week-4-class-1-network-concepts-and-metrics.html#triads" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are a number of different triad types, each of which, according to social theorists, tell us something about the particular role of that set of people. The proportion of various triad types in a network can tell us about its structure, and, in the case of a complex network, something of the process by which connections are formed. In this way, we connect the <em>micro</em> structure (the information on individual pairs or triads) with the <em>macro</em> (what this tells us about the overall formation and structure of a network).</p>
 <p>In an undirected network, there are four possble triad types, as seen in the diagram below. The first, a <strong>closed triad</strong>, is when each node is connected to the other two. The other possibilities are <strong>open triad</strong>, where one of the three possible connections is not present, a <strong>closed pair</strong>, where just one pair of the three is connected, and a <strong>disconnected triad</strong>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-89"></span>
-<img src="_main_files/figure-html/unnamed-chunk-89-1.png" alt="Four possible triad types in an undirected network" width="672" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-90"></span>
+<img src="_main_files/figure-html/unnamed-chunk-90-1.png" alt="Four possible triad types in an undirected network" width="672" />
 <p class="caption">
 Figure 5: Four possible triad types in an undirected network
 </p>
@@ -598,8 +598,8 @@ Figure 5: Four possible triad types in an undirected network
 <h4>Triadic Closure<a href="week-4-class-1-network-concepts-and-metrics.html#triadic-closure" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Triadic closure is the simple idea that people in a social network are more likely to connect to each other if they share another common connection. In social network theory, this is very common, and thought to drive the process of network formation. It’s called triadic closure, because it measures the relation between triads - sets of three nodes. It’s easy to measure in a network: we can do so simply by measuring the number of ‘complete’ triangles.</p>
 <p>Why is this interesting? As well as helping to explain network formation, we can think about how various triads work on a micro-level. Let’s start with a simple example: an undirected friendship network between three people. A and B know each other, as do B and C, but A and C have never met:</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-90"></span>
-<img src="_main_files/figure-html/unnamed-chunk-90-1.png" alt="An open triad, meaning one with a missing third connection." width="192" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-91"></span>
+<img src="_main_files/figure-html/unnamed-chunk-91-1.png" alt="An open triad, meaning one with a missing third connection." width="192" />
 <p class="caption">
 Figure 6: An open triad, meaning one with a missing third connection.
 </p>

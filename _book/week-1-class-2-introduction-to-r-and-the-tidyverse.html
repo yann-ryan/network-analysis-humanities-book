@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-10-31" />
+<meta name="date" content="2022-11-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -616,18 +616,23 @@ div.csl-indent {
 ## 1 bananas yellow      5
 ## 2 oranges orange     10
 ## 3  apples    red      8</code></pre>
+<p>You can also filter with multiple terms by using a vector (as above), and the special command <code>%in%</code>:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(fruit_data, colour <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>))</span></code></pre></div>
+<pre><code>##    fruit colour amount
+## 1 apples  green      2
+## 2 apples    red      8</code></pre>
 </div>
 <div id="slice_max-slice_min" class="section level3 hasAnchor">
 <h3>slice_max(), slice_min()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#slice_max-slice_min" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>These functions return the top or bottom number of rows, ordered by the data in a particular column.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb37-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> <span class="fu">slice_max</span>(<span class="at">order_by =</span> amount, <span class="at">n =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb39-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> <span class="fu">slice_max</span>(<span class="at">order_by =</span> amount, <span class="at">n =</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>##     fruit colour amount
 ## 1 oranges orange     10</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb39-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> <span class="fu">slice_min</span>(<span class="at">order_by =</span> amount, <span class="at">n =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb41-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> <span class="fu">slice_min</span>(<span class="at">order_by =</span> amount, <span class="at">n =</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>##    fruit colour amount
 ## 1 apples  green      2</code></pre>
 <p>These can also be used with <code>group_by()</code>, to give the top rows for each group:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb41-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(fruit) <span class="sc">%&gt;%</span> <span class="fu">slice_max</span>(<span class="at">order_by =</span> amount, <span class="at">n  =</span>  <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb43-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(fruit) <span class="sc">%&gt;%</span> <span class="fu">slice_max</span>(<span class="at">order_by =</span> amount, <span class="at">n  =</span>  <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 3
 ## # Groups:   fruit [3]
 ##   fruit   colour amount
@@ -640,28 +645,28 @@ div.csl-indent {
 <div id="sort-arrange" class="section level3 hasAnchor">
 <h3>sort(), arrange()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#sort-arrange" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another useful set of functions, often you want to sort things. The function <code>arrange()</code> does this very nicely. You specify the data frame, and the variable you would like to sort by.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, amount)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, amount)</span></code></pre></div>
 <pre><code>##     fruit colour amount
 ## 1  apples  green      2
 ## 2 bananas yellow      5
 ## 3  apples    red      8
 ## 4 oranges orange     10</code></pre>
 <p>Sorting is ascending by default, but you can specify descending using <code>desc()</code>:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, <span class="fu">desc</span>(amount))</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, <span class="fu">desc</span>(amount))</span></code></pre></div>
 <pre><code>##     fruit colour amount
 ## 1 oranges orange     10
 ## 2  apples    red      8
 ## 3 bananas yellow      5
 ## 4  apples  green      2</code></pre>
 <p>If you `sort<code>arrange()</code> by a list of characters, you’ll get alphabetical order:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, fruit)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, fruit)</span></code></pre></div>
 <pre><code>##     fruit colour amount
 ## 1  apples  green      2
 ## 2  apples    red      8
 ## 3 bananas yellow      5
 ## 4 oranges orange     10</code></pre>
 <p>You can sort by multiple things:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, fruit, <span class="fu">desc</span>(amount))</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(fruit_data, fruit, <span class="fu">desc</span>(amount))</span></code></pre></div>
 <pre><code>##     fruit colour amount
 ## 1  apples    red      8
 ## 2  apples  green      2
@@ -673,21 +678,21 @@ div.csl-indent {
 <h3>left_join(), inner_join(), anti_join()<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#left_join-inner_join-anti_join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another set of commands we’ll use quite often in this course are the <code>join()</code> ‘family’. Joins are a very powerful but simple way of selecting certain subsets of data, and adding information from multiple tables together.</p>
 <p>Let’s make a second table of information giving the delivery day for each fruit type:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb51-1" aria-hidden="true" tabindex="-1"></a>fruit_type <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;apples&#39;</span>, <span class="st">&#39;bananas&#39;</span>,<span class="st">&#39;oranges&#39;</span>)</span>
-<span id="cb51-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb51-2" aria-hidden="true" tabindex="-1"></a>weekday <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Monday&#39;</span>, <span class="st">&#39;Wednesday&#39;</span>, <span class="st">&#39;Friday&#39;</span>)</span>
-<span id="cb51-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-4"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb51-4" aria-hidden="true" tabindex="-1"></a>fruit_days <span class="ot">=</span> <span class="fu">data.frame</span>(fruit_type, weekday, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb51-5"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb51-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-6"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb51-6" aria-hidden="true" tabindex="-1"></a>fruit_days</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb53-1" aria-hidden="true" tabindex="-1"></a>fruit_type <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;apples&#39;</span>, <span class="st">&#39;bananas&#39;</span>,<span class="st">&#39;oranges&#39;</span>)</span>
+<span id="cb53-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb53-2" aria-hidden="true" tabindex="-1"></a>weekday <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Monday&#39;</span>, <span class="st">&#39;Wednesday&#39;</span>, <span class="st">&#39;Friday&#39;</span>)</span>
+<span id="cb53-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb53-4" aria-hidden="true" tabindex="-1"></a>fruit_days <span class="ot">=</span> <span class="fu">data.frame</span>(fruit_type, weekday, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb53-5"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-6"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb53-6" aria-hidden="true" tabindex="-1"></a>fruit_days</span></code></pre></div>
 <pre><code>##   fruit_type   weekday
 ## 1     apples    Monday
 ## 2    bananas Wednesday
 ## 3    oranges    Friday</code></pre>
 <p>This can be ‘joined’ to the fruit information, to add the new data on the delivery day, without having to edit the original table (or repeat the information for apples twice). This is done using <code>left_join</code>.</p>
 <p>Joins need a common <code>key</code>, a column which allows the join to match the data tables up. It’s important that these are unique (a person’s name makes a bad key by itself, for example, because it’s likely more than one person will share the same name). Usually, we use codes as the join keys. If the columns containing the join keys have different names (as ours do), specify them using the syntax below:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb53-1" aria-hidden="true" tabindex="-1"></a>joined_fruit <span class="ot">=</span> <span class="fu">left_join</span>(fruit_data, fruit_days, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;fruit&quot;</span> <span class="ot">=</span> <span class="st">&quot;fruit_type&quot;</span>))</span>
-<span id="cb53-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb53-3" aria-hidden="true" tabindex="-1"></a>joined_fruit</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb55-1" aria-hidden="true" tabindex="-1"></a>joined_fruit <span class="ot">=</span> <span class="fu">left_join</span>(fruit_data, fruit_days, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;fruit&quot;</span> <span class="ot">=</span> <span class="st">&quot;fruit_type&quot;</span>))</span>
+<span id="cb55-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb55-3" aria-hidden="true" tabindex="-1"></a>joined_fruit</span></code></pre></div>
 <pre><code>##     fruit colour amount   weekday
 ## 1  apples  green      2    Monday
 ## 2 bananas yellow      5 Wednesday
@@ -698,11 +703,11 @@ div.csl-indent {
 <div id="piping" class="section level3 hasAnchor">
 <h3>Piping<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#piping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another useful feature of the tidyverse is that you can ‘pipe’ commands through a bunch of functions, making it easier to follow the logical order of the code. This means that you can do one operation, and pass the result to another operation. The previous dataframe is passed as the first argument of the next function by using the pipe <code>%&gt;%</code> command. It works like this:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb55-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> </span>
-<span id="cb55-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(colour <span class="sc">!=</span> <span class="st">&#39;yellow&#39;</span>) <span class="sc">%&gt;%</span> <span class="co"># remove any yellow colour fruit</span></span>
-<span id="cb55-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fruit) <span class="sc">%&gt;%</span> <span class="co"># group the fruit by type</span></span>
-<span id="cb55-4"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(amount) <span class="sc">%&gt;%</span> <span class="co"># count each group</span></span>
-<span id="cb55-5"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="co"># arrange in descending order of the count</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb57-1" aria-hidden="true" tabindex="-1"></a>fruit_data <span class="sc">%&gt;%</span> </span>
+<span id="cb57-2"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(colour <span class="sc">!=</span> <span class="st">&#39;yellow&#39;</span>) <span class="sc">%&gt;%</span> <span class="co"># remove any yellow colour fruit</span></span>
+<span id="cb57-3"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fruit) <span class="sc">%&gt;%</span> <span class="co"># group the fruit by type</span></span>
+<span id="cb57-4"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(amount) <span class="sc">%&gt;%</span> <span class="co"># count each group</span></span>
+<span id="cb57-5"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb57-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="co"># arrange in descending order of the count</span></span></code></pre></div>
 <pre><code>## # A tibble: 2 × 2
 ##   fruit       n
 ##   &lt;chr&gt;   &lt;dbl&gt;
@@ -717,20 +722,20 @@ div.csl-indent {
 <p><code>ggplot</code> is an advanced package with many options and extensions, which cannot be covered here.</p>
 <p>Some examples using the fruit data:</p>
 <p>Bar chart of different types of fruit (one each of bananas and oranges, two types of apple)</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fruit_data) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> amount))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
-<p>Counting the total amount of fruit:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fruit_data) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> amount))</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fruit_data) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> amount))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
-<p>Charting amounts and fruit colours:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fruit_data) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">weight =</span> amount, <span class="at">fill =</span> colour)) </span></code></pre></div>
+<p>Counting the total amount of fruit:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fruit_data) <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> amount))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p>Charting amounts and fruit colours:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fruit_data) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">weight =</span> amount, <span class="at">fill =</span> colour)) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 </div>
 </div>
 <div id="reading-in-external-data" class="section level2 hasAnchor">
 <h2>Reading in external data<a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#reading-in-external-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Most of the time, you’ll be working with external data sources. These most commonly come in the form of comma separated values (.csv) or tab separated values (.tsv). The tidyverse commands to read these are <code>read_csv()</code> and <code>read_tsv</code>. You can also use <code>read_delim()</code>, and specify the type of delimited using <code>delim = ','</code> or <code>delim = '/t</code>. The path to the file is given as a string to the argument <code>file=</code>.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb60-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&#39;sample_network.csv&#39;</span>) <span class="co"># Read a .csv file as a network, specify the path to the file here.</span></span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb62-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&#39;sample_network.csv&#39;</span>) <span class="co"># Read a .csv file as a network, specify the path to the file here.</span></span></code></pre></div>
 <pre><code>## Rows: 7 Columns: 3
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -739,7 +744,7 @@ div.csl-indent {
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb62-1" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#cb64-1" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
 <pre><code>## # A tibble: 7 × 3
 ##   from  to    weight
 ##   &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;
