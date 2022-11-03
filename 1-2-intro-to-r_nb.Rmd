@@ -363,6 +363,8 @@ df
 
 Notice that each column has a data type beside it, either <chr> for text or <dbl> for numbers. This is important if you want to sort or run calculations on the data.
 
+## Further resources  
+
 This has been a very quick introduction to R, covering the basics. There are lots of places to learn more, including:
 
 [R-studio cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
@@ -372,3 +374,24 @@ This has been a very quick introduction to R, covering the basics. There are lot
 [R for data science, which teaches the tidyverse in detail](https://r4ds.had.co.nz)
 
 [Learn how to make a book like this using Bookdown](https://bookdown.org/yihui/bookdown/introduction.html)
+
+
+## Reading For Next Week 
+
+For next week, we want you to read an example of network analysis applied specifically to a humanities dataset. The article to read is the following:
+
+Ahnert, Ruth, and Sebastian E. Ahnert. ‘Metadata, Surveillance and the Tudor State’. History Workshop Journal, vol. 87, Apr. 2019, pp. 27–51. DOI.org (Crossref), https://doi.org/10.1093/hwj/dby033.
+
+An openly-available pre-publication proof is available through [this repository](https://www.repository.cam.ac.uk/bitstream/handle/1810/314971/Ahnert%20and%20Ahnert_Metadata%20Surveillance%20and%20the%20Tudor%20State_HWJ.pdf?sequence=1).
+
+We will discuss the article during next Wednesday's class. In preparation, please be prepared to answer the following four questions - we'll choose four people at random to answer one each. 
+
+1) What do the authors mean by 'not-reading'?
+
+2) Describe the distribution of the degree scores (degree is the number of connections).  What is the significance of this?
+
+3) What are 'bridges' in this context? How do the authors find them in the network?
+
+4) What is the process by which they make the network 'fingerprint'?
+
+As well as this, we'd like you to think about the article as a whole. What does it do well? What can you say about the 'balance' and connections between the humanities and computational parts?
