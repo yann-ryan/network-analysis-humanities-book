@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-11-03" />
+<meta name="date" content="2022-11-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -106,7 +106,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -119,7 +119,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -314,6 +314,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#triads"><i class="fa fa-check"></i>Triads</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#class-assignment"><i class="fa fa-check"></i>Class Assignment</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html"><i class="fa fa-check"></i>Week 4, Class 2: Network Analysis with R</a>
 <ul>
@@ -455,7 +456,7 @@ div.csl-indent {
 </div>
 <div id="introduction-2" class="section level2 hasAnchor">
 <h2>Introduction<a href="week-4-class-1-network-concepts-and-metrics.html#introduction-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This lesson will cover a number of concepts First, it outlines the concept and theory behind a number of key network metrics. These are generally divided into node-level and global metrics. Many node-level metrics are interested in <em>centrality</em>, that is, working out the most important and most influential nodes in a network. In a social network, this may point to individuals with a particular influence or role in the network, but it can also have other uses: Google’s PageRank algorithm uses a version of centrality to work out which web pages are likely of the highest quality or usefulness for a particular search, for example.</p>
+<p>This lesson will cover a number of concepts. First, it outlines the concept and theory behind a number of key network metrics. These are generally divided into node-level and global metrics. Many node-level metrics are interested in <em>centrality</em>, that is, working out the most important and most influential nodes in a network. In a social network, this may point to individuals with a particular influence or role in the network, but it can also have other uses: Google’s PageRank algorithm uses a version of centrality to work out which web pages are likely of the highest quality or usefulness for a particular search, for example.</p>
 <p>Second, we’ll talk briefly about some theories specific to <em>social network analysis</em> (or SNA). Social networks (that is, networks of people, where the connections and structure is governed by social factors) have their own set of concepts, which do not apply to all networks. We won’t go into detail (that could be a whole other course), but it’s useful to understand.</p>
 </div>
 <div id="node-level-metrics" class="section level2 hasAnchor">
@@ -626,6 +627,30 @@ Figure 6: An open triad, meaning one with a missing third connection.
 <h2>Conclusions<a href="week-4-class-1-network-concepts-and-metrics.html#conclusions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This tour of network metrics has just introduced some of the more common ways a network can be measured. All of these metrics can be applied to any network, but bear in mind that many have been developed with the specific aim of measuring relations between people in some sort of set of social interactions, and the conclusions drawn are based on the consideration that the individuals are in some sense ‘free agents’, and can freely connect with other nodes as they wish.</p>
 <p>In many other network types (books, or cities for example), there may be hidden factors and other constraints guiding the structure of the network. This is not to say that the metrics cannot be used, but just that the conclusions from them may not be the same as those in SNA literature.</p>
+</div>
+<div id="class-assignment" class="section level2 hasAnchor">
+<h2>Class Assignment<a href="week-4-class-1-network-concepts-and-metrics.html#class-assignment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before we get to coding our own networks on Friday, first we’ll use some ready-made tools to generate a set of network metrics and get familiar with them.</p>
+<p>Your task for this assignment is to load a network into an online tool called Network Navigator, available here: <a href="https://networknavigator.jrladd.com/" class="uri">https://networknavigator.jrladd.com/</a>, and report on its basic network statistics.</p>
+<p>You can use any network data you like. We have prepared a sample dataset called <code>sample_publisher_network.csv</code>, available in the <code>applying_networks_to_humanities/data</code> folder, but you are welcome to use any other of the sample datasets or another dataset you have found online.</p>
+<p>The instructions to upload the network data are available within the web application. In short, you should drag and drop the relevant .csv file into the appropriate box. Note that you can choose whether or not your csv has a header row. If it does, click the correct radio button. The application expects headers called <code>source</code>, <code>target</code>, and (optionally), <code>weight</code>. The <code>sample_publisher_network.csv</code> file has a header in this format, but if you are using other data you may need to edit the file first.</p>
+<p>Based on the information in today’s lesson, write a short (about 10 bullet points) report on the structure of this network. Some information you could include:</p>
+<ul>
+<li>Global network metrics. Is it dense or sparse? Is it highly clustered?</li>
+<li>The distribution of degree and other network metrics. Do a small number of nodes have most of the links, or is it evenly spread out?<br />
+</li>
+<li>A description of the network graph itself.<br />
+</li>
+<li>Who are the key nodes by degree, betweenness, and so forth? What does their position at the top of these rankings mean for their ‘importance’ in the network?</li>
+<li>Does it contain interesting information? Are you able to parse these things easily (such as the structure), or does it seem like a random ‘mess’. What would help you to understand this network better? Could it be filtered, and if so, how would you go about that?</li>
+</ul>
+<p>IMPORTANT!</p>
+<p>We would like you to include a screenshot (or multiple) of your results from the Network Navigator tool. To do this, first make a copy of this notebook into your ‘my work’ folder, and make sure you are editing this copy.</p>
+<p>Take and save a screenshot and save it to your local machine. Upload it to the ‘my work’ folder on CSC Notebooks, using the file browser.</p>
+<p>Next, switch to the R studio ‘Visual editor’ interface using the button highlighted below</p>
+<p><img src="images/paste-B2759EF2.png" /></p>
+<p>The visual editor looks like a simple word processor, and has an option for inserting an image. Click this and insert the screenshot(s) you uploaded.</p>
+<p>Once you’re finished, save and send your work as usual.</p>
 
 </div>
 </div>

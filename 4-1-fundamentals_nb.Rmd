@@ -6,7 +6,7 @@ This lesson has a corresponding editable notebook containing some exercises. The
 
 ## Introduction
 
-This lesson will cover a number of concepts First, it outlines the concept and theory behind a number of key network metrics. These are generally divided into node-level and global metrics. Many node-level metrics are interested in *centrality*, that is, working out the most important and most influential nodes in a network. In a social network, this may point to individuals with a particular influence or role in the network, but it can also have other uses: Google's PageRank algorithm uses a version of centrality to work out which web pages are likely of the highest quality or usefulness for a particular search, for example.
+This lesson will cover a number of concepts. First, it outlines the concept and theory behind a number of key network metrics. These are generally divided into node-level and global metrics. Many node-level metrics are interested in *centrality*, that is, working out the most important and most influential nodes in a network. In a social network, this may point to individuals with a particular influence or role in the network, but it can also have other uses: Google's PageRank algorithm uses a version of centrality to work out which web pages are likely of the highest quality or usefulness for a particular search, for example.
 
 Second, we'll talk briefly about some theories specific to *social network analysis* (or SNA). Social networks (that is, networks of people, where the connections and structure is governed by social factors) have their own set of concepts, which do not apply to all networks. We won't go into detail (that could be a whole other course), but it's useful to understand.
 
@@ -157,8 +157,6 @@ Network science has a large of algorithsm for finding optimal communities in gra
 
 Modularity is a score evaluating how well a given set of group labels describe the groups found in a network. It's calculated as the number of edges falling within groups minus the expected number in an equivalent network with edges placed at random ([link](https://www.pnas.org/content/103/23/8577)). In the below diagram, the modularity is high, because the groups (coloured as either red or green nodes) correctly describe the two separate 'communities' found in the network. Community detection algorithms work by trying to maximise this value.
 
-
-
 ![](images/modularity.png)
 
 As with the clustering coefficient, a high modularity indicates the extent to which the network might be described as a collection of densely-connected sub-groups, or whether the links are spread out evenly across the network.
@@ -181,14 +179,9 @@ At this point, most nodes are now in a community of two (if there's no change in
 
 In very large graphs, the process is more difficult and likely to give different results depending on the random starting point. Also, while the method may be a useful way of finding communities without preconceived starting points, it does require us to think of the network as being divided into communities of some kind. Every node must be placed in a community - none can be placed outside the communities, and, perhaps more controversially, with this method, no node can be a member of more than one community. 
 
-<center>
-
-![From Traag, V.A., Waltman, L. & van Eck, N.J. From Louvain to Leiden: guaranteeing well-connected communities. Sci Rep 9, 5233 (2019). <https://doi.org/10.1038/s41598-019-41695-z>](images/louvain.png){width="500"}
-
-</center>
+<center>![From Traag, V.A., Waltman, L. & van Eck, N.J. From Louvain to Leiden: guaranteeing well-connected communities. Sci Rep 9, 5233 (2019). https://doi.org/10.1038/s41598-019-41695-z](images/louvain.png){width="500"}</center>
 
 Important to note is that communities are to some degree subjective, and 'densely-connected' can have different meanings depending on the algorithm. And needless to say, detecting communities on a graph alone does not make a research question!
-
 
 ## Social network concepts: triadic closure, transitivity, brokerage
 
@@ -260,11 +253,7 @@ cowplot::plot_grid(a,b,c,d, labels = c('closed triad', 'open triad', 'connected 
 
 In a directed network, the situation is more complex. Each of the connections can be incoming or outgoing, meaning there are 16 possible triad connections. Don't worry, if you want to use these, network analysis software has methods for taking a 'census' of the various triads and their counts in a particular network.
 
-<center>
-
-![The 16 possible triad combinations in a directed network. The code underneath each triad refers to the numbers of mutual, asymmetric, and null dyads, with a further identifying letter: Up, Down, Cyclical, Transitive. E.g., 120D has 1 mutual, 2 asymmetric, 0 null dyads, and the Down orientation.](images/triad_census.jpg)
-
-</center> 
+<center>![The 16 possible triad combinations in a directed network. The code underneath each triad refers to the numbers of mutual, asymmetric, and null dyads, with a further identifying letter: Up, Down, Cyclical, Transitive. E.g., 120D has 1 mutual, 2 asymmetric, 0 null dyads, and the Down orientation.](images/triad_census.jpg)</center>
 
 #### Triadic Closure
 
@@ -294,20 +283,46 @@ This gap, from A to C, is sometimes called a 'structural hole'. In this triad, B
 
 Another influential paper, by Gould and Fernandez, used triads in their theory of *brokerage*. This is a process, according them, where individuals act as intermediaries in a network, helping to share information. They identify five types of brokerage roles, based on specific triad types, as seen in the image below:
 
-
-<center>
-
-![The five different brokerage roles, according to Gould and Fernandez (1989). In each case, the ellipses represent different 'sub-groups' of the wider network that each node belongs to.](images/brokerage_custom.jpg)
-
-</center>
+<center>![The five different brokerage roles, according to Gould and Fernandez (1989). In each case, the ellipses represent different 'sub-groups' of the wider network that each node belongs to.](images/brokerage_custom.jpg)</center>
 
 #### A Word of Warning...
 
-It's easy to see the appeal of these methods applied to historical or cultural sources, which we might use to uncover the specific social relations within a network of historical actors, understand the formation by which a particular correspondence network came about, or maybe measure the 'success' of a particular historical figure by the existence of 'structural holes' in their networks. I encourage you to think about and use these theories. However, do bear in mind that these theories were often developed using modern, 'complete' social network data, where every interaction was carefully recorded, often for the purposes of a particular test. As these methods rely heavily on these 'micro' structures (such as the presence or absence of a particular tie), they may be particularly sensitive to the kinds of missing data often found in historical sources, which are not usually collected systematically. 
-
+It's easy to see the appeal of these methods applied to historical or cultural sources, which we might use to uncover the specific social relations within a network of historical actors, understand the formation by which a particular correspondence network came about, or maybe measure the 'success' of a particular historical figure by the existence of 'structural holes' in their networks. I encourage you to think about and use these theories. However, do bear in mind that these theories were often developed using modern, 'complete' social network data, where every interaction was carefully recorded, often for the purposes of a particular test. As these methods rely heavily on these 'micro' structures (such as the presence or absence of a particular tie), they may be particularly sensitive to the kinds of missing data often found in historical sources, which are not usually collected systematically.
 
 ## Conclusions
 
 This tour of network metrics has just introduced some of the more common ways a network can be measured. All of these metrics can be applied to any network, but bear in mind that many have been developed with the specific aim of measuring relations between people in some sort of set of social interactions, and the conclusions drawn are based on the consideration that the individuals are in some sense 'free agents', and can freely connect with other nodes as they wish.
 
 In many other network types (books, or cities for example), there may be hidden factors and other constraints guiding the structure of the network. This is not to say that the metrics cannot be used, but just that the conclusions from them may not be the same as those in SNA literature.
+
+## Class Assignment  
+
+Before we get to coding our own networks on Friday, first we'll use some ready-made tools to generate a set of network metrics and get familiar with them.
+
+Your task for this assignment is to load a network into an online tool called Network Navigator, available here: <https://networknavigator.jrladd.com/>, and report on its basic network statistics.
+
+You can use any network data you like. We have prepared a sample dataset called `sample_publisher_network.csv`, available in the `applying_networks_to_humanities/data` folder, but you are welcome to use any other of the sample datasets or another dataset you have found online.
+
+The instructions to upload the network data are available within the web application. In short, you should drag and drop the relevant .csv file into the appropriate box. Note that you can choose whether or not your csv has a header row. If it does, click the correct radio button. The application expects headers called `source`, `target`, and (optionally), `weight`. The `sample_publisher_network.csv` file has a header in this format, but if you are using other data you may need to edit the file first.
+
+Based on the information in today's lesson, write a short (about 10 bullet points) report on the structure of this network. Some information you could include:
+
+-   Global network metrics. Is it dense or sparse? Is it highly clustered?
+-   The distribution of degree and other network metrics. Do a small number of nodes have most of the links, or is it evenly spread out?\
+-   A description of the network graph itself.\
+-   Who are the key nodes by degree, betweenness, and so forth? What does their position at the top of these rankings mean for their 'importance' in the network?
+-   Does it contain interesting information? Are you able to parse these things easily (such as the structure), or does it seem like a random 'mess'. What would help you to understand this network better? Could it be filtered, and if so, how would you go about that?
+
+IMPORTANT!
+
+We would like you to include a screenshot (or multiple) of your results from the Network Navigator tool. To do this, first make a copy of this notebook into your 'my work' folder, and make sure you are editing this copy.
+
+Take and save a screenshot and save it to your local machine. Upload it to the 'my work' folder on CSC Notebooks, using the file browser.
+
+Next, switch to the R studio 'Visual editor' interface using the button highlighted below
+
+![](images/paste-B2759EF2.png)
+
+The visual editor looks like a simple word processor, and has an option for inserting an image. Click this and insert the screenshot(s) you uploaded.
+
+Once you're finished, save and send your work as usual.
