@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-11-24" />
+<meta name="date" content="2022-11-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -461,7 +461,7 @@ div.csl-indent {
 <h2>Network data structures<a href="week-4-class-2-network-analysis-with-r.html#network-data-structures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Network data comes in a number of forms. Two common ones are adjacency matrices and edge lists. An adjacency matrix is a matrix of rows and columns, one for each node. If there is a link between two nodes, a 1 is put in at that point. If it is a weighted network, the weight can be entered in the correct space. In some cases, your data may be in a format where it is easy to use it as an adjacency matrix.</p>
 <p>Adjacency matrices can be easily read into R using <code>igraph</code> and <code>graph_from_adjacency_matrix()</code>.</p>
-<p>The other common type is what we will work with in this lesson: an edge list. An edge list is actually also a ‘sparse matrix’.</p>
+<p>The other common type is what we will work with in this lesson: an edge list.</p>
 </div>
 <div id="creating-a-network-object-in-r-from-an-edge-list" class="section level2 hasAnchor">
 <h2>Creating a Network Object in R from an Edge List<a href="week-4-class-2-network-analysis-with-r.html#creating-a-network-object-in-r-from-an-edge-list" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -966,7 +966,8 @@ Imagine that this is a complete network. Why, for example, might 021U (A and B b
 </div>
 <div id="louvain-community-detection-1" class="section level2 hasAnchor">
 <h2>Louvain community detection<a href="week-4-class-2-network-analysis-with-r.html#louvain-community-detection-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Another way to look at groups in networks is to use community detection. As explained in the previous chapter, community detection attempts to find groups of nodes which are more connected to each other than they are to nodes outside the group. Unlike components or cliques, communities can be found using a number of methods. Here, we’ll use the Louvain algorithm, which was introduced in the previous lesson. To make it easy to use the results, we’ll calculate the community for each node using tidygraph. This particular implementation of the algorithm only works for undirected graphs, so we have to create our network again from scratch, this time specifying that it’s <strong>undirected</strong>.</p>
+<p>Another way to look at groups in networks is to use community detection. As explained in the previous chapter, community detection attempts to find groups of nodes which are more connected to each other than they are to nodes outside the group. Unlike components or cliques, communities can be found using a number of methods. Here, we’ll use the Louvain algorithm, which was introduced in the previous lesson.</p>
+<p>To make it easy to use the results, we’ll calculate the community for each node using tidygraph. This particular implementation of the algorithm only works for undirected graphs, so we have to create our network again from scratch, this time specifying that it’s <strong>undirected</strong>.</p>
 <div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="week-4-class-2-network-analysis-with-r.html#cb211-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph_u <span class="ot">=</span> edge_list <span class="sc">%&gt;%</span> </span>
 <span id="cb211-2"><a href="week-4-class-2-network-analysis-with-r.html#cb211-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>(<span class="at">directed =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb211-3"><a href="week-4-class-2-network-analysis-with-r.html#cb211-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1010,7 +1011,10 @@ Imagine that this is a complete network. Why, for example, might 021U (A and B b
 <p><strong>Week 4:</strong> Ahnert et. al. (2021). <em>The Network Turn: Changing Perspectives in the Humanities</em> (Elements in Publishing and Book Culture). <strong>Chapter 5, 'Quantifying Culture' (<a href="https://www.cambridge.org/core/elements/network-turn/CC38F2EA9F51A6D1AFCB7E005218BBE5" class="uri">https://www.cambridge.org/core/elements/network-turn/CC38F2EA9F51A6D1AFCB7E005218BBE5</a>)</strong></p>
 <p>Questions:</p>
 <ul>
-<li></li>
+<li>What do the authors mean by the ‘abstraction’ of humanities data? What are the advantages and disadvantages of doing so?</li>
+<li>What are the assumptions made by the authors in the ‘toy example’ on page 76? What other ways could they have treated this data?</li>
+<li>What is the ‘trade-off’ mentioned on page 78?</li>
+<li>What do the authors suggest might be the best way to ‘solve’ the skills gap between those with quantitative and those with traditional humanities skills?</li>
 </ul>
 
 </div>

@@ -10,7 +10,7 @@ Network data comes in a number of forms. Two common ones are adjacency matrices 
 
 Adjacency matrices can be easily read into R using `igraph` and `graph_from_adjacency_matrix()`.
 
-The other common type is what we will work with in this lesson: an edge list. An edge list is actually also a 'sparse matrix'.
+The other common type is what we will work with in this lesson: an edge list. 
 
 ## Creating a Network Object in R from an Edge List
 
@@ -322,7 +322,9 @@ sample_tbl_graph %>% igraph::clique_num()
 
 ## Louvain community detection
 
-Another way to look at groups in networks is to use community detection. As explained in the previous chapter, community detection attempts to find groups of nodes which are more connected to each other than they are to nodes outside the group. Unlike components or cliques, communities can be found using a number of methods. Here, we'll use the Louvain algorithm, which was introduced in the previous lesson. To make it easy to use the results, we'll calculate the community for each node using tidygraph. This particular implementation of the algorithm only works for undirected graphs, so we have to create our network again from scratch, this time specifying that it's **undirected**.
+Another way to look at groups in networks is to use community detection. As explained in the previous chapter, community detection attempts to find groups of nodes which are more connected to each other than they are to nodes outside the group. Unlike components or cliques, communities can be found using a number of methods. Here, we'll use the Louvain algorithm, which was introduced in the previous lesson. 
+
+To make it easy to use the results, we'll calculate the community for each node using tidygraph. This particular implementation of the algorithm only works for undirected graphs, so we have to create our network again from scratch, this time specifying that it's **undirected**.
 
 ```{r}
 
@@ -353,4 +355,7 @@ sample_tbl_graph_u %>%
 
 Questions:
 
--   
+-    What do the authors mean by the 'abstraction' of humanities data? What are the advantages and disadvantages of doing so?
+-   What are the assumptions made by the authors in the 'toy example' on page 76? What other ways could they have treated this data?
+-   What is the 'trade-off' mentioned on page 78?
+-   What do the authors suggest might be the best way to 'solve' the skills gap between those with quantitative and those with traditional humanities skills?
