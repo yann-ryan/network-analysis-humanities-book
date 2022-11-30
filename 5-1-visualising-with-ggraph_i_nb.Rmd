@@ -1,0 +1,345 @@
+# Week 5, Class 1: Visualising Networks with ggraph, I
+
+## Network visualisations
+
+Many analyses of networks rely on visualisation. Graphing a network is particularly useful for *descriptive data analysis*, as a way of describing the overall structure of graph, and *exploratory data analysis,* where it's used as a sort of map to understand its various components, and to help spot patterns or interesting features by eye. These visualisations are most often the points and lines type diagrams which we have used throughout this book, but there are also a number of other ways they can be visualised (which often might be more useful).
+
+It's important to note that there is nothing inherently spatial about a graph: it is simply a record of connections between nodes. When we choose to represent it visually, we have to make decisions as to its form and how precisely its nodes and edges are placed in 2D (or even 3D) space.
+
+From early social network research, researchers tried to manually visualise these graphs in meaningful ways, for example by placing closely-connected clusters together (and away from other clusters), placing important or highly-connected nodes towards the centre, or minimising the number of edge (line) crossings. With large networks, today this process is usually carried out using algorithms to work out the node placements.
+
+### Force-directed network visualisations
+
+The most common family of these algorithms are 'force-directed', meaning they use a simulation of physical forces in order to create sensible placements of nodes. One of the most common of these is the Fruchterman-Reingold layout, which treats edges like a spring. Nodes which share an edge are attracted to each other using a spring-like force; every pair of nodes in the system also has a repulsive force. The algorithm simulates this physical system and stops when the distances between the nodes means that the system is in equilibrium.
+
+A good force-directed graph can actually convey a great deal of information about a network. The paper for this week's reading argues that the ambiguity of a force-directed graph can actually make them very useful for exploratory data analysis, when they are interpreted correctly.
+
+#### Reading a network graph
+
+Using a similar approach to that paper, consider this network of book publishers from the eighteenth century:
+
+![](images/full_net.png)
+
+This is a large network, consisting of tens of thousands of nodes and millions of edges. The nodes are coloured by 'community', meaning tthat each colour of nodes is more densely connected to each other than to the nodes of other colours. Despite its size, some structure can be seen. We could describe it as the following:
+
+-   Spatially (ignoring the colours), there are three main sections: a large central section, and two smaller sections, one to the bottom-right and another, even smaller, to the top-left of the main section.
+
+-   This main section is shaped a bit like a hairbrush: it has an elongated 'handle', and an attached 'brush' at the top.
+
+-   The colours are distinct, meaning that the force-directed graph did a good job in replicating the clusters found by the community detection algorithm.
+
+To understand why it might have this shape, we looked into the nodes in each of its clusters.
+
+The first thing we noted was that the almost separate 'islands' were groups of Dublin (larger and closer island) and US publishers.
+
+The main section is made up of clusters of different time periods. Each time period is connected to the others mainly by a short edge, meaning that (for example) the 1700 - 1720 cluster is much more connected to the 1720 - 1740 cluster than to the 1780 - 1800 cluster, for example. This is typical in a long, multi-generational dataset like this.
+
+The handle is mostly London-based publishers, and the 'brush' is a group of Scottish publishers. These Scottish publishers are mostly connected to the later London clusters (red/pink). Scottish publishers are much closer to the London core than either Dublin or US.
+
+Some inferences we might make from this diagram.
+
+-   US and Dublin publishers were very separate from a London/Edinburgh publishing axis.
+
+-   For London publishers, the strongest pull is temporal rather than any other aspect.
+
+-   Over time, the closeness of the Edinburgh and London publisher networks grew.
+
+When used correctly and with more knowledge about a network, force-directed diagrams like this can help to spot distinct clusters, structural 'holes', and other features of a network.
+
+#### Avoiding the dreaded 'hairball'
+
+Visualising large networks using these methods can often result in a large tangled mass of nodes and edges, known pejoratively as a 'hairball'. This is particularly true of large graphs without much of a tendency to cluster together, such as this graph of Facebook page networks[@musae].
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, cache = TRUE}
+
+g = data.table::fread('/Users/yannryan/Downloads/tvshow_edges.csv') %>% 
+  mutate(node_1 = node_1 + 1) %>% mutate(node_2 = node_2+1)
+
+g %>% 
+  graph_from_data_frame() %>% 
+  ggraph('fr', niter = 1000) +
+  geom_edge_link(alpha = .1) + 
+  geom_node_point(alpha = .5)
+
+```
+
+These graphs have limited use, even as exploratory data. There are some ways to mitigate against them, however:
+
+-   Consider filtering the network, as in the previous steps. Make sure you're aware of the consequences of filtering before and after you calculate network metrics, however.
+
+-   For large graphs, software such as Gephi, because it gives a real-time feedback of a network visualisation, can be useful, rather than purely using a programming language such as R.
+
+-   Think about whether a network diagram (or a network model at all) is the best way to represent or display your data. Could you arrive at the same conclusions with a simpler data analysis and output, such as a bar chart?
+
+### Other Network Visualisations
+
+There are many other ways besides a 'force-directed' graph to visualise a network.
+
+#### Bipartite graph
+
+Some network types are particularly suited to other visualisation methods. Bipartite networks, for example, are often visualised so that the nodes are placed in two rows, according to their types. The positions within the rows are then determined by an algorithm designed to minimise edge crossings.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+EL = c(1,7,2,6,3,8,2,5,4,6,1,5,2,6)
+types = rep(0:1, each=4)
+g = make_bipartite_graph(types, EL, directed = FALSE)
+
+g %>% ggraph('bipartite')+ 
+  geom_edge_link() + 
+  geom_node_point(size = 10, aes(color = as.character(types)))  + coord_flip() + theme_void() + theme(legend.position = 'bottom') + labs(color = 'Type:')
+```
+
+#### Adjacency Matrix
+
+One popular alternative to a network diagram is an *adjacency matrix.* In this case, the x and y axes contain each name in the network. A filled square is drawn for each edge, where they intersect.
+
+This method can be particularly useful for small, dense networks.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+letters = read_csv("letter_data.csv", col_types = cols(.default = "c"))
+edge_list = letters %>% 
+  filter(date <'1670-12-31')%>% 
+  group_by(from_id, to_id) %>% 
+  tally(name = 'weight') 
+
+g = edge_list %>% 
+  as_tbl_graph(directed = F) %>% 
+  mutate(group = group_louvain()) 
+e = g %>% activate(edges) %>% as_tibble()
+n   = g %>% as_tibble() %>% mutate(id = 1:nrow(.))
+
+ge = e %>% left_join(n, by = c('from'= 'id'))%>% 
+  left_join(n, by = c('to'= 'id')) %>% 
+  mutate(group = ifelse(group.x == group.y, group.x, NA))
+
+all_nodes = n$name
+name_order <- (n %>% arrange(group))$name
+
+p_data = ge  %>% mutate(
+        to = factor(name.x, levels = name_order),
+        from = factor(name.y, levels = name_order))
+
+ggplot(p_data, aes(x = from, y = to, fill = as.character(group))) +
+      geom_raster() +
+      theme_bw() +
+      # Because we need the x and y axis to display every node,
+      # not just the nodes that have connections to each other,
+      # make sure that ggplot does not drop unused factor levels
+      scale_x_discrete(drop = FALSE) +
+      scale_y_discrete(drop = FALSE) +
+      theme(
+        # Rotate the x-axis lables so they are legible
+        axis.text = element_blank(),
+        # Force the plot into a square aspect ratio
+        aspect.ratio = 1,
+        # Hide the legend (optional)
+        legend.position = "none")
+```
+
+## Network Visualisations with R and ggraph.
+
+Visualisations like the examples above can be created with another R package, called `ggraph`. This uses the same basic syntax as the plotting library `ggplot2`, we used in an earlier lesson, but adds some special functions to visualise networks.
+
+We'll spend today and the next class on learning how to visualise graphs with R and `ggraph`. First, we'll learn how to make a basic network diagram of nodes and edges, how to change the layout algorithm, and how to set the node and edge sizes. In the next class, we'll customise it with colour, arrows, text labels, and so forth. 
+
+Using this ggraph workflow, a network diagram consists of a number of elements:
+
+-   The network itself, in the form of a network object, either a `tbl_graph` or an `igraph` network.
+-   The `ggraph` function, which tells R to start making a network plot. 
+-   The relevant `geom_` layers, which tell ggraph to map the network to nodes and edges
+-   Aesthetics, which tell ggraph to map particular visual attributes (size, colour and so forth) to specified values.
+
+To begin with, create a `tbl_graph` network object from an edge list, using the same data and code as last week:  
+
+```{r message=FALSE, warning=FALSE}
+
+library(tidygraph)
+library(tidyverse)
+library(ggraph)
+letters = read_csv("letter_data.csv", col_types = cols(.default = "c"))
+
+edge_list = letters %>% 
+  group_by(from_id, to_id) %>% 
+  tally(name = 'weight')
+
+sample_tbl_graph = edge_list %>% 
+  as_tbl_graph()
+
+
+```
+
+### The ggraph function  
+
+To begin making the network diagram, we start with the `ggraph()` function. This tells R to begin drawing a graph. It has optional arguments: for example, you can set the layout to something other than the default using the argument `layout =`. There are a large number of layouts available to use, some of which will be shown below. 
+
+```{r}
+sample_tbl_graph %>% 
+  ggraph()
+```
+
+For now, you'll notice that it doesn't draw anything other than a blank grey background. 
+
+To draw the nodes and edges of the graph, we'll use what are known as 'geoms'. These are a family of functions which map the data to relevant elements. They all begin with `geom_`. These are added as layers to the ggraph object using `+` followed by the relevant geom. 
+
+-   First, adding `+ geom_node_point()` as a layer will draw the nodes of your network as points. The nodes are positioned according to the chosen (or default) layout algorithm:
+
+```{r}
+sample_tbl_graph %>% 
+  ggraph() + 
+  geom_node_point()
+```
+
+-   Next, `geom_edge_link()` will drawn the edges as connecting lines:
+
+```{r}
+sample_tbl_graph %>% 
+  ggraph() + 
+  geom_node_point() + 
+  geom_edge_link()
+```
+### Adjusting visual attributes. 
+
+
+There are many additional ways you can manipulate the visual appearance of your nodes and edges, by adding color, size, shape, arrows, and so forth.
+
+In ggraph (and ggplot), visual elements can be manipulated in two ways:
+
+-   You can specify an absolute value for an aesthetic, for example setting the size of all nodes to value 3
+-   You can specify that a value is mapped to a variable in your data. This could be some metric of your network calculated in a previous step, for example setting the size to be proportional to the degree score of a node, or it could be some external data, wuch as setting the colour to indicate the node's occupation.  
+
+This is all done within the relevant geom. We can check to see which aesthetics are recognised by a particular geom by typing  `?` followed by the function in the console and pressing return, i.e `?geom_node_point()`. This tells us that it recognises `alpha, colour, fill, shape, size, stroke, and filter`. 
+
+To set a one of these visual attributes (or aesthetic) to an absolute value, simply set it within the parentheses of `geom_node_point()`:  
+
+```{r}
+sample_tbl_graph %>% 
+  ggraph() + 
+  geom_node_point(size = 3) + # we specified that size should be set at the value 3
+  geom_edge_link()
+
+```
+We can also map aesthetics to a particular *variable* in the data. To do this, the value should exist as a column in the nodes table of the `tbl_graph` object. For example, we can calculate the degree score for each node:
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) 
+```
+
+And it is added as an additional column in the first table. 
+
+To map this column to be proportional to the node size, we do so within the function `aes()`, within the relevant geom: 
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% # calculate a value for degree
+  ggraph() + 
+  geom_edge_link() + # switch around the order of the nodes and edges as it's easier to see the node color
+  geom_node_point(aes(size = degree)) # map size to degree score
+```
+You'll notice that ggraph has added a **legend**: a guide to help us read exactly how the various sizes of the nodes map to the degree score. 
+
+You can experiment in the notebook with the other aesthetics, including `alpha` and `shape`. You'll notice that some of them cannot be mapped to a numerical (or continuous variable). We'll look into this in the next class.  
+
+## Adjusting edge aesthetics
+
+The visual appearance of the edges can also be adjusted, using the same syntax. 
+
+We can set the thickness of the edges using the `width` aesthetic:  
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('fr') + 
+  geom_edge_link(width = 3) + 
+  geom_node_point()
+```
+
+As with nodes, these aesthetics can be mapped to particular values. In this case, the variable to be mapped should exist as a column in the edges table in the `tbl_graph` object. If we look at the object, we can see that there is already a 'weight' column which we created when making the graph:
+
+```{r}
+sample_tbl_graph
+```
+
+Again, this can be mapped using the same syntax as with nodes. Set the `width` aesthetic to the `weight` variable within the `aes()` command:
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('fr') + 
+  geom_edge_link(aes(width = weight)) + 
+  geom_node_point()
+```
+
+## Layout algorithms
+
+Igraph has a large number of graph layouts. Depending on your network size and structure, different ones may be appropriate. Where possible, it is a good idea to add some other information, for example group membership or simply node names to your visualisation, at least temporarily. That way you can check to see if the visual structures, such as clusters, centre-periphery, and orientation, make any sense. Here are the most common graph layouts:
+
+#### Fruchterman-Reingold
+
+A popular 'force-directed' layout, which treats the connections between nodes as springs. 
+
+Add to ggraph using `layout = 'fr'`.
+
+```{r}
+sample_tbl_graph %>% 
+  ggraph(layout = 'fr') + 
+  geom_edge_link() + 
+  geom_node_point()
+```
+
+
+#### DRL
+
+Another force-directed layout, often used with larger graphs. 
+
+Add to ggraph using `layout = 'drl'`.
+
+```{r}
+sample_tbl_graph %>% 
+  ggraph(layout = 'drl') + 
+  geom_edge_link() + 
+  geom_node_point()
+```
+
+####  Kamada-Kawai
+
+Another force-directed layout. This doesn't work well with 'disconnected graphs: below I have added a function to only include the main connected component of the network. 
+
+Add using `layout = 'kk'`
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(component = group_components()) %>% 
+  filter(component == 1) %>% 
+  ggraph('kk') + 
+  geom_edge_link() + 
+  geom_node_point()
+```
+
+#### Circle
+
+Places nodes in a circle, in order:  
+
+```{r}
+sample_tbl_graph %>% 
+  ggraph('circle') + 
+  geom_edge_link() + 
+  geom_node_point()
+```
+
+#### Tree
+
+For hierarchical graphs. Places nodes in a tree diagram, according to their hierarchy. 
+
+```{r}
+sample_tbl_graph %>% 
+  ggraph('tree') + 
+  geom_edge_bend() + # here we use a different geom_edge_ more appropriate to tree graphs
+  geom_node_point(size = 3)
+```
+
+
+
+It is worth checking some of these out, particularly if you have a specific network structure, for example a hierarchy, or if you have a bipartite network. 
+
+Also note there are lots of other ways to visualise a network, for example by making a heatmap from an adjacency matrix. It's worth experimenting a bit with these (and explaining choices in your final project). 

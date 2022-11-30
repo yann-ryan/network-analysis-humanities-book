@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 5, Class 1: Visualising Networks with ggraph, I | Applying Network Analysis to Humanities</title>
+  <meta name="description" content="Week 5, Class 1: Visualising Networks with ggraph, I | Applying Network Analysis to Humanities" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 5, Class 1: Visualising Networks with ggraph, I | Applying Network Analysis to Humanities" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="yann-ryan/network-analysis-humanities-book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 5, Class 1: Visualising Networks with ggraph, I | Applying Network Analysis to Humanities" />
+  
+  
+  
+
+<meta name="author" content="Yann Ryan, Iiro Tihonen" />
+
+
+<meta name="date" content="2022-11-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-4-class-2-network-analysis-with-r.html"/>
+<link rel="next" href="visualising-networks-with-ggraph-ii.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.23/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Network Analysis Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-course"><i class="fa fa-check"></i>About the course</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#final-project"><i class="fa fa-check"></i>Final Project</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reading"><i class="fa fa-check"></i>Reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#slides"><i class="fa fa-check"></i>Slides</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html"><i class="fa fa-check"></i>Week 1, class 1: Course Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#how-to-use-this-book-and-follow-the-course."><i class="fa fa-check"></i>How to use this book and follow the course.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#what-do-we-mean-by-a-network"><i class="fa fa-check"></i>What do we mean by a ‘network’?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#networks-in-the-humanities"><i class="fa fa-check"></i>Networks in the Humanities</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#some-examples"><i class="fa fa-check"></i>Some Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#graph-theory"><i class="fa fa-check"></i>Graph Theory</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#why-use-networks-in-humanities"><i class="fa fa-check"></i>Why use networks in humanities?</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-basics"><i class="fa fa-check"></i>Network Basics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#nodes-and-edges"><i class="fa fa-check"></i>Nodes and Edges</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#edge-weights"><i class="fa fa-check"></i>Edge weights</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#edge-direction"><i class="fa fa-check"></i>Edge direction</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#weighted-and-directed"><i class="fa fa-check"></i>Weighted and directed</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#network-paths"><i class="fa fa-check"></i>Network paths</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#different-network-types"><i class="fa fa-check"></i>Different Network Types</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#bipartite-networks"><i class="fa fa-check"></i>Bipartite networks</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#multigraphs"><i class="fa fa-check"></i>Multigraphs</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#hypergraphs"><i class="fa fa-check"></i>Hypergraphs</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#spatial-networks"><i class="fa fa-check"></i>Spatial networks</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#from-bridges-to-social-networks"><i class="fa fa-check"></i>From Bridges to Social Networks…</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#the-strength-of-weak-ties"><i class="fa fa-check"></i>The Strength of Weak Ties</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#its-a-small-world"><i class="fa fa-check"></i>It’s a Small World</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#the-new-science-of-networks"><i class="fa fa-check"></i>The ‘New’ Science of Networks</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-1-course-introduction.html"><a href="week-1-class-1-course-introduction.html#conclusion"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><i class="fa fa-check"></i>Week 1, Class 2: Introduction to R and the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#r-and-r-studio"><i class="fa fa-check"></i>R and R-Studio</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#logging-into-csc-notebooks-and-opening-a-notebook."><i class="fa fa-check"></i>Logging into CSC notebooks and opening a notebook.</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#using-r"><i class="fa fa-check"></i>Using R</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#base-r."><i class="fa fa-check"></i>‘Base’ R.</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#basic-r-data-structures"><i class="fa fa-check"></i>Basic R data structures</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#data-types"><i class="fa fa-check"></i>Data types</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#installing-and-loading-packages"><i class="fa fa-check"></i>Installing and loading packages:</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i>Tidyverse</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#select-pull"><i class="fa fa-check"></i>select(), pull()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#group_by-tally-summarise"><i class="fa fa-check"></i>group_by(), tally(), summarise()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#filter"><i class="fa fa-check"></i>filter()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#slice_max-slice_min"><i class="fa fa-check"></i>slice_max(), slice_min()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#sort-arrange"><i class="fa fa-check"></i>sort(), arrange()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#left_join-inner_join-anti_join"><i class="fa fa-check"></i>left_join(), inner_join(), anti_join()</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#piping"><i class="fa fa-check"></i>Piping</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#plotting-using-ggplot"><i class="fa fa-check"></i>Plotting using ggplot()</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#reading-in-external-data"><i class="fa fa-check"></i>Reading in external data</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#further-resources"><i class="fa fa-check"></i>Further resources</a></li>
+<li class="chapter" data-level="" data-path="week-1-class-2-introduction-to-r-and-the-tidyverse.html"><a href="week-1-class-2-introduction-to-r-and-the-tidyverse.html#reading-for-next-week"><i class="fa fa-check"></i>Reading For Next Week</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html"><i class="fa fa-check"></i>Week 2, Class 1: Acquiring and Working With Network Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#presenting-networks-as-data"><i class="fa fa-check"></i>Presenting Networks as Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#estc"><i class="fa fa-check"></i>ESTC</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#tweetsets-and-hydrator"><i class="fa fa-check"></i>Tweetsets and hydrator</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#instructions-for-homework"><i class="fa fa-check"></i>Instructions for homework</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-1-acquiring-and-working-with-network-data.html"><a href="week-2-class-1-acquiring-and-working-with-network-data.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><i class="fa fa-check"></i>Week 2, Class 2: Cleaning the Observed and Thinking About the Unobserved Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#unharmonised-and-missing-data-or-the-universals-of-data-analysis"><i class="fa fa-check"></i>Unharmonised and Missing data, or the Universals of Data Analysis</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#unharmonised-data---an-overview"><i class="fa fa-check"></i>Unharmonised Data - An Overview</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#harmonisation-table"><i class="fa fa-check"></i>Harmonisation Table</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#regular-expressions-and-the-stringr-tools"><i class="fa fa-check"></i>Regular Expressions and the Stringr Tools</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#cleaning-data-at-scale"><i class="fa fa-check"></i>Cleaning Data at Scale</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#using-stringr-and-regular-experssions"><i class="fa fa-check"></i>Using Stringr and Regular Experssions</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#more-about-regular-expressions-and-stringr-in-practice"><i class="fa fa-check"></i>More About Regular Expressions and Stringr in Practice</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#regular-expressions-and-stringr---a-summary"><i class="fa fa-check"></i>Regular Expressions and Stringr - a Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#other-solutions-to-harmonisation-of-data"><i class="fa fa-check"></i>Other Solutions To Harmonisation of Data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#missing-data"><i class="fa fa-check"></i>Missing data</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#for-the-next-week"><i class="fa fa-check"></i>For the Next Week</a></li>
+<li class="chapter" data-level="" data-path="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html"><a href="week-2-class-2-cleaning-the-observed-and-thinking-about-the-unobserved-data.html#references-1"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html"><i class="fa fa-check"></i>Week 3, Class 1: Relational Data Part 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#managing-data"><i class="fa fa-check"></i>Managing Data</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#relational-data"><i class="fa fa-check"></i>Relational data</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#conceptual-data-model"><i class="fa fa-check"></i>Conceptual Data Model</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#logical-data-model"><i class="fa fa-check"></i>Logical Data Model</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#relational-data-in-practice"><i class="fa fa-check"></i>Relational Data in Practice</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#data-modeling-and-networks"><i class="fa fa-check"></i>Data Modeling and Networks</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#note-about-unique-identifiers"><i class="fa fa-check"></i>Note About Unique Identifiers</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-1-relational-data-part-1.html"><a href="week-3-class-1-relational-data-part-1.html#references-2"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html"><i class="fa fa-check"></i>Week 3, Class 2: Relational Data Part 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html#working-with-relational-data"><i class="fa fa-check"></i>Working With Relational Data</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html#creating-a-network-from-relational-data"><i class="fa fa-check"></i>Creating A Network From Relational Data</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html#other-practical-questions-with-relational-data"><i class="fa fa-check"></i>Other Practical Questions With Relational Data</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html#for-the-next-week-1"><i class="fa fa-check"></i>For the Next Week</a></li>
+<li class="chapter" data-level="" data-path="week-3-class-2-relational-data-part-2.html"><a href="week-3-class-2-relational-data-part-2.html#references-3"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html"><i class="fa fa-check"></i>Week 4, Class 1: Network Concepts and Metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#node-level-metrics"><i class="fa fa-check"></i>Node-level metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#degree"><i class="fa fa-check"></i>Degree</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#betweenness-centrality"><i class="fa fa-check"></i>Betweenness Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#eigenvector-centrality"><i class="fa fa-check"></i>Eigenvector Centrality</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#closeness-centrality"><i class="fa fa-check"></i>Closeness centrality</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#edge-level-metrics"><i class="fa fa-check"></i>Edge-level metrics</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#global-metrics"><i class="fa fa-check"></i>Global Metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#density"><i class="fa fa-check"></i>Density</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#average-path-length"><i class="fa fa-check"></i>Average path length</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#clustering-coefficient"><i class="fa fa-check"></i>Clustering coefficient</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#groups-and-community-structure-in-networks"><i class="fa fa-check"></i>Groups and Community Structure in Networks</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#components"><i class="fa fa-check"></i>Components</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#cliques"><i class="fa fa-check"></i>Cliques</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#community-detection-methods"><i class="fa fa-check"></i>Community Detection Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#social-network-concepts-triadic-closure-transitivity-brokerage"><i class="fa fa-check"></i>Social network concepts: triadic closure, transitivity, brokerage</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#triads"><i class="fa fa-check"></i>Triads</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-1-network-concepts-and-metrics.html"><a href="week-4-class-1-network-concepts-and-metrics.html#class-assignment"><i class="fa fa-check"></i>Class Assignment</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html"><i class="fa fa-check"></i>Week 4, Class 2: Network Analysis with R</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#introduction-3"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#network-data-structures"><i class="fa fa-check"></i>Network data structures</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#creating-a-network-object-in-r-from-an-edge-list"><i class="fa fa-check"></i>Creating a Network Object in R from an Edge List</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#import-network-data"><i class="fa fa-check"></i>Import Network Data</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#make-an-edge-list"><i class="fa fa-check"></i>Make an edge list</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#turn-the-edge-list-into-a-tbl_graph"><i class="fa fa-check"></i>Turn the edge list into a tbl_graph</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#calculating-network-metrics"><i class="fa fa-check"></i>Calculating Network Metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#global-metrics-1"><i class="fa fa-check"></i>Global metrics</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#node-level-metrics."><i class="fa fa-check"></i>Node-level metrics.</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#summarising-the-network-data"><i class="fa fa-check"></i>Summarising the network data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#joining-additional-data"><i class="fa fa-check"></i>Joining additional data</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#social-network-analysis-with-r"><i class="fa fa-check"></i>Social Network Analysis with R</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#transitivity-triads-structural-balance"><i class="fa fa-check"></i>Transitivity, Triads, structural balance</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#louvain-community-detection-1"><i class="fa fa-check"></i>Louvain community detection</a></li>
+<li class="chapter" data-level="" data-path="week-4-class-2-network-analysis-with-r.html"><a href="week-4-class-2-network-analysis-with-r.html#reading-for-next-week-1"><i class="fa fa-check"></i>Reading for next week</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph-i.html"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html"><i class="fa fa-check"></i>Week 5, Class 1: Visualising Networks with ggraph, I</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph-i.html"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#network-visualisations"><i class="fa fa-check"></i>Network visualisations</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph-i.html"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#force-directed-network-visualisations"><i class="fa fa-check"></i>Force-directed network visualisations</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph-i.html"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#other-network-visualisations"><i class="fa fa-check"></i>Other Network Visualisations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph-i.html"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#network-visualisations-with-r-and-ggraph."><i class="fa fa-check"></i>Network Visualisations with R and ggraph.</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph-i.html"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#the-ggraph-function"><i class="fa fa-check"></i>The ggraph function</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph-i.html"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#adjusting-edge-aesthetics"><i class="fa fa-check"></i>Adjusting edge aesthetics</a></li>
+<li class="chapter" data-level="" data-path="week-5-class-1-visualising-networks-with-ggraph-i.html"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#layout-algorithms"><i class="fa fa-check"></i>Layout algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html"><i class="fa fa-check"></i>Visualising Networks with ggraph, II</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#other-aesthetics-colour-alpha"><i class="fa fa-check"></i>Other aesthetics: colour, alpha</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#ggraph-and-other-tidyverse-functions"><i class="fa fa-check"></i>Ggraph and other tidyverse functions</a></li>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#add-node-labels"><i class="fa fa-check"></i>Add node labels</a></li>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#calculating-and-coloring-by-community-detection"><i class="fa fa-check"></i>Calculating and coloring by community detection</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#what-makes-a-good-network-visualisation"><i class="fa fa-check"></i>What makes a good network visualisation?</a></li>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#case-study-scientists-and-politicians"><i class="fa fa-check"></i>Case study: Scientists and Politicians</a></li>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#conclusions-1"><i class="fa fa-check"></i>Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html"><i class="fa fa-check"></i>Week 6, Class 1: Asking and Answering Questions with Networks</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#introduction-4"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#how-to-go-about-tackling-humanities-questions-of-networks"><i class="fa fa-check"></i>How to go about tackling humanities questions of networks?</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#practical-example-estc"><i class="fa fa-check"></i>Practical Example: ESTC</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#conclusions-2"><i class="fa fa-check"></i>Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#practical-example-twitter-and-dealing-with-big-data"><i class="fa fa-check"></i>Practical example: Twitter (and dealing with big data)</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#download-data"><i class="fa fa-check"></i>Download data</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#extend-the-data-model-by-creating-a"><i class="fa fa-check"></i>Extend the data model by creating a</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#basic-network-statistics"><i class="fa fa-check"></i>Basic network statistics</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#node-level-metrics-1"><i class="fa fa-check"></i>Node-level metrics</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#pagerank"><i class="fa fa-check"></i>PageRank</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#some-other-questions-you-might-ask-of-this-data"><i class="fa fa-check"></i>Some other questions you might ask of this data?</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#community-detection"><i class="fa fa-check"></i>Community Detection</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#adding-other-analysis-text-mining"><i class="fa fa-check"></i>Adding other analysis: text mining</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#exporting-the-edge-list-for-gephi."><i class="fa fa-check"></i>Exporting the edge list for Gephi.</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#conclusions-3"><i class="fa fa-check"></i>Conclusions</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#networks-and-regression"><i class="fa fa-check"></i>Networks and regression</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-1-asking-and-answering-questions-with-networks.html"><a href="week-6-class-1-asking-and-answering-questions-with-networks.html#statistical-approaches-to-networks---ergm-and-soam-rsiena"><i class="fa fa-check"></i>Statistical approaches to networks - ERGM and SOAM (RSiena)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html"><i class="fa fa-check"></i>Week 6, Class 2: Reflections and Pitfalls of Networks</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#what-are-implications-of-networks"><i class="fa fa-check"></i>What are implications of networks?</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#network-representations"><i class="fa fa-check"></i>Network representations</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#problems-with-network-representation"><i class="fa fa-check"></i>Problems with network representation</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#missing-data-1"><i class="fa fa-check"></i>Missing data</a></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#specific-problems-with-networks-and-culturalhumanities-data"><i class="fa fa-check"></i>Specific problems with networks and cultural/humanities data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-class-2-reflections-and-pitfalls-of-networks.html"><a href="week-6-class-2-reflections-and-pitfalls-of-networks.html#visualisations"><i class="fa fa-check"></i>Visualisations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html"><i class="fa fa-check"></i>Week 7: Final Project</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#presentation"><i class="fa fa-check"></i>Presentation:</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#what-should-the-final-project-look-like"><i class="fa fa-check"></i>What should the final project look like?</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#practical-steps"><i class="fa fa-check"></i>Practical steps</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#project-aim"><i class="fa fa-check"></i>Project Aim</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#r-markdown"><i class="fa fa-check"></i>R Markdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#reproducible-research"><i class="fa fa-check"></i>Reproducible research</a></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#final-project-datasets"><i class="fa fa-check"></i>Final Project Datasets</a>
+<ul>
+<li class="chapter" data-level="" data-path="week-7-final-project.html"><a href="week-7-final-project.html#available-datasets"><i class="fa fa-check"></i>Available datasets</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-and-extra-materials.html"><a href="appendix-and-extra-materials.html"><i class="fa fa-check"></i>Appendix and extra materials</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-and-extra-materials.html"><a href="appendix-and-extra-materials.html#ego-networks"><i class="fa fa-check"></i>Ego Networks</a></li>
+<li class="chapter" data-level="" data-path="appendix-and-extra-materials.html"><a href="appendix-and-extra-materials.html#case-study-a-spotify-ego-network"><i class="fa fa-check"></i>Case Study: A Spotify Ego Network</a></li>
+<li class="chapter" data-level="" data-path="appendix-and-extra-materials.html"><a href="appendix-and-extra-materials.html#bipartite-networks-1"><i class="fa fa-check"></i>Bipartite networks</a></li>
+<li class="chapter" data-level="" data-path="appendix-and-extra-materials.html"><a href="appendix-and-extra-materials.html#co-occurrence-and-co-authorship-networks."><i class="fa fa-check"></i>Co-occurrence and co-authorship networks.</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-and-extra-materials.html"><a href="appendix-and-extra-materials.html#a-type-of-co-authorship-publisher-networks"><i class="fa fa-check"></i>A type of co-authorship: publisher networks</a></li>
+<li class="chapter" data-level="" data-path="appendix-and-extra-materials.html"><a href="appendix-and-extra-materials.html#the-dataset"><i class="fa fa-check"></i>The dataset</a></li>
+<li class="chapter" data-level="" data-path="appendix-and-extra-materials.html"><a href="appendix-and-extra-materials.html#method"><i class="fa fa-check"></i>Method</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-and-extra-materials.html"><a href="appendix-and-extra-materials.html#conclusions-4"><i class="fa fa-check"></i>Conclusions</a></li>
+<li class="chapter" data-level="" data-path="appendix-and-extra-materials.html"><a href="appendix-and-extra-materials.html#exercises-2"><i class="fa fa-check"></i>Exercises:</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applying Network Analysis to Humanities</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-5-class-1-visualising-networks-with-ggraph-i" class="section level1 hasAnchor">
+<h1>Week 5, Class 1: Visualising Networks with ggraph, I<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#week-5-class-1-visualising-networks-with-ggraph-i" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="network-visualisations" class="section level2 hasAnchor">
+<h2>Network visualisations<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#network-visualisations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Many analyses of networks rely on visualisation. Graphing a network is particularly useful for <em>descriptive data analysis</em>, as a way of describing the overall structure of graph, and <em>exploratory data analysis,</em> where it’s used as a sort of map to understand its various components, and to help spot patterns or interesting features by eye. These visualisations are most often the points and lines type diagrams which we have used throughout this book, but there are also a number of other ways they can be visualised (which often might be more useful).</p>
+<p>It’s important to note that there is nothing inherently spatial about a graph: it is simply a record of connections between nodes. When we choose to represent it visually, we have to make decisions as to its form and how precisely its nodes and edges are placed in 2D (or even 3D) space.</p>
+<p>From early social network research, researchers tried to manually visualise these graphs in meaningful ways, for example by placing closely-connected clusters together (and away from other clusters), placing important or highly-connected nodes towards the centre, or minimising the number of edge (line) crossings. With large networks, today this process is usually carried out using algorithms to work out the node placements.</p>
+<div id="force-directed-network-visualisations" class="section level3 hasAnchor">
+<h3>Force-directed network visualisations<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#force-directed-network-visualisations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The most common family of these algorithms are ‘force-directed’, meaning they use a simulation of physical forces in order to create sensible placements of nodes. One of the most common of these is the Fruchterman-Reingold layout, which treats edges like a spring. Nodes which share an edge are attracted to each other using a spring-like force; every pair of nodes in the system also has a repulsive force. The algorithm simulates this physical system and stops when the distances between the nodes means that the system is in equilibrium.</p>
+<p>A good force-directed graph can actually convey a great deal of information about a network. The paper for this week’s reading argues that the ambiguity of a force-directed graph can actually make them very useful for exploratory data analysis, when they are interpreted correctly.</p>
+<div id="reading-a-network-graph" class="section level4 hasAnchor">
+<h4>Reading a network graph<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#reading-a-network-graph" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Using a similar approach to that paper, consider this network of book publishers from the eighteenth century:</p>
+<p><img src="images/full_net.png" /></p>
+<p>This is a large network, consisting of tens of thousands of nodes and millions of edges. The nodes are coloured by ‘community’, meaning tthat each colour of nodes is more densely connected to each other than to the nodes of other colours. Despite its size, some structure can be seen. We could describe it as the following:</p>
+<ul>
+<li><p>Spatially (ignoring the colours), there are three main sections: a large central section, and two smaller sections, one to the bottom-right and another, even smaller, to the top-left of the main section.</p></li>
+<li><p>This main section is shaped a bit like a hairbrush: it has an elongated ‘handle’, and an attached ‘brush’ at the top.</p></li>
+<li><p>The colours are distinct, meaning that the force-directed graph did a good job in replicating the clusters found by the community detection algorithm.</p></li>
+</ul>
+<p>To understand why it might have this shape, we looked into the nodes in each of its clusters.</p>
+<p>The first thing we noted was that the almost separate ‘islands’ were groups of Dublin (larger and closer island) and US publishers.</p>
+<p>The main section is made up of clusters of different time periods. Each time period is connected to the others mainly by a short edge, meaning that (for example) the 1700 - 1720 cluster is much more connected to the 1720 - 1740 cluster than to the 1780 - 1800 cluster, for example. This is typical in a long, multi-generational dataset like this.</p>
+<p>The handle is mostly London-based publishers, and the ‘brush’ is a group of Scottish publishers. These Scottish publishers are mostly connected to the later London clusters (red/pink). Scottish publishers are much closer to the London core than either Dublin or US.</p>
+<p>Some inferences we might make from this diagram.</p>
+<ul>
+<li><p>US and Dublin publishers were very separate from a London/Edinburgh publishing axis.</p></li>
+<li><p>For London publishers, the strongest pull is temporal rather than any other aspect.</p></li>
+<li><p>Over time, the closeness of the Edinburgh and London publisher networks grew.</p></li>
+</ul>
+<p>When used correctly and with more knowledge about a network, force-directed diagrams like this can help to spot distinct clusters, structural ‘holes’, and other features of a network.</p>
+</div>
+<div id="avoiding-the-dreaded-hairball" class="section level4 hasAnchor">
+<h4>Avoiding the dreaded ‘hairball’<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#avoiding-the-dreaded-hairball" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Visualising large networks using these methods can often result in a large tangled mass of nodes and edges, known pejoratively as a ‘hairball’. This is particularly true of large graphs without much of a tendency to cluster together, such as this graph of Facebook page networks<span class="citation">(<a href="#ref-musae" role="doc-biblioref">Rozemberczki, Allen, and Sarkar 2021</a>)</span>.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
+<p>These graphs have limited use, even as exploratory data. There are some ways to mitigate against them, however:</p>
+<ul>
+<li><p>Consider filtering the network, as in the previous steps. Make sure you’re aware of the consequences of filtering before and after you calculate network metrics, however.</p></li>
+<li><p>For large graphs, software such as Gephi, because it gives a real-time feedback of a network visualisation, can be useful, rather than purely using a programming language such as R.</p></li>
+<li><p>Think about whether a network diagram (or a network model at all) is the best way to represent or display your data. Could you arrive at the same conclusions with a simpler data analysis and output, such as a bar chart?</p></li>
+</ul>
+</div>
+</div>
+<div id="other-network-visualisations" class="section level3 hasAnchor">
+<h3>Other Network Visualisations<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#other-network-visualisations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are many other ways besides a ‘force-directed’ graph to visualise a network.</p>
+<div id="bipartite-graph" class="section level4 hasAnchor">
+<h4>Bipartite graph<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#bipartite-graph" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Some network types are particularly suited to other visualisation methods. Bipartite networks, for example, are often visualised so that the nodes are placed in two rows, according to their types. The positions within the rows are then determined by an algorithm designed to minimise edge crossings.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
+</div>
+<div id="adjacency-matrix" class="section level4 hasAnchor">
+<h4>Adjacency Matrix<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#adjacency-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>One popular alternative to a network diagram is an <em>adjacency matrix.</em> In this case, the x and y axes contain each name in the network. A filled square is drawn for each edge, where they intersect.</p>
+<p>This method can be particularly useful for small, dense networks.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-123-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="network-visualisations-with-r-and-ggraph." class="section level2 hasAnchor">
+<h2>Network Visualisations with R and ggraph.<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#network-visualisations-with-r-and-ggraph." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Visualisations like the examples above can be created with another R package, called <code>ggraph</code>. This uses the same basic syntax as the plotting library <code>ggplot2</code>, we used in an earlier lesson, but adds some special functions to visualise networks.</p>
+<p>We’ll spend today and the next class on learning how to visualise graphs with R and <code>ggraph</code>. First, we’ll learn how to make a basic network diagram of nodes and edges, how to change the layout algorithm, and how to set the node and edge sizes. In the next class, we’ll customise it with colour, arrows, text labels, and so forth.</p>
+<p>Using this ggraph workflow, a network diagram consists of a number of elements:</p>
+<ul>
+<li>The network itself, in the form of a network object, either a <code>tbl_graph</code> or an <code>igraph</code> network.</li>
+<li>The <code>ggraph</code> function, which tells R to start making a network plot.</li>
+<li>The relevant <code>geom_</code> layers, which tell ggraph to map the network to nodes and edges</li>
+<li>Aesthetics, which tell ggraph to map particular visual attributes (size, colour and so forth) to specified values.</li>
+</ul>
+<p>To begin with, create a <code>tbl_graph</code> network object from an edge list, using the same data and code as last week:</p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygraph)</span>
+<span id="cb214-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb214-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb214-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb214-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggraph)</span>
+<span id="cb214-4"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb214-4" aria-hidden="true" tabindex="-1"></a>letters <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;letter_data.csv&quot;</span>, <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">.default =</span> <span class="st">&quot;c&quot;</span>))</span>
+<span id="cb214-5"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb214-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb214-6"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb214-6" aria-hidden="true" tabindex="-1"></a>edge_list <span class="ot">=</span> letters <span class="sc">%&gt;%</span> </span>
+<span id="cb214-7"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb214-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(from_id, to_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb214-8"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb214-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(<span class="at">name =</span> <span class="st">&#39;weight&#39;</span>)</span>
+<span id="cb214-9"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb214-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb214-10"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb214-10" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="ot">=</span> edge_list <span class="sc">%&gt;%</span> </span>
+<span id="cb214-11"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb214-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>()</span></code></pre></div>
+<div id="the-ggraph-function" class="section level3 hasAnchor">
+<h3>The ggraph function<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#the-ggraph-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To begin making the network diagram, we start with the <code>ggraph()</code> function. This tells R to begin drawing a graph. It has optional arguments: for example, you can set the layout to something other than the default using the argument <code>layout =</code>. There are a large number of layouts available to use, some of which will be shown below.</p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb215-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb215-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb215-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>()</span></code></pre></div>
+<pre><code>## Using `stress` as default layout</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
+<p>For now, you’ll notice that it doesn’t draw anything other than a blank grey background.</p>
+<p>To draw the nodes and edges of the graph, we’ll use what are known as ‘geoms’. These are a family of functions which map the data to relevant elements. They all begin with <code>geom_</code>. These are added as layers to the ggraph object using <code>+</code> followed by the relevant geom.</p>
+<ul>
+<li>First, adding <code>+ geom_node_point()</code> as a layer will draw the nodes of your network as points. The nodes are positioned according to the chosen (or default) layout algorithm:</li>
+</ul>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb217-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb217-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb217-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>() <span class="sc">+</span> </span>
+<span id="cb217-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb217-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>()</span></code></pre></div>
+<pre><code>## Using `stress` as default layout</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
+<ul>
+<li>Next, <code>geom_edge_link()</code> will drawn the edges as connecting lines:</li>
+</ul>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb219-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb219-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb219-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>() <span class="sc">+</span> </span>
+<span id="cb219-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb219-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>() <span class="sc">+</span> </span>
+<span id="cb219-4"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb219-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>()</span></code></pre></div>
+<pre><code>## Using `stress` as default layout</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="672" />
+### Adjusting visual attributes.</p>
+<p>There are many additional ways you can manipulate the visual appearance of your nodes and edges, by adding color, size, shape, arrows, and so forth.</p>
+<p>In ggraph (and ggplot), visual elements can be manipulated in two ways:</p>
+<ul>
+<li>You can specify an absolute value for an aesthetic, for example setting the size of all nodes to value 3</li>
+<li>You can specify that a value is mapped to a variable in your data. This could be some metric of your network calculated in a previous step, for example setting the size to be proportional to the degree score of a node, or it could be some external data, wuch as setting the colour to indicate the node’s occupation.</li>
+</ul>
+<p>This is all done within the relevant geom. We can check to see which aesthetics are recognised by a particular geom by typing <code>?</code> followed by the function in the console and pressing return, i.e <code>?geom_node_point()</code>. This tells us that it recognises <code>alpha, colour, fill, shape, size, stroke, and filter</code>.</p>
+<p>To set a one of these visual attributes (or aesthetic) to an absolute value, simply set it within the parentheses of <code>geom_node_point()</code>:</p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb221-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb221-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb221-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>() <span class="sc">+</span> </span>
+<span id="cb221-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb221-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> <span class="co"># we specified that size should be set at the value 3</span></span>
+<span id="cb221-4"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb221-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>()</span></code></pre></div>
+<pre><code>## Using `stress` as default layout</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="672" />
+We can also map aesthetics to a particular <em>variable</em> in the data. To do this, the value should exist as a column in the nodes table of the <code>tbl_graph</code> object. For example, we can calculate the degree score for each node:</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb223-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb223-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb223-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) </span></code></pre></div>
+<pre><code>## # A tbl_graph: 248 nodes and 364 edges
+## #
+## # A directed simple graph with 6 components
+## #
+## # Node Data: 248 × 2 (active)
+##   name                    degree
+##   &lt;chr&gt;                    &lt;dbl&gt;
+## 1 E000145-S012650-T000000      1
+## 2 E000189-S014115-T000000      3
+## 3 E000312-S012741-T000000      1
+## 4 E000393-S036175-T000000      1
+## 5 E000520-S001769-T000000      2
+## 6 E000799-S042396-T000000      1
+## # … with 242 more rows
+## #
+## # Edge Data: 364 × 3
+##    from    to weight
+##   &lt;int&gt; &lt;int&gt;  &lt;int&gt;
+## 1     1    89      1
+## 2     2    22      4
+## 3     2   199      1
+## # … with 361 more rows</code></pre>
+<p>And it is added as an additional column in the first table.</p>
+<p>To map this column to be proportional to the node size, we do so within the function <code>aes()</code>, within the relevant geom:</p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb225-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb225-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb225-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> <span class="co"># calculate a value for degree</span></span>
+<span id="cb225-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb225-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>() <span class="sc">+</span> </span>
+<span id="cb225-4"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb225-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> <span class="co"># switch around the order of the nodes and edges as it&#39;s easier to see the node color</span></span>
+<span id="cb225-5"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb225-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> degree)) <span class="co"># map size to degree score</span></span></code></pre></div>
+<pre><code>## Using `stress` as default layout</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-130-1.png" width="672" />
+You’ll notice that ggraph has added a <strong>legend</strong>: a guide to help us read exactly how the various sizes of the nodes map to the degree score.</p>
+<p>You can experiment in the notebook with the other aesthetics, including <code>alpha</code> and <code>shape</code>. You’ll notice that some of them cannot be mapped to a numerical (or continuous variable). We’ll look into this in the next class.</p>
+</div>
+</div>
+<div id="adjusting-edge-aesthetics" class="section level2 hasAnchor">
+<h2>Adjusting edge aesthetics<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#adjusting-edge-aesthetics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The visual appearance of the edges can also be adjusted, using the same syntax.</p>
+<p>We can set the thickness of the edges using the <code>width</code> aesthetic:</p>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb227-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb227-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb227-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb227-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb227-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb227-4"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb227-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">width =</span> <span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb227-5"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb227-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-131-1.png" width="672" /></p>
+<p>As with nodes, these aesthetics can be mapped to particular values. In this case, the variable to be mapped should exist as a column in the edges table in the <code>tbl_graph</code> object. If we look at the object, we can see that there is already a ‘weight’ column which we created when making the graph:</p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb228-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph</span></code></pre></div>
+<pre><code>## # A tbl_graph: 248 nodes and 364 edges
+## #
+## # A directed simple graph with 6 components
+## #
+## # Node Data: 248 × 1 (active)
+##   name                   
+##   &lt;chr&gt;                  
+## 1 E000145-S012650-T000000
+## 2 E000189-S014115-T000000
+## 3 E000312-S012741-T000000
+## 4 E000393-S036175-T000000
+## 5 E000520-S001769-T000000
+## 6 E000799-S042396-T000000
+## # … with 242 more rows
+## #
+## # Edge Data: 364 × 3
+##    from    to weight
+##   &lt;int&gt; &lt;int&gt;  &lt;int&gt;
+## 1     1    89      1
+## 2     2    22      4
+## 3     2   199      1
+## # … with 361 more rows</code></pre>
+<p>Again, this can be mapped using the same syntax as with nodes. Set the <code>width</code> aesthetic to the <code>weight</code> variable within the <code>aes()</code> command:</p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb230-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb230-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb230-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb230-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb230-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb230-4"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb230-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="fu">aes</span>(<span class="at">width =</span> weight)) <span class="sc">+</span> </span>
+<span id="cb230-5"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb230-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
+</div>
+<div id="layout-algorithms" class="section level2 hasAnchor">
+<h2>Layout algorithms<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#layout-algorithms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Igraph has a large number of graph layouts. Depending on your network size and structure, different ones may be appropriate. Where possible, it is a good idea to add some other information, for example group membership or simply node names to your visualisation, at least temporarily. That way you can check to see if the visual structures, such as clusters, centre-periphery, and orientation, make any sense. Here are the most common graph layouts:</p>
+<div id="fruchterman-reingold" class="section level4 hasAnchor">
+<h4>Fruchterman-Reingold<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#fruchterman-reingold" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A popular ‘force-directed’ layout, which treats the connections between nodes as springs.</p>
+<p>Add to ggraph using <code>layout = 'fr'</code>.</p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb231-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb231-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb231-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb231-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb231-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> </span>
+<span id="cb231-4"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb231-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
+</div>
+<div id="drl" class="section level4 hasAnchor">
+<h4>DRL<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#drl" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Another force-directed layout, often used with larger graphs.</p>
+<p>Add to ggraph using <code>layout = 'drl'</code>.</p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb232-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb232-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb232-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">&#39;drl&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb232-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb232-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> </span>
+<span id="cb232-4"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb232-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
+</div>
+<div id="kamada-kawai" class="section level4 hasAnchor">
+<h4>Kamada-Kawai<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#kamada-kawai" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Another force-directed layout. This doesn’t work well with ’disconnected graphs: below I have added a function to only include the main connected component of the network.</p>
+<p>Add using <code>layout = 'kk'</code></p>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb233-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb233-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb233-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">component =</span> <span class="fu">group_components</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb233-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb233-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(component <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb233-4"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb233-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;kk&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb233-5"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb233-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> </span>
+<span id="cb233-6"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb233-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-136-1.png" width="672" /></p>
+</div>
+<div id="circle" class="section level4 hasAnchor">
+<h4>Circle<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#circle" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Places nodes in a circle, in order:</p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb234-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb234-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb234-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;circle&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb234-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb234-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> </span>
+<span id="cb234-4"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb234-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-137-1.png" width="672" /></p>
+</div>
+<div id="tree" class="section level4 hasAnchor">
+<h4>Tree<a href="week-5-class-1-visualising-networks-with-ggraph-i.html#tree" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For hierarchical graphs. Places nodes in a tree diagram, according to their hierarchy.</p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb235-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb235-2"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb235-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;tree&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb235-3"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb235-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_bend</span>() <span class="sc">+</span> <span class="co"># here we use a different geom_edge_ more appropriate to tree graphs</span></span>
+<span id="cb235-4"><a href="week-5-class-1-visualising-networks-with-ggraph-i.html#cb235-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-138-1.png" width="672" /></p>
+<p>It is worth checking some of these out, particularly if you have a specific network structure, for example a hierarchy, or if you have a bipartite network.</p>
+<p>Also note there are lots of other ways to visualise a network, for example by making a heatmap from an adjacency matrix. It’s worth experimenting a bit with these (and explaining choices in your final project).</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-musae" class="csl-entry">
+Rozemberczki, Benedek, Carl Allen, and Rik Sarkar. 2021. <span>“<span>Multi-Scale Attributed Node Embedding</span>.”</span> <em>Journal of Complex Networks</em> 9 (2).
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-4-class-2-network-analysis-with-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualising-networks-with-ggraph-ii.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/5-1-visualising-with-ggraph_i_nb.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

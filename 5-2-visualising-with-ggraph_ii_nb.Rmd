@@ -1,0 +1,156 @@
+# Visualising Networks with ggraph, II
+
+## Other aesthetics: colour, alpha  
+
+#### Edge types
+
+You can also make extenstive changes to the type of edge. In many cases, these may make the diagram more readable. Some have particular uses, for example `geom_edge_fan()` is used for a multigraph (where you have multiple different types of edges), and `geom_edge_arc` can be useful for when you want to visualise the difference between incoming and outgoing edges:
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('fr') + 
+  geom_edge_bend(linetype = 5,
+                 arrow = arrow(length = unit(4, 'mm')), 
+                   end_cap = circle(3, 'mm')) + 
+  geom_node_point(size = 3, aes(color = degree))
+```
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('fr') + 
+  geom_edge_arc(linetype = 5,
+                 arrow = arrow(length = unit(4, 'mm')), 
+                   end_cap = circle(3, 'mm')) + 
+  geom_node_point(size = 3, aes(color = degree))
+```
+
+
+You can also add arrows, with the following syntax. The `length` and `endcap` arguments control the appearance of the arrow.
+
+```{r}
+
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('fr') + 
+  geom_edge_link(linetype = 5,
+                 arrow = arrow(length = unit(4, 'mm')), 
+                   end_cap = circle(3, 'mm')) + 
+  geom_node_point(size = 3, aes(color = degree))
+
+```
+
+
+### Ggraph and other tidyverse functions
+
+You can use the dplyr pipes to perform calculations, filter the data and then visualise it, all in one go:
+
+```{r}
+sample_tbl_graph %>% 
+  activate(nodes)%>% 
+  mutate(degree = centrality_degree(mode = 'total')) %>% # calculate total degree 
+  filter(degree >2) %>% # filter to only include nodes with a degree greater than 2.
+  ggraph('fr') + 
+  geom_node_point() + 
+  geom_edge_link()
+```
+
+### Add node labels
+
+Add `geom_node_text()` to add text labels to your network. In a larger network, it can be helpful to only show labels belonging to the most-connected nodes.
+
+To do this, join the people table to the nodes table, then use ggraph, setting the `label` aesthetic. Another `dplyr` verb, `if_else` allows you to add conditions to the label command.
+
+Here, I've used if_else to return the label if the node's degree score is more than 10:
+
+A the moment, we only have the IDs for each node. In a further step we can join back the actual names and use these as labels.
+
+```{r}
+
+sample_tbl_graph %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree(mode = 'total'))  %>% 
+  ggraph('nicely') + 
+  geom_node_point(aes(size = degree)) + 
+  geom_node_text(aes(label = if_else(degree >10, name, NULL), size = degree), repel = TRUE) + 
+  geom_edge_link(alpha = .2)
+
+```
+
+### Calculating and coloring by community detection
+
+One very common visualisation is colouring the various groups in the network, which might give us a clue as to its structure.
+
+```{r}
+sample_tbl_graph %>% 
+  as.undirected() %>% 
+  as_tbl_graph() %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree(mode = 'total'))  %>% 
+  mutate(community = group_edge_betweenness(weights =NULL)) %>% 
+  filter(community %in% 1:4) %>% 
+  ggraph('nicely') + 
+  geom_node_point(aes(size = degree, color = as.character(community))) + 
+  geom_edge_link(alpha = .2)
+```
+
+## What makes a good network visualisation?
+
+You will rarely be able to make a good network visualisation simply by pushing a button and using the default settings. You should think about what your network is trying to communicate and to what audience, and spend some time
+
+-   Treat the diagram as carefully as you would an essay or other piece of text. Is it easy to understand?
+
+-   Make sure you really need a network graph, and that another method of communicating the information wouldn't be better. For example, if your diagram is simply showing the most influential nodes, would a bar chart (or even a table) with their degree work just as well?
+
+-   Use colour/shape/size if you need to, but make sure you explain what each element is doing.
+
+-   Spend some time showing your readers how to 'read' the visualisation. What is interesting about the left/right/top/bottom of the diagram? What is the significance of nodes grouped together, and what about nodes in the centre versus nodes towards the edge? Are there obvious clusters and gaps, and do these show up in the visualisation?
+
+## Case study: Scientists and Politicians
+
+In this final section, I'll demonstrate how these methods might be used to carry out exploratory data analysis on the sample letter dataset.
+
+The node attributes can used either to filter the network, or added as extra visual elements. Doing so helps us to understand a bit more about why the network might look the way it does.
+
+First, load the same node attributes table as before:
+
+```{r}
+node_attributes = read_csv('node_attributes.csv')
+```
+
+This external information might help us to make sense of the clusters found by the community detection algorithm used above. One of the fields in the data is whether that person is listed as a politician on Wikidata: the field is a simple flag of either `yes` or `no`.
+
+To check whether this might be a clue towards the structure of the network, we will set the *color* to the community detection results, and the *shape* to the politician flag, with the following code:
+
+```{r message=FALSE, warning=FALSE}
+sample_tbl_graph %>% 
+  as.undirected() %>% 
+  as_tbl_graph()%>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree(mode = 'total')) %>% 
+  left_join(node_attributes) %>% 
+  mutate(community = group_edge_betweenness(weights =NULL)) %>% 
+  filter(community %in% 1:4) %>% 
+  ggraph('fr') + 
+  geom_edge_link(alpha = .2)+ 
+  geom_node_point(aes(size = degree, color = as.character(community), shape = politician))  + 
+  geom_node_text(aes(label = ifelse(degree >2, main_name, NA)), size = 2.5, repel = T) + 
+  theme(legend.position = 'none')
+```
+
+It does look like one of the four clusters (cluster 2) has far fewer politicians. This cluster seems to be a group of what might be described as natural philosophers.
+
+Other things to look out for in this visualisation:
+
+-   What is the importance of the nodes sitting in between the scientists and the politicians? What metrics might they score highly on, and what role might they occupy in this system? What kinds of information may they be able to pass on?
+
+-   What is the position of Athanasius Kircher? What does it mean to be on the periphery of this network?
+
+-   What effect might additional data have on the metrics in this network? Should this make us cautious about any inference from this network?
+
+## Conclusions
+
+Hopefully, from reading this chapter, you'll be convinced that network visualisations are useful, but that they should also be approached with caution. The bottom line is, visualisations of themselves are not a result: at the very least, they need extensive commentary in order to explain them, and in some cases, they may simply be useful ways of describing the network.
+
+At the same time, in combination with the additional attributes from our data model, thoughtful visualisations can be incredibly useful for exploring a network dataset, revealing patterns that are otherwise hidden. I encourage you to use visualisations in your final project if they make sense, are not just 'hairballs', and if they can be justified with relevant commentary.

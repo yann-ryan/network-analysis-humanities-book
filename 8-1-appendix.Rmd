@@ -1,4 +1,7 @@
-# Week 5, class 2: Other network types
+# Appendix and extra materials 
+
+Useful as examples for the final project - things we didn't have time to cover in class. 
+
 
 ## Ego Networks
 
