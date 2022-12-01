@@ -1,24 +1,31 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Week 7: Final Project
 
 There are two stages to the final project:
 
 -   In the final week of the course, either December 14 or 16, you'll be assigned a 10-minute presentation slot, where you should outline your progress so far, including your research question, datasets used, any problems you encountered (or think you might). This is a chance to get feedback from your peers and course leaders.
 
--   The final project itself is due on Friday, December 23.
+-   The final project itself is due on **Tuesday, January 17.**
 
 ## Presentation:
 
 A good presentation should try and cover the following:
 
-Outline your research question
+-   Outline your research question
 
-What are the steps you need to carry out?
+-   What are the steps you need to carry out?
 
-How will you get your data? What size is the dataset, is it manageable with your resources, how long will it take to put together (for example if you are hydrating tweets, how long will this take?)
+-   How will you get your data? What size is the dataset, is it manageable with your resources, how long will it take to put together (for example if you are hydrating tweets, how long will this take?)
 
-What expertise do you need, what do you have and who will you ask for help?
+-   What expertise do you need, what do you have and where will you find help if needed?
 
-What problems might arise and how are you going to deal with them?
+-   Do you have any existing examples you'd like to emulate?
+
+-   What problems might arise and how are you going to deal with them?
 
 ## What should the final project look like?
 

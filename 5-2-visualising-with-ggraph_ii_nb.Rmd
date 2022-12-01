@@ -1,10 +1,158 @@
-# Visualising Networks with ggraph, II
+# Week 5, Class 2: Visualising Networks with ggraph, II
 
-## Other aesthetics: colour, alpha  
+## Discreet versus continuous variables
+
+A very important concept to bear in mind when making visualisations is the differences in the way **discrete** and **continuous** value are treated. For the purposes of visualisation we can think of the differences like this:
+
+-   A **continuous** value is something you can measure, for example height. There are infinite values that a height can be.
+
+-   A **discrete** value is one where the values are one of a limited set of set values. For example, occupation, or colour. Another name for this is **categorical** value.
+
+It is easier to understand with an example of how this affects how visual elements (aesthetics) are mapped to values. First, we'll create an example dataset of fruit with three variables: total, weight, and delivery (day): 
+
+```{r}
+
+df = tibble(fruit = c("banana", "apple", "orange"), 
+            total = c(100, 200, 300) ,
+       weight = c(50.2, 75.11, 20.547), 
+       delivery = c("Monday", "Wednesday", "Saturday"))
+
+df
+```
+
+-   In this data, R treats *fruit* as a **discrete** value, *total* and *weight* as **continuous** values, and *delivery* as a **discrete** value.
+
+The type of data has an important role in how the data will be visualised and is worth understanding. To demonstrate, we'll assign the **fill** aesthetic first of all to a continuous value (weight) and then to a discrete value (delivery):
+
+```{r}
+df %>% ggplot() + geom_col(aes(x = fruit, y = total, fill = weight))
+```
+
+Ggplot (and ggraph will work in the same way) assigns each bar a colour from a spectrum running from dark to light blue, according to its value. In this case, **the larger the weight value, the lighter the colour will be.** This works well for continuous values because it allows our brain to quickly understand which values are heavier and which are lighter - something which would be particularly useful if the data visualisation was much larger and had many more bars (in this case, we would also probably like to reverse the scale so that lighter weights were a lighter colour, but that is an easy change to make). 
+
+Now if we plot with a **discrete** value, **delivery:**
+
+```{r}
+df %>% ggplot() + geom_col(aes(x = fruit, y = total, fill = delivery))
+```
+
+In this case, ggplot recognises that the values are discrete, and changes the colour scheme accordingly. Rather than try and map the values across a colour scale, it picks three **constrasting** colours to highlight that each value is a separate category, and they are not from across a continuous range, as with weight.
+
+You will notice similar changes when you map additional aesthetics to your network using ggraph. Depending on whether the value you try to map is continuous or discrete, you will see different results.
+
+**Some aesthetics can only map to one of the two types**. We saw this in the last class when we tried to map a continuous variable (degree) to the **shape** aesthetic. Unlike with colour, it's not possible to have a continuous spectrum of shapes - something can only be one shape or another.
+
+An opposite example is the aesthetic **alpha,** which means **transparency.** Transparency cannot be categorical (at least in practical terms), so mapping alpha to a **discrete** variable doesn't make any sense.
+
+## Other aesthetics: colour, alpha
+
+Using the same data as yesterday, we'll demonstrate some of the other aesthetics which can be mapped to values. 
+
+We'll also use `left_join` to add the table of node attributes used in week 4, which we can then visualise in the network. Using `left_join` means they are joined to the nodes table. Note that some of them are discrete and some are continuous variables. 
+
+```{r message=FALSE, warning=FALSE}
+
+library(tidygraph)
+library(tidyverse)
+library(ggraph)
+letters = read_csv("../applying-network-analysis-to-humanities/data/letter_data1670.csv", col_types = cols(.default = "c"))
+
+node_attributes = read_csv('../applying-network-analysis-to-humanities/data/node_attributes.csv')
+
+
+edge_list = letters %>% 
+  group_by(from_id, to_id) %>% 
+  tally(name = 'weight')
+
+sample_tbl_graph = edge_list %>% 
+  as_tbl_graph()
+
+sample_tbl_graph = sample_tbl_graph %>% left_join(node_attributes, by = 'name')
+
+sample_tbl_graph
+```
+
+First, we'll calculate a degree score, and map this to colour, which is a continuous variable. We'll also increase the size of all nodes (notice it is outside the `aes()` function) to make it easier to see the changes.
+
+```{r}
+
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree(mode = 'all')) %>% 
+  ggraph(layout = 'fr') + 
+  geom_edge_link() + 
+  geom_node_point(size = 3, aes(color = degree))
+  
+```
+
+Next, we'll map gender to the shape aesthetic, which (clearly this is a traditional, binary system) is coded as a discrete value:
+
+```{r}
+
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree(mode = 'all')) %>% 
+  ggraph(layout = 'fr') + 
+  geom_edge_link() + 
+  geom_node_point(size = 3, 
+                  aes(color = degree, shape = gender))
+
+  
+```
+
+Last, we'll map the weight value in the edges table to the alpha aesthetic, which controls transparency. Note that the code for this is included within `geom_edge_link()` this time. 
+
+```{r}
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree(mode = 'all')) %>% 
+  ggraph(layout = 'fr') + 
+  geom_edge_link(aes(alpha = weight)) + 
+  geom_node_point(size = 3, aes(color = degree, shape = gender))
+
+```
+
+Try changing the mappings in the code above to see what works best, and to notice the difference between continuous and discreet variables: for example, map gender to colour, and degree to alpha. 
+
+
+## Adding node labels
+
+To add text labels to your network, you need to add a separate geom layer to your network. The correct one to use is `geom_node_text()`.
+
+To specify which data ggraph should use to draw the labels, map the label aesthetic to the required column. In this case, we will use `main_name`. 
+
+```{r}
+
+sample_tbl_graph %>% 
+  ggraph('fr') + 
+  geom_node_point() + 
+  geom_node_text(aes(label = main_name)) + 
+  geom_edge_link(alpha = .2)
+
+```
+
+You'll notice that the text is unreadable because there are too many overlapping labels. 
+
+In a larger network, it can be helpful to only show labels belonging to the most-connected nodes.
+
+It's a little complicated to explain the syntax, but you can use copy and paste this example to your own networ: just change the `main_name` to the correct column you wish to get the labels from in your own network. 
+
+```{r}
+
+sample_tbl_graph %>% 
+  mutate(degree = centrality_degree()) %>% 
+  ggraph('fr') + 
+  geom_node_point() + 
+  geom_node_text(aes(label = if_else(degree >10, main_name, NULL))) + 
+  geom_edge_link(alpha = .2)
+
+```
+
+
+## Some other things you can change
+
+We won't go into detail with these, but it might be useful to have as a reference when you are building your own graph. 
 
 #### Edge types
 
-You can also make extenstive changes to the type of edge. In many cases, these may make the diagram more readable. Some have particular uses, for example `geom_edge_fan()` is used for a multigraph (where you have multiple different types of edges), and `geom_edge_arc` can be useful for when you want to visualise the difference between incoming and outgoing edges:
+You can make extensive changes to the type of edge. In many cases, these may make the diagram more readable. Some have particular uses, for example `geom_edge_fan()` is used for a multigraph (where you have multiple different types of edges), and `geom_edge_arc` can be useful for when you want to visualise the difference between incoming and outgoing edges:
 
 ```{r}
 sample_tbl_graph %>% 
@@ -26,8 +174,9 @@ sample_tbl_graph %>%
   geom_node_point(size = 3, aes(color = degree))
 ```
 
+#### Arrows
 
-You can also add arrows, with the following syntax. The `length` and `endcap` arguments control the appearance of the arrow.
+Add arrows with the following syntax. The `length` and `endcap` arguments control the appearance of the arrow, so you can experiment with changing those. 
 
 ```{r}
 
@@ -42,64 +191,30 @@ sample_tbl_graph %>%
 ```
 
 
-### Ggraph and other tidyverse functions
-
-You can use the dplyr pipes to perform calculations, filter the data and then visualise it, all in one go:
-
-```{r}
-sample_tbl_graph %>% 
-  activate(nodes)%>% 
-  mutate(degree = centrality_degree(mode = 'total')) %>% # calculate total degree 
-  filter(degree >2) %>% # filter to only include nodes with a degree greater than 2.
-  ggraph('fr') + 
-  geom_node_point() + 
-  geom_edge_link()
-```
-
-### Add node labels
-
-Add `geom_node_text()` to add text labels to your network. In a larger network, it can be helpful to only show labels belonging to the most-connected nodes.
-
-To do this, join the people table to the nodes table, then use ggraph, setting the `label` aesthetic. Another `dplyr` verb, `if_else` allows you to add conditions to the label command.
-
-Here, I've used if_else to return the label if the node's degree score is more than 10:
-
-A the moment, we only have the IDs for each node. In a further step we can join back the actual names and use these as labels.
-
-```{r}
-
-sample_tbl_graph %>% 
-  activate(nodes) %>% 
-  mutate(degree = centrality_degree(mode = 'total'))  %>% 
-  ggraph('nicely') + 
-  geom_node_point(aes(size = degree)) + 
-  geom_node_text(aes(label = if_else(degree >10, name, NULL), size = degree), repel = TRUE) + 
-  geom_edge_link(alpha = .2)
-
-```
-
 ### Calculating and coloring by community detection
 
 One very common visualisation is colouring the various groups in the network, which might give us a clue as to its structure.
 
+This is an interesting case of where we need to be mindful of the differences between continuous and discrete values. The output for the community detection is a number: node 1 will be placed in group 1, node 2 in group 2, node 3 in group 1, and so forth. By default, ggraph treats these numbers as continuous variables, and will map them to a colour scale as in the first example above. However, group membership should be considered a discrete value.
+
+In order to tell ggraph to treat it as a discete value, we wrap the value in the `as.character()` function. This tells R to treat the value as a character string instead of a number, and ggraph treats character strings as discrete variables. 
+
 ```{r}
 sample_tbl_graph %>% 
-  as.undirected() %>% 
-  as_tbl_graph() %>% 
-  activate(nodes) %>% 
-  mutate(degree = centrality_degree(mode = 'total'))  %>% 
-  mutate(community = group_edge_betweenness(weights =NULL)) %>% 
-  filter(community %in% 1:4) %>% 
-  ggraph('nicely') + 
-  geom_node_point(aes(size = degree, color = as.character(community))) + 
-  geom_edge_link(alpha = .2)
+ to_undirected() %>% # change the graph to undirected, in order to make the community detection work.
+  mutate(community = group_louvain(weights =NULL)) %>% # calculate the group memberships
+  filter(community %in% 1:4) %>% # filter to only include the first four groups
+  ggraph('fr')  + 
+  geom_edge_link(alpha = .2) +  # reduce the transparency of the edges to make it easier to see the colours.+ 
+  geom_node_point(aes(color = as.character(community)))  # map the colour aesthetic to the group label. Use as.character() to change it to a discrete value
+
 ```
 
 ## What makes a good network visualisation?
 
 You will rarely be able to make a good network visualisation simply by pushing a button and using the default settings. You should think about what your network is trying to communicate and to what audience, and spend some time
 
--   Treat the diagram as carefully as you would an essay or other piece of text. Is it easy to understand?
+-   Treat the visualisation as carefully as you would an essay or other piece of text. Is it easy to understand?
 
 -   Make sure you really need a network graph, and that another method of communicating the information wouldn't be better. For example, if your diagram is simply showing the most influential nodes, would a bar chart (or even a table) with their degree work just as well?
 
@@ -125,7 +240,7 @@ To check whether this might be a clue towards the structure of the network, we w
 
 ```{r message=FALSE, warning=FALSE}
 sample_tbl_graph %>% 
-  as.undirected() %>% 
+  igraph::as.undirected() %>% 
   as_tbl_graph()%>% 
   activate(nodes) %>% 
   mutate(degree = centrality_degree(mode = 'total')) %>% 

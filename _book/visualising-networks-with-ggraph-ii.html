@@ -23,7 +23,7 @@
 <meta name="author" content="Yann Ryan, Iiro Tihonen" />
 
 
-<meta name="date" content="2022-11-30" />
+<meta name="date" content="2022-12-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -356,10 +356,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html"><i class="fa fa-check"></i>Visualising Networks with ggraph, II</a>
 <ul>
-<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#other-aesthetics-colour-alpha"><i class="fa fa-check"></i>Other aesthetics: colour, alpha</a>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#discreet-versus-continuous-variables"><i class="fa fa-check"></i>Discreet versus continuous variables</a></li>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#other-aesthetics-colour-alpha"><i class="fa fa-check"></i>Other aesthetics: colour, alpha</a></li>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#adding-node-labels"><i class="fa fa-check"></i>Adding node labels</a></li>
+<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#some-other-things-you-can-change"><i class="fa fa-check"></i>Some other things you can change</a>
 <ul>
-<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#ggraph-and-other-tidyverse-functions"><i class="fa fa-check"></i>Ggraph and other tidyverse functions</a></li>
-<li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#add-node-labels"><i class="fa fa-check"></i>Add node labels</a></li>
 <li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#calculating-and-coloring-by-community-detection"><i class="fa fa-check"></i>Calculating and coloring by community detection</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="visualising-networks-with-ggraph-ii.html"><a href="visualising-networks-with-ggraph-ii.html#what-makes-a-good-network-visualisation"><i class="fa fa-check"></i>What makes a good network visualisation?</a></li>
@@ -461,94 +462,187 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="visualising-networks-with-ggraph-ii" class="section level1 hasAnchor">
 <h1>Visualising Networks with ggraph, II<a href="visualising-networks-with-ggraph-ii.html#visualising-networks-with-ggraph-ii" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="discreet-versus-continuous-variables" class="section level2 hasAnchor">
+<h2>Discreet versus continuous variables<a href="visualising-networks-with-ggraph-ii.html#discreet-versus-continuous-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A very important concept to bear in mind when making visualisations is the differences in the way <strong>discreet</strong> and <strong>continuous</strong> value are treated. For the purposes of visualisation we can think of the differences like this:</p>
+<ul>
+<li><p>A <strong>continuous</strong> value is something you can measure, for example height. There are infinite values that a height can be.</p></li>
+<li><p>A <strong>discrete</strong> value is one where the values are one of a limited set of set values. For example, occupation, or colour. Another name for this is <strong>categorical</strong> value.</p></li>
+</ul>
+<p>It is easier to understand with an example of how this affects how visual elements (aesthetics) are mapped to values.</p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="visualising-networks-with-ggraph-ii.html#cb236-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">fruit =</span> <span class="fu">c</span>(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;orange&quot;</span>), </span>
+<span id="cb236-2"><a href="visualising-networks-with-ggraph-ii.html#cb236-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">total =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>) ,</span>
+<span id="cb236-3"><a href="visualising-networks-with-ggraph-ii.html#cb236-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">weight =</span> <span class="fu">c</span>(<span class="fl">50.2</span>, <span class="fl">75.11</span>, <span class="fl">20.547</span>), </span>
+<span id="cb236-4"><a href="visualising-networks-with-ggraph-ii.html#cb236-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">delivery =</span> <span class="fu">c</span>(<span class="st">&quot;Monday&quot;</span>, <span class="st">&quot;Wednesday&quot;</span>, <span class="st">&quot;Saturday&quot;</span>))</span>
+<span id="cb236-5"><a href="visualising-networks-with-ggraph-ii.html#cb236-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb236-6"><a href="visualising-networks-with-ggraph-ii.html#cb236-6" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 4
+##   fruit  total weight delivery 
+##   &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;    
+## 1 banana   100   50.2 Monday   
+## 2 apple    200   75.1 Wednesday
+## 3 orange   300   20.5 Saturday</code></pre>
+<ul>
+<li>In this data, R treats <strong>fruit</strong> a a <strong>discrete</strong> value, <strong>total</strong> and <strong>weight</strong> as <strong>continuous</strong> values, and <strong>delivery</strong> as a <strong>discrete</strong> value.</li>
+</ul>
+<p>The type of data has an important role in how the data will be visualised and is worth understanding. To demonstrate, we’ll assign the <strong>fill</strong> aesthetic first of all to a continuous value (weight) and then to a discrete value (delivery):</p>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="visualising-networks-with-ggraph-ii.html#cb238-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> total, <span class="at">fill =</span> weight))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-140-1.png" width="672" /></p>
+<p>Ggplot (and ggraph will work in the same way) assigns each bar a colour from a spectrum running from dark to light blue, according to its value. In this case, <strong>the larger the weight value, the lighter the colour will be.</strong> This works well for continuous values because it allows our brain to quickly understand which values are heavier and which are lighter - something which would be particularly useful if the data visualisation was much larger and had many more bars.</p>
+<p>Now if we plot with a <strong>discrete</strong> value, <strong>delivery:</strong></p>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="visualising-networks-with-ggraph-ii.html#cb239-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> fruit, <span class="at">y =</span> total, <span class="at">fill =</span> delivery))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-141-1.png" width="672" /></p>
+<p>In this case, ggplot recognises that the values are discrete, and changes the colour scheme accordingly. Rather than try and map the values across a colour scale, it picks three <strong>constrasting</strong> colours to highlight that each value is a separate category, and they are not from across a continuous range, as with weight.</p>
+<p>You will notice similar changes when you map additional aesthetics to your network using ggraph. Depending on whether the value you try to map is continuous or discrete, you will see different results.</p>
+<p><strong>Some aesthetics can only map to one of the two values</strong>. We saw this in the last class when we tried to map a continuous variable (degree) to the <strong>shape</strong> aesthetic. Unlike with colour, it’s not possible to have a continuous spectrum of shapes - something can only be one shape or another.</p>
+<p>An opposite example is the aesthetic <strong>alpha,</strong> which means <strong>transparency.</strong> Transparency cannot be categorical (at least in practical terms), so mapping alpha to a <strong>discrete</strong> variable doesn’t make any sense.</p>
+</div>
 <div id="other-aesthetics-colour-alpha" class="section level2 hasAnchor">
 <h2>Other aesthetics: colour, alpha<a href="visualising-networks-with-ggraph-ii.html#other-aesthetics-colour-alpha" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Using the same data as yesterday, we’ll demonstrate some of the other aesthetics which can be mapped to values.</p>
+<p>We’ll also use <code>left_join</code> to add the table of node attributes used in week 4, which we can then visualise in the network. Using <code>left_join</code> means they are joined to the nodes table. Note that some of them are discrete and some are continuous variables.</p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="visualising-networks-with-ggraph-ii.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygraph)</span>
+<span id="cb240-2"><a href="visualising-networks-with-ggraph-ii.html#cb240-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb240-3"><a href="visualising-networks-with-ggraph-ii.html#cb240-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggraph)</span>
+<span id="cb240-4"><a href="visualising-networks-with-ggraph-ii.html#cb240-4" aria-hidden="true" tabindex="-1"></a>letters <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;../applying-network-analysis-to-humanities/data/letter_data1670.csv&quot;</span>, <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">.default =</span> <span class="st">&quot;c&quot;</span>))</span>
+<span id="cb240-5"><a href="visualising-networks-with-ggraph-ii.html#cb240-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb240-6"><a href="visualising-networks-with-ggraph-ii.html#cb240-6" aria-hidden="true" tabindex="-1"></a>node_attributes <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&#39;../applying-network-analysis-to-humanities/data/node_attributes.csv&#39;</span>)</span>
+<span id="cb240-7"><a href="visualising-networks-with-ggraph-ii.html#cb240-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb240-8"><a href="visualising-networks-with-ggraph-ii.html#cb240-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb240-9"><a href="visualising-networks-with-ggraph-ii.html#cb240-9" aria-hidden="true" tabindex="-1"></a>edge_list <span class="ot">=</span> letters <span class="sc">%&gt;%</span> </span>
+<span id="cb240-10"><a href="visualising-networks-with-ggraph-ii.html#cb240-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(from_id, to_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb240-11"><a href="visualising-networks-with-ggraph-ii.html#cb240-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(<span class="at">name =</span> <span class="st">&#39;weight&#39;</span>)</span>
+<span id="cb240-12"><a href="visualising-networks-with-ggraph-ii.html#cb240-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb240-13"><a href="visualising-networks-with-ggraph-ii.html#cb240-13" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="ot">=</span> edge_list <span class="sc">%&gt;%</span> </span>
+<span id="cb240-14"><a href="visualising-networks-with-ggraph-ii.html#cb240-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>()</span>
+<span id="cb240-15"><a href="visualising-networks-with-ggraph-ii.html#cb240-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb240-16"><a href="visualising-networks-with-ggraph-ii.html#cb240-16" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="ot">=</span> sample_tbl_graph <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(node_attributes, <span class="at">by =</span> <span class="st">&#39;name&#39;</span>)</span>
+<span id="cb240-17"><a href="visualising-networks-with-ggraph-ii.html#cb240-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb240-18"><a href="visualising-networks-with-ggraph-ii.html#cb240-18" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph</span></code></pre></div>
+<pre><code>## # A tbl_graph: 248 nodes and 364 edges
+## #
+## # A directed simple graph with 6 components
+## #
+## # Node Data: 248 × 13 (active)
+##   name  main_n… all_na… links birth_… death_… gender roles_… wikida… occupa…
+##   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
+## 1 E000… Dr. La… Dr. La… http…    1632    1703 male   chapla… http:/… chapla…
+## 2 E000… Edward… Edward… http…    1638    1697 male   astron… http:/… astron…
+## 3 E000… Dr. Ri… Dr. Ri… http…    1619    1681 male   priest  http:/… priest 
+## 4 E000… Solms-… Prince… http…    1602    1675 female art co… http:/… art co…
+## 5 E000… Arthur… Arthur… http…    1614    1686 male   politi… http:/… politi…
+## 6 E000… Sir Jo… Sir Jo… http…    1603    1671 male   politi… http:/… politi…
+## # … with 242 more rows, and 3 more variables: place_of_birth &lt;chr&gt;,
+## #   place_of_death &lt;chr&gt;, politician &lt;chr&gt;
+## #
+## # Edge Data: 364 × 3
+##    from    to weight
+##   &lt;int&gt; &lt;int&gt;  &lt;int&gt;
+## 1     1    89      1
+## 2     2    22      4
+## 3     2   199      1
+## # … with 361 more rows</code></pre>
+<p>First, we’ll calculate a degree score, and map this to colour, which is a continuous variable. We’ll also increase the size of all nodes (notice it is outside the <code>aes()</code> function) to make it easier to see the changes.</p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="visualising-networks-with-ggraph-ii.html#cb242-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb242-2"><a href="visualising-networks-with-ggraph-ii.html#cb242-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;all&#39;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb242-3"><a href="visualising-networks-with-ggraph-ii.html#cb242-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb242-4"><a href="visualising-networks-with-ggraph-ii.html#cb242-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> </span>
+<span id="cb242-5"><a href="visualising-networks-with-ggraph-ii.html#cb242-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-143-1.png" width="672" /></p>
+<p>Next, we’ll map gender to the shape aesthetic, which (at least in this outdated binary way) is coded as a discrete value:</p>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="visualising-networks-with-ggraph-ii.html#cb243-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb243-2"><a href="visualising-networks-with-ggraph-ii.html#cb243-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;all&#39;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb243-3"><a href="visualising-networks-with-ggraph-ii.html#cb243-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb243-4"><a href="visualising-networks-with-ggraph-ii.html#cb243-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> </span>
+<span id="cb243-5"><a href="visualising-networks-with-ggraph-ii.html#cb243-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, </span>
+<span id="cb243-6"><a href="visualising-networks-with-ggraph-ii.html#cb243-6" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">aes</span>(<span class="at">color =</span> degree, <span class="at">shape =</span> gender))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-144-1.png" width="672" />
+Last, we’ll map the weight value in the edges table to the alpha aesthetic, which controls transparency. Note that the code for this is included within <code>geom_edge_link()</code> this time.</p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="visualising-networks-with-ggraph-ii.html#cb244-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb244-2"><a href="visualising-networks-with-ggraph-ii.html#cb244-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;all&#39;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb244-3"><a href="visualising-networks-with-ggraph-ii.html#cb244-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb244-4"><a href="visualising-networks-with-ggraph-ii.html#cb244-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="fu">aes</span>(<span class="at">alpha =</span> weight)) <span class="sc">+</span> </span>
+<span id="cb244-5"><a href="visualising-networks-with-ggraph-ii.html#cb244-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree, <span class="at">shape =</span> gender))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-145-1.png" width="672" /></p>
+<p>Try changing the mappings in the code above to see what works best and to notice the difference between continuous and discreet variables: for example, map gender to colour, and degree to alpha.</p>
+</div>
+<div id="adding-node-labels" class="section level2 hasAnchor">
+<h2>Adding node labels<a href="visualising-networks-with-ggraph-ii.html#adding-node-labels" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To add text labels to your network, you need to add a separate geom layer to your network. The correct one to use is <code>geom_node_text()</code>.</p>
+<p>To specify which data ggraph should use to draw the labels, map the label aesthetic to the required column. In this case, we will use <code>main_name</code>.</p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="visualising-networks-with-ggraph-ii.html#cb245-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb245-2"><a href="visualising-networks-with-ggraph-ii.html#cb245-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb245-3"><a href="visualising-networks-with-ggraph-ii.html#cb245-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>() <span class="sc">+</span> </span>
+<span id="cb245-4"><a href="visualising-networks-with-ggraph-ii.html#cb245-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> main_name)) <span class="sc">+</span> </span>
+<span id="cb245-5"><a href="visualising-networks-with-ggraph-ii.html#cb245-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">2</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-146-1.png" width="672" /></p>
+<p>You’ll notice that the text is unreadable because there are too many overlapping labels.</p>
+<p>In a larger network, it can be helpful to only show labels belonging to the most-connected nodes.</p>
+<p>It’s a little complicated to explain the syntax, but you can use copy and paste this example to your own networ: just change the <code>main_name</code> to the correct column you wish to get the labels from in your own network.</p>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="visualising-networks-with-ggraph-ii.html#cb246-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb246-2"><a href="visualising-networks-with-ggraph-ii.html#cb246-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb246-3"><a href="visualising-networks-with-ggraph-ii.html#cb246-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb246-4"><a href="visualising-networks-with-ggraph-ii.html#cb246-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>() <span class="sc">+</span> </span>
+<span id="cb246-5"><a href="visualising-networks-with-ggraph-ii.html#cb246-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">if_else</span>(degree <span class="sc">&gt;</span><span class="dv">10</span>, main_name, <span class="cn">NULL</span>))) <span class="sc">+</span> </span>
+<span id="cb246-6"><a href="visualising-networks-with-ggraph-ii.html#cb246-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 244 rows containing missing values (geom_text).</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-147-1.png" width="672" /></p>
+</div>
+<div id="some-other-things-you-can-change" class="section level2 hasAnchor">
+<h2>Some other things you can change<a href="visualising-networks-with-ggraph-ii.html#some-other-things-you-can-change" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We won’t go into detail with these, but it might be useful to have as a reference when you are building your own graph.</p>
 <div id="edge-types" class="section level4 hasAnchor">
 <h4>Edge types<a href="visualising-networks-with-ggraph-ii.html#edge-types" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>You can also make extenstive changes to the type of edge. In many cases, these may make the diagram more readable. Some have particular uses, for example <code>geom_edge_fan()</code> is used for a multigraph (where you have multiple different types of edges), and <code>geom_edge_arc</code> can be useful for when you want to visualise the difference between incoming and outgoing edges:</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="visualising-networks-with-ggraph-ii.html#cb236-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb236-2"><a href="visualising-networks-with-ggraph-ii.html#cb236-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb236-3"><a href="visualising-networks-with-ggraph-ii.html#cb236-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
-<span id="cb236-4"><a href="visualising-networks-with-ggraph-ii.html#cb236-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_bend</span>(<span class="at">linetype =</span> <span class="dv">5</span>,</span>
-<span id="cb236-5"><a href="visualising-networks-with-ggraph-ii.html#cb236-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">&#39;mm&#39;</span>)), </span>
-<span id="cb236-6"><a href="visualising-networks-with-ggraph-ii.html#cb236-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">end_cap =</span> <span class="fu">circle</span>(<span class="dv">3</span>, <span class="st">&#39;mm&#39;</span>)) <span class="sc">+</span> </span>
-<span id="cb236-7"><a href="visualising-networks-with-ggraph-ii.html#cb236-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="visualising-networks-with-ggraph-ii.html#cb237-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb237-2"><a href="visualising-networks-with-ggraph-ii.html#cb237-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb237-3"><a href="visualising-networks-with-ggraph-ii.html#cb237-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
-<span id="cb237-4"><a href="visualising-networks-with-ggraph-ii.html#cb237-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_arc</span>(<span class="at">linetype =</span> <span class="dv">5</span>,</span>
-<span id="cb237-5"><a href="visualising-networks-with-ggraph-ii.html#cb237-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">&#39;mm&#39;</span>)), </span>
-<span id="cb237-6"><a href="visualising-networks-with-ggraph-ii.html#cb237-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">end_cap =</span> <span class="fu">circle</span>(<span class="dv">3</span>, <span class="st">&#39;mm&#39;</span>)) <span class="sc">+</span> </span>
-<span id="cb237-7"><a href="visualising-networks-with-ggraph-ii.html#cb237-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-140-1.png" width="672" /></p>
-<p>You can also add arrows, with the following syntax. The <code>length</code> and <code>endcap</code> arguments control the appearance of the arrow.</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="visualising-networks-with-ggraph-ii.html#cb238-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb238-2"><a href="visualising-networks-with-ggraph-ii.html#cb238-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb238-3"><a href="visualising-networks-with-ggraph-ii.html#cb238-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
-<span id="cb238-4"><a href="visualising-networks-with-ggraph-ii.html#cb238-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">linetype =</span> <span class="dv">5</span>,</span>
-<span id="cb238-5"><a href="visualising-networks-with-ggraph-ii.html#cb238-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">&#39;mm&#39;</span>)), </span>
-<span id="cb238-6"><a href="visualising-networks-with-ggraph-ii.html#cb238-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">end_cap =</span> <span class="fu">circle</span>(<span class="dv">3</span>, <span class="st">&#39;mm&#39;</span>)) <span class="sc">+</span> </span>
-<span id="cb238-7"><a href="visualising-networks-with-ggraph-ii.html#cb238-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-141-1.png" width="672" /></p>
+<p>You can make extensive changes to the type of edge. In many cases, these may make the diagram more readable. Some have particular uses, for example <code>geom_edge_fan()</code> is used for a multigraph (where you have multiple different types of edges), and <code>geom_edge_arc</code> can be useful for when you want to visualise the difference between incoming and outgoing edges:</p>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="visualising-networks-with-ggraph-ii.html#cb248-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb248-2"><a href="visualising-networks-with-ggraph-ii.html#cb248-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb248-3"><a href="visualising-networks-with-ggraph-ii.html#cb248-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb248-4"><a href="visualising-networks-with-ggraph-ii.html#cb248-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_bend</span>(<span class="at">linetype =</span> <span class="dv">5</span>,</span>
+<span id="cb248-5"><a href="visualising-networks-with-ggraph-ii.html#cb248-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">&#39;mm&#39;</span>)), </span>
+<span id="cb248-6"><a href="visualising-networks-with-ggraph-ii.html#cb248-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">end_cap =</span> <span class="fu">circle</span>(<span class="dv">3</span>, <span class="st">&#39;mm&#39;</span>)) <span class="sc">+</span> </span>
+<span id="cb248-7"><a href="visualising-networks-with-ggraph-ii.html#cb248-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-148-1.png" width="672" /></p>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="visualising-networks-with-ggraph-ii.html#cb249-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb249-2"><a href="visualising-networks-with-ggraph-ii.html#cb249-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb249-3"><a href="visualising-networks-with-ggraph-ii.html#cb249-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb249-4"><a href="visualising-networks-with-ggraph-ii.html#cb249-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_arc</span>(<span class="at">linetype =</span> <span class="dv">5</span>,</span>
+<span id="cb249-5"><a href="visualising-networks-with-ggraph-ii.html#cb249-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">&#39;mm&#39;</span>)), </span>
+<span id="cb249-6"><a href="visualising-networks-with-ggraph-ii.html#cb249-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">end_cap =</span> <span class="fu">circle</span>(<span class="dv">3</span>, <span class="st">&#39;mm&#39;</span>)) <span class="sc">+</span> </span>
+<span id="cb249-7"><a href="visualising-networks-with-ggraph-ii.html#cb249-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-149-1.png" width="672" /></p>
 </div>
-<div id="ggraph-and-other-tidyverse-functions" class="section level3 hasAnchor">
-<h3>Ggraph and other tidyverse functions<a href="visualising-networks-with-ggraph-ii.html#ggraph-and-other-tidyverse-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>You can use the dplyr pipes to perform calculations, filter the data and then visualise it, all in one go:</p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="visualising-networks-with-ggraph-ii.html#cb239-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb239-2"><a href="visualising-networks-with-ggraph-ii.html#cb239-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes)<span class="sc">%&gt;%</span> </span>
-<span id="cb239-3"><a href="visualising-networks-with-ggraph-ii.html#cb239-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;total&#39;</span>)) <span class="sc">%&gt;%</span> <span class="co"># calculate total degree </span></span>
-<span id="cb239-4"><a href="visualising-networks-with-ggraph-ii.html#cb239-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(degree <span class="sc">&gt;</span><span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="co"># filter to only include nodes with a degree greater than 2.</span></span>
-<span id="cb239-5"><a href="visualising-networks-with-ggraph-ii.html#cb239-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
-<span id="cb239-6"><a href="visualising-networks-with-ggraph-ii.html#cb239-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>() <span class="sc">+</span> </span>
-<span id="cb239-7"><a href="visualising-networks-with-ggraph-ii.html#cb239-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-142-1.png" width="672" /></p>
-</div>
-<div id="add-node-labels" class="section level3 hasAnchor">
-<h3>Add node labels<a href="visualising-networks-with-ggraph-ii.html#add-node-labels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Add <code>geom_node_text()</code> to add text labels to your network. In a larger network, it can be helpful to only show labels belonging to the most-connected nodes.</p>
-<p>To do this, join the people table to the nodes table, then use ggraph, setting the <code>label</code> aesthetic. Another <code>dplyr</code> verb, <code>if_else</code> allows you to add conditions to the label command.</p>
-<p>Here, I’ve used if_else to return the label if the node’s degree score is more than 10:</p>
-<p>A the moment, we only have the IDs for each node. In a further step we can join back the actual names and use these as labels.</p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="visualising-networks-with-ggraph-ii.html#cb240-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb240-2"><a href="visualising-networks-with-ggraph-ii.html#cb240-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> </span>
-<span id="cb240-3"><a href="visualising-networks-with-ggraph-ii.html#cb240-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;total&#39;</span>))  <span class="sc">%&gt;%</span> </span>
-<span id="cb240-4"><a href="visualising-networks-with-ggraph-ii.html#cb240-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;nicely&#39;</span>) <span class="sc">+</span> </span>
-<span id="cb240-5"><a href="visualising-networks-with-ggraph-ii.html#cb240-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> degree)) <span class="sc">+</span> </span>
-<span id="cb240-6"><a href="visualising-networks-with-ggraph-ii.html#cb240-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">if_else</span>(degree <span class="sc">&gt;</span><span class="dv">10</span>, name, <span class="cn">NULL</span>), <span class="at">size =</span> degree), <span class="at">repel =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> </span>
-<span id="cb240-7"><a href="visualising-networks-with-ggraph-ii.html#cb240-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">2</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 240 rows containing missing values (geom_text_repel).</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-143-1.png" width="672" /></p>
+<div id="arrows" class="section level4 hasAnchor">
+<h4>Arrows<a href="visualising-networks-with-ggraph-ii.html#arrows" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Add arrows with the following syntax. The <code>length</code> and <code>endcap</code> arguments control the appearance of the arrow, so you can experiment with changing those.</p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="visualising-networks-with-ggraph-ii.html#cb250-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb250-2"><a href="visualising-networks-with-ggraph-ii.html#cb250-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb250-3"><a href="visualising-networks-with-ggraph-ii.html#cb250-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb250-4"><a href="visualising-networks-with-ggraph-ii.html#cb250-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">linetype =</span> <span class="dv">5</span>,</span>
+<span id="cb250-5"><a href="visualising-networks-with-ggraph-ii.html#cb250-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">&#39;mm&#39;</span>)), </span>
+<span id="cb250-6"><a href="visualising-networks-with-ggraph-ii.html#cb250-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">end_cap =</span> <span class="fu">circle</span>(<span class="dv">3</span>, <span class="st">&#39;mm&#39;</span>)) <span class="sc">+</span> </span>
+<span id="cb250-7"><a href="visualising-networks-with-ggraph-ii.html#cb250-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> degree))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-150-1.png" width="672" /></p>
 </div>
 <div id="calculating-and-coloring-by-community-detection" class="section level3 hasAnchor">
 <h3>Calculating and coloring by community detection<a href="visualising-networks-with-ggraph-ii.html#calculating-and-coloring-by-community-detection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One very common visualisation is colouring the various groups in the network, which might give us a clue as to its structure.</p>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="visualising-networks-with-ggraph-ii.html#cb242-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb242-2"><a href="visualising-networks-with-ggraph-ii.html#cb242-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.undirected</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb242-3"><a href="visualising-networks-with-ggraph-ii.html#cb242-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb242-4"><a href="visualising-networks-with-ggraph-ii.html#cb242-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> </span>
-<span id="cb242-5"><a href="visualising-networks-with-ggraph-ii.html#cb242-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;total&#39;</span>))  <span class="sc">%&gt;%</span> </span>
-<span id="cb242-6"><a href="visualising-networks-with-ggraph-ii.html#cb242-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">community =</span> <span class="fu">group_edge_betweenness</span>(<span class="at">weights =</span><span class="cn">NULL</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb242-7"><a href="visualising-networks-with-ggraph-ii.html#cb242-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(community <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb242-8"><a href="visualising-networks-with-ggraph-ii.html#cb242-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;nicely&#39;</span>) <span class="sc">+</span> </span>
-<span id="cb242-9"><a href="visualising-networks-with-ggraph-ii.html#cb242-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> degree, <span class="at">color =</span> <span class="fu">as.character</span>(community))) <span class="sc">+</span> </span>
-<span id="cb242-10"><a href="visualising-networks-with-ggraph-ii.html#cb242-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">2</span>)</span></code></pre></div>
-<pre><code>## Warning in cluster_edge_betweenness(graph = .G(), weights = weights, directed =
-## directed): At core/community/edge_betweenness.c:485 : Membership vector will be
-## selected based on the lowest modularity score.</code></pre>
-<pre><code>## Warning in cluster_edge_betweenness(graph = .G(), weights = weights, directed
-## = directed): At core/community/edge_betweenness.c:492 : Modularity calculation
-## with weighted edge betweenness community detection might not make sense --
-## modularity treats edge weights as similarities while edge betwenness treats them
-## as distances.</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-144-1.png" width="672" /></p>
+<p>This is an interesting case of where we need to be mindful of the differences between continuous and discrete values. The output for the community detection is a number: node 1 will be placed in group 1, node 2 in group 2, node 3 in group 1, and so forth. By default, ggraph treats these numbers as continuous variables, and will map them to a colour scale as in the first example above. However, group membership should be considered a discrete value.</p>
+<p>In order to tell ggraph to treat it as a discete value, we wrap the value in the <code>as.character()</code> function. This tells R to treat the value as a character string instead of a number, and ggraph treats character strings as discrete variables.</p>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="visualising-networks-with-ggraph-ii.html#cb251-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb251-2"><a href="visualising-networks-with-ggraph-ii.html#cb251-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">to_undirected</span>() <span class="sc">%&gt;%</span> <span class="co"># change the graph to undirected, in order to make the community detection work.</span></span>
+<span id="cb251-3"><a href="visualising-networks-with-ggraph-ii.html#cb251-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">community =</span> <span class="fu">group_louvain</span>(<span class="at">weights =</span><span class="cn">NULL</span>)) <span class="sc">%&gt;%</span> <span class="co"># calculate the group memberships</span></span>
+<span id="cb251-4"><a href="visualising-networks-with-ggraph-ii.html#cb251-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(community <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> <span class="co"># filter to only include the first four groups</span></span>
+<span id="cb251-5"><a href="visualising-networks-with-ggraph-ii.html#cb251-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>)  <span class="sc">+</span> </span>
+<span id="cb251-6"><a href="visualising-networks-with-ggraph-ii.html#cb251-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">2</span>) <span class="sc">+</span>  <span class="co"># reduce the transparency of the edges to make it easier to see the colours.+ </span></span>
+<span id="cb251-7"><a href="visualising-networks-with-ggraph-ii.html#cb251-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.character</span>(community)))  <span class="co"># map the colour aesthetic to the group label. Use as.character() to change it to a discrete value</span></span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-151-1.png" width="672" /></p>
 </div>
 </div>
 <div id="what-makes-a-good-network-visualisation" class="section level2 hasAnchor">
 <h2>What makes a good network visualisation?<a href="visualising-networks-with-ggraph-ii.html#what-makes-a-good-network-visualisation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You will rarely be able to make a good network visualisation simply by pushing a button and using the default settings. You should think about what your network is trying to communicate and to what audience, and spend some time</p>
 <ul>
-<li><p>Treat the diagram as carefully as you would an essay or other piece of text. Is it easy to understand?</p></li>
+<li><p>Treat the visualisation as carefully as you would an essay or other piece of text. Is it easy to understand?</p></li>
 <li><p>Make sure you really need a network graph, and that another method of communicating the information wouldn’t be better. For example, if your diagram is simply showing the most influential nodes, would a bar chart (or even a table) with their degree work just as well?</p></li>
 <li><p>Use colour/shape/size if you need to, but make sure you explain what each element is doing.</p></li>
 <li><p>Spend some time showing your readers how to ‘read’ the visualisation. What is interesting about the left/right/top/bottom of the diagram? What is the significance of nodes grouped together, and what about nodes in the centre versus nodes towards the edge? Are there obvious clusters and gaps, and do these show up in the visualisation?</p></li>
@@ -559,7 +653,7 @@ div.csl-indent {
 <p>In this final section, I’ll demonstrate how these methods might be used to carry out exploratory data analysis on the sample letter dataset.</p>
 <p>The node attributes can used either to filter the network, or added as extra visual elements. Doing so helps us to understand a bit more about why the network might look the way it does.</p>
 <p>First, load the same node attributes table as before:</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="visualising-networks-with-ggraph-ii.html#cb245-1" aria-hidden="true" tabindex="-1"></a>node_attributes <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&#39;node_attributes.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="visualising-networks-with-ggraph-ii.html#cb252-1" aria-hidden="true" tabindex="-1"></a>node_attributes <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&#39;node_attributes.csv&#39;</span>)</span></code></pre></div>
 <pre><code>## Rows: 248 Columns: 13
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -570,20 +664,20 @@ div.csl-indent {
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <p>This external information might help us to make sense of the clusters found by the community detection algorithm used above. One of the fields in the data is whether that person is listed as a politician on Wikidata: the field is a simple flag of either <code>yes</code> or <code>no</code>.</p>
 <p>To check whether this might be a clue towards the structure of the network, we will set the <em>color</em> to the community detection results, and the <em>shape</em> to the politician flag, with the following code:</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="visualising-networks-with-ggraph-ii.html#cb247-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
-<span id="cb247-2"><a href="visualising-networks-with-ggraph-ii.html#cb247-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.undirected</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb247-3"><a href="visualising-networks-with-ggraph-ii.html#cb247-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>()<span class="sc">%&gt;%</span> </span>
-<span id="cb247-4"><a href="visualising-networks-with-ggraph-ii.html#cb247-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> </span>
-<span id="cb247-5"><a href="visualising-networks-with-ggraph-ii.html#cb247-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;total&#39;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb247-6"><a href="visualising-networks-with-ggraph-ii.html#cb247-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(node_attributes) <span class="sc">%&gt;%</span> </span>
-<span id="cb247-7"><a href="visualising-networks-with-ggraph-ii.html#cb247-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">community =</span> <span class="fu">group_edge_betweenness</span>(<span class="at">weights =</span><span class="cn">NULL</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb247-8"><a href="visualising-networks-with-ggraph-ii.html#cb247-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(community <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb247-9"><a href="visualising-networks-with-ggraph-ii.html#cb247-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
-<span id="cb247-10"><a href="visualising-networks-with-ggraph-ii.html#cb247-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">2</span>)<span class="sc">+</span> </span>
-<span id="cb247-11"><a href="visualising-networks-with-ggraph-ii.html#cb247-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> degree, <span class="at">color =</span> <span class="fu">as.character</span>(community), <span class="at">shape =</span> politician))  <span class="sc">+</span> </span>
-<span id="cb247-12"><a href="visualising-networks-with-ggraph-ii.html#cb247-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">ifelse</span>(degree <span class="sc">&gt;</span><span class="dv">2</span>, main_name, <span class="cn">NA</span>)), <span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">repel =</span> T) <span class="sc">+</span> </span>
-<span id="cb247-13"><a href="visualising-networks-with-ggraph-ii.html#cb247-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-146-1.png" width="672" /></p>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="visualising-networks-with-ggraph-ii.html#cb254-1" aria-hidden="true" tabindex="-1"></a>sample_tbl_graph <span class="sc">%&gt;%</span> </span>
+<span id="cb254-2"><a href="visualising-networks-with-ggraph-ii.html#cb254-2" aria-hidden="true" tabindex="-1"></a>  igraph<span class="sc">::</span><span class="fu">as.undirected</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb254-3"><a href="visualising-networks-with-ggraph-ii.html#cb254-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>()<span class="sc">%&gt;%</span> </span>
+<span id="cb254-4"><a href="visualising-networks-with-ggraph-ii.html#cb254-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> </span>
+<span id="cb254-5"><a href="visualising-networks-with-ggraph-ii.html#cb254-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;total&#39;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb254-6"><a href="visualising-networks-with-ggraph-ii.html#cb254-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(node_attributes) <span class="sc">%&gt;%</span> </span>
+<span id="cb254-7"><a href="visualising-networks-with-ggraph-ii.html#cb254-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">community =</span> <span class="fu">group_edge_betweenness</span>(<span class="at">weights =</span><span class="cn">NULL</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb254-8"><a href="visualising-networks-with-ggraph-ii.html#cb254-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(community <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb254-9"><a href="visualising-networks-with-ggraph-ii.html#cb254-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="st">&#39;fr&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb254-10"><a href="visualising-networks-with-ggraph-ii.html#cb254-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="at">alpha =</span> .<span class="dv">2</span>)<span class="sc">+</span> </span>
+<span id="cb254-11"><a href="visualising-networks-with-ggraph-ii.html#cb254-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> degree, <span class="at">color =</span> <span class="fu">as.character</span>(community), <span class="at">shape =</span> politician))  <span class="sc">+</span> </span>
+<span id="cb254-12"><a href="visualising-networks-with-ggraph-ii.html#cb254-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">ifelse</span>(degree <span class="sc">&gt;</span><span class="dv">2</span>, main_name, <span class="cn">NA</span>)), <span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">repel =</span> T) <span class="sc">+</span> </span>
+<span id="cb254-13"><a href="visualising-networks-with-ggraph-ii.html#cb254-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-153-1.png" width="672" /></p>
 <p>It does look like one of the four clusters (cluster 2) has far fewer politicians. This cluster seems to be a group of what might be described as natural philosophers.</p>
 <p>Other things to look out for in this visualisation:</p>
 <ul>
