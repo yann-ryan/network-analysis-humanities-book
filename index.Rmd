@@ -200,10 +200,10 @@ There are also a set of slides for each week, which you can access here:
 -   Week 5: [class
     1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/5-1-visualising-with-ggraph.html),
     [class
-    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/visualising-gephi.html)
+    2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/5-2-visualising-gephi.html)
 
 -   Week 6: [class
-    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/bipartite-networks.html),
+    1](https://comhis.github.io/applying-network-analysis-to-humanities/slides/6-1-bipartite-networks.html),
     [class
     2](https://comhis.github.io/applying-network-analysis-to-humanities/slides/6-2-literary-linguistic.html)
 

@@ -477,7 +477,7 @@ In this class we'll take this raw data, filter it, and turn it into a bipartite 
 
 First, load the data into R:
 
-```{r}
+```{r, cache = FALSE}
 load(file = '../publisher_network/estc_actor_links')
 load('../publisher_network/estc_core')
 ```
@@ -488,7 +488,9 @@ The book IDs and the actor IDs can be used as an *edge list*, and processed exac
 
 ```{r}
 
-edge_list = estc_actor_links %>% left_join(estc_core %>% select(estc_id, publication_year, publication_place)) %>% 
+edge_list = estc_actor_links %>% 
+  left_join(estc_core %>% 
+              select(estc_id, publication_year, publication_place)) %>% 
   filter(publication_year %in% 1750:1760) %>% 
   filter(publication_place == 'Edinburgh') %>%
   filter(actor_role_publisher == TRUE) %>% 
@@ -500,7 +502,9 @@ edge_list = estc_actor_links %>% left_join(estc_core %>% select(estc_id, publica
 Use the same functions as before to turn this into a network object:
 
 ```{r}
-publisher_graph  = edge_list%>% as_tbl_graph()
+publisher_graph  = edge_list %>% as_tbl_graph()
+
+publisher_graph
 ```
 
 The next steps are specific to bipartite networks. In order for R to 'know' that the network is bipartite, each node needs to have an associated type. We use an igraph function for this, called `bipartite_mapping()`. This assigns a TRUE or FALSE value to each node, depending on whether they are found in the first or second column of the data. This is saved as an attribute of the nodes using the following code:
@@ -513,9 +517,9 @@ At this point, we can already visualise the network, setting the shape of the no
 
 ```{r}
 publisher_graph %>% 
-  ggraph('stress') +
+  ggraph('fr') +
   geom_edge_link(alpha = .2) + 
-  geom_node_point(aes(shape = type),size =2) + 
+  geom_node_point(aes(shape = type, color = type),size =2) + 
   theme_void()
 ```
 
@@ -527,11 +531,16 @@ Igraph has another function for this, `bipartite_projection()`. Use this functio
 
 ```{r}
 proj = bipartite.projection(publisher_graph)
+
+proj
+
 ```
 
 The result is a new object, a list, containing to further objects. These are the two network projections (publisher to publisher, and book to book). They can be accessed using `proj[[1]]` and `proj[[2]]`. We'll work with the second item, the publishers, but first, turn it into a tidygraph object so that we can work on it in the same way as the previous lessons.
 
 ```{r}
+proj[[2]]
+
 proj[[2]] = proj[[2]] %>% as_tbl_graph()
 
 proj[[2]] 

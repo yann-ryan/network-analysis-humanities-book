@@ -227,7 +227,7 @@ retweet_graph
 
 ```
 
-### Extend the data model by creating a
+### Extend the data model by creating a nodes table. 
 
 We will also make a basic table of node information, containing the user friends and follower numbers for each account. This plus the network will consist of our data model.
 
